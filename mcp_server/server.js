@@ -47,6 +47,7 @@ if (wikiArgIdx >= 0 && args[wikiArgIdx + 1]) {
 const SCRIPTS_DIR = join(WIKI_DIR, 'scripts');
 const MEMORIES_DIR = join(WIKI_DIR, 'memories');
 const SHARED_DIR = join(WIKI_DIR, 'shared');
+const PROJECTS_DIR = join(WIKI_DIR, 'projects');
 
 console.error(`[openclaw-wiki-mcp] Wiki 目录: ${WIKI_DIR}`);
 console.error(`[openclaw-wiki-mcp] 脚本目录: ${SCRIPTS_DIR}`);
@@ -400,17 +401,33 @@ ${content}
   }
 );
 
-// 14. wiki_recall - 查询记忆
+// 14. wiki_recall - 查询记忆/项目
 server.tool(
   'wiki_recall',
-  '查询共享知识/记忆。搜索 user-preferences、project-decisions 等共享内容。',
+  '查询共享知识/记忆/项目进度。搜索 user-preferences、project-decisions 或指定项目。',
   {
     query: z.string().min(1).max(200).describe('搜索关键词'),
+    project: z.string().optional().describe('项目名（如 my-webapp），指定后搜索项目进度'),
     limit: z.number().min(1).max(20).default(5).describe('返回数量')
   },
-  async ({ query, limit }) => {
+  async ({ query, project, limit }) => {
     try {
-      // 限定搜索 shared 目录
+      // 指定项目时，优先返回项目进度
+      if (project) {
+        const progressPath = join(PROJECTS_DIR, project, 'progress.md');
+        if (existsSync(progressPath)) {
+          const progress = await readFile(progressPath, 'utf-8');
+          let result = `# 项目进度: ${project}\n\n${progress}`;
+          // 同时搜索项目相关内容
+          const projectQuery = `projects/${project} ${query}`;
+          const related = await runScript('unified-search.js', [projectQuery, String(limit)], 30000);
+          result += `\n\n---\n\n## 相关内容\n\n${related}`;
+          return { content: [{ type: 'text', text: result }] };
+        }
+        return { content: [{ type: 'text', text: `❌ 项目不存在: ${project}` }], isError: true };
+      }
+
+      // 默认搜索 shared + projects 目录
       const sharedQuery = `shared ${query}`;
       const output = await runScript('unified-search.js', [sharedQuery, String(limit)], 30000);
       return { content: [{ type: 'text', text: output }] };
@@ -460,6 +477,99 @@ server.tool(
     }
   }
 );
+
+// ── 项目进度工具 ──────────────────────────────────────────────
+
+// 16. wiki_update_progress - 更新项目进度
+server.tool(
+  'wiki_update_progress',
+  '更新项目进度记录。AI 完成任务后追加一条进度日志，任何 AI 接手都能看到。',
+  {
+    project: z.string().describe('项目名（如 my-webapp）'),
+    task: z.string().describe('任务描述'),
+    ai: z.string().describe('执行的 AI（Claude/Codex/Hermes/OpenClaw）'),
+    status: z.enum(['✅', '🚧', '❌']).describe('任务状态：完成/进行中/失败'),
+    note: z.string().optional().describe('备注信息')
+  },
+  async ({ project, task, ai, status, note }) => {
+    try {
+      const projectDir = join(PROJECTS_DIR, project);
+      const progressPath = join(projectDir, 'progress.md');
+
+      if (!existsSync(progressPath)) {
+        return { content: [{ type: 'text', text: `❌ 项目不存在: ${project}\n请先创建 projects/${project}/progress.md` }], isError: true };
+      }
+
+      // 追加进度日志
+      const timestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
+      const logLine = `| ${timestamp} | ${ai} | ${task} | ${status} | ${note || ''} |\n`;
+
+      const { appendFile } = await import('fs/promises');
+      await appendFile(progressPath, logLine, 'utf-8');
+
+      // 同步入库向量库
+      const relativePath = `projects/${project}/progress.md`;
+      try {
+        await runPython('wiki-pgvector.py', ['add', relativePath], 30000);
+      } catch (e) {
+        // 入库失败不影响进度记录
+      }
+
+      return { content: [{ type: 'text', text: `✅ 进度已更新: ${project}\n${logLine}` }] };
+    } catch (err) {
+      return { content: [{ type: 'text', text: `更新进度失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
+// 17. wiki_get_progress - 获取项目进度
+server.tool(
+  'wiki_get_progress',
+  '获取项目当前进度。返回 progress.md 内容，AI 接手项目时先调用此工具。',
+  {
+    project: z.string().describe('项目名（如 my-webapp）')
+  },
+  async ({ project }) => {
+    try {
+      const progressPath = join(PROJECTS_DIR, project, 'progress.md');
+
+      if (!existsSync(progressPath)) {
+        return { content: [{ type: 'text', text: `❌ 项目不存在: ${project}\n可用项目: ${await listProjects()}` }], isError: true };
+      }
+
+      const content = await readFile(progressPath, 'utf-8');
+      return { content: [{ type: 'text', text: content }] };
+    } catch (err) {
+      return { content: [{ type: 'text', text: `获取进度失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
+// 18. wiki_list_projects - 列出所有项目
+server.tool(
+  'wiki_list_projects',
+  '列出所有项目。返回 projects/ 目录下的项目列表。',
+  {},
+  async () => {
+    try {
+      const projects = await listProjects();
+      return { content: [{ type: 'text', text: `# 项目列表\n\n${projects}` }] };
+    } catch (err) {
+      return { content: [{ type: 'text', text: `列出项目失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
+async function listProjects() {
+  if (!existsSync(PROJECTS_DIR)) return '(无项目)';
+  const dirs = await readdir(PROJECTS_DIR);
+  const projects = dirs.filter(d => {
+    const p = join(PROJECTS_DIR, d);
+    return existsSync(join(p, 'progress.md'));
+  });
+  if (projects.length === 0) return '(无项目)';
+  return projects.map(p => `- ${p}`).join('\n');
+}
 
 // ── 启动 Server ──────────────────────────────────────────────
 async function main() {

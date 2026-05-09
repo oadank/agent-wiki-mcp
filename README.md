@@ -52,6 +52,12 @@ agent-wiki-mcp/
 ├── mcp_server/               # MCP Server（跨平台调用）
 │   ├── server.js             # MCP 入口
 │   └── MCP_CONFIG.md         # 配置指南
+├── projects/                 # 项目进度（换 AI 不丢进度）
+│   ├── .templates/           # 模板文件
+│   │   ├── progress.md       # 进度记录模板
+│   │   └── decisions.md      # 技术决策模板
+│   └── {{项目名}}/           # 具体项目
+│       └── progress.md       # AI 接手必读
 ├── shared/                   # 共享知识（跨 AI 可用）
 │   ├── user-preferences/     # 用户偏好
 │   ├── project-decisions/    # 项目决策
@@ -94,8 +100,41 @@ agent-wiki-mcp/
 | `wiki_delete` | 单文件删除 | 删除页面及向量 |
 | `wiki_incremental` | 增量入库 | 扫描新增页面入库 |
 | `wiki_remember` | 记录知识 | 保存共享知识 |
-| `wiki_recall` | 查询记忆 | 搜索共享知识 |
+| `wiki_recall` | 查询记忆/项目 | 搜索共享知识或项目进度 |
 | `wiki_explain` | 解释来源 | 显示页面原始 URL |
+| `wiki_update_progress` | 更新进度 | AI 任务完成后追加进度 |
+| `wiki_get_progress` | 获取进度 | AI 接手项目时读取进度 |
+| `wiki_list_projects` | 列出项目 | 显示所有项目列表 |
+
+---
+
+## 项目进度管理（换 AI 不丢进度）
+
+**核心功能**：让 Claude、Codex、Hermes、OpenClaw 共享项目进度。
+
+### 使用场景
+
+```
+周一：Claude 做了数据库迁移，进度记录到 wiki
+周二：Codex 接手，调用 wiki_get_progress 就能看到昨天进度
+周三：Hermes 继续开发，不用重新解释
+```
+
+### 快速上手
+
+```bash
+# 创建项目目录
+cp projects/.templates/progress.md projects/my-project/progress.md
+
+# 入库
+python3 .pgvector/wiki-pgvector.py add projects/my-project/progress.md
+
+# AI 任务完成后更新进度（MCP 调用）
+wiki_update_progress "my-project" "完成数据库迁移" "Claude" "✅" "新增 users 表"
+
+# AI 接手项目时读取进度
+wiki_get_progress "my-project"
+```
 
 ---
 
