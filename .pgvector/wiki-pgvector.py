@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Wiki Vector Search - PostgreSQL + pgvector
+Wiki Vector Search - PostgreSQL + pgvector (N5105 优化版)
 用法:
-  python3 wiki-pgvector.py build              # 重建向量索引
+  python3 wiki-pgvector.py build              # 重建向量索引（延迟索引策略）
   python3 wiki-pgvector.py search "关键词" 5  # 搜索
   python3 wiki-pgvector.py clean              # 清理已删除页面
 """
 
 import os
 import sys
-import json
+import time
 import psycopg2
 import requests
 from pathlib import Path
@@ -19,7 +19,9 @@ VAULT = os.environ.get("WIKI_VAULT_PATH", Path(__file__).parent.parent.resolve()
 EMBED_URL = os.environ.get("EMBEDDING_URL", "http://localhost:11435/v1/embeddings")
 MODEL = "bge-small-zh-v1.5"
 DIMENSIONS = 512
-BATCH_SIZE = 5  # 降低批次大小，避免 BGE 服务过载
+BATCH_SIZE = 10       # 每批处理数量
+BATCH_DELAY = 5       # 每批后等待秒数（给系统呼吸）
+EMBED_DELAY = 1       # 每次embedding后等待秒数
 
 # PostgreSQL 连接
 PG_CONN = {
@@ -33,10 +35,8 @@ SKIP_DIRS = [".", "..", ".git", ".pgvector", "scripts", "_raw", "_meta",
              "shared", ".pnpm-store"]
 
 
-import time
-
 def get_embedding(texts, retries=3):
-    """调用 BGE embedding 服务，带重试"""
+    """调用 BGE embedding 服务，带重试和延迟"""
     payload = {
         "input": texts,
         "model": MODEL,
@@ -44,14 +44,15 @@ def get_embedding(texts, retries=3):
     }
     for attempt in range(retries):
         try:
-            resp = requests.post(EMBED_URL, json=payload, timeout=300)
+            resp = requests.post(EMBED_URL, json=payload, timeout=120)
             resp.raise_for_status()
             data = resp.json().get("data", [])
+            time.sleep(EMBED_DELAY)  # 请求后等待
             return [item["embedding"] for item in data]
         except Exception as e:
             if attempt < retries - 1:
                 print(f"  ⚠️ embedding 失败 (尝试 {attempt+1}/{retries}): {e}")
-                time.sleep(2)  # 等待 2 秒后重试
+                time.sleep(5)  # 失败后等待更长
             else:
                 raise
 
@@ -95,7 +96,6 @@ def extract_meta(content, filename):
     title = filename.replace(".md", "").replace("-", " ")
     summary = ""
 
-    # 解析 frontmatter
     if content.startswith("---\n"):
         parts = content.split("---\n", 2)
         if len(parts) >= 3:
@@ -106,7 +106,6 @@ def extract_meta(content, filename):
                 elif line.startswith("summary:"):
                     summary = line.split(":", 1)[1].strip().strip('"').strip("'")
 
-    # 从内容提取
     if not title:
         for line in content.split("\n"):
             if line.startswith("# "):
@@ -122,55 +121,84 @@ def clean_nul(text):
 
 
 def build_index():
-    """重建向量索引"""
+    """重建向量索引（延迟索引策略，避免 N5105 卡死）"""
     print("📄 收集页面...")
     pages = collect_pages()
-    print(f"  收集到 {len(pages)} 个页面")
+    total = len(pages)
+    print(f"  收集到 {total} 个页面")
 
     conn = psycopg2.connect(**PG_CONN)
     cur = conn.cursor()
 
-    # 清空旧数据
+    # ========== 延迟索引策略 ==========
+    # 1. 删除 HNSW 索引（入库时不更新索引）
+    print("🗑️ 删除旧索引...")
+    cur.execute("DROP INDEX IF EXISTS wiki_embedding_idx")
+    conn.commit()
+
+    # 2. 清空旧数据
     cur.execute("TRUNCATE wiki_vectors")
     conn.commit()
 
-    # 分批处理
-    for i in range(0, len(pages), BATCH_SIZE):
+    # 3. 批量插入数据（无索引压力）
+    print("📦 批量入库...")
+    success = 0
+    failed = 0
+    start_time = time.time()
+
+    for i in range(0, total, BATCH_SIZE):
         batch = pages[i:i + BATCH_SIZE]
         texts = [clean_nul(p["content"]) for p in batch]
-        print(f"  进度: {i}/{len(pages)}")
+
+        # 进度显示
+        elapsed = time.time() - start_time
+        rate = success / elapsed if elapsed > 0 else 0
+        eta = (total - i) / rate / 60 if rate > 0 else 0
+        print(f"  进度: {i}/{total} ({i*100//total}%) | 成功: {success} | ETA: {eta:.1f}分钟")
 
         try:
             embeddings = get_embedding(texts)
         except Exception as e:
-            print(f"  ⚠️ embedding 失败: {e}")
+            print(f"  ⚠️ embedding 批次失败: {e}")
+            failed += len(batch)
             continue
 
         for page, emb in zip(batch, embeddings):
-            cur.execute("""
-                INSERT INTO wiki_vectors (path, title, summary, content, embedding, category)
-                VALUES (%s, %s, %s, %s, %s, %s)
-            """, (page["path"], clean_nul(page["title"]), clean_nul(page["summary"]),
-                  clean_nul(page["content"]), emb, page["category"]))
+            try:
+                cur.execute("""
+                    INSERT INTO wiki_vectors (path, title, summary, content, embedding, category)
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                """, (page["path"], clean_nul(page["title"]), clean_nul(page["summary"]),
+                      clean_nul(page["content"]), emb, page["category"]))
+                success += 1
+            except Exception as e:
+                print(f"  ⚠️ INSERT 失败: {page['path']}: {e}")
+                failed += 1
 
         conn.commit()
+        time.sleep(BATCH_DELAY)  # 每批后等待，给系统呼吸
+
+    # 4. 重建 HNSW 索引（一次性）
+    print("🔧 重建 HNSW 索引...")
+    cur.execute("CREATE INDEX wiki_embedding_idx ON wiki_vectors USING hnsw (embedding vector_cosine_ops)")
+    conn.commit()
 
     cur.close()
     conn.close()
-    print(f"✅ 向量库已重建: {len(pages)} 页")
+
+    elapsed = time.time() - start_time
+    print(f"✅ 向量库已重建: {success} 页 (失败 {failed}) | 耗时 {elapsed/60:.1f} 分钟")
 
 
 def search(query, top_k=10):
     """向量搜索"""
     print(f"🔍 搜索: \"{query}\"")
 
-    # 获取查询向量
     query_emb = get_embedding([query])[0]
 
     conn = psycopg2.connect(**PG_CONN)
     cur = conn.cursor()
 
-    # cosine similarity 搜索
     cur.execute("""
         SELECT path, title, summary, category,
                1 - (embedding <=> %s::vector) as similarity
@@ -216,8 +244,6 @@ def clean_deleted():
     conn.close()
 
     print(f"✅ 已清理 {len(deleted)} 条")
-    for p in deleted:
-        print(f"  - {p}")
 
 
 def main():
