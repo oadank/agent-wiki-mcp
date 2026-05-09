@@ -160,7 +160,7 @@ server.tool(
     try {
       const indexPath = join(WIKI_DIR, 'index.md');
       const manifestPath = join(WIKI_DIR, '.manifest.json');
-      const lancedbPath = join(WIKI_DIR, '.lancedb');
+      const pgvectorPath = join(WIKI_DIR, '.pgvector');
 
       let status = `# Wiki 状态检查\n\n`;
       status += `Wiki 目录: ${WIKI_DIR}\n`;
@@ -170,7 +170,7 @@ server.tool(
       status += `## 核心文件\n`;
       status += `- index.md: ${existsSync(indexPath) ? '✅ 存在' : '❌ 缺失'}\n`;
       status += `- .manifest.json: ${existsSync(manifestPath) ? '✅ 存在' : '❌ 缺失'}\n`;
-      status += `- .lancedb/: ${existsSync(lancedbPath) ? '✅ 存在' : '❌ 缺失'}\n\n`;
+      status += `- .pgvector/: ${existsSync(pgvectorPath) ? '✅ 存在' : '❌ 缺失'}\n\n`;
 
       // 统计文档数量
       const files = await readdir(WIKI_DIR);
