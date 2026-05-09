@@ -67,6 +67,20 @@ Fork 自 [oadank/openclaw-wiki-lancedb](https://github.com/oadank/openclaw-wiki-
 | `paused` | 用户手动暂停 | 不检查，唤醒时汇报 |
 | `archived` | 项目路径不存在 | 保留记录，移到 `_archived/` |
 
+### 进度报告格式
+
+所有 AI 生成的项目进度报告**必须使用统一格式**（见 `projects/.templates/report-template.md`）：
+
+```
+📊 项目进度汇报：{{项目名}}
+
+1. 基本信息：项目名、路径、状态、负责人
+2. 当前状态：最后编辑 AI、时间、任务、暂停天数
+3. 进度日志：最近 N 条任务记录
+4. 待处理变更：Git 状态、未提交文件
+5. 下一步建议：继续执行的任务
+```
+
 ---
 
 ## 为什么用 pgvector？

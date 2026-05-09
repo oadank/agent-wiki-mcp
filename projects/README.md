@@ -15,12 +15,15 @@ category: projects
 projects/
 ├── .templates/           # 模板文件
 │   ├── progress.md       # 进度记录模板
-│   └── decisions.md      # 技术决策模板
+│   ├── decisions.md      # 技术决策模板
+│   ├── meta.json         # 元数据模板
+│   └── report-template.md # 进度报告模板（统一格式）
+├── registry.json         # 项目注册表（项目名→路径映射）
 ├── {{项目名}}/           # 具体项目目录
 │   ├── progress.md       # 项目进度（AI 必读）
-│   ├── decisions.md      # 技术决策记录
-│   ├── current-state.md  # 当前状态快照
-│   └── references/       # 相关文档链接
+│   ├── meta.json         # 元数据（机器可读）
+│   └── decisions.md      # 技术决策记录
+├── _archived/            # 已废弃项目（保留记录）
 ```
 
 ---
@@ -63,3 +66,29 @@ wiki_update_progress "my-project" "完成数据库迁移" "Claude" "✅"
 2. **决策传承**: decisions.md 记录"为什么"，避免重复讨论
 3. **原子更新**: wiki_update_progress 单条追加，不重建索引
 4. **跨平台**: MCP 协议，Claude/Codex/Hermes/OpenClaw 都可用
+
+---
+
+## 进度报告格式
+
+任何 AI 生成项目进度报告时，**必须使用统一格式**。
+
+参考模板：`projects/.templates/report-template.md`
+
+### 报告结构
+
+1. **基本信息**：项目名、路径、状态、负责人
+2. **当前状态**：最后编辑 AI、时间、任务、暂停天数
+3. **进度日志**：最近 N 条任务记录
+4. **待处理变更**：Git 状态、未提交文件
+5. **下一步建议**：继续执行的任务
+
+### 使用方式
+
+```bash
+# 查看项目报告模板
+cat projects/.templates/report-template.md
+
+# 或搜索
+wiki_query "进度报告模板"
+```
