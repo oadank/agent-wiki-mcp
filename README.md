@@ -4,6 +4,18 @@
 
 ---
 
+## 项目来源
+
+Fork 自 [oadank/openclaw-wiki-lancedb](https://github.com/oadank/openclaw-wiki-lancedb)。
+
+**迁移记录**：
+- 原方案：LanceDB（嵌入式向量库）
+- 新方案：PostgreSQL + pgvector（服务端向量库）
+- 原因：多 AI 共用场景，PG 并发更强
+- 完成时间：2026-05-09
+
+---
+
 ## 功能特性
 
 | 功能 | 说明 |
@@ -103,31 +115,39 @@ wiki_deep_query "gateway 报错排查"
 ## 导入新文档
 
 ```bash
-# 快速入库（0 token，秒级）
-python3 scripts/wiki-quick-ingest.py <文件路径> [分类]
+# 单文件入库（推荐）
+python3 .pgvector/wiki-pgvector.py add knowledge/plugins/new.md
 
-# 批量入库
-python3 scripts/wiki-quick-ingest.py --batch <目录>
+# 增量入库（扫描新增）
+python3 .pgvector/wiki-pgvector.py incremental
 
-# 增量更新向量
-python3 .pgvector/wiki-pgvector.py build  # 全量重建
-# 或手动 INSERT 单条
+# 全量重建（慎用，大批量）
+python3 .pgvector/wiki-pgvector.py build
 ```
+
+**建议**：日常用 `add` 单条入库，索引自动更新，不卡系统。
 
 ---
 
 ## 索引维护
 
 ```bash
-# 重建向量索引
+# 单文件入库（索引自动更新）
+python3 .pgvector/wiki-pgvector.py add knowledge/plugins/new.md
+
+# 单文件删除（索引自动更新）
+python3 .pgvector/wiki-pgvector.py delete knowledge/plugins/old.md
+
+# 增量入库（新增页面）
+python3 .pgvector/wiki-pgvector.py incremental
+
+# 全量重建（大批量时使用）
 python3 .pgvector/wiki-pgvector.py build
-
-# 清理已删除页面
-python3 .pgvector/wiki-pgvector.py clean
-
-# 重建 HNSW 索引（增量更新后）
-psql -U postgres -c "REINDEX INDEX wiki_embedding_idx;"
 ```
+
+**N5105 防卡策略**：
+- 单条操作：索引自动更新，无需手动干预
+- 大批量（500+）：延迟索引（先删索引 → 入库 → 重建），防止卡死
 
 ---
 
@@ -168,11 +188,22 @@ PG_USER=postgres
 
 ## 更新日志
 
-- **2026-05-09**: LanceDB → pgvector 迁移完成
-- **2026-05-09**: 目录结构大重构 → knowledge/ 统一组织
-- **2026-05-09**: pgvector 0.8.2 安装，wiki_vectors 表创建
-- **2026-05-07**: 清理重复文件，修复 `.manifest.json` 路径映射
-- **2026-04-28**: 初始导入 487 页 OpenClaw 文档
+- **2026-05-09**: LanceDB → pgvector 迁移（1570 页入库）
+- **2026-05-09**: 目录重构 → knowledge/ 统一组织
+- **2026-05-09**: pgvector 0.8.2 + wiki_vectors 表
+- **2026-05-07**: 清理重复文件，修复路径映射
+- **2026-04-28**: 初始导入 OpenClaw 文档
+
+---
+
+## 引用记录
+
+| 来源 | 页数 | 说明 |
+|------|------|------|
+| OpenClaw 官方文档 | 487 | https://github.com/openclaw/openclaw |
+| LiteLLM 文档 | 24 | Proxy/Core/Providers 等 |
+| Gateway 配置 | 12 | 认证/路由/代理等 |
+| 插件文档 | 100+ | channels/plugins/tools |
 
 ---
 
