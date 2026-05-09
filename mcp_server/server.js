@@ -185,7 +185,15 @@ server.tool(
         output += '\n\n---\n\n## 📊 项目同步提醒\n\n';
         for (const r of syncReport.reports) {
           if (r.action === 'synced') {
-            output += `- **${r.project}**: 检测到 ${r.changes} 个变化\n`;
+            output += `### ${r.project}\n`;
+            for (const c of r.changes) {
+              if (c.type === 'files_modified') {
+                const pathLabel = c.path.split('/').pop(); // 简化路径显示
+                output += `- ${pathLabel}: ${c.count} 个文件变化\n`;
+              } else if (c.type === 'path_missing') {
+                output += `- ⚠️ 路径不存在: ${c.path}\n`;
+              }
+            }
           } else if (r.action === 'archived') {
             output += `- **${r.project}**: 已归档 (${r.reason})\n`;
           }
@@ -630,44 +638,56 @@ function saveMeta(projectName, meta) {
   writeFileSync(join(projectDir, 'meta.json'), JSON.stringify(meta, null, 2), 'utf-8');
 }
 
-// 检测项目变化（纯代码，无LLM）
+// 检测项目变化（支持多路径）
 function detectChanges(projectName) {
   const registry = loadRegistry();
   const proj = registry.projects[projectName];
 
   if (!proj) return { type: 'not_registered' };
 
-  // 检查项目路径是否存在
-  if (!existsSync(proj.path)) {
-    return { type: 'project_missing', path: proj.path };
+  // 收集所有检测路径：主路径 + relatedPaths
+  const allPaths = [proj.path];
+  if (proj.relatedPaths && Array.isArray(proj.relatedPaths)) {
+    allPaths.push(...proj.relatedPaths);
   }
 
   const meta = loadMeta(projectName) || { lastSession: new Date().toISOString() };
   const changes = [];
-
-  // 检查目录下最近修改的文件（排除 node_modules 等）
   const lastSessionTime = new Date(meta.lastSession);
-  const recentFiles = [];
-  const ignoreDirs = ['node_modules', '.git', '__pycache__', '.cache', 'dist', 'build'];
 
-  try {
-    const findResult = execSync(
-      `find . -type f -newermt "${lastSessionTime.toISOString()}" ` +
-      `-not -path "./node_modules/*" -not -path "./.git/*" ` +
-      `-not -path "./__pycache__/*" -not -path "./.cache/*" ` +
-      `-not -path "./dist/*" -not -path "./build/*" ` +
-      `2>/dev/null | head -20`,
-      { cwd: proj.path, encoding: 'utf-8', timeout: 10000 }
-    ).trim();
-    if (findResult) {
-      recentFiles.push(...findResult.split('\n').filter(s => s && !s.includes('.pyc')));
+  // 对每个路径检测变化
+  for (const path of allPaths) {
+    // 检查路径是否存在
+    if (!existsSync(path)) {
+      changes.push({ type: 'path_missing', path });
+      continue;
     }
-  } catch (e) {
-    // find 命令失败，跳过
-  }
 
-  if (recentFiles.length > 0) {
-    changes.push({ type: 'files_modified', count: recentFiles.length, files: recentFiles.slice(0, 10) });
+    // 检查目录下最近修改的文件
+    try {
+      const findResult = execSync(
+        `find . -type f -newermt "${lastSessionTime.toISOString()}" ` +
+        `-not -path "./node_modules/*" -not -path "./.git/*" ` +
+        `-not -path "./__pycache__/*" -not -path "./.cache/*" ` +
+        `-not -path "./dist/*" -not -path "./build/*" ` +
+        `2>/dev/null | head -20`,
+        { cwd: path, encoding: 'utf-8', timeout: 10000 }
+      ).trim();
+
+      if (findResult) {
+        const files = findResult.split('\n').filter(s => s && !s.includes('.pyc'));
+        if (files.length > 0) {
+          changes.push({
+            type: 'files_modified',
+            path: path,
+            count: files.length,
+            files: files.slice(0, 10)
+          });
+        }
+      }
+    } catch (e) {
+      // find 命令失败，跳过此路径
+    }
   }
 
   // 计算距离上次更新的天数
@@ -677,6 +697,7 @@ function detectChanges(projectName) {
     type: 'checked',
     projectName,
     realPath: proj.path,
+    relatedPaths: proj.relatedPaths || [],
     changes,
     daysSinceUpdate: daysSince,
     lastSession: meta.lastSession,
@@ -738,7 +759,7 @@ async function autoSync() {
         } catch (e) {}
       }
 
-      reports.push({ project: name, action: 'synced', changes: result.changes.length });
+      reports.push({ project: name, action: 'synced', changes: result.changes });
     }
   }
 
@@ -864,7 +885,15 @@ server.tool(
       let text = '# 项目同步报告\n\n';
       for (const r of reports) {
         if (r.action === 'synced') {
-          text += `✅ **${r.project}**: 同步 ${r.changes} 个变化\n`;
+          text += `✅ **${r.project}**\n`;
+          for (const c of r.changes) {
+            if (c.type === 'files_modified') {
+              const pathLabel = c.path.split('/').pop();
+              text += `   - ${pathLabel}: ${c.count} 个变化\n`;
+            } else if (c.type === 'path_missing') {
+              text += `   - ⚠️ 路径不存在: ${c.path}\n`;
+            }
+          }
         } else if (r.action === 'archived') {
           text += `📦 **${r.project}**: 已归档 (${r.reason})\n`;
         }
