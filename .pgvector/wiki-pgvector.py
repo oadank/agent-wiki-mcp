@@ -23,9 +23,9 @@ VAULT = os.environ.get("WIKI_VAULT_PATH", Path(__file__).parent.parent.resolve()
 EMBED_URL = os.environ.get("EMBEDDING_URL", "http://localhost:11435/v1/embeddings")
 MODEL = "bge-small-zh-v1.5"
 DIMENSIONS = 512
-BATCH_SIZE = 10       # 每批处理数量
-BATCH_DELAY = 5       # 每批后等待秒数（给系统呼吸）
-EMBED_DELAY = 1       # 每次embedding后等待秒数
+BATCH_SIZE = 10       # 批量嵌入数量
+BATCH_DELAY = 3       # 每批后等待秒数
+EMBED_DELAY = 0.5     # 每次embedding后等待秒数
 
 # PostgreSQL 连接
 PG_CONN = {
@@ -292,7 +292,7 @@ def incremental():
                   clean_nul(page["content"]), emb, page["category"]))
             conn.commit()
             success += 1
-            time.sleep(1)  # 每条后等待，避免卡死
+            time.sleep(0.5)  # 每条后等待
         except Exception as e:
             print(f"  ⚠️ 失败: {page['path']}: {e}")
             continue
