@@ -389,3 +389,6 @@
 | 2026-05-09T03:05:01.319449+00:00 | quick-ingest | ✅ | web.md → concepts//web-surfaces-gateway.md |
 | 2026-05-09T03:05:01.333681+00:00 | quick-ingest | ✅ | webchat.md → concepts//webchat-gateway-websocket-ui.md |
 | 2026-05-09T03:05:01.347893+00:00 | quick-ingest | ✅ | 测试文件.md → concepts//测试文件-1.md |
+| 2026-05-09T07:36:22.572033+00:00 | delete | ⏭️  | concepts/memos-本地记忆插件指南.md: file=False, index=False, manifest=False, vector=False |
+| 2026-05-09T08:47:07.807Z | lint | ⚠️ | 检查 1637 页，3200 个问题 |
+| 2026-05-09T08:55:43.550Z | lint | ⚠️ | 检查 1637 页，3200 个问题 |
