@@ -316,10 +316,10 @@ def add_single(filepath):
     cur = conn.cursor()
 
     # 检查是否已存在
-    cur.execute("SELECT id FROM wiki_vectors WHERE path = %s", (filepath))
+    cur.execute("SELECT id FROM wiki_vectors WHERE path = %s", (filepath,))
     if cur.fetchone():
         print(f"⚠️ 页面已存在，将更新")
-        cur.execute("DELETE FROM wiki_vectors WHERE path = %s", (filepath))
+        cur.execute("DELETE FROM wiki_vectors WHERE path = %s", (filepath,))
         conn.commit()
 
     try:
@@ -343,14 +343,14 @@ def delete_single(filepath):
     conn = psycopg2.connect(**PG_CONN)
     cur = conn.cursor()
 
-    cur.execute("SELECT id FROM wiki_vectors WHERE path = %s", (filepath))
+    cur.execute("SELECT id FROM wiki_vectors WHERE path = %s", (filepath,))
     if not cur.fetchone():
         print(f"❌ 页面不存在: {filepath}")
         cur.close()
         conn.close()
         return
 
-    cur.execute("DELETE FROM wiki_vectors WHERE path = %s", (filepath))
+    cur.execute("DELETE FROM wiki_vectors WHERE path = %s", (filepath,))
     conn.commit()
     cur.close()
     conn.close()
