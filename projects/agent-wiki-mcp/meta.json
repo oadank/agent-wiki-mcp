@@ -1,11 +1,23 @@
 {
   "projectName": "agent-wiki-mcp",
-  "realPath": "/opt/.openclaw/workspace/skills/agent-wiki-mcp",
+  "realPath": "/opt/agent-wiki-mcp",
   "status": "active",
   "createdAt": "2026-05-09T10:56:14.357Z",
-  "lastSession": "2026-05-09T10:56:14.357Z",
+  "lastSession": "2026-05-09T11:12:09.841Z",
   "lastAI": "Claude",
   "currentTask": "智能项目进度系统",
   "taskStatus": "🚧",
-  "indexed": true
+  "indexed": true,
+  "daysSinceUpdate": 0,
+  "pendingChanges": [
+    {
+      "type": "git_uncommitted",
+      "count": 2,
+      "files": [
+        "M projects/agent-wiki-mcp/meta.json",
+        " M projects/registry.json"
+      ]
+    }
+  ],
+  "lastCommit": "99192ea312164d60f14b475b48320a59d3c1945a"
 }
