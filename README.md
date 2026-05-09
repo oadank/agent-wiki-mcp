@@ -81,6 +81,18 @@ Fork 自 [oadank/openclaw-wiki-lancedb](https://github.com/oadank/openclaw-wiki-
 5. 下一步建议：继续执行的任务
 ```
 
+### 项目跟踪文件编写指南
+
+**任何 AI 注册或更新项目时，必须遵循编写规范**（见 `projects/.templates/writing-guide.md`）：
+
+| 文件 | 规范 |
+|------|------|
+| progress.md | 表格换行、时间格式、状态符号统一 |
+| meta.json | 必填字段、限制最多 20 条文件记录 |
+| registry.json | 路径正确、多路径项目用 relatedPaths |
+
+---
+
 ---
 
 ## 为什么用 pgvector？

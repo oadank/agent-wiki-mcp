@@ -17,7 +17,8 @@ projects/
 │   ├── progress.md       # 进度记录模板
 │   ├── decisions.md      # 技术决策模板
 │   ├── meta.json         # 元数据模板
-│   └── report-template.md # 进度报告模板（统一格式）
+│   ├── report-template.md # 进度报告模板（统一格式）
+│   └── writing-guide.md  # 编写指南（必读）
 ├── registry.json         # 项目注册表（项目名→路径映射）
 ├── {{项目名}}/           # 具体项目目录
 │   ├── progress.md       # 项目进度（AI 必读）
@@ -91,4 +92,36 @@ cat projects/.templates/report-template.md
 
 # 或搜索
 wiki_query "进度报告模板"
+```
+
+---
+
+## 项目跟踪文件编写指南
+
+**任何 AI 注册或更新项目时，必须遵循编写规范**。
+
+参考指南：`projects/.templates/writing-guide.md`
+
+### 关键规范
+
+| 文件 | 必须遵守 |
+|------|----------|
+| progress.md | 表格每行独立换行，时间格式 `YYYY-MM-DD HH:mm` |
+| meta.json | 必填字段齐全，`pendingChanges.files` 最多 20 条 |
+| registry.json | 路径是项目实际路径，不是 wiki 路径 |
+
+### 常见错误
+
+- ❌ 表格行缺少换行符，两行合并成一行
+- ❌ meta.json 记录过多文件（超过 2KB）
+- ❌ 项目路径不是 git 仓库，git status 扫描整个父目录
+
+### 使用方式
+
+```bash
+# 查看编写指南
+cat projects/.templates/writing-guide.md
+
+# 或搜索
+wiki_query "项目跟踪编写指南"
 ```
