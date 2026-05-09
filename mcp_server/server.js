@@ -29,8 +29,9 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
 import { spawn } from 'child_process';
-import { readFile, readdir, stat } from 'fs/promises';
-import { existsSync } from 'fs';
+import { execSync } from 'child_process';
+import { readFile, readdir, stat, writeFile, appendFile } from 'fs/promises';
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -571,11 +572,405 @@ async function listProjects() {
   return projects.map(p => `- ${p}`).join('\n');
 }
 
+// ── 项目智能跟踪系统 ──────────────────────────────────────────────
+
+const REGISTRY_PATH = join(PROJECTS_DIR, 'registry.json');
+const SYNC_INTERVAL = 5 * 60 * 1000; // 5分钟检查一次
+let syncTimer = null;
+
+// 加载注册表
+function loadRegistry() {
+  try {
+    if (!existsSync(REGISTRY_PATH)) {
+      return { version: 1, projects: {} };
+    }
+    return JSON.parse(readFileSync(REGISTRY_PATH, 'utf-8'));
+  } catch (e) {
+    return { version: 1, projects: {} };
+  }
+}
+
+// 保存注册表
+function saveRegistry(registry) {
+  writeFileSync(REGISTRY_PATH, JSON.stringify(registry, null, 2), 'utf-8');
+}
+
+// 加载项目 meta
+function loadMeta(projectName) {
+  const metaPath = join(PROJECTS_DIR, projectName, 'meta.json');
+  try {
+    if (!existsSync(metaPath)) return null;
+    return JSON.parse(readFileSync(metaPath, 'utf-8'));
+  } catch (e) {
+    return null;
+  }
+}
+
+// 保存项目 meta
+function saveMeta(projectName, meta) {
+  const projectDir = join(PROJECTS_DIR, projectName);
+  if (!existsSync(projectDir)) {
+    mkdirSync(projectDir, { recursive: true });
+  }
+  writeFileSync(join(projectDir, 'meta.json'), JSON.stringify(meta, null, 2), 'utf-8');
+}
+
+// 检测项目变化（纯代码，无LLM）
+function detectChanges(projectName) {
+  const registry = loadRegistry();
+  const proj = registry.projects[projectName];
+
+  if (!proj) return { type: 'not_registered' };
+
+  // 检查项目路径是否存在
+  if (!existsSync(proj.path)) {
+    return { type: 'project_missing', path: proj.path };
+  }
+
+  const meta = loadMeta(projectName) || { lastSession: new Date().toISOString() };
+  const changes = [];
+
+  // 方法1: git status（只检查是否有未提交的改动）
+  try {
+    const gitStatus = execSync(
+      'git status --porcelain 2>/dev/null || echo ""',
+      { cwd: proj.path, encoding: 'utf-8', timeout: 5000 }
+    ).trim();
+    if (gitStatus) {
+      const files = gitStatus.split('\n').filter(s => s);
+      if (files.length > 0) {
+        changes.push({ type: 'git_uncommitted', count: files.length, files });
+      }
+    }
+
+    // 检查最新 commit
+    const lastCommit = execSync(
+      'git rev-parse HEAD 2>/dev/null || echo ""',
+      { cwd: proj.path, encoding: 'utf-8', timeout: 5000 }
+    ).trim();
+    if (lastCommit && lastCommit !== meta.lastCommit) {
+      changes.push({ type: 'git_new_commit', commit: lastCommit });
+    }
+  } catch (e) {
+    // 非 git 项目或 git 命令失败，跳过
+  }
+
+  // 方法2: 检查目录下最近修改的文件（排除 node_modules 等）
+  const lastSessionTime = new Date(meta.lastSession);
+  const recentFiles = [];
+  const ignoreDirs = ['node_modules', '.git', '__pycache__', '.cache', 'dist', 'build'];
+
+  try {
+    const findResult = execSync(
+      `find . -type f -newermt "${lastSessionTime.toISOString()}" ` +
+      `-not -path "./node_modules/*" -not -path "./.git/*" ` +
+      `-not -path "./__pycache__/*" -not -path "./.cache/*" ` +
+      `-not -path "./dist/*" -not -path "./build/*" ` +
+      `2>/dev/null | head -20`,
+      { cwd: proj.path, encoding: 'utf-8', timeout: 10000 }
+    ).trim();
+    if (findResult) {
+      recentFiles.push(...findResult.split('\n').filter(s => s && !s.includes('.pyc')));
+    }
+  } catch (e) {
+    // find 命令失败，跳过
+  }
+
+  if (recentFiles.length > 0) {
+    changes.push({ type: 'files_modified', count: recentFiles.length, files: recentFiles.slice(0, 10) });
+  }
+
+  // 计算距离上次更新的天数
+  const daysSince = Math.floor((Date.now() - lastSessionTime.getTime()) / (24 * 60 * 60 * 1000));
+
+  return {
+    type: 'checked',
+    projectName,
+    realPath: proj.path,
+    changes,
+    daysSinceUpdate: daysSince,
+    lastSession: meta.lastSession,
+    lastAI: meta.lastAI
+  };
+}
+
+// 执行自动同步
+async function autoSync() {
+  const registry = loadRegistry();
+  const reports = [];
+
+  for (const [name, proj] of Object.entries(registry.projects)) {
+    if (proj.status !== 'active') continue;
+
+    const result = detectChanges(name);
+
+    if (result.type === 'project_missing') {
+      // 项目路径不存在，标记为 archived
+      proj.status = 'archived';
+      proj.archivedAt = new Date().toISOString();
+      proj.archiveReason = '项目路径不存在';
+      saveRegistry(registry);
+
+      // 移动到 _archived 目录
+      const oldDir = join(PROJECTS_DIR, name);
+      const archivedDir = join(PROJECTS_DIR, '_archived', name);
+      if (existsSync(oldDir)) {
+        try {
+          mkdirSync(join(PROJECTS_DIR, '_archived'), { recursive: true });
+          execSync(`mv "${oldDir}" "${archivedDir}"`, { encoding: 'utf-8' });
+        } catch (e) {}
+      }
+
+      reports.push({ project: name, action: 'archived', reason: '路径不存在' });
+      continue;
+    }
+
+    if (result.type === 'not_registered') continue;
+
+    // 有变化则更新
+    if (result.changes.length > 0) {
+      const meta = loadMeta(name) || {};
+      meta.lastSession = new Date().toISOString();
+      meta.daysSinceUpdate = 0;
+      meta.pendingChanges = result.changes;
+
+      // 提取最新 commit
+      for (const c of result.changes) {
+        if (c.type === 'git_new_commit') {
+          meta.lastCommit = c.commit;
+        }
+      }
+
+      saveMeta(name, meta);
+
+      // 更新注册表检查时间
+      proj.lastCheck = new Date().toISOString();
+      saveRegistry(registry);
+
+      // 自动入库（保持搜索及时性）
+      const progressPath = join(PROJECTS_DIR, name, 'progress.md');
+      if (existsSync(progressPath)) {
+        try {
+          await runPython('wiki-pgvector.py', ['add', `projects/${name}/progress.md`], 30000);
+        } catch (e) {}
+      }
+
+      reports.push({ project: name, action: 'synced', changes: result.changes.length });
+    }
+  }
+
+  if (reports.length > 0) {
+    console.error('[自动同步]', reports.map(r => `${r.project}: ${r.action}`).join(', '));
+  }
+
+  return reports;
+}
+
+// 19. wiki_register_project - 注册新项目
+server.tool(
+  'wiki_register_project',
+  '注册新项目到跟踪系统。建立项目名与实际路径的映射，开启自动跟踪。',
+  {
+    name: z.string().min(1).describe('项目名（如 my-webapp）'),
+    path: z.string().describe('项目实际路径（如 /opt/.openclaw/workspace/skills/my-app）')
+  },
+  async ({ name, path }) => {
+    try {
+      // 检查路径是否存在
+      if (!existsSync(path)) {
+        return { content: [{ type: 'text', text: `❌ 项目路径不存在: ${path}` }], isError: true };
+      }
+
+      const registry = loadRegistry();
+
+      // 检查是否已注册
+      if (registry.projects[name]) {
+        return { content: [{ type: 'text', text: `⚠️ 项目已注册: ${name}\n路径: ${registry.projects[name].path}` }] };
+      }
+
+      // 注册项目
+      registry.projects[name] = {
+        path,
+        status: 'active',
+        createdAt: new Date().toISOString(),
+        lastCheck: new Date().toISOString()
+      };
+      saveRegistry(registry);
+
+      // 创建项目目录和初始文件
+      const projectDir = join(PROJECTS_DIR, name);
+      mkdirSync(projectDir, { recursive: true });
+
+      // 复制模板
+      const templateProgress = join(PROJECTS_DIR, '.templates', 'progress.md');
+      const templateMeta = join(PROJECTS_DIR, '.templates', 'meta.json');
+
+      if (existsSync(templateProgress)) {
+        let progressContent = readFileSync(templateProgress, 'utf-8');
+        progressContent = progressContent.replace('{{项目名}}', name);
+        writeFileSync(join(projectDir, 'progress.md'), progressContent, 'utf-8');
+      }
+
+      // 创建 meta.json
+      const meta = {
+        projectName: name,
+        realPath: path,
+        status: 'active',
+        createdAt: new Date().toISOString(),
+        lastSession: new Date().toISOString(),
+        lastAI: '注册',
+        currentTask: '项目初始化',
+        taskStatus: '✅',
+        pendingChanges: [],
+        totalSessions: 0,
+        daysSinceUpdate: 0,
+        indexed: false,
+        indexUpdatedAt: new Date().toISOString()
+      };
+      saveMeta(name, meta);
+
+      // 入库
+      try {
+        await runPython('wiki-pgvector.py', ['add', `projects/${name}/progress.md`], 30000);
+        meta.indexed = true;
+        saveMeta(name, meta);
+      } catch (e) {}
+
+      return { content: [{ type: 'text', text: `✅ 项目已注册: ${name}\n路径: ${path}\n跟踪目录: projects/${name}/` }] };
+    } catch (err) {
+      return { content: [{ type: 'text', text: `注册失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
+// 20. wiki_auto_sync - 手动触发同步（或查看同步状态）
+server.tool(
+  'wiki_auto_sync',
+  '手动触发项目同步检查。显示所有活跃项目的变化状态。',
+  {},
+  async () => {
+    try {
+      const reports = await autoSync();
+      if (reports.length === 0) {
+        return { content: [{ type: 'text', text: '✅ 所有项目无变化，无需同步' }] };
+      }
+
+      let text = '# 项目同步报告\n\n';
+      for (const r of reports) {
+        if (r.action === 'synced') {
+          text += `✅ **${r.project}**: 同步 ${r.changes} 个变化\n`;
+        } else if (r.action === 'archived') {
+          text += `📦 **${r.project}**: 已归档 (${r.reason})\n`;
+        }
+      }
+      return { content: [{ type: 'text', text: text }] };
+    } catch (err) {
+      return { content: [{ type: 'text', text: `同步失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
+// 21. wiki_wake_check - 项目唤醒检查
+server.tool(
+  'wiki_wake_check',
+  '检查项目唤醒状态。如果项目长时间未更新，返回提醒信息供 AI 展示给用户。',
+  {
+    project: z.string().describe('项目名')
+  },
+  async ({ project }) => {
+    try {
+      const result = detectChanges(project);
+
+      if (result.type === 'not_registered') {
+        return { content: [{ type: 'text', text: `❌ 项目未注册: ${project}` }], isError: true };
+      }
+
+      if (result.type === 'project_missing') {
+        return { content: [{ type: 'text', text: `⚠️ 项目路径已不存在: ${result.path}\n建议归档或更新路径` }], isError: true };
+      }
+
+      const meta = loadMeta(project) || {};
+      const daysSince = result.daysSinceUpdate;
+
+      // 长时间未更新（>1天）才提醒
+      if (daysSince > 1) {
+        let text = `📊 **项目唤醒提醒: ${project}**\n\n`;
+        text += `- 最后编辑: **${meta.lastAI || '未知'}**\n`;
+        text += `- 最后时间: ${meta.lastSession || '未知'}\n`;
+        text += `- 当前任务: ${meta.currentTask || '未知'}\n`;
+        text += `- 任务状态: ${meta.taskStatus || '未知'}\n`;
+        text += `- 已暂停: **${daysSince} 天**\n`;
+        if (meta.pendingChanges?.length > 0) {
+          text += `- 待处理变化: ${meta.pendingChanges.length} 个\n`;
+        }
+        text += `\n是否继续此项目？`;
+        return { content: [{ type: 'text', text: text }] };
+      }
+
+      // 短时间内，静默返回状态
+      return { content: [{ type: 'text', text: `✅ ${project}: 正常（${daysSince} 天前更新）` }] };
+    } catch (err) {
+      return { content: [{ type: 'text', text: `唤醒检查失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
+// 22. wiki_archive_project - 归档项目
+server.tool(
+  'wiki_archive_project',
+  '归档项目。保留所有记录但停止自动跟踪。',
+  {
+    project: z.string().describe('项目名'),
+    reason: z.string().optional().describe('归档原因')
+  },
+  async ({ project, reason }) => {
+    try {
+      const registry = loadRegistry();
+      if (!registry.projects[project]) {
+        return { content: [{ type: 'text', text: `❌ 项目未注册: ${project}` }], isError: true };
+      }
+
+      registry.projects[project].status = 'archived';
+      registry.projects[project].archivedAt = new Date().toISOString();
+      registry.projects[project].archiveReason = reason || '用户手动归档';
+      saveRegistry(registry);
+
+      // 移动到 _archived
+      const oldDir = join(PROJECTS_DIR, project);
+      const archivedDir = join(PROJECTS_DIR, '_archived', project);
+      if (existsSync(oldDir) && !existsSync(archivedDir)) {
+        mkdirSync(join(PROJECTS_DIR, '_archived'), { recursive: true });
+        execSync(`mv "${oldDir}" "${archivedDir}"`, { encoding: 'utf-8' });
+      }
+
+      return { content: [{ type: 'text', text: `📦 项目已归档: ${project}\n原因: ${reason || '用户手动归档'}\n记录保留在: projects/_archived/${project}/` }] };
+    } catch (err) {
+      return { content: [{ type: 'text', text: `归档失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
+// 启动定时同步（后台）
+function startAutoSync() {
+  if (syncTimer) return;
+  syncTimer = setInterval(async () => {
+    try {
+      await autoSync();
+    } catch (e) {
+      console.error('[自动同步错误]', e.message);
+    }
+  }, SYNC_INTERVAL);
+  console.error(`[自动同步] 已启动，间隔 ${SYNC_INTERVAL / 60000} 分钟`);
+}
+
 // ── 启动 Server ──────────────────────────────────────────────
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
   console.error('[openclaw-wiki-mcp] Server 已启动，等待 MCP 客户端连接...');
+
+  // 启动自动同步（后台定时检查）
+  startAutoSync();
 }
 
 main().catch((err) => {

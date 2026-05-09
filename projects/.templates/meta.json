@@ -1,0 +1,18 @@
+{
+  "projectName": "{{项目名}}",
+  "realPath": "{{项目实际路径}}",
+  "status": "active",
+  "createdAt": "{{创建时间}}",
+  "lastSession": "{{最后会话时间}}",
+  "lastAI": "{{最后操作的AI}}",
+  "currentTask": "{{当前任务}}",
+  "taskStatus": "🚧",
+  "lastCommit": "{{最后commit hash}}",
+  "pendingChanges": [],
+  "totalSessions": 0,
+  "daysSinceUpdate": 0,
+  "wakeReminder": false,
+  "indexed": true,
+  "indexUpdatedAt": "{{索引更新时间}}",
+  "notes": "{{备注}}"
+}
