@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const VAULT = process.env.OBSIDIAN_VAULT_PATH || '/root/.openclaw/workspace/agent-wiki-mcp';
+const VAULT = process.env.WIKI_VAULT_PATH || process.env.OBSIDIAN_VAULT_PATH || '/opt/.openclaw/workspace/skills/agent-wiki-mcp';
 const LOG_PATH = path.join(VAULT, 'log.md');
 const INDEX_PATH = path.join(VAULT, 'index.md');
 
@@ -20,15 +20,25 @@ function appendLog(operation, status, details) {
 
 function getAllPages() {
   const pages = [];
-  for (const cat of ['concepts', 'entities', 'skills', 'references', 'synthesis']) {
-    const dir = path.join(VAULT, cat);
-    if (!fs.existsSync(dir)) continue;
+  const categories = ['knowledge', 'shared'];
+
+  function scanDir(dir, category) {
+    if (!fs.existsSync(dir)) return;
     for (const file of fs.readdirSync(dir)) {
-      if (!file.endsWith('.md')) continue;
       const fullpath = path.join(dir, file);
-      const content = fs.readFileSync(fullpath, 'utf8');
-      pages.push({ path: fullpath, category: cat, filename: file, content });
+      if (fs.statSync(fullpath).isDirectory()) {
+        scanDir(fullpath, category); // 递归扫描子目录
+      } else if (file.endsWith('.md')) {
+        const content = fs.readFileSync(fullpath, 'utf8');
+        const relativePath = path.relative(VAULT, fullpath);
+        pages.push({ path: fullpath, category, filename: file, relativePath, content });
+      }
     }
+  }
+
+  for (const cat of categories) {
+    const dir = path.join(VAULT, cat);
+    scanDir(dir, cat);
   }
   return pages;
 }
