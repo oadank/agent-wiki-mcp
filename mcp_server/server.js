@@ -177,7 +177,22 @@ server.tool(
   {},
   async () => {
     try {
-      const output = await runScript('wiki-brief.js', [], 30000);
+      let output = await runScript('wiki-brief.js', [], 30000);
+
+      // 附加待发送的同步报告
+      const syncReport = getPendingSyncReport();
+      if (syncReport) {
+        output += '\n\n---\n\n## 📊 项目同步提醒\n\n';
+        for (const r of syncReport.reports) {
+          if (r.action === 'synced') {
+            output += `- **${r.project}**: 检测到 ${r.changes} 个变化\n`;
+          } else if (r.action === 'archived') {
+            output += `- **${r.project}**: 已归档 (${r.reason})\n`;
+          }
+        }
+        output += `\n> 同步时间: ${syncReport.timestamp}`;
+      }
+
       return { content: [{ type: 'text', text: output || '无近期操作记录' }] };
     } catch (err) {
       return { content: [{ type: 'text', text: `获取 brief 失败: ${err.message}` }], isError: true };
@@ -630,38 +645,7 @@ function detectChanges(projectName) {
   const meta = loadMeta(projectName) || { lastSession: new Date().toISOString() };
   const changes = [];
 
-  // 检查是否是 git 仓库（必须有 .git 目录）
-  const isGitRepo = existsSync(join(proj.path, '.git'));
-
-  // 方法1: git status（仅在 git 仓库内执行）
-  if (isGitRepo) {
-    try {
-      const gitStatus = execSync(
-        'git status --porcelain 2>/dev/null || echo ""',
-        { cwd: proj.path, encoding: 'utf-8', timeout: 5000 }
-      ).trim();
-      if (gitStatus) {
-        const files = gitStatus.split('\n').filter(s => s);
-        // 限制最多记录 20 个文件，避免 meta.json 过大
-        if (files.length > 0) {
-          changes.push({ type: 'git_uncommitted', count: files.length, files: files.slice(0, 20) });
-        }
-      }
-
-      // 检查最新 commit
-      const lastCommit = execSync(
-        'git rev-parse HEAD 2>/dev/null || echo ""',
-        { cwd: proj.path, encoding: 'utf-8', timeout: 5000 }
-      ).trim();
-      if (lastCommit && lastCommit !== meta.lastCommit) {
-        changes.push({ type: 'git_new_commit', commit: lastCommit });
-      }
-    } catch (e) {
-      // git 命令失败，跳过
-    }
-  }
-
-  // 方法2: 检查目录下最近修改的文件（排除 node_modules 等）
+  // 检查目录下最近修改的文件（排除 node_modules 等）
   const lastSessionTime = new Date(meta.lastSession);
   const recentFiles = [];
   const ignoreDirs = ['node_modules', '.git', '__pycache__', '.cache', 'dist', 'build'];
@@ -740,13 +724,6 @@ async function autoSync() {
       meta.daysSinceUpdate = 0;
       meta.pendingChanges = result.changes;
 
-      // 提取最新 commit
-      for (const c of result.changes) {
-        if (c.type === 'git_new_commit') {
-          meta.lastCommit = c.commit;
-        }
-      }
-
       saveMeta(name, meta);
 
       // 更新注册表检查时间
@@ -767,9 +744,32 @@ async function autoSync() {
 
   if (reports.length > 0) {
     console.error('[自动同步]', reports.map(r => `${r.project}: ${r.action}`).join(', '));
+
+    // 写入待发送同步报告（供下次 MCP 调用时附加）
+    const pendingSyncPath = join(PROJECTS_DIR, '.pending-sync.json');
+    const syncReport = {
+      timestamp: new Date().toISOString(),
+      reports
+    };
+    writeFileSync(pendingSyncPath, JSON.stringify(syncReport, null, 2), 'utf-8');
   }
 
   return reports;
+}
+
+// 读取并清除待发送同步报告
+function getPendingSyncReport() {
+  const pendingSyncPath = join(PROJECTS_DIR, '.pending-sync.json');
+  if (!existsSync(pendingSyncPath)) return null;
+
+  try {
+    const report = JSON.parse(readFileSync(pendingSyncPath, 'utf-8'));
+    // 读取后删除，避免重复发送
+    writeFileSync(pendingSyncPath, '', 'utf-8');
+    return report;
+  } catch (e) {
+    return null;
+  }
 }
 
 // 19. wiki_register_project - 注册新项目

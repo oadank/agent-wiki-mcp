@@ -3,36 +3,21 @@
   "realPath": "/opt/agent-wiki-mcp",
   "status": "active",
   "createdAt": "2026-05-09T10:56:14.357Z",
-  "lastSession": "2026-05-09T15:03:37.131Z",
+  "lastSession": "2026-05-09T15:44:00.990Z",
   "lastAI": "Claude",
-  "currentTask": "项目接力功能测试",
-  "taskStatus": "✅",
+  "currentTask": "删除 git 功能",
+  "taskStatus": "🚧",
   "indexed": true,
   "daysSinceUpdate": 0,
   "pendingChanges": [
     {
-      "type": "git_uncommitted",
-      "count": 10,
-      "files": [
-        "D \"knowledge/openclaw/concepts/\\346\\265\\213\\350\\257\\225\\346\\226\\207\\344\\273\\266-1.md\"",
-        " D \"knowledge/openclaw/concepts/\\346\\265\\213\\350\\257\\225\\346\\226\\207\\344\\273\\266.md\"",
-        " D \"knowledge/openclaw/projects/openclaw-wiki-\\346\\234\\254\\345\\234\\260\\347\\237\\245\\350\\257\\206\\345\\272\\223.md\"",
-        " M projects/README.md",
-        " M projects/agent-wiki-mcp/meta.json",
-        " M projects/registry.json",
-        "?? projects/.templates/report-template.md",
-        "?? projects/_archived/",
-        "?? \"projects/agent-wiki-mcp/openclaw-wiki-\\346\\234\\254\\345\\234\\260\\347\\237\\245\\350\\257\\206\\345\\272\\223.md\"",
-        "?? projects/agent-wiki-mcp/progress.md"
-      ]
-    },
-    {
       "type": "files_modified",
-      "count": 1,
+      "count": 2,
       "files": [
-        "./projects/registry.json"
+        "./projects/registry.json",
+        "./projects/agents-to-im/meta.json"
       ]
     }
   ],
-  "lastCommit": "4b546cd08e42ef7b31c08c6c34ba84868330984d"
+  "lastCommit": "b86676fc00d1c2d0a8682e3f1d55a57255c580af"
 }

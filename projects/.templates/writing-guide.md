@@ -83,7 +83,6 @@ category: project
 |------|------|----------|
 | `relatedPaths` | 关联路径数组 | 多实例项目（如 agents-to-im） |
 | `description` | 项目描述 | 复杂项目需要额外说明 |
-| `lastCommit` | 最后 commit hash | git 项目自动检测 |
 | `pendingChanges` | 待处理变更 | **最多 20 条**，超过则截断 |
 
 ### 禁止事项
@@ -174,7 +173,7 @@ category: project
 {
   "pendingChanges": [
     {
-      "type": "git_uncommitted",
+      "type": "files_modified",
       "count": 134,
       "files": ["前 20 个文件...截断显示"]
     }
@@ -190,12 +189,11 @@ category: project
 
 ```
 1. 检查项目路径是否存在
-2. 检查项目路径是否有 .git 目录
-3. 创建 projects/{{项目名}}/ 目录
-4. 写入 progress.md（遵循上述格式）
-5. 写入 meta.json（必填字段齐全）
-6. 更新 registry.json
-7. 入库到向量库
+2. 创建 projects/{{项目名}}/ 目录
+3. 写入 progress.md（遵循上述格式）
+4. 写入 meta.json（必填字段齐全）
+5. 更新 registry.json
+6. 入库到向量库
 ```
 
 ### 更新进度
