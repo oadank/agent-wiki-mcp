@@ -177,30 +177,7 @@ server.tool(
   {},
   async () => {
     try {
-      let output = await runScript('wiki-brief.js', [], 30000);
-
-      // 附加待发送的同步报告
-      const syncReport = getPendingSyncReport();
-      if (syncReport) {
-        output += '\n\n---\n\n## 📊 项目同步提醒\n\n';
-        for (const r of syncReport.reports) {
-          if (r.action === 'synced') {
-            output += `### ${r.project}\n`;
-            for (const c of r.changes) {
-              if (c.type === 'files_modified') {
-                const pathLabel = c.path.split('/').pop(); // 简化路径显示
-                output += `- ${pathLabel}: ${c.count} 个文件变化\n`;
-              } else if (c.type === 'path_missing') {
-                output += `- ⚠️ 路径不存在: ${c.path}\n`;
-              }
-            }
-          } else if (r.action === 'archived') {
-            output += `- **${r.project}**: 已归档 (${r.reason})\n`;
-          }
-        }
-        output += `\n> 同步时间: ${syncReport.timestamp}`;
-      }
-
+      const output = await runScript('wiki-brief.js', [], 30000);
       return { content: [{ type: 'text', text: output || '无近期操作记录' }] };
     } catch (err) {
       return { content: [{ type: 'text', text: `获取 brief 失败: ${err.message}` }], isError: true };
@@ -765,32 +742,9 @@ async function autoSync() {
 
   if (reports.length > 0) {
     console.error('[自动同步]', reports.map(r => `${r.project}: ${r.action}`).join(', '));
-
-    // 写入待发送同步报告（供下次 MCP 调用时附加）
-    const pendingSyncPath = join(PROJECTS_DIR, '.pending-sync.json');
-    const syncReport = {
-      timestamp: new Date().toISOString(),
-      reports
-    };
-    writeFileSync(pendingSyncPath, JSON.stringify(syncReport, null, 2), 'utf-8');
   }
 
   return reports;
-}
-
-// 读取并清除待发送同步报告
-function getPendingSyncReport() {
-  const pendingSyncPath = join(PROJECTS_DIR, '.pending-sync.json');
-  if (!existsSync(pendingSyncPath)) return null;
-
-  try {
-    const report = JSON.parse(readFileSync(pendingSyncPath, 'utf-8'));
-    // 读取后删除，避免重复发送
-    writeFileSync(pendingSyncPath, '', 'utf-8');
-    return report;
-  } catch (e) {
-    return null;
-  }
 }
 
 // 19. wiki_register_project - 注册新项目
