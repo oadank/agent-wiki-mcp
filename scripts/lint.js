@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const VAULT = process.env.OBSIDIAN_VAULT_PATH || '/root/.openclaw/workspace/openclaw-wiki-lancedb';
+const VAULT = process.env.OBSIDIAN_VAULT_PATH || '/root/.openclaw/workspace/agent-wiki-mcp';
 const LOG_PATH = path.join(VAULT, 'log.md');
 const INDEX_PATH = path.join(VAULT, 'index.md');
 

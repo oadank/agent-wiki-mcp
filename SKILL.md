@@ -1,5 +1,5 @@
 ---
-name: openclaw-wiki-lancedb
+name: agent-wiki-mcp
 description: "查询本地 Wiki 知识库。支持关键词搜索、语义联想、双重验证。当用户询问 OpenClaw 文档、配置指南、概念说明、工具用法、安装问题、报错排查、功能解释、最佳实践、版本更新时使用。"
 version: 2.11.0
 ---
@@ -17,6 +17,7 @@ version: 2.11.0
 1. **每次提问都要搜索** — 即使之前回答过类似问题，用户再次提问时必须重新搜索。wiki 内容可能已更新，旧答案可能过时。
 2. **不搜索不许回答** — 没有搜索结果前，禁止凭记忆回答。如果搜索失败，诚实告知"搜索不到相关信息"。
 3. **禁止敷衍用户** — 不允许说"刚才已经说过了"、"看上面的回答"等话。每次都要认真对待。
+4. **手动修改/新增 wiki 内容后必须更新索引** — 新建/修改/删除 wiki 文件后，必须立即执行 `python3 /opt/.openclaw/workspace/skills/agent-wiki-mcp/scripts/wiki-quick-ingest.py` 增量更新向量索引，否则其他 AI 搜索不到最新内容。
 
 ### 何时搜索
 
@@ -293,8 +294,8 @@ pip install pymupdf python-docx openpyxl
 适合大量文档快速入库，后续再精加工。
 
 ```bash
-python3 skills/openclaw-wiki-lancedb/scripts/wiki-quick-ingest.py <源文件.md> [分类]
-python3 skills/openclaw-wiki-lancedb/scripts/wiki-quick-ingest.py --batch <目录> [分类]
+python3 skills/agent-wiki-mcp/scripts/wiki-quick-ingest.py <源文件.md> [分类]
+python3 skills/agent-wiki-mcp/scripts/wiki-quick-ingest.py --batch <目录> [分类]
 ```
 
 - 自动分类（根据内容关键词推断）
@@ -308,16 +309,16 @@ python3 skills/openclaw-wiki-lancedb/scripts/wiki-quick-ingest.py --batch <目�
 
 ```bash
 # 单个文件（输出到 .drafts/）
-node skills/openclaw-wiki-lancedb/scripts/wiki-refine.js plugins/five-lessons.md
+node skills/agent-wiki-mcp/scripts/wiki-refine.js plugins/five-lessons.md
 
 # 指定分类
-node skills/openclaw-wiki-lancedb/scripts/wiki-refine.js --category plugins
+node skills/agent-wiki-mcp/scripts/wiki-refine.js --category plugins
 
 # 全库未精炼文件
-node skills/openclaw-wiki-lancedb/scripts/wiki-refine.js --unrefined
+node skills/agent-wiki-mcp/scripts/wiki-refine.js --unrefined
 
 # 跳过草稿区，直接写入
-node skills/openclaw-wiki-lancedb/scripts/wiki-refine.js --direct concepts/agent.md
+node skills/agent-wiki-mcp/scripts/wiki-refine.js --direct concepts/agent.md
 ```
 
 **精加工内容：**
@@ -333,7 +334,7 @@ node skills/openclaw-wiki-lancedb/scripts/wiki-refine.js --direct concepts/agent
 适合需要 AI 理解、提炼、整合的文档。
 
 ```bash
-node skills/openclaw-wiki-lancedb/scripts/ingest.js [--full]
+node skills/agent-wiki-mcp/scripts/ingest.js [--full]
 ```
 
 ---
@@ -343,7 +344,7 @@ node skills/openclaw-wiki-lancedb/scripts/ingest.js [--full]
 精加工输出到 `.drafts/` 目录，需人工审核后转正。
 
 ```bash
-node skills/openclaw-wiki-lancedb/scripts/wiki-review.js
+node skills/agent-wiki-mcp/scripts/wiki-review.js
 # 菜单: (a)pprove (r)eject (d)iff (e)dit (q)uit
 ```
 
@@ -360,10 +361,10 @@ node skills/openclaw-wiki-lancedb/scripts/wiki-review.js
 
 ```bash
 # dry-run 预览
-node skills/openclaw-wiki-lancedb/scripts/wiki-divergence.js --dry-run
+node skills/agent-wiki-mcp/scripts/wiki-divergence.js --dry-run
 
 # 单页处理
-node skills/openclaw-wiki-lancedb/scripts/wiki-divergence.js --page concepts/agent.md
+node skills/agent-wiki-mcp/scripts/wiki-divergence.js --page concepts/agent.md
 ```
 
 ---
@@ -374,10 +375,10 @@ node skills/openclaw-wiki-lancedb/scripts/wiki-divergence.js --page concepts/age
 
 ```bash
 # 简单分解
-node skills/openclaw-wiki-lancedb/scripts/wiki-query-decompose.js "比较 OpenClaw 和 Dify"
+node skills/agent-wiki-mcp/scripts/wiki-query-decompose.js "比较 OpenClaw 和 Dify"
 
 # 含 Gap 检测（无结果时推荐搜索建议）
-node skills/openclaw-wiki-lancedb/scripts/wiki-query-decompose.js "OpenClaw 安装" --search
+node skills/agent-wiki-mcp/scripts/wiki-query-decompose.js "OpenClaw 安装" --search
 ```
 
 ---
@@ -388,13 +389,13 @@ node skills/openclaw-wiki-lancedb/scripts/wiki-query-decompose.js "OpenClaw 安�
 
 ```bash
 # 全量重建
-node skills/openclaw-wiki-lancedb/scripts/wiki-scaffold.js
+node skills/agent-wiki-mcp/scripts/wiki-scaffold.js
 
 # 仅重建 index.md
-node skills/openclaw-wiki-lancedb/scripts/wiki-scaffold.js --index
+node skills/agent-wiki-mcp/scripts/wiki-scaffold.js --index
 
 # dry-run 预览
-node skills/openclaw-wiki-lancedb/scripts/wiki-scaffold.js --dry-run
+node skills/agent-wiki-mcp/scripts/wiki-scaffold.js --dry-run
 ```
 
 ---
@@ -404,7 +405,7 @@ node skills/openclaw-wiki-lancedb/scripts/wiki-scaffold.js --dry-run
 解析 log.md 近 24 小时条目，生成 brief.md 日报。
 
 ```bash
-node skills/openclaw-wiki-lancedb/scripts/wiki-brief.js
+node skills/agent-wiki-mcp/scripts/wiki-brief.js
 # --since 指定时间范围
 # --dry-run 预览
 ```
@@ -417,13 +418,13 @@ JSONL 不可变记录，追踪 tokens/cost。
 
 ```bash
 # 记录操作
-node skills/openclaw-wiki-lancedb/scripts/wiki-audit.js record refine "agent-loop.md" 500 0.001
+node skills/agent-wiki-mcp/scripts/wiki-audit.js record refine "agent-loop.md" 500 0.001
 
 # 最近 20 条
-node skills/openclaw-wiki-lancedb/scripts/wiki-audit.js recent 20
+node skills/agent-wiki-mcp/scripts/wiki-audit.js recent 20
 
 # 统计
-node skills/openclaw-wiki-lancedb/scripts/wiki-audit.js stats
+node skills/agent-wiki-mcp/scripts/wiki-audit.js stats
 ```
 
 ---
@@ -433,8 +434,8 @@ node skills/openclaw-wiki-lancedb/scripts/wiki-audit.js stats
 LLM 响应按 prompt SHA256 缓存。
 
 ```bash
-node skills/openclaw-wiki-lancedb/scripts/wiki-cache.js stats
-node skills/openclaw-wiki-lancedb/scripts/wiki-cache.js clear
+node skills/agent-wiki-mcp/scripts/wiki-cache.js stats
+node skills/agent-wiki-mcp/scripts/wiki-cache.js clear
 ```
 
 ---
@@ -445,13 +446,13 @@ node skills/openclaw-wiki-lancedb/scripts/wiki-cache.js clear
 
 ```bash
 # 列出钩子
-node skills/openclaw-wiki-lancedb/scripts/wiki-hooks.js list
+node skills/agent-wiki-mcp/scripts/wiki-hooks.js list
 
 # 注册
-node skills/openclaw-wiki-lancedb/scripts/wiki-hooks.js add on-ingest ./hooks/post-ingest.sh
+node skills/agent-wiki-mcp/scripts/wiki-hooks.js add on-ingest ./hooks/post-ingest.sh
 
 # 触发
-node skills/openclaw-wiki-lancedb/scripts/wiki-hooks.js fire on-ingest
+node skills/agent-wiki-mcp/scripts/wiki-hooks.js fire on-ingest
 ```
 
 ---
@@ -462,10 +463,10 @@ node skills/openclaw-wiki-lancedb/scripts/wiki-hooks.js fire on-ingest
 
 ```bash
 # 查看今日消耗
-node skills/openclaw-wiki-lancedb/scripts/wiki-cost-guard.js status
+node skills/agent-wiki-mcp/scripts/wiki-cost-guard.js status
 
 # 设置日限额 50000 tokens，警告 80%
-node skills/openclaw-wiki-lancedb/scripts/wiki-cost-guard.js set 50000 0.8
+node skills/agent-wiki-mcp/scripts/wiki-cost-guard.js set 50000 0.8
 ```
 
 ---
@@ -476,16 +477,16 @@ node skills/openclaw-wiki-lancedb/scripts/wiki-cost-guard.js set 50000 0.8
 
 ```bash
 # 启动监控（默认 raw/ 目录）
-node skills/openclaw-wiki-lancedb/scripts/wiki-watch.js
+node skills/agent-wiki-mcp/scripts/wiki-watch.js
 
 # 监控指定目录 + 自动精加工 + 5 秒防抖
-node skills/openclaw-wiki-lancedb/scripts/wiki-watch.js /path/to/watch --auto-refine --debounce 5
+node skills/agent-wiki-mcp/scripts/wiki-watch.js /path/to/watch --auto-refine --debounce 5
 
 # 启动时批量处理现有文件
-node skills/openclaw-wiki-lancedb/scripts/wiki-watch.js --batch
+node skills/agent-wiki-mcp/scripts/wiki-watch.js --batch
 
 # 预览模式（不执行）
-node skills/openclaw-wiki-lancedb/scripts/wiki-watch.js --dry-run
+node skills/agent-wiki-mcp/scripts/wiki-watch.js --dry-run
 ```
 
 **功能：**
@@ -503,16 +504,16 @@ ingest → refine → lint → review 四步流水线。
 
 ```bash
 # 全量流水线（批量入库 + 精加工）
-bash skills/openclaw-wiki-lancedb/scripts/wiki-run.sh --batch --auto-refine
+bash skills/agent-wiki-mcp/scripts/wiki-run.sh --batch --auto-refine
 
 # 入库 + 精加工 + 审核草稿（交互式）
-bash skills/openclaw-wiki-lancedb/scripts/wiki-run.sh --batch --auto-refine --review
+bash skills/agent-wiki-mcp/scripts/wiki-run.sh --batch --auto-refine --review
 
 # 仅精加工 + 审核（不批量入库）
-bash skills/openclaw-wiki-lancedb/scripts/wiki-run.sh --auto-refine --review
+bash skills/agent-wiki-mcp/scripts/wiki-run.sh --auto-refine --review
 
 # 预览模式（不执行）
-bash skills/openclaw-wiki-lancedb/scripts/wiki-run.sh --dry-run
+bash skills/agent-wiki-mcp/scripts/wiki-run.sh --dry-run
 ```
 
 **步骤：**
@@ -529,16 +530,16 @@ bash skills/openclaw-wiki-lancedb/scripts/wiki-run.sh --dry-run
 
 ```bash
 # 修复所有问题（断链 + stub + 孤儿页检测）
-node skills/openclaw-wiki-lancedb/scripts/wiki-maintain.js --fix
+node skills/agent-wiki-mcp/scripts/wiki-maintain.js --fix
 
 # 仅修复断链（通过 alias 映射规范化 wikilinks）
-node skills/openclaw-wiki-lancedb/scripts/wiki-maintain.js --fix-links
+node skills/agent-wiki-mcp/scripts/wiki-maintain.js --fix-links
 
 # 仅为缺失目标创建 stub 页面
-node skills/openclaw-wiki-lancedb/scripts/wiki-maintain.js --create-stubs
+node skills/agent-wiki-mcp/scripts/wiki-maintain.js --create-stubs
 
 # 预览模式（不执行）
-node skills/openclaw-wiki-lancedb/scripts/wiki-maintain.js --dry-run
+node skills/agent-wiki-mcp/scripts/wiki-maintain.js --dry-run
 ```
 
 **功能：**
@@ -556,16 +557,16 @@ node skills/openclaw-wiki-lancedb/scripts/wiki-maintain.js --dry-run
 
 ```bash
 # 提交当前变更（自动 git add -A + commit）
-node skills/openclaw-wiki-lancedb/scripts/wiki-git.js commit "操作描述"
+node skills/agent-wiki-mcp/scripts/wiki-git.js commit "操作描述"
 
 # 回退最后一次自动提交（只回退 auto: 前缀的提交）
-node skills/openclaw-wiki-lancedb/scripts/wiki-git.js undo
+node skills/agent-wiki-mcp/scripts/wiki-git.js undo
 
 # 查看自动提交历史（只显示 auto: 前缀的）
-node skills/openclaw-wiki-lancedb/scripts/wiki-git.js log
+node skills/agent-wiki-mcp/scripts/wiki-git.js log
 
 # 查看未提交的变更
-de skills/openclaw-wiki-lancedb/scripts/wiki-git.js status
+de skills/agent-wiki-mcp/scripts/wiki-git.js status
 ```
 
 **功能：**

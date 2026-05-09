@@ -1,9 +1,9 @@
 {
   "version": "1",
-  "updatedAt": "2026-04-28T03:36:08.770736+00:00",
+  "updatedAt": "2026-05-09T03:05:01.336825+00:00",
   "stats": {
-    "totalSourcesIngested": 487,
-    "totalPages": 487,
+    "totalSourcesIngested": 544,
+    "totalPages": 544,
     "total_sources_ingested": 487,
     "total_pages": 487
   },
@@ -17,7 +17,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/image-generation.md"
+        "knowledge/plugins/image-generation.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/lobster.md": {
@@ -29,7 +29,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/lobster-read_when-you-want-deterministic-multi-step-workflows-with-explicit-approvals-you-need-to-resume-a-workflow-without-re-running-earlier-steps.md"
+        "knowledge/plugins/lobster-read_when-you-want-deterministic-multi-step-workflows-with-explicit-approvals-you-need-to-resume-a-workflow-without-re-running-earlier-steps.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/clawhub.md": {
@@ -41,7 +41,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/clawhub.md"
+        "knowledge/plugins/clawhub.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/index.md": {
@@ -53,7 +53,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/tools-and-plugins.md"
+        "knowledge/plugins/tools-and-plugins.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/music-generation.md": {
@@ -65,7 +65,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/music-generation.md"
+        "knowledge/plugins/music-generation.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/exec.md": {
@@ -77,7 +77,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/exec-tool.md"
+        "knowledge/gateway/exec-tool.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/diffs.md": {
@@ -89,7 +89,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/diffs.md"
+        "knowledge/plugins/diffs.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/plugin.md": {
@@ -101,7 +101,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugins-1.md"
+        "knowledge/plugins/plugins-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/qwen_modelstudio.md": {
@@ -112,7 +112,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/qwen_modelstudio.md"
+        "knowledge/openclaw/providers/qwen_modelstudio.md"
       ],
       "format": "markdown"
     },
@@ -124,7 +124,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/tencent.md"
+        "knowledge/openclaw/providers/tencent.md"
       ],
       "format": "markdown"
     },
@@ -137,7 +137,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/model-provider-quickstart.md"
+        "knowledge/gateway/model-provider-quickstart.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/deepseek.md": {
@@ -149,7 +149,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/deepseek.md"
+        "knowledge/plugins/deepseek.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/runway.md": {
@@ -160,7 +160,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/runway.md"
+        "knowledge/openclaw/providers/runway.md"
       ],
       "format": "markdown"
     },
@@ -172,7 +172,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/nvidia.md"
+        "knowledge/openclaw/providers/nvidia.md"
       ],
       "format": "markdown"
     },
@@ -184,7 +184,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/glm.md"
+        "knowledge/openclaw/providers/glm.md"
       ],
       "format": "markdown"
     },
@@ -197,7 +197,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/provider-directory.md"
+        "knowledge/plugins/provider-directory.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/vercel-ai-gateway.md": {
@@ -208,7 +208,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/vercel-ai-gateway.md"
+        "knowledge/openclaw/providers/vercel-ai-gateway.md"
       ],
       "format": "markdown"
     },
@@ -221,7 +221,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/groq.md"
+        "knowledge/gateway/groq.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/alibaba.md": {
@@ -232,7 +232,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/alibaba.md"
+        "knowledge/openclaw/providers/alibaba.md"
       ],
       "format": "markdown"
     },
@@ -245,7 +245,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/anthropic.md"
+        "knowledge/plugins/anthropic.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/arcee.md": {
@@ -256,7 +256,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/arcee.md"
+        "knowledge/openclaw/providers/arcee.md"
       ],
       "format": "markdown"
     },
@@ -268,7 +268,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/bedrock-mantle.md"
+        "knowledge/openclaw/providers/bedrock-mantle.md"
       ],
       "format": "markdown"
     },
@@ -280,7 +280,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/bedrock.md"
+        "knowledge/openclaw/providers/bedrock.md"
       ],
       "format": "markdown"
     },
@@ -292,7 +292,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/chutes.md"
+        "knowledge/openclaw/providers/chutes.md"
       ],
       "format": "markdown"
     },
@@ -304,7 +304,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/claude-max-api-proxy.md"
+        "knowledge/openclaw/providers/claude-max-api-proxy.md"
       ],
       "format": "markdown"
     },
@@ -317,7 +317,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/cloudflare-ai-gateway.md"
+        "knowledge/gateway/cloudflare-ai-gateway.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/comfy.md": {
@@ -329,7 +329,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/comfyui.md"
+        "knowledge/plugins/comfyui.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/deepgram.md": {
@@ -341,7 +341,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/deepgram.md"
+        "knowledge/plugins/deepgram.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/fal.md": {
@@ -353,7 +353,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/fal.md"
+        "knowledge/gateway/fal.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/fireworks.md": {
@@ -364,7 +364,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/fireworks.md"
+        "knowledge/openclaw/providers/fireworks.md"
       ],
       "format": "markdown"
     },
@@ -377,7 +377,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/github-copilot.md"
+        "knowledge/plugins/github-copilot.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/google.md": {
@@ -389,7 +389,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/google-gemini.md"
+        "knowledge/plugins/google-gemini.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/huggingface.md": {
@@ -400,7 +400,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/huggingface.md"
+        "knowledge/openclaw/providers/huggingface.md"
       ],
       "format": "markdown"
     },
@@ -412,7 +412,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/inferrs.md"
+        "knowledge/openclaw/providers/inferrs.md"
       ],
       "format": "markdown"
     },
@@ -424,7 +424,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/kilocode.md"
+        "knowledge/openclaw/providers/kilocode.md"
       ],
       "format": "markdown"
     },
@@ -437,7 +437,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/litellm.md"
+        "knowledge/gateway/litellm.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/lmstudio.md": {
@@ -449,7 +449,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/lm-studio.md"
+        "knowledge/plugins/lm-studio.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/minimax.md": {
@@ -461,7 +461,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/minimax.md"
+        "knowledge/plugins/minimax.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/mistral.md": {
@@ -472,7 +472,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/mistral.md"
+        "knowledge/openclaw/providers/mistral.md"
       ],
       "format": "markdown"
     },
@@ -485,7 +485,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/moonshot-ai.md"
+        "knowledge/plugins/moonshot-ai.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/ollama.md": {
@@ -497,7 +497,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/ollama.md"
+        "knowledge/plugins/ollama.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/openai.md": {
@@ -509,7 +509,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/openai.md"
+        "knowledge/plugins/openai.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/opencode-go.md": {
@@ -521,7 +521,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/opencode-go.md"
+        "knowledge/gateway/opencode-go.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/opencode.md": {
@@ -533,7 +533,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/opencode.md"
+        "knowledge/gateway/opencode.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/openrouter.md": {
@@ -545,7 +545,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/openrouter.md"
+        "knowledge/plugins/openrouter.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/perplexity-provider.md": {
@@ -557,7 +557,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/perplexity.md"
+        "knowledge/plugins/perplexity.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/qianfan.md": {
@@ -568,7 +568,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/qianfan.md"
+        "knowledge/openclaw/providers/qianfan.md"
       ],
       "format": "markdown"
     },
@@ -581,7 +581,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/qwen.md"
+        "knowledge/plugins/qwen.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/sglang.md": {
@@ -592,7 +592,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/sglang.md"
+        "knowledge/openclaw/providers/sglang.md"
       ],
       "format": "markdown"
     },
@@ -604,7 +604,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/stepfun.md"
+        "knowledge/openclaw/providers/stepfun.md"
       ],
       "format": "markdown"
     },
@@ -616,7 +616,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/synthetic.md"
+        "knowledge/openclaw/providers/synthetic.md"
       ],
       "format": "markdown"
     },
@@ -628,7 +628,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/together.md"
+        "knowledge/openclaw/providers/together.md"
       ],
       "format": "markdown"
     },
@@ -641,7 +641,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/venice-ai.md"
+        "knowledge/gateway/venice-ai.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/vllm.md": {
@@ -653,7 +653,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/vllm.md"
+        "knowledge/plugins/vllm.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/volcengine.md": {
@@ -665,7 +665,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/volcengine-doubao.md"
+        "knowledge/plugins/volcengine-doubao.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/vydra.md": {
@@ -676,7 +676,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "providers/vydra.md"
+        "knowledge/openclaw/providers/vydra.md"
       ],
       "format": "markdown"
     },
@@ -689,7 +689,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/xai.md"
+        "knowledge/plugins/xai.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/xiaomi.md": {
@@ -701,7 +701,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/xiaomi-mimo.md"
+        "knowledge/plugins/xiaomi-mimo.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/zai.md": {
@@ -713,7 +713,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/z-ai.md"
+        "knowledge/plugins/z-ai.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/bluebubbles.md": {
@@ -725,7 +725,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/bluebubbles.md"
+        "knowledge/plugins/bluebubbles.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/broadcast-groups.md": {
@@ -737,7 +737,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/broadcast-groups.md"
+        "knowledge/gateway/broadcast-groups.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/channel-routing.md": {
@@ -749,7 +749,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/channel-routing.md"
+        "knowledge/plugins/channel-routing.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/discord.md": {
@@ -761,7 +761,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/discord.md"
+        "knowledge/plugins/discord.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/feishu.md": {
@@ -773,7 +773,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/feishu.md"
+        "knowledge/gateway/feishu.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/googlechat.md": {
@@ -784,7 +784,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "channels/googlechat.md"
+        "knowledge/channels/googlechat.md"
       ],
       "format": "markdown"
     },
@@ -797,7 +797,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/group-messages.md"
+        "knowledge/gateway/group-messages.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/groups.md": {
@@ -809,7 +809,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/groups.md"
+        "knowledge/gateway/groups.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/imessage.md": {
@@ -821,7 +821,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/imessage.md"
+        "knowledge/gateway/imessage.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/index.md": {
@@ -833,7 +833,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/chat-channels.md"
+        "knowledge/plugins/chat-channels.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/irc.md": {
@@ -844,7 +844,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "channels/irc.md"
+        "knowledge/channels/irc.md"
       ],
       "format": "markdown"
     },
@@ -856,7 +856,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "channels/line.md"
+        "knowledge/channels/line.md"
       ],
       "format": "markdown"
     },
@@ -868,7 +868,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "channels/location.md"
+        "knowledge/channels/location.md"
       ],
       "format": "markdown"
     },
@@ -881,7 +881,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/matrix.md"
+        "knowledge/plugins/matrix.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/mattermost.md": {
@@ -893,7 +893,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/mattermost.md"
+        "knowledge/plugins/mattermost.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/msteams.md": {
@@ -905,7 +905,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/microsoft-teams.md"
+        "knowledge/plugins/microsoft-teams.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/nextcloud-talk.md": {
@@ -916,7 +916,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "channels/nextcloud-talk.md"
+        "knowledge/channels/nextcloud-talk.md"
       ],
       "format": "markdown"
     },
@@ -928,7 +928,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "channels/nostr.md"
+        "knowledge/channels/nostr.md"
       ],
       "format": "markdown"
     },
@@ -941,7 +941,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/pairing.md"
+        "knowledge/plugins/pairing.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/qa-channel.md": {
@@ -953,7 +953,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/qa-channel.md"
+        "knowledge/plugins/qa-channel.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/qqbot.md": {
@@ -965,7 +965,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/qq-bot.md"
+        "knowledge/plugins/qq-bot.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/signal.md": {
@@ -977,7 +977,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/signal.md"
+        "knowledge/gateway/signal.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/slack.md": {
@@ -989,7 +989,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/slack.md"
+        "knowledge/plugins/slack.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/synology-chat.md": {
@@ -1000,7 +1000,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "channels/synology-chat.md"
+        "knowledge/channels/synology-chat.md"
       ],
       "format": "markdown"
     },
@@ -1013,7 +1013,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/telegram.md"
+        "knowledge/plugins/telegram.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/tlon.md": {
@@ -1024,7 +1024,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "channels/tlon.md"
+        "knowledge/channels/tlon.md"
       ],
       "format": "markdown"
     },
@@ -1037,7 +1037,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/channel-troubleshooting.md"
+        "knowledge/plugins/channel-troubleshooting.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/twitch.md": {
@@ -1049,7 +1049,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/twitch.md"
+        "knowledge/plugins/twitch.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/wechat.md": {
@@ -1060,7 +1060,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "channels/wechat.md"
+        "knowledge/channels/wechat.md"
       ],
       "format": "markdown"
     },
@@ -1073,7 +1073,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/whatsapp.md"
+        "knowledge/plugins/whatsapp.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/zalo.md": {
@@ -1085,7 +1085,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/zalo.md"
+        "knowledge/plugins/zalo.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/zalouser.md": {
@@ -1097,7 +1097,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/zalo-personal.md"
+        "knowledge/plugins/zalo-personal.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/ansible.md": {
@@ -1109,7 +1109,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/ansible.md"
+        "knowledge/gateway/ansible.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/azure.md": {
@@ -1120,7 +1120,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/azure.md"
+        "knowledge/openclaw/install/azure.md"
       ],
       "format": "markdown"
     },
@@ -1133,7 +1133,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/bun-experimental.md"
+        "knowledge/gateway/bun-experimental.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/clawdock.md": {
@@ -1144,7 +1144,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/clawdock.md"
+        "knowledge/openclaw/install/clawdock.md"
       ],
       "format": "markdown"
     },
@@ -1157,7 +1157,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/release-channels.md"
+        "knowledge/plugins/release-channels.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/digitalocean.md": {
@@ -1168,7 +1168,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/digitalocean.md"
+        "knowledge/openclaw/install/digitalocean.md"
       ],
       "format": "markdown"
     },
@@ -1180,7 +1180,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/docker-vm-runtime.md"
+        "knowledge/openclaw/install/docker-vm-runtime.md"
       ],
       "format": "markdown"
     },
@@ -1193,7 +1193,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/docker.md"
+        "knowledge/plugins/docker.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/exe-dev.md": {
@@ -1205,7 +1205,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/exe-dev.md"
+        "knowledge/gateway/exe-dev.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/fly.md": {
@@ -1217,7 +1217,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/fly-io-read_when-deploying-openclaw-on-fly-io-setting-up-fly-volumes-secrets-and-first-run-config.md"
+        "knowledge/plugins/fly-io-read_when-deploying-openclaw-on-fly-io-setting-up-fly-volumes-secrets-and-first-run-config.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/gcp.md": {
@@ -1228,7 +1228,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/gcp.md"
+        "knowledge/openclaw/install/gcp.md"
       ],
       "format": "markdown"
     },
@@ -1241,7 +1241,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/hetzner.md"
+        "knowledge/gateway/hetzner.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/hostinger.md": {
@@ -1252,7 +1252,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/hostinger.md"
+        "knowledge/openclaw/install/hostinger.md"
       ],
       "format": "markdown"
     },
@@ -1265,7 +1265,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/install.md"
+        "knowledge/gateway/install.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/installer.md": {
@@ -1277,7 +1277,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/installer-internals.md"
+        "knowledge/gateway/installer-internals.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/kubernetes.md": {
@@ -1288,7 +1288,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/kubernetes.md"
+        "knowledge/openclaw/install/kubernetes.md"
       ],
       "format": "markdown"
     },
@@ -1301,7 +1301,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/macos-vms.md"
+        "knowledge/gateway/macos-vms.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/migrating-matrix.md": {
@@ -1312,7 +1312,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/migrating-matrix.md"
+        "knowledge/openclaw/install/migrating-matrix.md"
       ],
       "format": "markdown"
     },
@@ -1325,7 +1325,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/migration-guide.md"
+        "knowledge/plugins/migration-guide.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/nix.md": {
@@ -1337,7 +1337,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/nix.md"
+        "knowledge/plugins/nix.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/node.md": {
@@ -1348,7 +1348,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/node.md"
+        "knowledge/openclaw/install/node.md"
       ],
       "format": "markdown"
     },
@@ -1360,7 +1360,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/oracle.md"
+        "knowledge/openclaw/install/oracle.md"
       ],
       "format": "markdown"
     },
@@ -1372,7 +1372,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/podman.md"
+        "knowledge/openclaw/install/podman.md"
       ],
       "format": "markdown"
     },
@@ -1384,7 +1384,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/raspberry-pi.md"
+        "knowledge/openclaw/install/raspberry-pi.md"
       ],
       "format": "markdown"
     },
@@ -1396,7 +1396,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "install/uninstall.md"
+        "knowledge/openclaw/install/uninstall.md"
       ],
       "format": "markdown"
     },
@@ -1409,7 +1409,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/updating.md"
+        "knowledge/plugins/updating.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/nodes/audio.md": {
@@ -1421,7 +1421,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/audio-and-voice-notes.md"
+        "knowledge/gateway/audio-and-voice-notes.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/nodes/camera.md": {
@@ -1432,7 +1432,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "nodes/camera.md"
+        "knowledge/openclaw/nodes/camera.md"
       ],
       "format": "markdown"
     },
@@ -1445,7 +1445,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/image-and-media-support.md"
+        "knowledge/gateway/image-and-media-support.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/nodes/index.md": {
@@ -1457,7 +1457,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/nodes-1.md"
+        "knowledge/gateway/nodes-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/nodes/location-command.md": {
@@ -1468,7 +1468,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "nodes/location-command.md"
+        "knowledge/openclaw/nodes/location-command.md"
       ],
       "format": "markdown"
     },
@@ -1481,7 +1481,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/media-understanding.md"
+        "knowledge/plugins/media-understanding.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/nodes/talk.md": {
@@ -1493,7 +1493,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/talk-mode.md"
+        "knowledge/gateway/talk-mode.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/nodes/troubleshooting.md": {
@@ -1504,7 +1504,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "nodes/troubleshooting.md"
+        "knowledge/openclaw/nodes/troubleshooting.md"
       ],
       "format": "markdown"
     },
@@ -1517,7 +1517,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/voice-wake.md"
+        "knowledge/gateway/voice-wake.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/platforms/android.md": {
@@ -1529,7 +1529,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/android-app.md"
+        "knowledge/plugins/android-app.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/platforms/digitalocean.md": {
@@ -1541,7 +1541,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/digitalocean-platform.md"
+        "knowledge/gateway/digitalocean-platform.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/platforms/index.md": {
@@ -1552,7 +1552,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "platforms/index.md"
+        "knowledge/openclaw/platforms/index.md"
       ],
       "format": "markdown"
     },
@@ -1565,7 +1565,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/ios-app.md"
+        "knowledge/plugins/ios-app.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/platforms/linux.md": {
@@ -1576,7 +1576,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "platforms/linux.md"
+        "knowledge/openclaw/platforms/linux.md"
       ],
       "format": "markdown"
     },
@@ -1588,7 +1588,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/bundled-gateway.md"
+        "knowledge/openclaw/mac/bundled-gateway.md"
       ],
       "format": "markdown"
     },
@@ -1600,7 +1600,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/canvas.md"
+        "knowledge/openclaw/mac/canvas.md"
       ],
       "format": "markdown"
     },
@@ -1612,7 +1612,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/child-process.md"
+        "knowledge/openclaw/mac/child-process.md"
       ],
       "format": "markdown"
     },
@@ -1625,7 +1625,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/macos-dev-setup.md"
+        "knowledge/plugins/macos-dev-setup.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/platforms/mac/health.md": {
@@ -1636,7 +1636,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/health.md"
+        "knowledge/openclaw/mac/health.md"
       ],
       "format": "markdown"
     },
@@ -1648,7 +1648,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/icon.md"
+        "knowledge/openclaw/mac/icon.md"
       ],
       "format": "markdown"
     },
@@ -1660,7 +1660,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/logging.md"
+        "knowledge/openclaw/mac/logging.md"
       ],
       "format": "markdown"
     },
@@ -1672,7 +1672,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/menu-bar.md"
+        "knowledge/openclaw/mac/menu-bar.md"
       ],
       "format": "markdown"
     },
@@ -1685,7 +1685,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/peekaboo-bridge.md"
+        "knowledge/plugins/peekaboo-bridge.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/platforms/mac/permissions.md": {
@@ -1696,7 +1696,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/permissions.md"
+        "knowledge/openclaw/mac/permissions.md"
       ],
       "format": "markdown"
     },
@@ -1709,7 +1709,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/remote-control.md"
+        "knowledge/plugins/remote-control.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/platforms/mac/signing.md": {
@@ -1720,7 +1720,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/signing.md"
+        "knowledge/openclaw/mac/signing.md"
       ],
       "format": "markdown"
     },
@@ -1732,7 +1732,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/skills.md"
+        "knowledge/openclaw/mac/skills.md"
       ],
       "format": "markdown"
     },
@@ -1744,7 +1744,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/voice-overlay.md"
+        "knowledge/openclaw/mac/voice-overlay.md"
       ],
       "format": "markdown"
     },
@@ -1756,7 +1756,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/voicewake.md"
+        "knowledge/openclaw/mac/voicewake.md"
       ],
       "format": "markdown"
     },
@@ -1768,7 +1768,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/webchat.md"
+        "knowledge/openclaw/mac/webchat.md"
       ],
       "format": "markdown"
     },
@@ -1780,7 +1780,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "mac/xpc.md"
+        "knowledge/openclaw/mac/xpc.md"
       ],
       "format": "markdown"
     },
@@ -1793,7 +1793,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/macos-app.md"
+        "knowledge/gateway/macos-app.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/platforms/oracle.md": {
@@ -1805,7 +1805,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/oracle-cloud-platform.md"
+        "knowledge/plugins/oracle-cloud-platform.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/platforms/raspberry-pi.md": {
@@ -1817,7 +1817,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/raspberry-pi-platform.md"
+        "knowledge/gateway/raspberry-pi-platform.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/platforms/windows.md": {
@@ -1828,7 +1828,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "platforms/windows.md"
+        "knowledge/openclaw/platforms/windows.md"
       ],
       "format": "markdown"
     },
@@ -1840,7 +1840,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "plugins/agent-tools.md"
+        "knowledge/plugins/agent-tools.md"
       ],
       "format": "markdown"
     },
@@ -1853,7 +1853,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-internals.md"
+        "knowledge/plugins/plugin-internals.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/building-extensions.md": {
@@ -1864,7 +1864,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "plugins/building-extensions.md"
+        "knowledge/plugins/building-extensions.md"
       ],
       "format": "markdown"
     },
@@ -1877,7 +1877,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/building-plugins-1.md"
+        "knowledge/plugins/building-plugins-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/bundles.md": {
@@ -1889,7 +1889,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-bundles.md"
+        "knowledge/plugins/plugin-bundles.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/codex-harness.md": {
@@ -1901,7 +1901,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/codex-harness-1.md"
+        "knowledge/plugins/codex-harness-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/community.md": {
@@ -1913,7 +1913,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/community-plugins.md"
+        "knowledge/plugins/community-plugins.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/manifest.md": {
@@ -1925,7 +1925,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-manifest.md"
+        "knowledge/plugins/plugin-manifest.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/memory-wiki.md": {
@@ -1936,7 +1936,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "plugins/memory-wiki.md"
+        "knowledge/plugins/memory-wiki.md"
       ],
       "format": "markdown"
     },
@@ -1949,7 +1949,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/message-presentation-1.md"
+        "knowledge/plugins/message-presentation-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/sdk-agent-harness.md": {
@@ -1961,7 +1961,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/agent-harness-plugins.md"
+        "knowledge/plugins/agent-harness-plugins.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/sdk-channel-plugins.md": {
@@ -1973,7 +1973,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/building-channel-plugins.md"
+        "knowledge/plugins/building-channel-plugins.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/sdk-entrypoints.md": {
@@ -1985,7 +1985,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-entry-points.md"
+        "knowledge/plugins/plugin-entry-points.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/sdk-migration.md": {
@@ -1997,7 +1997,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-sdk-migration.md"
+        "knowledge/plugins/plugin-sdk-migration.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/sdk-overview.md": {
@@ -2009,7 +2009,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-sdk-overview.md"
+        "knowledge/plugins/plugin-sdk-overview.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/sdk-provider-plugins.md": {
@@ -2021,7 +2021,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/building-provider-plugins.md"
+        "knowledge/plugins/building-provider-plugins.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/sdk-runtime.md": {
@@ -2033,7 +2033,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-runtime-helpers.md"
+        "knowledge/plugins/plugin-runtime-helpers.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/sdk-setup.md": {
@@ -2045,7 +2045,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-setup-and-config.md"
+        "knowledge/plugins/plugin-setup-and-config.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/sdk-testing.md": {
@@ -2057,7 +2057,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-testing.md"
+        "knowledge/plugins/plugin-testing.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/skill-workshop.md": {
@@ -2068,7 +2068,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "plugins/skill-workshop.md"
+        "knowledge/plugins/skill-workshop.md"
       ],
       "format": "markdown"
     },
@@ -2081,7 +2081,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/voice-call-plugin.md"
+        "knowledge/plugins/voice-call-plugin.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/webhooks.md": {
@@ -2092,7 +2092,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "plugins/webhooks.md"
+        "knowledge/plugins/webhooks.md"
       ],
       "format": "markdown"
     },
@@ -2105,7 +2105,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/zalo-personal-plugin.md"
+        "knowledge/plugins/zalo-personal-plugin.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/AGENTS.default.md": {
@@ -2117,7 +2117,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/default-agents-md.md"
+        "knowledge/gateway/default-agents-md.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/RELEASING.md": {
@@ -2129,7 +2129,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/release-policy.md"
+        "knowledge/plugins/release-policy.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/api-usage-costs.md": {
@@ -2141,7 +2141,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/api-usage-and-costs.md"
+        "knowledge/plugins/api-usage-and-costs.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/credits.md": {
@@ -2152,7 +2152,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "reference/credits.md"
+        "knowledge/openclaw/reference/credits.md"
       ],
       "format": "markdown"
     },
@@ -2165,7 +2165,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "references/device-model-database.md"
+        "knowledge/openclaw/references/device-model-database.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/memory-config.md": {
@@ -2177,7 +2177,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/memory-configuration-reference.md"
+        "knowledge/plugins/memory-configuration-reference.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/prompt-caching.md": {
@@ -2189,7 +2189,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/prompt-caching.md"
+        "knowledge/gateway/prompt-caching.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/rich-output-protocol.md": {
@@ -2201,7 +2201,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "skills/rich-output-protocol.md"
+        "knowledge/openclaw/skills/rich-output-protocol.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/rpc.md": {
@@ -2212,7 +2212,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "reference/rpc.md"
+        "knowledge/openclaw/reference/rpc.md"
       ],
       "format": "markdown"
     },
@@ -2225,7 +2225,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/secretref-credential-surface.md"
+        "knowledge/plugins/secretref-credential-surface.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/session-management-compaction.md": {
@@ -2237,7 +2237,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/session-management-deep-dive.md"
+        "knowledge/plugins/session-management-deep-dive.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/templates/AGENTS.dev.md": {
@@ -2248,7 +2248,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/AGENTS.dev.md"
+        "knowledge/openclaw/templates/AGENTS.dev.md"
       ],
       "format": "markdown"
     },
@@ -2261,7 +2261,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/agents-md-template.md"
+        "knowledge/gateway/agents-md-template.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/templates/BOOT.md": {
@@ -2272,7 +2272,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/BOOT.md"
+        "knowledge/openclaw/templates/BOOT.md"
       ],
       "format": "markdown"
     },
@@ -2284,7 +2284,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/BOOTSTRAP.md"
+        "knowledge/openclaw/templates/BOOTSTRAP.md"
       ],
       "format": "markdown"
     },
@@ -2296,7 +2296,7 @@
       "source_type": "document",
       "project": "openclaw-docs",
       "pages_created": [
-        "reference/CLAUDE.md"
+        "knowledge/openclaw/reference/CLAUDE.md"
       ],
       "pages_updated": [],
       "format": "markdown",
@@ -2310,7 +2310,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/HEARTBEAT.md"
+        "knowledge/openclaw/templates/HEARTBEAT.md"
       ],
       "format": "markdown"
     },
@@ -2322,7 +2322,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/IDENTITY.dev.md"
+        "knowledge/openclaw/templates/IDENTITY.dev.md"
       ],
       "format": "markdown"
     },
@@ -2334,7 +2334,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/IDENTITY.md"
+        "knowledge/openclaw/templates/IDENTITY.md"
       ],
       "format": "markdown"
     },
@@ -2346,7 +2346,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/SOUL.dev.md"
+        "knowledge/openclaw/templates/SOUL.dev.md"
       ],
       "format": "markdown"
     },
@@ -2358,7 +2358,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/SOUL.md"
+        "knowledge/openclaw/templates/SOUL.md"
       ],
       "format": "markdown"
     },
@@ -2370,7 +2370,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/TOOLS.dev.md"
+        "knowledge/openclaw/templates/TOOLS.dev.md"
       ],
       "format": "markdown"
     },
@@ -2382,7 +2382,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/TOOLS.md"
+        "knowledge/openclaw/templates/TOOLS.md"
       ],
       "format": "markdown"
     },
@@ -2394,7 +2394,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/USER.dev.md"
+        "knowledge/openclaw/templates/USER.dev.md"
       ],
       "format": "markdown"
     },
@@ -2406,7 +2406,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "templates/USER.md"
+        "knowledge/openclaw/templates/USER.md"
       ],
       "format": "markdown"
     },
@@ -2419,7 +2419,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/tests.md"
+        "knowledge/plugins/tests.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/token-use.md": {
@@ -2431,7 +2431,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/token-use-and-costs.md"
+        "knowledge/gateway/token-use-and-costs.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/transcript-hygiene.md": {
@@ -2443,7 +2443,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/transcript-hygiene.md"
+        "knowledge/gateway/transcript-hygiene.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/wizard.md": {
@@ -2455,7 +2455,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/onboarding-reference.md"
+        "knowledge/plugins/onboarding-reference.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/acp-agents.md": {
@@ -2467,7 +2467,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/acp-agents.md"
+        "knowledge/plugins/acp-agents.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/agent-send.md": {
@@ -2478,7 +2478,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/agent-send.md"
+        "knowledge/openclaw/tools/agent-send.md"
       ],
       "format": "markdown"
     },
@@ -2490,7 +2490,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/apply-patch.md"
+        "knowledge/openclaw/tools/apply-patch.md"
       ],
       "format": "markdown"
     },
@@ -2502,7 +2502,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/brave-search.md"
+        "knowledge/openclaw/tools/brave-search.md"
       ],
       "format": "markdown"
     },
@@ -2515,7 +2515,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/browser-troubleshooting.md"
+        "knowledge/gateway/browser-troubleshooting.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/browser-login.md": {
@@ -2526,7 +2526,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/browser-login.md"
+        "knowledge/openclaw/tools/browser-login.md"
       ],
       "format": "markdown"
     },
@@ -2539,7 +2539,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/wsl2-windows-remote-chrome-cdp-troubleshooting.md"
+        "knowledge/gateway/wsl2-windows-remote-chrome-cdp-troubleshooting.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/browser.md": {
@@ -2551,7 +2551,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/browser-openclaw-managed.md"
+        "knowledge/plugins/browser-openclaw-managed.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/btw.md": {
@@ -2562,7 +2562,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/btw.md"
+        "knowledge/openclaw/tools/btw.md"
       ],
       "format": "markdown"
     },
@@ -2575,7 +2575,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/adding-capabilities-contributor-guide.md"
+        "knowledge/plugins/adding-capabilities-contributor-guide.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/code-execution.md": {
@@ -2587,7 +2587,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/code-execution.md"
+        "knowledge/plugins/code-execution.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/creating-skills.md": {
@@ -2598,7 +2598,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/creating-skills.md"
+        "knowledge/openclaw/tools/creating-skills.md"
       ],
       "format": "markdown"
     },
@@ -2610,7 +2610,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/duckduckgo-search.md"
+        "knowledge/openclaw/tools/duckduckgo-search.md"
       ],
       "format": "markdown"
     },
@@ -2622,7 +2622,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/elevated.md"
+        "knowledge/openclaw/tools/elevated.md"
       ],
       "format": "markdown"
     },
@@ -2634,7 +2634,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/exa-search.md"
+        "knowledge/openclaw/tools/exa-search.md"
       ],
       "format": "markdown"
     },
@@ -2647,7 +2647,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/exec-approvals.md"
+        "knowledge/gateway/exec-approvals.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/firecrawl.md": {
@@ -2658,7 +2658,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/firecrawl.md"
+        "knowledge/openclaw/tools/firecrawl.md"
       ],
       "format": "markdown"
     },
@@ -2670,7 +2670,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/gemini-search.md"
+        "knowledge/openclaw/tools/gemini-search.md"
       ],
       "format": "markdown"
     },
@@ -2682,7 +2682,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/grok-search.md"
+        "knowledge/openclaw/tools/grok-search.md"
       ],
       "format": "markdown"
     },
@@ -2694,7 +2694,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/kimi-search.md"
+        "knowledge/openclaw/tools/kimi-search.md"
       ],
       "format": "markdown"
     },
@@ -2706,7 +2706,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/llm-task.md"
+        "knowledge/openclaw/tools/llm-task.md"
       ],
       "format": "markdown"
     },
@@ -2719,7 +2719,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/tool-loop-detection.md"
+        "knowledge/gateway/tool-loop-detection.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/media-overview.md": {
@@ -2731,7 +2731,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/media-overview.md"
+        "knowledge/plugins/media-overview.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/minimax-search.md": {
@@ -2742,7 +2742,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/minimax-search.md"
+        "knowledge/openclaw/tools/minimax-search.md"
       ],
       "format": "markdown"
     },
@@ -2755,7 +2755,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/multi-agent-sandbox-and-tools.md"
+        "knowledge/plugins/multi-agent-sandbox-and-tools.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/ollama-search.md": {
@@ -2767,7 +2767,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/ollama-web-search.md"
+        "knowledge/plugins/ollama-web-search.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/pdf.md": {
@@ -2779,7 +2779,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/pdf-tool.md"
+        "knowledge/plugins/pdf-tool.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/perplexity-search.md": {
@@ -2790,7 +2790,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/perplexity-search.md"
+        "knowledge/openclaw/tools/perplexity-search.md"
       ],
       "format": "markdown"
     },
@@ -2802,7 +2802,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/reactions.md"
+        "knowledge/openclaw/tools/reactions.md"
       ],
       "format": "markdown"
     },
@@ -2814,7 +2814,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/searxng-search.md"
+        "knowledge/openclaw/tools/searxng-search.md"
       ],
       "format": "markdown"
     },
@@ -2826,7 +2826,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/skills-config.md"
+        "knowledge/openclaw/tools/skills-config.md"
       ],
       "format": "markdown"
     },
@@ -2839,7 +2839,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/skills.md"
+        "knowledge/plugins/skills.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/slash-commands.md": {
@@ -2851,7 +2851,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/slash-commands.md"
+        "knowledge/plugins/slash-commands.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/subagents.md": {
@@ -2863,7 +2863,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/sub-agents.md"
+        "knowledge/plugins/sub-agents.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/tavily.md": {
@@ -2874,7 +2874,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/tavily.md"
+        "knowledge/openclaw/tools/tavily.md"
       ],
       "format": "markdown"
     },
@@ -2887,7 +2887,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/thinking-levels.md"
+        "knowledge/plugins/thinking-levels.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/tokenjuice.md": {
@@ -2899,7 +2899,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/tokenjuice.md"
+        "knowledge/plugins/tokenjuice.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/tts.md": {
@@ -2911,7 +2911,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/text-to-speech.md"
+        "knowledge/plugins/text-to-speech.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/video-generation.md": {
@@ -2923,7 +2923,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/video-generation.md"
+        "knowledge/plugins/video-generation.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/web-fetch.md": {
@@ -2934,7 +2934,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "tools/web-fetch.md"
+        "knowledge/openclaw/tools/web-fetch.md"
       ],
       "format": "markdown"
     },
@@ -2947,7 +2947,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/web-search.md"
+        "knowledge/plugins/web-search.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/help/debugging.md": {
@@ -2959,7 +2959,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/debugging.md"
+        "knowledge/plugins/debugging.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/help/environment.md": {
@@ -2970,7 +2970,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "help/environment.md"
+        "knowledge/openclaw/help/environment.md"
       ],
       "format": "markdown"
     },
@@ -2982,7 +2982,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "help/faq.md"
+        "knowledge/openclaw/help/faq.md"
       ],
       "format": "markdown"
     },
@@ -2994,7 +2994,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "help/gpt54-codex-agentic-parity-maintainers.md"
+        "knowledge/openclaw/help/gpt54-codex-agentic-parity-maintainers.md"
       ],
       "format": "markdown"
     },
@@ -3006,7 +3006,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "help/gpt54-codex-agentic-parity.md"
+        "knowledge/openclaw/help/gpt54-codex-agentic-parity.md"
       ],
       "format": "markdown"
     },
@@ -3018,7 +3018,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "help/index.md"
+        "knowledge/openclaw/help/index.md"
       ],
       "format": "markdown"
     },
@@ -3030,7 +3030,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "help/scripts.md"
+        "knowledge/openclaw/help/scripts.md"
       ],
       "format": "markdown"
     },
@@ -3043,7 +3043,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/testing.md"
+        "knowledge/plugins/testing.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/help/troubleshooting.md": {
@@ -3054,7 +3054,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "help/troubleshooting.md"
+        "knowledge/openclaw/help/troubleshooting.md"
       ],
       "format": "markdown"
     },
@@ -3067,7 +3067,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/contributing-to-the-threat-model.md"
+        "knowledge/gateway/contributing-to-the-threat-model.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/security/THREAT-MODEL-ATLAS.md": {
@@ -3079,7 +3079,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/threat-model-mitre-atlas.md"
+        "knowledge/gateway/threat-model-mitre-atlas.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/security/formal-verification.md": {
@@ -3090,7 +3090,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "security/formal-verification.md"
+        "knowledge/openclaw/security/formal-verification.md"
       ],
       "format": "markdown"
     },
@@ -3103,7 +3103,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/auth-monitoring.md"
+        "knowledge/gateway/auth-monitoring.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/automation/clawflow.md": {
@@ -3115,7 +3115,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "automation/clawflow-1.md"
+        "knowledge/openclaw/automation/clawflow-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/automation/cron-jobs.md": {
@@ -3127,7 +3127,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/scheduled-tasks.md"
+        "knowledge/plugins/scheduled-tasks.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/automation/cron-vs-heartbeat.md": {
@@ -3139,7 +3139,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/cron-vs-heartbeat.md"
+        "knowledge/gateway/cron-vs-heartbeat.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/automation/gmail-pubsub.md": {
@@ -3150,7 +3150,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "automation/gmail-pubsub.md"
+        "knowledge/openclaw/automation/gmail-pubsub.md"
       ],
       "format": "markdown"
     },
@@ -3163,7 +3163,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/hooks.md"
+        "knowledge/plugins/hooks.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/automation/index.md": {
@@ -3175,7 +3175,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/automation-tasks.md"
+        "knowledge/plugins/automation-tasks.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/automation/poll.md": {
@@ -3186,7 +3186,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "automation/poll.md"
+        "knowledge/openclaw/automation/poll.md"
       ],
       "format": "markdown"
     },
@@ -3199,7 +3199,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/standing-orders.md"
+        "knowledge/gateway/standing-orders.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/automation/taskflow.md": {
@@ -3211,7 +3211,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/task-flow.md"
+        "knowledge/plugins/task-flow.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/automation/tasks.md": {
@@ -3223,7 +3223,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/background-tasks.md"
+        "knowledge/gateway/background-tasks.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/automation/troubleshooting.md": {
@@ -3234,7 +3234,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "automation/troubleshooting.md"
+        "knowledge/openclaw/automation/troubleshooting.md"
       ],
       "format": "markdown"
     },
@@ -3246,7 +3246,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "automation/webhook.md"
+        "knowledge/openclaw/automation/webhook.md"
       ],
       "format": "markdown"
     },
@@ -3258,7 +3258,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "diagnostics/flags.md"
+        "knowledge/openclaw/diagnostics/flags.md"
       ],
       "format": "markdown"
     },
@@ -3270,7 +3270,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/active-memory.md"
+        "knowledge/openclaw/concepts/active-memory.md"
       ],
       "format": "markdown"
     },
@@ -3283,7 +3283,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/agent-loop.md"
+        "knowledge/plugins/agent-loop.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/agent-workspace.md": {
@@ -3295,7 +3295,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/agent-workspace.md"
+        "knowledge/gateway/agent-workspace.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/architecture.md": {
@@ -3306,7 +3306,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/architecture.md"
+        "knowledge/openclaw/concepts/architecture.md"
       ],
       "format": "markdown"
     },
@@ -3319,7 +3319,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/compaction.md"
+        "knowledge/plugins/compaction.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/context-engine.md": {
@@ -3331,7 +3331,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/context-engine.md"
+        "knowledge/plugins/context-engine.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/context.md": {
@@ -3342,7 +3342,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/context.md"
+        "knowledge/openclaw/concepts/context.md"
       ],
       "format": "markdown"
     },
@@ -3355,7 +3355,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/delegate-architecture-read_when.md"
+        "knowledge/gateway/delegate-architecture-read_when.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/dreaming.md": {
@@ -3367,7 +3367,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/dreaming.md"
+        "knowledge/plugins/dreaming.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/experimental-features.md": {
@@ -3378,7 +3378,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/experimental-features.md"
+        "knowledge/openclaw/concepts/experimental-features.md"
       ],
       "format": "markdown"
     },
@@ -3390,7 +3390,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/features.md"
+        "knowledge/openclaw/concepts/features.md"
       ],
       "format": "markdown"
     },
@@ -3402,7 +3402,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/markdown-formatting.md"
+        "knowledge/openclaw/concepts/markdown-formatting.md"
       ],
       "format": "markdown"
     },
@@ -3415,7 +3415,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/builtin-memory-engine.md"
+        "knowledge/gateway/builtin-memory-engine.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/memory-honcho.md": {
@@ -3426,7 +3426,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/memory-honcho.md"
+        "knowledge/openclaw/concepts/memory-honcho.md"
       ],
       "format": "markdown"
     },
@@ -3439,7 +3439,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/qmd-memory-engine.md"
+        "knowledge/gateway/qmd-memory-engine.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/memory-search.md": {
@@ -3451,7 +3451,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/memory-search.md"
+        "knowledge/gateway/memory-search.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/memory.md": {
@@ -3463,7 +3463,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/memory-overview.md"
+        "knowledge/plugins/memory-overview.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/messages.md": {
@@ -3475,7 +3475,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/messages.md"
+        "knowledge/plugins/messages.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/model-failover.md": {
@@ -3487,7 +3487,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/model-failover.md"
+        "knowledge/plugins/model-failover.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/model-providers.md": {
@@ -3499,7 +3499,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/model-providers.md"
+        "knowledge/plugins/model-providers.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/models.md": {
@@ -3511,7 +3511,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/models-cli.md"
+        "knowledge/gateway/models-cli.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/multi-agent.md": {
@@ -3523,7 +3523,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/multi-agent-routing.md"
+        "knowledge/gateway/multi-agent-routing.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/oauth.md": {
@@ -3535,7 +3535,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/oauth.md"
+        "knowledge/plugins/oauth.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/presence.md": {
@@ -3546,7 +3546,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/presence.md"
+        "knowledge/openclaw/concepts/presence.md"
       ],
       "format": "markdown"
     },
@@ -3559,7 +3559,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/qa-overview.md"
+        "knowledge/plugins/qa-overview.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/queue.md": {
@@ -3571,7 +3571,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/command-queue.md"
+        "knowledge/gateway/command-queue.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/retry.md": {
@@ -3582,7 +3582,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/retry.md"
+        "knowledge/openclaw/concepts/retry.md"
       ],
       "format": "markdown"
     },
@@ -3595,7 +3595,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/session-pruning.md"
+        "knowledge/gateway/session-pruning.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/session-tool.md": {
@@ -3607,7 +3607,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/session-tools.md"
+        "knowledge/gateway/session-tools.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/session.md": {
@@ -3619,7 +3619,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/session-management.md"
+        "knowledge/gateway/session-management.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/soul.md": {
@@ -3630,7 +3630,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/soul.md"
+        "knowledge/openclaw/concepts/soul.md"
       ],
       "format": "markdown"
     },
@@ -3643,7 +3643,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/streaming-and-chunking.md"
+        "knowledge/gateway/streaming-and-chunking.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/system-prompt.md": {
@@ -3655,7 +3655,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/system-prompt.md"
+        "knowledge/plugins/system-prompt.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/timezone.md": {
@@ -3666,7 +3666,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/timezone.md"
+        "knowledge/openclaw/concepts/timezone.md"
       ],
       "format": "markdown"
     },
@@ -3678,7 +3678,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/typebox.md"
+        "knowledge/openclaw/concepts/typebox.md"
       ],
       "format": "markdown"
     },
@@ -3690,7 +3690,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/typing-indicators.md"
+        "knowledge/openclaw/concepts/typing-indicators.md"
       ],
       "format": "markdown"
     },
@@ -3702,7 +3702,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "concepts/usage-tracking.md"
+        "knowledge/openclaw/concepts/usage-tracking.md"
       ],
       "format": "markdown"
     },
@@ -3715,7 +3715,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/control-ui.md"
+        "knowledge/plugins/control-ui.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/web/dashboard.md": {
@@ -3727,7 +3727,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/dashboard-1.md"
+        "knowledge/gateway/dashboard-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/web/index.md": {
@@ -3739,7 +3739,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/web.md"
+        "knowledge/gateway/web.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/web/tui.md": {
@@ -3751,7 +3751,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/tui.md"
+        "knowledge/gateway/tui.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/web/webchat.md": {
@@ -3763,7 +3763,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/webchat.md"
+        "knowledge/plugins/webchat.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plan/ui-channels.md": {
@@ -3775,7 +3775,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/channel-presentation-refactor-plan.md"
+        "knowledge/plugins/channel-presentation-refactor-plan.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/debug/node-issue.md": {
@@ -3786,7 +3786,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "debug/node-issue.md"
+        "knowledge/openclaw/debug/node-issue.md"
       ],
       "format": "markdown"
     },
@@ -3799,7 +3799,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/agent-bootstrapping.md"
+        "knowledge/gateway/agent-bootstrapping.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/start/docs-directory.md": {
@@ -3810,7 +3810,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "start/docs-directory.md"
+        "knowledge/openclaw/start/docs-directory.md"
       ],
       "format": "markdown"
     },
@@ -3822,7 +3822,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "start/getting-started.md"
+        "knowledge/openclaw/start/getting-started.md"
       ],
       "format": "markdown"
     },
@@ -3835,7 +3835,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/docs-hubs.md"
+        "knowledge/plugins/docs-hubs.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/start/lore.md": {
@@ -3846,7 +3846,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "start/lore.md"
+        "knowledge/openclaw/start/lore.md"
       ],
       "format": "markdown"
     },
@@ -3858,7 +3858,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "start/onboarding-overview.md"
+        "knowledge/openclaw/start/onboarding-overview.md"
       ],
       "format": "markdown"
     },
@@ -3870,7 +3870,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "start/onboarding.md"
+        "knowledge/openclaw/start/onboarding.md"
       ],
       "format": "markdown"
     },
@@ -3883,7 +3883,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/personal-assistant-setup.md"
+        "knowledge/gateway/personal-assistant-setup.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/start/quickstart.md": {
@@ -3894,7 +3894,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "start/quickstart.md"
+        "knowledge/openclaw/start/quickstart.md"
       ],
       "format": "markdown"
     },
@@ -3906,7 +3906,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "start/setup.md"
+        "knowledge/openclaw/start/setup.md"
       ],
       "format": "markdown"
     },
@@ -3918,7 +3918,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "start/showcase.md"
+        "knowledge/openclaw/start/showcase.md"
       ],
       "format": "markdown"
     },
@@ -3931,7 +3931,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/cli-automation.md"
+        "knowledge/gateway/cli-automation.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/start/wizard-cli-reference.md": {
@@ -3943,7 +3943,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/cli-setup-reference.md"
+        "knowledge/plugins/cli-setup-reference.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/start/wizard.md": {
@@ -3954,7 +3954,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "start/wizard.md"
+        "knowledge/openclaw/start/wizard.md"
       ],
       "format": "markdown"
     },
@@ -3966,7 +3966,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/acp.md"
+        "knowledge/openclaw/cli/acp.md"
       ],
       "format": "markdown"
     },
@@ -3979,7 +3979,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/agent.md"
+        "knowledge/plugins/agent.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/agents.md": {
@@ -3991,7 +3991,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/agents.md"
+        "knowledge/plugins/agents.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/approvals.md": {
@@ -4002,7 +4002,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/approvals.md"
+        "knowledge/openclaw/cli/approvals.md"
       ],
       "format": "markdown"
     },
@@ -4015,7 +4015,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/backup.md"
+        "knowledge/plugins/backup.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/browser.md": {
@@ -4027,7 +4027,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/browser.md"
+        "knowledge/plugins/browser.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/channels.md": {
@@ -4039,7 +4039,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/channels.md"
+        "knowledge/plugins/channels.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/clawbot.md": {
@@ -4050,7 +4050,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/clawbot.md"
+        "knowledge/openclaw/cli/clawbot.md"
       ],
       "format": "markdown"
     },
@@ -4062,7 +4062,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/completion.md"
+        "knowledge/openclaw/cli/completion.md"
       ],
       "format": "markdown"
     },
@@ -4075,7 +4075,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/config.md"
+        "knowledge/plugins/config.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/configure.md": {
@@ -4087,7 +4087,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/configure.md"
+        "knowledge/plugins/configure.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/cron.md": {
@@ -4099,7 +4099,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/cron.md"
+        "knowledge/gateway/cron.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/daemon.md": {
@@ -4110,7 +4110,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/daemon.md"
+        "knowledge/openclaw/cli/daemon.md"
       ],
       "format": "markdown"
     },
@@ -4123,7 +4123,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/dashboard.md"
+        "knowledge/gateway/dashboard.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/devices.md": {
@@ -4135,7 +4135,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/devices.md"
+        "knowledge/gateway/devices.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/directory.md": {
@@ -4146,7 +4146,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/directory.md"
+        "knowledge/openclaw/cli/directory.md"
       ],
       "format": "markdown"
     },
@@ -4158,7 +4158,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/dns.md"
+        "knowledge/openclaw/cli/dns.md"
       ],
       "format": "markdown"
     },
@@ -4170,7 +4170,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/docs.md"
+        "knowledge/openclaw/cli/docs.md"
       ],
       "format": "markdown"
     },
@@ -4183,7 +4183,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/doctor.md"
+        "knowledge/plugins/doctor.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/flows.md": {
@@ -4194,7 +4194,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/flows.md"
+        "knowledge/openclaw/cli/flows.md"
       ],
       "format": "markdown"
     },
@@ -4207,7 +4207,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/gateway.md"
+        "knowledge/plugins/gateway.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/health.md": {
@@ -4218,7 +4218,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/health.md"
+        "knowledge/openclaw/cli/health.md"
       ],
       "format": "markdown"
     },
@@ -4231,7 +4231,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/hooks-1.md"
+        "knowledge/plugins/hooks-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/index.md": {
@@ -4243,7 +4243,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/cli-reference.md"
+        "knowledge/plugins/cli-reference.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/infer.md": {
@@ -4255,7 +4255,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/inference-cli.md"
+        "knowledge/plugins/inference-cli.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/logs.md": {
@@ -4266,7 +4266,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/logs.md"
+        "knowledge/openclaw/cli/logs.md"
       ],
       "format": "markdown"
     },
@@ -4279,7 +4279,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/mcp.md"
+        "knowledge/plugins/mcp.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/memory.md": {
@@ -4291,7 +4291,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/memory.md"
+        "knowledge/plugins/memory.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/message.md": {
@@ -4303,7 +4303,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/message.md"
+        "knowledge/plugins/message.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/models.md": {
@@ -4315,7 +4315,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/models.md"
+        "knowledge/plugins/models.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/node.md": {
@@ -4327,7 +4327,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/node.md"
+        "knowledge/gateway/node.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/nodes.md": {
@@ -4339,7 +4339,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/nodes.md"
+        "knowledge/gateway/nodes.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/onboard.md": {
@@ -4351,7 +4351,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/onboard.md"
+        "knowledge/plugins/onboard.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/pairing.md": {
@@ -4362,7 +4362,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/pairing.md"
+        "knowledge/openclaw/cli/pairing.md"
       ],
       "format": "markdown"
     },
@@ -4375,7 +4375,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugins.md"
+        "knowledge/plugins/plugins.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/qr.md": {
@@ -4386,7 +4386,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/qr.md"
+        "knowledge/openclaw/cli/qr.md"
       ],
       "format": "markdown"
     },
@@ -4398,7 +4398,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/reset.md"
+        "knowledge/openclaw/cli/reset.md"
       ],
       "format": "markdown"
     },
@@ -4411,7 +4411,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/sandbox-cli-read_when.md"
+        "knowledge/plugins/sandbox-cli-read_when.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/secrets.md": {
@@ -4422,7 +4422,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/secrets.md"
+        "knowledge/openclaw/cli/secrets.md"
       ],
       "format": "markdown"
     },
@@ -4434,7 +4434,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/security.md"
+        "knowledge/openclaw/cli/security.md"
       ],
       "format": "markdown"
     },
@@ -4447,7 +4447,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/sessions.md"
+        "knowledge/gateway/sessions.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/setup.md": {
@@ -4459,7 +4459,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/setup.md"
+        "knowledge/gateway/setup.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/skills.md": {
@@ -4471,7 +4471,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/skills.md"
+        "knowledge/gateway/skills.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/status.md": {
@@ -4483,7 +4483,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/status.md"
+        "knowledge/plugins/status.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/system.md": {
@@ -4494,7 +4494,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/system.md"
+        "knowledge/openclaw/cli/system.md"
       ],
       "format": "markdown"
     },
@@ -4506,7 +4506,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/tui.md"
+        "knowledge/openclaw/cli/tui.md"
       ],
       "format": "markdown"
     },
@@ -4518,7 +4518,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/uninstall.md"
+        "knowledge/openclaw/cli/uninstall.md"
       ],
       "format": "markdown"
     },
@@ -4531,7 +4531,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/update.md"
+        "knowledge/plugins/update.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/voicecall.md": {
@@ -4543,7 +4543,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/voicecall.md"
+        "knowledge/plugins/voicecall.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/webhooks.md": {
@@ -4554,7 +4554,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/webhooks.md"
+        "knowledge/openclaw/cli/webhooks.md"
       ],
       "format": "markdown"
     },
@@ -4566,7 +4566,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/wiki.md"
+        "knowledge/openclaw/cli/wiki.md"
       ],
       "format": "markdown"
     },
@@ -4579,7 +4579,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/discovery-and-transports.md"
+        "knowledge/gateway/discovery-and-transports.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/health.md": {
@@ -4591,7 +4591,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/health-checks.md"
+        "knowledge/gateway/health-checks.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/heartbeat.md": {
@@ -4603,7 +4603,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/heartbeat.md"
+        "knowledge/plugins/heartbeat.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/multiple-gateways.md": {
@@ -4615,7 +4615,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/multiple-gateways-1.md"
+        "knowledge/gateway/multiple-gateways-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/pairing.md": {
@@ -4627,7 +4627,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/gateway-owned-pairing.md"
+        "knowledge/gateway/gateway-owned-pairing.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/openresponses-http-api.md": {
@@ -4639,7 +4639,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/openresponses-api.md"
+        "knowledge/plugins/openresponses-api.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/openai-http-api.md": {
@@ -4651,7 +4651,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/openai-chat-completions.md"
+        "knowledge/gateway/openai-chat-completions.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/background-process.md": {
@@ -4663,7 +4663,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/background-exec-and-process-tool.md"
+        "knowledge/gateway/background-exec-and-process-tool.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/security/index.md": {
@@ -4675,7 +4675,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/security.md"
+        "knowledge/plugins/security.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/secrets-plan-contract.md": {
@@ -4686,7 +4686,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "gateway/secrets-plan-contract.md"
+        "knowledge/gateway/secrets-plan-contract.md"
       ],
       "format": "markdown"
     },
@@ -4699,7 +4699,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/remote-gateway-setup.md"
+        "knowledge/gateway/remote-gateway-setup.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/gateway-lock.md": {
@@ -4711,7 +4711,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/gateway-lock-1.md"
+        "knowledge/gateway/gateway-lock-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/bridge-protocol.md": {
@@ -4723,7 +4723,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/bridge-protocol-1.md"
+        "knowledge/gateway/bridge-protocol-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/secrets.md": {
@@ -4735,7 +4735,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/secrets-management.md"
+        "knowledge/plugins/secrets-management.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/tools-invoke-http-api.md": {
@@ -4746,7 +4746,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "gateway/tools-invoke-http-api.md"
+        "knowledge/gateway/tools-invoke-http-api.md"
       ],
       "format": "markdown"
     },
@@ -4759,7 +4759,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/gateway-runbook.md"
+        "knowledge/gateway/gateway-runbook.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/configuration-examples.md": {
@@ -4771,7 +4771,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/configuration-examples-1.md"
+        "knowledge/gateway/configuration-examples-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/sandbox-vs-tool-policy-vs-elevated.md": {
@@ -4782,7 +4782,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "gateway/sandbox-vs-tool-policy-vs-elevated.md"
+        "knowledge/gateway/sandbox-vs-tool-policy-vs-elevated.md"
       ],
       "format": "markdown"
     },
@@ -4795,7 +4795,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/configuration.md"
+        "knowledge/plugins/configuration.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/cli-backends.md": {
@@ -4807,7 +4807,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/cli-backends.md"
+        "knowledge/plugins/cli-backends.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/remote.md": {
@@ -4819,7 +4819,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/remote-access.md"
+        "knowledge/gateway/remote-access.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/tailscale.md": {
@@ -4831,7 +4831,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/tailscale-1.md"
+        "knowledge/gateway/tailscale-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/authentication.md": {
@@ -4843,7 +4843,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/authentication-1.md"
+        "knowledge/gateway/authentication-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/doctor.md": {
@@ -4855,7 +4855,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/doctor-1.md"
+        "knowledge/plugins/doctor-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/logging.md": {
@@ -4867,7 +4867,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/gateway-logging.md"
+        "knowledge/gateway/gateway-logging.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/trusted-proxy-auth.md": {
@@ -4879,7 +4879,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/trusted-proxy-auth.md"
+        "knowledge/plugins/trusted-proxy-auth.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/network-model.md": {
@@ -4890,7 +4890,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "gateway/network-model.md"
+        "knowledge/gateway/network-model.md"
       ],
       "format": "markdown"
     },
@@ -4903,7 +4903,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/openshell-read_when-you-want-cloud-managed-sandboxes-instead-of-local-docker-you-are-setting-up-the-openshell-plugin-you-need-to-choose-between-mirror-and-remote-workspace-modes.md"
+        "knowledge/plugins/openshell-read_when-you-want-cloud-managed-sandboxes-instead-of-local-docker-you-are-setting-up-the-openshell-plugin-you-need-to-choose-between-mirror-and-remote-workspace-modes.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/protocol.md": {
@@ -4915,7 +4915,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/gateway-protocol.md"
+        "knowledge/plugins/gateway-protocol.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/troubleshooting.md": {
@@ -4927,7 +4927,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/troubleshooting.md"
+        "knowledge/plugins/troubleshooting.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/bonjour.md": {
@@ -4939,7 +4939,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/bonjour-discovery.md"
+        "knowledge/plugins/bonjour-discovery.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/local-models.md": {
@@ -4951,7 +4951,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/local-models-1.md"
+        "knowledge/gateway/local-models-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/sandboxing.md": {
@@ -4963,7 +4963,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/sandboxing.md"
+        "knowledge/plugins/sandboxing.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/configuration-reference.md": {
@@ -4975,7 +4975,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/configuration-reference.md"
+        "knowledge/plugins/configuration-reference.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/AGENTS.md": {
@@ -4986,7 +4986,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "docs/AGENTS.md"
+        "knowledge/openclaw/docs/AGENTS.md"
       ],
       "format": "markdown"
     },
@@ -5010,7 +5010,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "docs/brave-search.md"
+        "knowledge/openclaw/docs/brave-search.md"
       ],
       "format": "markdown"
     },
@@ -5023,7 +5023,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/matrix-push-rules-for-quiet-previews.md"
+        "knowledge/gateway/matrix-push-rules-for-quiet-previews.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/ci.md": {
@@ -5046,7 +5046,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "cli/proxy.md"
+        "knowledge/openclaw/cli/proxy.md"
       ],
       "format": "markdown"
     },
@@ -5059,7 +5059,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/openclaw-tasks.md"
+        "knowledge/gateway/openclaw-tasks.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/date-time.md": {
@@ -5070,7 +5070,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "docs/date-time.md"
+        "knowledge/openclaw/docs/date-time.md"
       ],
       "format": "markdown"
     },
@@ -5083,7 +5083,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/configuration-agents.md"
+        "knowledge/plugins/configuration-agents.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/config-channels.md": {
@@ -5095,7 +5095,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/configuration-channels.md"
+        "knowledge/plugins/configuration-channels.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/config-tools.md": {
@@ -5107,7 +5107,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/configuration-tools-and-custom-providers.md"
+        "knowledge/plugins/configuration-tools-and-custom-providers.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/diagnostics.md": {
@@ -5119,7 +5119,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/diagnostics-export.md"
+        "knowledge/plugins/diagnostics-export.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/security/audit-checks.md": {
@@ -5131,7 +5131,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/security-audit-checks.md"
+        "knowledge/plugins/security-audit-checks.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/help/faq-first-run.md": {
@@ -5143,7 +5143,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/faq-first-run-setup.md"
+        "knowledge/plugins/faq-first-run-setup.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/help/faq-models.md": {
@@ -5155,7 +5155,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/faq-models-and-auth.md"
+        "knowledge/gateway/faq-models-and-auth.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/help/testing-live.md": {
@@ -5167,7 +5167,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/testing-live-suites.md"
+        "knowledge/plugins/testing-live-suites.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/logging.md": {
@@ -5190,7 +5190,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "docs/network.md"
+        "knowledge/openclaw/docs/network.md"
       ],
       "format": "markdown"
     },
@@ -5202,7 +5202,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "docs/perplexity.md"
+        "knowledge/openclaw/docs/perplexity.md"
       ],
       "format": "markdown"
     },
@@ -5239,7 +5239,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/codex-harness-context-engine-port.md"
+        "knowledge/plugins/codex-harness-context-engine-port.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/architecture-internals.md": {
@@ -5251,7 +5251,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-architecture-internals.md"
+        "knowledge/plugins/plugin-architecture-internals.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/google-meet.md": {
@@ -5263,7 +5263,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/google-meet-plugin.md"
+        "knowledge/plugins/google-meet-plugin.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/sdk-subpaths.md": {
@@ -5275,7 +5275,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-sdk-subpaths.md"
+        "knowledge/plugins/plugin-sdk-subpaths.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/prose.md": {
@@ -5286,7 +5286,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "docs/prose.md"
+        "knowledge/openclaw/docs/prose.md"
       ],
       "format": "markdown"
     },
@@ -5299,7 +5299,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/elevenlabs.md"
+        "knowledge/plugins/elevenlabs.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/acp-agents-setup.md": {
@@ -5311,7 +5311,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/acp-agents-setup.md"
+        "knowledge/plugins/acp-agents-setup.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/browser-control.md": {
@@ -5323,7 +5323,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/browser-control-api.md"
+        "knowledge/plugins/browser-control-api.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/exec-approvals-advanced.md": {
@@ -5335,7 +5335,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/exec-approvals-advanced.md"
+        "knowledge/plugins/exec-approvals-advanced.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tools/trajectory.md": {
@@ -5347,7 +5347,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/trajectory-bundles.md"
+        "knowledge/plugins/trajectory-bundles.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/tts.md": {
@@ -5358,7 +5358,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "docs/tts.md"
+        "knowledge/openclaw/docs/tts.md"
       ],
       "format": "markdown"
     },
@@ -5370,7 +5370,7 @@
       "sourceType": "document",
       "project": "openclaw-docs",
       "pagesCreated": [
-        "docs/vps.md"
+        "knowledge/openclaw/docs/vps.md"
       ],
       "format": "markdown"
     },
@@ -5380,10 +5380,10 @@
       "contentHash": "sha256:60f7c65dca554de193ae2ffcc268aa8843bea7b3301f7cd12eabb3ffad68fefb",
       "sourceType": "quick",
       "project": "manual",
-      "articleTitle": "OpenClaw Wiki - 本地知识库",
+      "articleTitle": "OpenClaw Wiki - \u672c\u5730\u77e5\u8bc6\u5e93",
       "articleUrl": "/tmp/openclaw-wiki-readme.md",
       "pagesCreated": [
-        "projects/openclaw-wiki-本地知识库.md"
+        "knowledge/openclaw/projects/openclaw-wiki-\u672c\u5730\u77e5\u8bc6\u5e93.md"
       ],
       "format": "markdown"
     },
@@ -5395,7 +5395,7 @@
       "format": "pdf",
       "project": "manual",
       "pagesCreated": [
-        "gateway/openclaw-skills-ai-configuration-guide-pdf.md"
+        "knowledge/gateway/openclaw-skills-ai-configuration-guide-pdf.md"
       ]
     },
     "/tmp/test-watch.md": {
@@ -5407,7 +5407,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "concepts/测试文件.md"
+        "knowledge/openclaw/concepts/\u6d4b\u8bd5\u6587\u4ef6.md"
       ]
     },
     "README.md": {
@@ -5419,7 +5419,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "projects/openclaw-wiki-本地知识库-1.md"
+        "knowledge/openclaw/projects/openclaw-wiki-\u672c\u5730\u77e5\u8bc6\u5e93-1.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/CLAUDE.md": {
@@ -5551,7 +5551,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/matrix-migration.md"
+        "knowledge/plugins/matrix-migration.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/channels/yuanbao.md": {
@@ -5563,7 +5563,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/yuanbao.md"
+        "knowledge/plugins/yuanbao.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/crestodian.md": {
@@ -5575,7 +5575,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/crestodian.md"
+        "knowledge/plugins/crestodian.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/cli/migrate.md": {
@@ -5587,7 +5587,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/migrate.md"
+        "knowledge/plugins/migrate.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/agent-runtimes.md": {
@@ -5599,7 +5599,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/agent-runtimes.md"
+        "knowledge/plugins/agent-runtimes.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/agent.md": {
@@ -5611,7 +5611,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/agent-runtime.md"
+        "knowledge/gateway/agent-runtime.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/channel-docking.md": {
@@ -5623,7 +5623,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/channel-docking.md"
+        "knowledge/plugins/channel-docking.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/concepts/qa-matrix.md": {
@@ -5635,7 +5635,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/matrix-qa.md"
+        "knowledge/plugins/matrix-qa.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/opentelemetry.md": {
@@ -5647,7 +5647,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/opentelemetry-export.md"
+        "knowledge/plugins/opentelemetry-export.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/gateway/prometheus.md": {
@@ -5659,7 +5659,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/prometheus-metrics.md"
+        "knowledge/plugins/prometheus-metrics.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/help/gpt55-codex-agentic-parity-maintainers.md": {
@@ -5671,7 +5671,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "automation/gpt-5-5-codex-parity-maintainer-notes.md"
+        "knowledge/openclaw/automation/gpt-5-5-codex-parity-maintainer-notes.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/help/gpt55-codex-agentic-parity.md": {
@@ -5683,7 +5683,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "automation/gpt-5-5-codex-agentic-parity.md"
+        "knowledge/openclaw/automation/gpt-5-5-codex-agentic-parity.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/migrating-claude.md": {
@@ -5695,7 +5695,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/migrating-from-claude.md"
+        "knowledge/plugins/migrating-from-claude.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/install/migrating-hermes.md": {
@@ -5707,7 +5707,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/migrating-from-hermes.md"
+        "knowledge/plugins/migrating-from-hermes.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/codex-computer-use.md": {
@@ -5719,7 +5719,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/codex-computer-use.md"
+        "knowledge/plugins/codex-computer-use.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/compatibility.md": {
@@ -5731,7 +5731,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-compatibility.md"
+        "knowledge/plugins/plugin-compatibility.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/hooks.md": {
@@ -5743,7 +5743,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/plugin-hooks.md"
+        "knowledge/plugins/plugin-hooks.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/plugins/memory-lancedb.md": {
@@ -5755,7 +5755,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/memory-lancedb.md"
+        "knowledge/plugins/memory-lancedb.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/azure-speech.md": {
@@ -5767,7 +5767,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/azure-speech.md"
+        "knowledge/gateway/azure-speech.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/cerebras.md": {
@@ -5779,7 +5779,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/cerebras.md"
+        "knowledge/plugins/cerebras.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/deepinfra.md": {
@@ -5791,7 +5791,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/deepinfra.md"
+        "knowledge/plugins/deepinfra.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/gradium.md": {
@@ -5803,7 +5803,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/gradium.md"
+        "knowledge/gateway/gradium.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/inworld.md": {
@@ -5815,7 +5815,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/inworld.md"
+        "knowledge/gateway/inworld.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/providers/senseaudio.md": {
@@ -5827,7 +5827,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/senseaudio.md"
+        "knowledge/gateway/senseaudio.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/reference/application-modernization-plan.md": {
@@ -5839,7 +5839,7 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "plugins/application-modernization-plan.md"
+        "knowledge/plugins/application-modernization-plan.md"
       ]
     },
     "https://github.com/openclaw/openclaw/blob/main/docs/superpowers/specs/2026-04-22-tweakcn-custom-theme-import-design.md": {
@@ -5851,30 +5851,714 @@
       "format": "md",
       "project": "manual",
       "pagesCreated": [
-        "gateway/tweakcn-custom-theme-import-design.md"
+        "knowledge/gateway/tweakcn-custom-theme-import-design.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/active-memory.md": {
+      "ingestedAt": "2026-05-09T03:05:00.474808+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 22420,
+      "contentHash": "sha256:724e737e1bcabc20eb5a5b79f136d0a8c6e9c9e07d212db13a37b04b2a5127b6",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//active-memory-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/agent-loop.md": {
+      "ingestedAt": "2026-05-09T03:05:00.507854+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 9675,
+      "contentHash": "sha256:a54344feaa05d937e57c3202e62ede491de60216352d22252ce6276cff936ae2",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//agent-loop-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/agent-workspace.md": {
+      "ingestedAt": "2026-05-09T03:05:00.524448+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 7985,
+      "contentHash": "sha256:3c84273421321ee2219d9a6f900b041ceaf78f96ff73ef86a0469e15153ed201",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//agent-workspace-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/agent.md": {
+      "ingestedAt": "2026-05-09T03:05:00.548849+00:00",
+      "modifiedAt": 1778152619.7145483,
+      "sizeBytes": 5867,
+      "contentHash": "sha256:07fe0ca3c6bc306f95ac024b97b4e6e188c2d30786b936b8bd66a5f3ec012d4e",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//agent-runtime.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/architecture.md": {
+      "ingestedAt": "2026-05-09T03:05:00.581215+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 5967,
+      "contentHash": "sha256:e02e4716adfdfef644191e187b0cc2106f0077dc69fa03728675ab2807a1a4ec",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//gateway-architecture.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/automation.md": {
+      "ingestedAt": "2026-05-09T03:05:00.609017+00:00",
+      "modifiedAt": 1778152619.7145483,
+      "sizeBytes": 3849,
+      "contentHash": "sha256:54366a46cdb5585c30a05e004eca6662169918d468ea19dfa9608f417c482185",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//automation-tasks.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/compaction.md": {
+      "ingestedAt": "2026-05-09T03:05:00.629811+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 6522,
+      "contentHash": "sha256:387cda51bd18b19870e4bb2ef44e804f94b181a475dd85d135dc9399169a66b2",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//compaction-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/context-engine.md": {
+      "ingestedAt": "2026-05-09T03:05:00.651807+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 11635,
+      "contentHash": "sha256:2b2e4594ab71a0ba0e08bc9b680347689b0d8479ec75304d38aad9ed96c7b102",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//context-engine-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/context.md": {
+      "ingestedAt": "2026-05-09T03:05:00.665545+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 7993,
+      "contentHash": "sha256:b08fba7fafffd7597d8bf0ed8c24570c186f1463313bdd1310669884c4794ef6",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//context-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/control-ui.md": {
+      "ingestedAt": "2026-05-09T03:05:00.678967+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 5074,
+      "contentHash": "sha256:eb99ed1f13037a9fe47df6a5ab1053f85669e8f924afefbdc56878cdea461e98",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//control-ui-browser.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/dashboard.md": {
+      "ingestedAt": "2026-05-09T03:05:00.692732+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 3001,
+      "contentHash": "sha256:80f2bfbdb77a0cc5119e59a2b807539668bbfc76f1109f73544f2f6d6219f68a",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//dashboard-control-ui.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/debugging.md": {
+      "ingestedAt": "2026-05-09T03:05:00.705828+00:00",
+      "modifiedAt": 1778152619.7145483,
+      "sizeBytes": 3726,
+      "contentHash": "sha256:3ec84abe26377bbfde7b1fa29e64c812dbd37700ba92da214fdff768f1237450",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//debugging-openclaw.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/delegate-architecture.md": {
+      "ingestedAt": "2026-05-09T03:05:00.719034+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 13078,
+      "contentHash": "sha256:6b8b6d9047dc65662cf7bca3503f512510a5343843165c4dbac5a20a834c3658",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//delegate-architecture-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/diagnostics-flags.md": {
+      "ingestedAt": "2026-05-09T03:05:00.731792+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 2996,
+      "contentHash": "sha256:605423042f90e3fe4737ee609762383c8bfb277d2f782e334aea914b29b32f81",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//diagnostics-flags-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/dreaming.md": {
+      "ingestedAt": "2026-05-09T03:05:00.745023+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 7827,
+      "contentHash": "sha256:41a26ce8d43e81c6ed0607d69a8fbfc74312e3aac9b9e78a3f772e22ea173f3d",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//dreaming-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/environment.md": {
+      "ingestedAt": "2026-05-09T03:05:00.758121+00:00",
+      "modifiedAt": 1778152619.7145483,
+      "sizeBytes": 5289,
+      "contentHash": "sha256:4b084206bac04358f7702443556ecd05d448997dd041daea33f5ee1606a2c4b0",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//environment-variables.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/experimental-features.md": {
+      "ingestedAt": "2026-05-09T03:05:00.771183+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 3303,
+      "contentHash": "sha256:f36a81df2b002d4e020ee8afe4396f70b57cefa5623dff152829ae7cf177a0d4",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//experimental-features-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/features.md": {
+      "ingestedAt": "2026-05-09T03:05:00.784762+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 3197,
+      "contentHash": "sha256:26e926edd8898c9a4bcb0d62013845c886796acc6436f911a46b471e4d190b7c",
+      "sourceType": "report",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//features-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/formal-verification.md": {
+      "ingestedAt": "2026-05-09T03:05:00.798470+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 6152,
+      "contentHash": "sha256:5d9117fd7d7d4f6696bbaa799b2f163dbe1dec690cf1436a352bc637ae80e991",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//formal-verification-security-models.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/hooks.md": {
+      "ingestedAt": "2026-05-09T03:05:00.811738+00:00",
+      "modifiedAt": 1778152619.7145483,
+      "sizeBytes": 3156,
+      "contentHash": "sha256:5f2265d014f192f8ddfcb64403bfdf413baf8a01a2e3a39d3826fc6c2474d9f4",
+      "sourceType": "report",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//hooks-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/markdown-formatting.md": {
+      "ingestedAt": "2026-05-09T03:05:00.824654+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 4855,
+      "contentHash": "sha256:081ddf6343798945298572681598fca164f10730ddbbe4be91d58b19a00e8783",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//markdown-formatting-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/memory-builtin.md": {
+      "ingestedAt": "2026-05-09T03:05:00.837912+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 4760,
+      "contentHash": "sha256:5834cc5bb2902d07571f7f1c25fbe66162075f5c2081880d9e9705e1b04e05ea",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//builtin-memory-engine.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/memory-honcho.md": {
+      "ingestedAt": "2026-05-09T03:05:00.851456+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 5570,
+      "contentHash": "sha256:c17e905e0337f0ee55a52145949d2377688046e4bb5ef2c7f862c83a60a05e5f",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//honcho-memory.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/memory-qmd.md": {
+      "ingestedAt": "2026-05-09T03:05:00.864947+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 6391,
+      "contentHash": "sha256:6881ac4537bee132603f40bc0b1b40f359abd30587debe7a7e22dd441977e036",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//qmd-memory-engine.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/memory-search.md": {
+      "ingestedAt": "2026-05-09T03:05:00.878229+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 5234,
+      "contentHash": "sha256:4f583444a176009b14b11bc1ca89a287a3a18f8e495c2780c7c2041ff52fc725",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//memory-search-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/memory.md": {
+      "ingestedAt": "2026-05-09T03:05:00.892067+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 7179,
+      "contentHash": "sha256:1fc94f4786854c3c9f59b6766fba891e16b74642e001aa6227c568522fb65d20",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//memory-overview.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/memos-local-guide.md": {
+      "ingestedAt": "2026-05-09T03:05:00.905885+00:00",
+      "modifiedAt": 1778295889.5349104,
+      "sizeBytes": 6338,
+      "contentHash": "sha256:09a42acf2ecd21644c9c6eb7bc907973bca38d6e587d2b734f6691769f1cbe4c",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//memos-\u672c\u5730\u8bb0\u5fc6\u63d2\u4ef6\u6307\u5357.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/messages.md": {
+      "ingestedAt": "2026-05-09T03:05:00.919769+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 7044,
+      "contentHash": "sha256:6fe9a25b14cfe2356ff5252551c56d8c27734be0f131c11f9854544ef1754a27",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//messages-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/model-failover.md": {
+      "ingestedAt": "2026-05-09T03:05:00.934034+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 15508,
+      "contentHash": "sha256:29d30ddebd4c6dc6069ccd8c60b6b105b04534abe51f748a47cb30e3e054447f",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//model-failover-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/model-providers.md": {
+      "ingestedAt": "2026-05-09T03:05:00.948967+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 28152,
+      "contentHash": "sha256:ccaaf6ad5cf8f45b8b00b0148d232786f471050561980e0a58bb87ab6cddb111",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//model-providers-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/models-cli.md": {
+      "ingestedAt": "2026-05-09T03:05:00.962431+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 6381,
+      "contentHash": "sha256:ff6dbb745f3cba4583f7fa7fcd7319084733a3ce9cff91870005903601cd5a5f",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//models-cli-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/models.md": {
+      "ingestedAt": "2026-05-09T03:05:00.976457+00:00",
+      "modifiedAt": 1778152619.7145483,
+      "sizeBytes": 13227,
+      "contentHash": "sha256:d1663db2a8fd53edb93e9c045774d7616259df972d87f55c178a868e8519cad3",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//models-cli-2.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/multi-agent.md": {
+      "ingestedAt": "2026-05-09T03:05:00.990908+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 19180,
+      "contentHash": "sha256:1b3e1ba03330864a4c4e8fd35c938041d184fd7935eedf646f77d789c8d3e5f3",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//multi-agent-routing.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/oauth.md": {
+      "ingestedAt": "2026-05-09T03:05:01.007020+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 6678,
+      "contentHash": "sha256:4c195592056beee6870a2673f63496e72076140018423c25eb3615e55d21349a",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//oauth-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/presence.md": {
+      "ingestedAt": "2026-05-09T03:05:01.024267+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 3644,
+      "contentHash": "sha256:c96e586ab273ed55084c13fb6aa0c40f071ccb8033a94eb9392017a9c55d70a5",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//presence-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/qa-e2e-automation.md": {
+      "ingestedAt": "2026-05-09T03:05:01.040592+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 12528,
+      "contentHash": "sha256:b4df3919a0b4bb110a729cdfcef60711ffffb751cfba30623692c69f4c816de0",
+      "sourceType": "report",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//qa-e2e-automation-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/queue.md": {
+      "ingestedAt": "2026-05-09T03:05:01.054315+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 4608,
+      "contentHash": "sha256:e92111f49254c8ef4f98c0efe0fb375f4b6aab7370c5fc75659777d74c449b4f",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//command-queue.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/retry.md": {
+      "ingestedAt": "2026-05-09T03:05:01.067931+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 2256,
+      "contentHash": "sha256:e3c1ff8238ad412c475e86a975b26ba8c9c8c7f1ad6a3e8410017f2964aad05e",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//retry-policy.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/session-pruning.md": {
+      "ingestedAt": "2026-05-09T03:05:01.081939+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 3470,
+      "contentHash": "sha256:24ac235b288cbbe1271d8752700852874b00269e4d230fbc1f9ad4caea28688f",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//session-pruning-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/session-tool.md": {
+      "ingestedAt": "2026-05-09T03:05:01.096559+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 7168,
+      "contentHash": "sha256:647d5475607c9d293470366a437eacb96a3b0faef30168b69248bdcfb44359ea",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//session-tools.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/session.md": {
+      "ingestedAt": "2026-05-09T03:05:01.110616+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 4083,
+      "contentHash": "sha256:6cd17901872f83977d4f60fc97bf0f4de38965d64613f0c4be19b150cb17686c",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//session-management.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/soul.md": {
+      "ingestedAt": "2026-05-09T03:05:01.124019+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 3791,
+      "contentHash": "sha256:6fc0df5a549196a0267018a476daaed4cf0f50c55b78cde554b28228b726719b",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//soul-md-personality-guide.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/streaming.md": {
+      "ingestedAt": "2026-05-09T03:05:01.138444+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 9172,
+      "contentHash": "sha256:3bf7fe098e834274d694007c812b367080c7c5f5efe966ba1c7695718d61aa3e",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//streaming-and-chunking.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/system-prompt.md": {
+      "ingestedAt": "2026-05-09T03:05:01.153071+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 10172,
+      "contentHash": "sha256:e594b641fada6102d461840c1d7ff9ff5457eb1f0628b08213af8c20272327b6",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//system-prompt-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/taskflow.md": {
+      "ingestedAt": "2026-05-09T03:05:01.167176+00:00",
+      "modifiedAt": 1778152619.7145483,
+      "sizeBytes": 3306,
+      "contentHash": "sha256:93c3ef55001f3ffe9be7c7c40c740798657a2f94e1b3fd6b08429799d90c91f1",
+      "sourceType": "report",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//task-flow.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/tasks.md": {
+      "ingestedAt": "2026-05-09T03:05:01.181259+00:00",
+      "modifiedAt": 1778152619.7145483,
+      "sizeBytes": 4990,
+      "contentHash": "sha256:360748413f4d44624bcd58b9b204039d7964bc0cddec6b13afe56d7f292b0496",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//background-tasks.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/threat-model-contributing.md": {
+      "ingestedAt": "2026-05-09T03:05:01.194841+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 3904,
+      "contentHash": "sha256:ac2343afc59c9ee14cbd0147b7a2c234b6e9081cdf6b0dbe1332e977648480d8",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//contributing-to-the-threat-model.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/threat-model.md": {
+      "ingestedAt": "2026-05-09T03:05:01.209463+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 9149,
+      "contentHash": "sha256:0c4f604347cd3e1ea9eeccaab40beed266e878e2d3a419b37609ed5ec58e49a5",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//threat-model-mitre-atlas.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/timezone.md": {
+      "ingestedAt": "2026-05-09T03:05:01.223414+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 2663,
+      "contentHash": "sha256:10f0471e9aa426079a3362ded8169cf8aeea5e05e3f7f7f6bd89796f04059c45",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//timezones.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/troubleshooting.md": {
+      "ingestedAt": "2026-05-09T03:05:01.237451+00:00",
+      "modifiedAt": 1778152619.7145483,
+      "sizeBytes": 5148,
+      "contentHash": "sha256:b071fe097c8273b35df2a7abbf814650120a722d47bbb3cd6c0a6fcd9bac1111",
+      "sourceType": "report",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//troubleshooting-openclaw.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/tui.md": {
+      "ingestedAt": "2026-05-09T03:05:01.251738+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 5814,
+      "contentHash": "sha256:6e921456c8bbc3eed6bc3204801a216b6e2183d4dc0e06dc062402d8588d40d9",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//terminal-ui-tui.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/typebox.md": {
+      "ingestedAt": "2026-05-09T03:05:01.266357+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 9557,
+      "contentHash": "sha256:0ffd35f22656604caf1f6ae190e3746e836d94d3be93abc0fe9cc1311dc5f9de",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//typebox-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/typing-indicators.md": {
+      "ingestedAt": "2026-05-09T03:05:01.280280+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 2725,
+      "contentHash": "sha256:a41cf9e8971fef4a9b9df3abbb232fc4a99cb30879ab09f3a7a2015af2416d4a",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//typing-indicators-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/usage-tracking.md": {
+      "ingestedAt": "2026-05-09T03:05:01.294315+00:00",
+      "modifiedAt": 1778152619.7225485,
+      "sizeBytes": 3363,
+      "contentHash": "sha256:bdb35420075e736dd4b553b08ca999d113e9daa2c06b58237e08d3213642edf6",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//usage-tracking-1.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/web.md": {
+      "ingestedAt": "2026-05-09T03:05:01.308620+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 3103,
+      "contentHash": "sha256:4cfe6629b73e4dfc1e0654f95cdb8ccae710ebf7838e504035f431654f4d18d6",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//web-surfaces-gateway.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/webchat.md": {
+      "ingestedAt": "2026-05-09T03:05:01.322698+00:00",
+      "modifiedAt": 1778152619.7185483,
+      "sizeBytes": 3450,
+      "contentHash": "sha256:13949c54790a5dd6a33531dc4fc5d646ee92a4ab4be6e32703172d1d63413fa1",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//webchat-gateway-websocket-ui.md"
+      ]
+    },
+    "knowledge/openclaw/concepts/\u6d4b\u8bd5\u6587\u4ef6.md": {
+      "ingestedAt": "2026-05-09T03:05:01.336785+00:00",
+      "modifiedAt": 1778152619.7145483,
+      "sizeBytes": 332,
+      "contentHash": "sha256:0298cd2a41d93fb4e5a4c35027a2a7ea92499421fa99786d412d6e208a4d4384",
+      "sourceType": "article",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "knowledge/openclaw/concepts//\u6d4b\u8bd5\u6587\u4ef6-1.md"
       ]
     }
   },
   "last_updated": "2026-04-24T07:08:43Z",
   "projects": {
     "openclaw-docs": {
-      "name": "OpenClaw 官方文档",
+      "name": "OpenClaw \u5b98\u65b9\u6587\u6863",
       "sourceUrl": "https://docs.openclaw.ai/",
       "gitRemote": "https://github.com/openclaw/openclaw.git",
       "sourceType": "git-clone"
     },
     "five-lessons": {
-      "name": "构建生产级 OpenClaw 插件的五个经验教训",
+      "name": "\u6784\u5efa\u751f\u4ea7\u7ea7 OpenClaw \u63d2\u4ef6\u7684\u4e94\u4e2a\u7ecf\u9a8c\u6559\u8bad",
       "sourceUrl": "https://clawhub.ai/blog/five-lessons-from-building-a-production-openclaw-plugin",
       "sourceType": "web"
     },
     "openclaw-wiki-lancedb": {
-      "name": "OpenClaw Wiki LanceDB 项目",
+      "name": "OpenClaw Wiki LanceDB \u9879\u76ee",
       "sourceUrl": "https://github.com/openclaw/openclaw-wiki-lancedb",
       "sourceType": "git-clone"
     },
     "manual": {
-      "name": "手动导入",
+      "name": "\u624b\u52a8\u5bfc\u5165",
       "sourceUrl": null,
       "sourceType": "local-file"
     }

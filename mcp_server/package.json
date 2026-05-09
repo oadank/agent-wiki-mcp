@@ -1,0 +1,19 @@
+{
+  "name": "openclaw-wiki-mcp",
+  "version": "1.0.0",
+  "description": "OpenClaw Wiki MCP Server - 知识库搜索 + 记忆层",
+  "type": "module",
+  "main": "server.js",
+  "bin": {
+    "openclaw-wiki-mcp": "./server.js"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.25.0"
+  },
+  "keywords": ["mcp", "wiki", "knowledge-base", "openclaw"],
+  "license": "MIT"
+}
