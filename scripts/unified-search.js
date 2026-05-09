@@ -17,7 +17,7 @@ const path = require('path');
 const VAULT = process.env.WIKI_VAULT_PATH || path.join(__dirname, '..');
 const INDEX_PATH = path.join(VAULT, 'index.md');
 const MANIFEST_PATH = path.join(VAULT, '.manifest.json');
-const VECTOR_SEARCH = path.join(VAULT, '.lancedb', 'wiki-vector-search.js');
+const VECTOR_SEARCH = path.join(VAULT, '.pgvector', 'wiki-pgvector.py');
 const QUERY = process.argv[2];
 const LIMIT = parseInt(process.argv[3]) || 10;
 const MODE = process.argv.includes('--mode') 
@@ -120,24 +120,36 @@ function grepSearch() {
 // ============================================================
 function vectorSearch() {
   const results = new Map();
-  
+
   try {
-    const output = execSync(`node "${VECTOR_SEARCH}" search "${QUERY.replace(/"/g, '\\"')}" ${LIMIT} 2>&1`, { encoding: 'utf8', timeout: 60000 });
-    const lines = output.split('\n').filter(l => /^\[\d/.test(l.trim()));
-    for (const line of lines) {
-      const match = line.match(/\[([\d.]+)\]\s+\((\w+)\)\s+(\S+)\s+—\s+(.+)/);
+    const output = execSync(`python3 "${VECTOR_SEARCH}" search "${QUERY.replace(/"/g, '\\"')}" ${LIMIT} 2>&1`, { encoding: 'utf8', timeout: 60000 });
+    const lines = output.split('\n');
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      // 匹配 "[N] path" 格式
+      const match = line.match(/\[(\d+)\]\s+(.+)/);
       if (match) {
-        const score = parseFloat(match[1]);
-        const vecSource = match[2];
-        const pagePath = match[3];
-        const title = match[4];
-        results.set(pagePath, {
-          path: pagePath,
-          title: title,
-          source: 'vector',
-          score: score,
-          vecSource: vecSource
-        });
+        const pagePath = match[2].trim();
+        // 解析后续行获取标题和相似度
+        let title = '';
+        let similarity = 0;
+        for (let j = i + 1; j < lines.length && lines[j].startsWith('    '); j++) {
+          if (lines[j].includes('标题:')) {
+            title = lines[j].split('标题:')[1].trim();
+          }
+          if (lines[j].includes('相似度:')) {
+            similarity = parseFloat(lines[j].split('相似度:')[1].trim());
+          }
+        }
+        if (pagePath) {
+          results.set(pagePath, {
+            path: pagePath,
+            title: title || pagePath,
+            source: 'vector',
+            score: similarity,
+            vecSource: 'pgvector'
+          });
+        }
       }
     }
   } catch(e) {}
