@@ -2,9 +2,13 @@
 """
 Wiki Vector Search - PostgreSQL + pgvector (N5105 优化版)
 用法:
-  python3 wiki-pgvector.py build              # 重建向量索引（延迟索引策略）
+  python3 wiki-pgvector.py build              # 全量重建索引（延迟索引策略）
+  python3 wiki-pgvector.py incremental        # 增量入库（只入库新增页面）
+  python3 wiki-pgvector.py add <文件路径>     # 单文件入库
+  python3 wiki-pgvector.py delete <文件路径>  # 单文件删除
   python3 wiki-pgvector.py search "关键词" 5  # 搜索
   python3 wiki-pgvector.py clean              # 清理已删除页面
+  python3 wiki-pgvector.py reindex            # 重建 HNSW 索引
 """
 
 import os
@@ -238,12 +242,134 @@ def clean_deleted():
         if not full_path.exists():
             deleted.append(path)
             cur.execute("DELETE FROM wiki_vectors WHERE path = %s", (path,))
+            time.sleep(0.5)  # 每条删除后等待
 
     conn.commit()
     cur.close()
     conn.close()
 
     print(f"✅ 已清理 {len(deleted)} 条")
+
+
+def incremental():
+    """增量入库（只入库新增页面，不卡系统）"""
+    print("📄 收集页面...")
+    pages = collect_pages()
+
+    conn = psycopg2.connect(**PG_CONN)
+    cur = conn.cursor()
+
+    # 查询已有页面
+    cur.execute("SELECT path FROM wiki_vectors")
+    existing = set(row[0] for row in cur.fetchall())
+    cur.close()
+    conn.close()
+
+    # 筛选新增页面
+    new_pages = [p for p in pages if p["path"] not in existing]
+    total = len(new_pages)
+
+    if total == 0:
+        print("✅ 无新增页面")
+        return
+
+    print(f"  新增页面: {total}")
+
+    # 单条入库（轻量，不卡）
+    success = 0
+    conn = psycopg2.connect(**PG_CONN)
+    cur = conn.cursor()
+
+    for i, page in enumerate(new_pages):
+        print(f"  进度: {i+1}/{total}")
+
+        try:
+            emb = get_embedding([clean_nul(page["content"])])[0]
+            cur.execute("""
+                INSERT INTO wiki_vectors (path, title, summary, content, embedding, category)
+                VALUES (%s, %s, %s, %s, %s, %s)
+            """, (page["path"], clean_nul(page["title"]), clean_nul(page["summary"]),
+                  clean_nul(page["content"]), emb, page["category"]))
+            conn.commit()
+            success += 1
+            time.sleep(3)  # 每条后等待，避免卡死
+        except Exception as e:
+            print(f"  ⚠️ 失败: {page['path']}: {e}")
+            continue
+
+    cur.close()
+    conn.close()
+    print(f"✅ 增量入库完成: {success}/{total} 页")
+
+
+def add_single(filepath):
+    """单文件入库"""
+    full_path = Path(VAULT) / filepath
+    if not full_path.exists():
+        print(f"❌ 文件不存在: {filepath}")
+        return
+
+    content = full_path.read_text(encoding="utf-8")
+    title, summary = extract_meta(content, full_path.name)
+
+    conn = psycopg2.connect(**PG_CONN)
+    cur = conn.cursor()
+
+    # 检查是否已存在
+    cur.execute("SELECT id FROM wiki_vectors WHERE path = %s", (filepath))
+    if cur.fetchone():
+        print(f"⚠️ 页面已存在，将更新")
+        cur.execute("DELETE FROM wiki_vectors WHERE path = %s", (filepath))
+        conn.commit()
+
+    try:
+        emb = get_embedding([clean_nul(content[:3000])])[0]
+        cur.execute("""
+            INSERT INTO wiki_vectors (path, title, summary, content, embedding, category)
+            VALUES (%s, %s, %s, %s, %s, %s)
+        """, (filepath, clean_nul(title), clean_nul(summary),
+              clean_nul(content[:3000]), emb, Path(filepath).parent.parts[0] if "/" in filepath else "root"))
+        conn.commit()
+        print(f"✅ 已入库: {filepath}")
+    except Exception as e:
+        print(f"❌ 入库失败: {e}")
+
+    cur.close()
+    conn.close()
+
+
+def delete_single(filepath):
+    """单文件删除"""
+    conn = psycopg2.connect(**PG_CONN)
+    cur = conn.cursor()
+
+    cur.execute("SELECT id FROM wiki_vectors WHERE path = %s", (filepath))
+    if not cur.fetchone():
+        print(f"❌ 页面不存在: {filepath}")
+        cur.close()
+        conn.close()
+        return
+
+    cur.execute("DELETE FROM wiki_vectors WHERE path = %s", (filepath))
+    conn.commit()
+    cur.close()
+    conn.close()
+    print(f"✅ 已删除: {filepath}")
+
+
+def reindex():
+    """重建 HNSW 索引"""
+    print("🔧 重建 HNSW 索引...")
+    conn = psycopg2.connect(**PG_CONN)
+    cur = conn.cursor()
+
+    cur.execute("DROP INDEX IF EXISTS wiki_embedding_idx")
+    cur.execute("CREATE INDEX wiki_embedding_idx ON wiki_vectors USING hnsw (embedding vector_cosine_ops)")
+    conn.commit()
+
+    cur.close()
+    conn.close()
+    print("✅ 索引已重建")
 
 
 def main():
@@ -255,6 +381,18 @@ def main():
 
     if cmd == "build":
         build_index()
+    elif cmd == "incremental":
+        incremental()
+    elif cmd == "add":
+        if len(sys.argv) < 3:
+            print("用法: python3 wiki-pgvector.py add <文件路径>")
+            sys.exit(1)
+        add_single(sys.argv[2])
+    elif cmd == "delete":
+        if len(sys.argv) < 3:
+            print("用法: python3 wiki-pgvector.py delete <文件路径>")
+            sys.exit(1)
+        delete_single(sys.argv[2])
     elif cmd == "search":
         if len(sys.argv) < 3:
             print("用法: python3 wiki-pgvector.py search \"关键词\" [数量]")
@@ -264,6 +402,8 @@ def main():
         search(query, top_k)
     elif cmd == "clean":
         clean_deleted()
+    elif cmd == "reindex":
+        reindex()
     else:
         print(f"未知命令: {cmd}")
         print(__doc__)
