@@ -91,6 +91,38 @@ async function runScript(scriptName, args = [], timeout = 60000) {
   });
 }
 
+// 调用 Python 脚本（pgvector）
+async function runPython(scriptName, args = [], timeout = 60000) {
+  const scriptPath = join(WIKI_DIR, '.pgvector', scriptName);
+  if (!existsSync(scriptPath)) {
+    throw new Error(`脚本不存在: ${scriptPath}`);
+  }
+
+  return new Promise((resolve, reject) => {
+    const proc = spawn('python3', [scriptPath, ...args], {
+      cwd: WIKI_DIR,
+      timeout,
+      env: { ...process.env, WIKI_VAULT_PATH: WIKI_DIR }
+    });
+
+    let stdout = '';
+    let stderr = '';
+
+    proc.stdout.on('data', (data) => stdout += data);
+    proc.stderr.on('data', (data) => stderr += data);
+
+    proc.on('close', (code) => {
+      if (code === 0) {
+        resolve(stdout);
+      } else {
+        reject(new Error(stderr || `脚本退出码: ${code}`));
+      }
+    });
+
+    proc.on('error', (err) => reject(err));
+  });
+}
+
 async function readMarkdownFile(filePath) {
   if (!existsSync(filePath)) {
     return null;
@@ -274,9 +306,58 @@ server.tool(
   }
 );
 
+// 10. wiki_add - 单文件入库
+server.tool(
+  'wiki_add',
+  '单文件入库到向量数据库。入库后索引自动更新。',
+  {
+    filepath: z.string().describe('文件路径（相对于 wiki 根目录）')
+  },
+  async ({ filepath }) => {
+    try {
+      const output = await runPython('wiki-pgvector.py', ['add', filepath], 60000);
+      return { content: [{ type: 'text', text: output }] };
+    } catch (err) {
+      return { content: [{ type: 'text', text: `入库失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
+// 11. wiki_delete - 单文件删除
+server.tool(
+  'wiki_delete',
+  '从向量数据库删除单文件。删除后索引自动更新。',
+  {
+    filepath: z.string().describe('文件路径（相对于 wiki 根目录）')
+  },
+  async ({ filepath }) => {
+    try {
+      const output = await runPython('wiki-pgvector.py', ['delete', filepath], 30000);
+      return { content: [{ type: 'text', text: output }] };
+    } catch (err) {
+      return { content: [{ type: 'text', text: `删除失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
+// 12. wiki_incremental - 增量入库
+server.tool(
+  'wiki_incremental',
+  '增量入库。扫描新增页面入库，不重建索引，适合日常维护。',
+  {},
+  async () => {
+    try {
+      const output = await runPython('wiki-pgvector.py', ['incremental'], 300000);
+      return { content: [{ type: 'text', text: output }] };
+    } catch (err) {
+      return { content: [{ type: 'text', text: `增量入库失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
 // ── 记忆层工具 ──────────────────────────────────────────────
 
-// 10. wiki_remember - 记忆（知识库层，共享）
+// 13. wiki_remember - 记忆（知识库层，共享）
 server.tool(
   'wiki_remember',
   '记录共享知识到 Wiki。用于项目决策、用户偏好、技术事实等可跨平台共享的信息。',
@@ -318,7 +399,7 @@ ${content}
   }
 );
 
-// 11. wiki_recall - 查询记忆
+// 14. wiki_recall - 查询记忆
 server.tool(
   'wiki_recall',
   '查询共享知识/记忆。搜索 user-preferences、project-decisions 等共享内容。',
@@ -338,7 +419,7 @@ server.tool(
   }
 );
 
-// 12. wiki_explain - 解释知识来源
+// 15. wiki_explain - 解释知识来源
 server.tool(
   'wiki_explain',
   '解释 Wiki 页面来源。显示页面的原始 URL、消化时间、关联文档。',

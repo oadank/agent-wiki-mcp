@@ -88,8 +88,11 @@ agent-wiki-mcp/
 | `wiki_ingest_status` | 消化状态 | 待消化源文件 |
 | `wiki_ingest` | 消化文件 | raw → wiki 页面 |
 | `wiki_pages` | 列出页面 | 查看所有 wiki 页面 |
-| `wiki_rebuild_index` | 重建索引 | 更新搜索索引 |
+| `wiki_rebuild_index` | 重建索引 | 全量重建（慎用） |
 | `wiki_validate` | 验证结构 | 检查 wiki 完整性 |
+| `wiki_add` | 单文件入库 | 新增页面到向量库 |
+| `wiki_delete` | 单文件删除 | 删除页面及向量 |
+| `wiki_incremental` | 增量入库 | 扫描新增页面入库 |
 | `wiki_remember` | 记录知识 | 保存共享知识 |
 | `wiki_recall` | 查询记忆 | 搜索共享知识 |
 | `wiki_explain` | 解释来源 | 显示页面原始 URL |
