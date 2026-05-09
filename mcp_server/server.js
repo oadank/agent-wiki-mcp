@@ -630,29 +630,35 @@ function detectChanges(projectName) {
   const meta = loadMeta(projectName) || { lastSession: new Date().toISOString() };
   const changes = [];
 
-  // 方法1: git status（只检查是否有未提交的改动）
-  try {
-    const gitStatus = execSync(
-      'git status --porcelain 2>/dev/null || echo ""',
-      { cwd: proj.path, encoding: 'utf-8', timeout: 5000 }
-    ).trim();
-    if (gitStatus) {
-      const files = gitStatus.split('\n').filter(s => s);
-      if (files.length > 0) {
-        changes.push({ type: 'git_uncommitted', count: files.length, files });
-      }
-    }
+  // 检查是否是 git 仓库（必须有 .git 目录）
+  const isGitRepo = existsSync(join(proj.path, '.git'));
 
-    // 检查最新 commit
-    const lastCommit = execSync(
-      'git rev-parse HEAD 2>/dev/null || echo ""',
-      { cwd: proj.path, encoding: 'utf-8', timeout: 5000 }
-    ).trim();
-    if (lastCommit && lastCommit !== meta.lastCommit) {
-      changes.push({ type: 'git_new_commit', commit: lastCommit });
+  // 方法1: git status（仅在 git 仓库内执行）
+  if (isGitRepo) {
+    try {
+      const gitStatus = execSync(
+        'git status --porcelain 2>/dev/null || echo ""',
+        { cwd: proj.path, encoding: 'utf-8', timeout: 5000 }
+      ).trim();
+      if (gitStatus) {
+        const files = gitStatus.split('\n').filter(s => s);
+        // 限制最多记录 20 个文件，避免 meta.json 过大
+        if (files.length > 0) {
+          changes.push({ type: 'git_uncommitted', count: files.length, files: files.slice(0, 20) });
+        }
+      }
+
+      // 检查最新 commit
+      const lastCommit = execSync(
+        'git rev-parse HEAD 2>/dev/null || echo ""',
+        { cwd: proj.path, encoding: 'utf-8', timeout: 5000 }
+      ).trim();
+      if (lastCommit && lastCommit !== meta.lastCommit) {
+        changes.push({ type: 'git_new_commit', commit: lastCommit });
+      }
+    } catch (e) {
+      // git 命令失败，跳过
     }
-  } catch (e) {
-    // 非 git 项目或 git 命令失败，跳过
   }
 
   // 方法2: 检查目录下最近修改的文件（排除 node_modules 等）
