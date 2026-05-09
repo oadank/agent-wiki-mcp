@@ -6,13 +6,13 @@
       "path": "/opt/agent-wiki-mcp",
       "status": "active",
       "createdAt": "2026-05-09T10:56:14.354Z",
-      "lastCheck": "2026-05-09T15:44:00.990Z"
+      "lastCheck": "2026-05-10 00:06"
     },
     "agents-to-im": {
       "path": "/opt/.agents-to-im-claude",
       "status": "active",
       "createdAt": "2026-05-09T14:38:00.000Z",
-      "lastCheck": "2026-05-09T15:44:01.989Z",
+      "lastCheck": "2026-05-10 00:07",
       "description": "飞书桥接软件（Claude + Codex 两个实例 + 全局二进制程序）",
       "relatedPaths": [
         "/opt/.agents-to-im-codex",
