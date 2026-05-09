@@ -292,7 +292,7 @@ def incremental():
                   clean_nul(page["content"]), emb, page["category"]))
             conn.commit()
             success += 1
-            time.sleep(3)  # 每条后等待，避免卡死
+            time.sleep(1)  # 每条后等待，避免卡死
         except Exception as e:
             print(f"  ⚠️ 失败: {page['path']}: {e}")
             continue
