@@ -99,6 +99,39 @@ agent-wiki-mcp/
 
 ---
 
+## MCP 配置
+
+### Claude Code
+
+**文件**: `/opt/.mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "openclaw-wiki": {
+      "command": "node",
+      "args": ["/opt/.openclaw/workspace/skills/agent-wiki-mcp/mcp_server/server.js"]
+    }
+  }
+}
+```
+
+### Codex
+
+**文件**: `~/.codex/config.toml`
+
+```toml
+[mcp_servers.openclaw-wiki]
+command = "node"
+args = ["/opt/.openclaw/workspace/skills/agent-wiki-mcp/mcp_server/server.js"]
+```
+
+### Cursor / VS Code
+
+参考 `mcp_server/MCP_CONFIG.md`
+
+---
+
 ## 快速搜索
 
 ```bash
