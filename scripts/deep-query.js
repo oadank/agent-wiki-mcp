@@ -14,7 +14,7 @@ const VAULT = process.env.WIKI_VAULT_PATH || path.join(__dirname, '..');
 const UNIFIED_SEARCH = path.join(__dirname, 'unified-search.js');
 
 // LLM 配置
-const LLM_BASE_URL = process.env.LLM_BASE_URL || 'http://host.docker.internal:4000';
+const LLM_BASE_URL = process.env.LLM_BASE_URL || 'http://localhost:4000';
 const LLM_API_KEY = process.env.LLM_API_KEY || '200418';
 const LLM_MODEL = process.env.LLM_MODEL || 'auto';
 

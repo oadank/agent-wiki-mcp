@@ -1,131 +1,112 @@
 #!/usr/bin/env node
 /**
  * wiki-query: 在 wiki 中搜索并回答问题
- * 用法: node scripts/query.js "你的问题" [--index-only]
+ * 用法: node scripts/query.js "你的问题" [数量]
  */
 
 const fs = require('fs');
 const path = require('path');
 
-const VAULT = process.env.OBSIDIAN_VAULT_PATH || '/root/.openclaw/workspace/agent-wiki-mcp';
-const INDEX_PATH = path.join(VAULT, 'index.md');
+const VAULT = process.env.WIKI_VAULT_PATH || '/opt/.openclaw/workspace/skills/agent-wiki-mcp';
 
-function loadIndex() {
-  if (!fs.existsSync(INDEX_PATH)) return [];
-  const content = fs.readFileSync(INDEX_PATH, 'utf8');
-  const pages = [];
-  for (const match of content.matchAll(/\[\[(.+?)\]\]/g)) {
-    pages.push(match[1]);
+function scanDir(dir, candidates, terms, depth = 0) {
+  if (depth > 3 || !fs.existsSync(dir)) return;
+  for (const file of fs.readdirSync(dir)) {
+    const fullpath = path.join(dir, file);
+    const stat = fs.statSync(fullpath);
+    if (stat.isDirectory()) {
+      scanDir(fullpath, candidates, terms, depth + 1);
+    } else if (file.endsWith('.md')) {
+      try {
+        const content = fs.readFileSync(fullpath, 'utf8');
+        const relPath = path.relative(VAULT, fullpath);
+        const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n/);
+        const frontmatter = fmMatch ? fmMatch[1] : '';
+        const titleMatch = frontmatter.match(/title:\s*"?([^"\n]+)"?/);
+        const title = titleMatch ? titleMatch[1].trim() : file.replace('.md', '');
+
+        let score = 0;
+        const lowerTitle = title.toLowerCase();
+        const lowerContent = content.toLowerCase();
+        for (const term of terms) {
+          if (lowerTitle.includes(term)) score += 10;
+          if (lowerContent.includes(term)) score += 1;
+        }
+
+        if (score > 0) {
+          candidates.push({ path: relPath, title, score });
+        }
+      } catch (e) {}
+    }
   }
-  return pages;
 }
 
-function findCandidatePages(query) {
+function findPages(query, limit = 10) {
   const terms = query.toLowerCase().split(/\s+/).filter(t => t.length > 1);
   const candidates = [];
 
-  for (const cat of ['concepts', 'entities', 'skills', 'references', 'synthesis']) {
+  for (const cat of ['knowledge', 'shared']) {
     const dir = path.join(VAULT, cat);
-    if (!fs.existsSync(dir)) continue;
-    for (const file of fs.readdirSync(dir)) {
-      if (!file.endsWith('.md')) continue;
-      const fullpath = path.join(dir, file);
-      const content = fs.readFileSync(fullpath, 'utf8');
-      const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n/);
-      const frontmatter = fmMatch ? fmMatch[1] : '';
-      const titleMatch = frontmatter.match(/title:\s*"?([^"]+)"?/);
-      const tagsMatch = frontmatter.match(/tags:\s*\[([^\]]*)\]/);
-      const summaryMatch = frontmatter.match(/summary:\s*"?([^"]+)"?/);
-      const title = titleMatch ? titleMatch[1].trim().toLowerCase() : file.replace('.md', '').toLowerCase();
-      const tags = tagsMatch ? tagsMatch[1].toLowerCase() : '';
-      const summary = summaryMatch ? summaryMatch[1].toLowerCase() : '';
-
-      let score = 0;
-      for (const term of terms) {
-        if (title.includes(term)) score += 10;
-        if (tags.includes(term)) score += 5;
-        if (summary.includes(term)) score += 3;
-      }
-
-      if (score > 0) {
-        candidates.push({ path: fullpath, title: titleMatch ? titleMatch[1].trim() : file.replace('.md', ''), category: cat, score, frontmatter: content.substring(0, content.indexOf('\n---\n') + 5) || '', content });
-      }
-    }
+    scanDir(dir, candidates, terms);
   }
 
   candidates.sort((a, b) => b.score - a.score);
-  return candidates.slice(0, 5);
+  return candidates.slice(0, limit);
 }
 
-async function queryWiki(question, indexOnly = false) {
-  console.log(`🔍 查询: ${question}`);
-  const indexPages = loadIndex();
-  console.log(`📑 索引中有 ${indexPages.length} 个页面`);
-  const candidates = findCandidatePages(question);
-
-  if (candidates.length === 0) {
-    console.log('❌ 没有找到相关页面');
-    return '没有找到相关内容。';
+function listPages(limit = 30) {
+  const pages = [];
+  for (const cat of ['knowledge', 'shared']) {
+    const dir = path.join(VAULT, cat);
+    scanDirAll(dir, pages);
   }
+  return pages.slice(0, limit);
+}
 
-  console.log(`📋 找到 ${candidates.length} 个候选页面:`);
-  for (const c of candidates) {
-    console.log(`  - ${c.category}/${c.title} (score: ${c.score})`);
-  }
-
-  let context = '';
-  for (const c of candidates) {
-    const content = indexOnly ? c.frontmatter : c.content;
-    context += `\n\n### ${c.title} (${c.category})\n${content}\n`;
-  }
-
-  const prompt = `你是一个知识库助手。请根据以下 wiki 页面内容回答问题。\n\n**问题**: ${question}\n\n**相关页面**:\n${context}\n\n**规则**:\n1. 只基于提供的 wiki 页面回答\n2. 如果信息不足，说明哪些内容缺失\n3. 使用 [[wikilink]] 格式引用相关页面\n4. 回答要简洁准确`;
-
-  const response = await fetch('http://localhost:3000/api/chat', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'dashscope/qwen3.6-plus',
-      messages: [{ role: 'user', content: prompt }],
-      max_tokens: 2000,
-      temperature: 0.3
-    })
-  }).catch(() => null);
-
-  let answer;
-  if (response && response.ok) {
-    const data = await response.json();
-    answer = data.choices?.[0]?.message?.content;
-  }
-
-  if (!answer) {
-    console.log('\n⚠️  LLM 不可用，返回候选页面内容:');
-    for (const c of candidates) {
-      console.log(`\n--- ${c.title} (${c.category}) ---`);
-      console.log(c.content.substring(0, 1000));
+function scanDirAll(dir, pages, depth = 0) {
+  if (depth > 3 || !fs.existsSync(dir)) return;
+  for (const file of fs.readdirSync(dir)) {
+    const fullpath = path.join(dir, file);
+    const stat = fs.statSync(fullpath);
+    if (stat.isDirectory()) {
+      scanDirAll(fullpath, pages, depth + 1);
+    } else if (file.endsWith('.md')) {
+      const relPath = path.relative(VAULT, fullpath);
+      pages.push(relPath);
     }
-    return;
   }
-
-  console.log('\n💡 回答:');
-  console.log(answer);
-  return answer;
 }
 
 async function main() {
   const args = process.argv.slice(2);
-  const indexOnly = args.includes('--index-only');
-  const question = args.filter(a => !a.startsWith('--')).join(' ');
+  const limit = parseInt(args[args.length - 1]) || 30;
+  const query = args.filter(a => !a.match(/^\d+$/)).join(' ');
 
-  if (!question) {
-    console.log('用法: node query.js "你的问题" [--index-only]');
-    process.exit(1);
+  if (!query) {
+    // 无查询词，列出页面
+    const pages = listPages(limit);
+    console.log(`📑 Wiki 页面 (${pages.length} 条):\n`);
+    for (const p of pages) {
+      console.log(`  - ${p}`);
+    }
+    return;
   }
 
-  await queryWiki(question, indexOnly);
+  // 有查询词，搜索
+  console.log(`🔍 搜索: "${query}"\n`);
+  const pages = findPages(query, limit);
+  if (pages.length === 0) {
+    console.log('❌ 没有找到相关页面');
+    return;
+  }
+
+  console.log(`📋 找到 ${pages.length} 个页面:\n`);
+  for (const p of pages) {
+    console.log(`  [${p.score}] ${p.path} — ${p.title}`);
+  }
 }
 
 main().catch(err => {
-  console.error('Fatal error:', err);
+  console.error('Error:', err.message);
   process.exit(1);
 });

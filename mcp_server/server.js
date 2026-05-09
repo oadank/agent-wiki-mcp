@@ -374,7 +374,8 @@ server.tool(
         return { content: [{ type: 'text', text: `错误: shared 目录不存在 (${SHARED_DIR})` }], isError: true };
       }
 
-      const filename = title.replace(/[^a-zA-Z0-9_-]/g, '_') + '.md';
+      // 支持中文和 CJK 字符：\u4e00-\u9fa5 (中文), \u3040-\u30ff (日文), \uac00-\ud7a3 (韩文)
+      const filename = title.replace(/[^\u4e00-\u9fff\uac00-\ud7a3a-zA-Z0-9_-]/g, '_') + '.md';
       const filePath = join(SHARED_DIR, filename);
 
       const frontmatter = `---
