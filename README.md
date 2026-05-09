@@ -21,11 +21,51 @@ Fork 自 [oadank/openclaw-wiki-lancedb](https://github.com/oadank/openclaw-wiki-
 | 功能 | 说明 |
 |------|------|
 | **混合搜索** | grep 精确匹配 + pgvector 语义搜索，双重验证 |
-| **MCP 支持** | Claude Code / Codex / Cursor / VS Code Copilot |
+| **MCP 支持** | Claude Code / Codex / Hermes / Cursor / VS Code Copilot / OpenClaw |
 | **多格式导入** | PDF / DOCX / XLSX / Markdown 自动解析 |
 | **增量索引** | 新文档随时添加，向量 INSERT 更新 |
 | **共享记忆** | user-preferences / project-decisions 跨 AI 共享 |
 | **多 AI 并发** | PostgreSQL 多进程，适合多 Agent 共用 |
+| **智能项目跟踪** | 自动检测变化、定时同步、唤醒提醒（纯代码，无 LLM） |
+
+---
+
+## 智能项目跟踪系统
+
+**核心功能**：换 AI 不丢进度，项目状态自动同步。
+
+### 特点
+
+| 特点 | 说明 |
+|------|------|
+| **不污染原项目** | 所有跟踪信息在 wiki 的 `projects/` 内 |
+| **持久记录** | 项目废弃/移动/删除，记录仍在 `_archived/` |
+| **纯代码自动化** | 变化检测无 LLM，省 token |
+| **智能提示** | 有变化才提示，无变化静默 |
+| **唤醒汇报** | 长时间未更新主动提醒 |
+| **索引联动** | 变化后自动入库，搜索及时 |
+
+### 自动化流程
+
+```
+每5分钟自动检查:
+├── 检测 git status（未提交文件）
+├── 检测最新 commit（对比上次记录）
+├── 检测文件 mtime（最近修改）
+│
+├── 有变化 → 更新 meta.json + progress.md + 自动入库
+├── 无变化 → 静默，不打扰
+│
+└── 项目路径不存在 → 自动归档到 _archived/
+```
+
+### 项目状态
+
+| 状态 | 条件 | 处理 |
+|------|------|------|
+| `active` | 正常跟踪 | 定时同步 |
+| `paused` | 用户手动暂停 | 不检查，唤醒时汇报 |
+| `archived` | 项目路径不存在 | 保留记录，移到 `_archived/` |
 
 ---
 
@@ -50,32 +90,35 @@ Fork 自 [oadank/openclaw-wiki-lancedb](https://github.com/oadank/openclaw-wiki-
 ```
 agent-wiki-mcp/
 ├── mcp_server/               # MCP Server（跨平台调用）
-│   ├── server.js             # MCP 入口
-│   └── MCP_CONFIG.md         # 配置指南
-├── projects/                 # 项目进度（换 AI 不丢进度）
+│   └── server.js             # MCP 入口 + 定时同步逻辑
+├── projects/                 # 项目跟踪系统（换 AI 不丢进度）
+│   ├── registry.json         # 项目注册表（项目名→路径映射）
 │   ├── .templates/           # 模板文件
 │   │   ├── progress.md       # 进度记录模板
-│   │   └── decisions.md      # 技术决策模板
-│   └── {{项目名}}/           # 具体项目
-│       └── progress.md       # AI 接手必读
+│   │   ├── decisions.md      # 技术决策模板
+│   │   └── meta.json         # 元数据模板
+│   ├── {{项目名}}/           # 具体项目跟踪目录
+│   │   ├── progress.md       # 进度日志（人类可读）
+│   │   └── meta.json         # 元数据（机器可读）
+│   └── _archived/            # 已废弃项目（保留记录）
+│       └── old-project/
+│           └── meta.json     # status: "archived"
 ├── shared/                   # 共享知识（跨 AI 可用）
 │   ├── user-preferences/     # 用户偏好
 │   ├── project-decisions/    # 项目决策
 │   └── technical-facts/      # 技术事实
 ├── scripts/                  # 搜索脚本
 │   ├── unified-search.js     # 统一搜索入口
-│   ├── wiki-quick-ingest.py  # 快速入库（0 token）
-│   └── parsers/              # 多格式解析
+│   ├── query.js              # 页面列表
+│   └── deep-query.js         # 深度搜索
 ├── .pgvector/                # pgvector 向量存储
-│   ├── wiki-pgvector.py      # 向量搜索脚本
-│   └── wiki_vectors 表       # PostgreSQL 表
+│   └── wiki-pgvector.py      # 向量搜索脚本
 ├── knowledge/                # 知识库（整理后）
 │   ├── openclaw/             # OpenClaw 核心（21 子目录）
 │   ├── litellm/              # LiteLLM 文档（24 子目录）
 │   ├── gateway/              # Gateway 配置
 │   ├── plugins/              # 插件文档
 │   └── channels/             # 频道文档
-├── _raw/                     # 原始文件（待入库）
 ├── .manifest.json            # 来源映射清单
 ├── index.md                  # 全量索引（人类可读）
 └── SKILL.md                  # 技能定义（Agent 必读）
@@ -97,7 +140,7 @@ agent-wiki-mcp/
 | `wiki_rebuild_index` | 重建索引 | 全量重建（慎用） |
 | `wiki_validate` | 验证结构 | 检查 wiki 完整性 |
 | `wiki_add` | 单文件入库 | 新增页面到向量库 |
-| `wiki_delete` | 单文件删除 | 删除页面及向量 |
+| `wiki_delete` | 单文件删除 | 删除页面及物理文件 |
 | `wiki_incremental` | 增量入库 | 扫描新增页面入库 |
 | `wiki_remember` | 记录知识 | 保存共享知识 |
 | `wiki_recall` | 查询记忆/项目 | 搜索共享知识或项目进度 |
@@ -105,6 +148,10 @@ agent-wiki-mcp/
 | `wiki_update_progress` | 更新进度 | AI 任务完成后追加进度 |
 | `wiki_get_progress` | 获取进度 | AI 接手项目时读取进度 |
 | `wiki_list_projects` | 列出项目 | 显示所有项目列表 |
+| `wiki_register_project` | 注册项目 | 建立项目名与路径映射 |
+| `wiki_auto_sync` | 手动同步 | 触发项目变化检查 |
+| `wiki_wake_check` | 唤醒检查 | 长时间未更新提醒 |
+| `wiki_archive_project` | 归档项目 | 保留记录停止跟踪 |
 
 ---
 
@@ -149,7 +196,7 @@ wiki_get_progress "my-project"
   "mcpServers": {
     "openclaw-wiki": {
       "command": "node",
-      "args": ["/opt/.openclaw/workspace/skills/agent-wiki-mcp/mcp_server/server.js"]
+      "args": ["/opt/agent-wiki-mcp/mcp_server/server.js"]
     }
   }
 }
@@ -162,8 +209,12 @@ wiki_get_progress "my-project"
 ```toml
 [mcp_servers.openclaw-wiki]
 command = "node"
-args = ["/opt/.openclaw/workspace/skills/agent-wiki-mcp/mcp_server/server.js"]
+args = ["/opt/agent-wiki-mcp/mcp_server/server.js"]
 ```
+
+### Hermes / OpenClaw
+
+**文件**: MCP 配置同上，Hermes 原生支持 MCP 协议。
 
 ### Cursor / VS Code
 
@@ -263,9 +314,12 @@ PG_USER=postgres
 
 ## 更新日志
 
+- **2026-05-09**: 智能项目跟踪系统（registry.json、定时同步、唤醒检查）
+- **2026-05-09**: 项目进度管理（换 AI 不丢进度）
 - **2026-05-09**: LanceDB → pgvector 迁移（1570 页入库）
 - **2026-05-09**: 目录重构 → knowledge/ 统一组织
 - **2026-05-09**: pgvector 0.8.2 + wiki_vectors 表
+- **2026-05-09**: 四个 MCP bug 修复（tuple、URL、目录扫描、中文文件名）
 - **2026-05-07**: 清理重复文件，修复路径映射
 - **2026-04-28**: 初始导入 OpenClaw 文档
 
