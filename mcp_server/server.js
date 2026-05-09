@@ -383,7 +383,7 @@ server.tool(
       const frontmatter = `---
 title: "${title}"
 category: ${category}
-date: ${new Date().toISOString()}
+date: ${toBeijingTime()}
 tags: ${JSON.stringify(tags || [])}
 ---
 # ${title}
@@ -502,7 +502,7 @@ server.tool(
       }
 
       // 追加进度日志
-      const timestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
+      const timestamp = toBeijingTime();
       const logLine = `| ${timestamp} | ${ai} | ${task} | ${status} | ${note || ''} |\n`;
 
       const { appendFile } = await import('fs/promises');
@@ -578,6 +578,18 @@ const REGISTRY_PATH = join(PROJECTS_DIR, 'registry.json');
 const SYNC_INTERVAL = 5 * 60 * 1000; // 5分钟检查一次
 let syncTimer = null;
 
+// 北京时间格式化（UTC+8）
+function toBeijingTime(date = new Date()) {
+  const beijing = new Date(date.getTime() + 8 * 60 * 60 * 1000);
+  return beijing.toISOString().slice(0, 16).replace('T', ' ');
+}
+
+// 北京时间 ISO 格式（用于存储，find 命令兼容）
+function toBeijingISO(date = new Date()) {
+  const beijing = new Date(date.getTime() + 8 * 60 * 60 * 1000);
+  return beijing.toISOString();
+}
+
 // 加载注册表
 function loadRegistry() {
   try {
@@ -628,7 +640,7 @@ function detectChanges(projectName) {
     allPaths.push(...proj.relatedPaths);
   }
 
-  const meta = loadMeta(projectName) || { lastSession: new Date().toISOString() };
+  const meta = loadMeta(projectName) || { lastSession: toBeijingTime() };
   const changes = [];
   const lastSessionTime = new Date(meta.lastSession);
 
@@ -695,7 +707,7 @@ async function autoSync() {
     if (result.type === 'project_missing') {
       // 项目路径不存在，标记为 archived
       proj.status = 'archived';
-      proj.archivedAt = new Date().toISOString();
+      proj.archivedAt = toBeijingTime();
       proj.archiveReason = '项目路径不存在';
       saveRegistry(registry);
 
@@ -718,14 +730,14 @@ async function autoSync() {
     // 有变化则更新
     if (result.changes.length > 0) {
       const meta = loadMeta(name) || {};
-      meta.lastSession = new Date().toISOString();
+      meta.lastSession = toBeijingTime();
       meta.daysSinceUpdate = 0;
       meta.pendingChanges = result.changes;
 
       saveMeta(name, meta);
 
       // 更新注册表检查时间
-      proj.lastCheck = new Date().toISOString();
+      proj.lastCheck = toBeijingTime();
       saveRegistry(registry);
 
       // 自动入库（保持搜索及时性）
@@ -773,8 +785,8 @@ server.tool(
       registry.projects[name] = {
         path,
         status: 'active',
-        createdAt: new Date().toISOString(),
-        lastCheck: new Date().toISOString()
+        createdAt: toBeijingTime(),
+        lastCheck: toBeijingTime()
       };
       saveRegistry(registry);
 
@@ -797,8 +809,8 @@ server.tool(
         projectName: name,
         realPath: path,
         status: 'active',
-        createdAt: new Date().toISOString(),
-        lastSession: new Date().toISOString(),
+        createdAt: toBeijingTime(),
+        lastSession: toBeijingTime(),
         lastAI: '注册',
         currentTask: '项目初始化',
         taskStatus: '✅',
@@ -806,7 +818,7 @@ server.tool(
         totalSessions: 0,
         daysSinceUpdate: 0,
         indexed: false,
-        indexUpdatedAt: new Date().toISOString()
+        indexUpdatedAt: toBeijingTime()
       };
       saveMeta(name, meta);
 

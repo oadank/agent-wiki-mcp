@@ -3,7 +3,7 @@
   "realPath": "/opt/.agents-to-im-claude",
   "status": "active",
   "createdAt": "2026-05-09T15:38:00.000Z",
-  "lastSession": "2026-05-09T15:44:01.988Z",
+  "lastSession": "2026-05-10 00:07",
   "lastAI": "Claude",
   "currentTask": "清理 meta.json 脏数据",
   "taskStatus": "✅",
@@ -12,6 +12,7 @@
   "pendingChanges": [
     {
       "type": "files_modified",
+      "path": "/opt/.agents-to-im-claude",
       "count": 5,
       "files": [
         "./logs/bridge.log",
@@ -21,6 +22,5 @@
         "./data/messages/3f3f14bd-62cb-4614-acce-c82967faa91e.json"
       ]
     }
-  ],
-  "lastCommit": "aff7e87f61ef1062e80169d1a95d3e744b37dbca"
+  ]
 }

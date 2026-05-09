@@ -3,21 +3,23 @@
   "realPath": "/opt/agent-wiki-mcp",
   "status": "active",
   "createdAt": "2026-05-09T10:56:14.357Z",
-  "lastSession": "2026-05-09T15:44:00.990Z",
+  "lastSession": "2026-05-10 00:06",
   "lastAI": "Claude",
-  "currentTask": "删除 git 功能",
-  "taskStatus": "🚧",
+  "currentTask": "清理残留字段",
+  "taskStatus": "✅",
   "indexed": true,
   "daysSinceUpdate": 0,
   "pendingChanges": [
     {
       "type": "files_modified",
-      "count": 2,
+      "path": "/opt/agent-wiki-mcp",
+      "count": 4,
       "files": [
+        "./mcp_server/server.js",
         "./projects/registry.json",
-        "./projects/agents-to-im/meta.json"
+        "./projects/agents-to-im/meta.json",
+        "./projects/agent-wiki-mcp/meta.json"
       ]
     }
-  ],
-  "lastCommit": "b86676fc00d1c2d0a8682e3f1d55a57255c580af"
+  ]
 }
