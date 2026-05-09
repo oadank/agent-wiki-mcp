@@ -339,22 +339,34 @@ def add_single(filepath):
 
 
 def delete_single(filepath):
-    """单文件删除"""
+    """单文件删除（同时删除物理文件）"""
+    full_path = Path(VAULT) / filepath
+
     conn = psycopg2.connect(**PG_CONN)
     cur = conn.cursor()
 
     cur.execute("SELECT id FROM wiki_vectors WHERE path = %s", (filepath,))
     if not cur.fetchone():
-        print(f"❌ 页面不存在: {filepath}")
+        print(f"❌ 页面不存在于向量库: {filepath}")
         cur.close()
         conn.close()
         return
 
+    # 删除向量库记录
     cur.execute("DELETE FROM wiki_vectors WHERE path = %s", (filepath,))
     conn.commit()
     cur.close()
     conn.close()
-    print(f"✅ 已删除: {filepath}")
+
+    # 删除物理文件（安全检查：必须存在且在 VAULT 内）
+    if full_path.exists() and str(full_path).startswith(str(VAULT)):
+        try:
+            full_path.unlink()
+            print(f"✅ 已删除向量记录 + 物理文件: {filepath}")
+        except Exception as e:
+            print(f"⚠️ 向量已删，但文件删除失败: {e}")
+    else:
+        print(f"✅ 已删除向量记录: {filepath} (物理文件不存在或路径异常)")
 
 
 def reindex():
