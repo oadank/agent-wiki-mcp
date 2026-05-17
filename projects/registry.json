@@ -6,18 +6,36 @@
       "path": "/opt/agent-wiki-mcp",
       "status": "active",
       "createdAt": "2026-05-09T10:56:14.354Z",
-      "lastCheck": "2026-05-10 00:06"
+      "lastCheck": "2026-05-17 14:36"
     },
     "agents-to-im": {
       "path": "/opt/.agents-to-im-claude",
       "status": "active",
       "createdAt": "2026-05-09T14:38:00.000Z",
-      "lastCheck": "2026-05-10 00:07",
+      "lastCheck": "2026-05-17 14:31",
       "description": "飞书桥接软件（Claude + Codex 两个实例 + 全局二进制程序）",
       "relatedPaths": [
         "/opt/.agents-to-im-codex",
         "/usr/bin/agents-to-im"
       ]
+    },
+    "codex": {
+      "path": "/opt/.codex",
+      "status": "active",
+      "createdAt": "2026-05-10 00:36",
+      "lastCheck": "2026-05-17 14:36"
+    },
+    "litellm-domestic-fix": {
+      "path": "/opt/litellm-source",
+      "status": "active",
+      "createdAt": "2026-05-11 01:23",
+      "lastCheck": "2026-05-17 11:15"
+    },
+    "litellm-codex-domestic": {
+      "path": "/opt/litellm-source",
+      "status": "active",
+      "createdAt": "2026-05-12 21:16",
+      "lastCheck": "2026-05-17 11:16"
     }
   }
 }

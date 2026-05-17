@@ -1,0 +1,24 @@
+{
+  "projectName": "codex",
+  "realPath": "/opt/.codex",
+  "status": "active",
+  "createdAt": "2026-05-10 00:36",
+  "lastSession": "2026-05-17 14:36",
+  "lastAI": "注册",
+  "currentTask": "项目初始化",
+  "taskStatus": "✅",
+  "pendingChanges": [
+    {
+      "type": "files_modified",
+      "path": "/opt/.codex",
+      "count": 1,
+      "files": [
+        "./tmp/arg0/codex-arg0zvidia/.lock"
+      ]
+    }
+  ],
+  "totalSessions": 0,
+  "daysSinceUpdate": 0,
+  "indexed": true,
+  "indexUpdatedAt": "2026-05-10 00:36"
+}

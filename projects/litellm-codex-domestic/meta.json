@@ -1,9 +1,9 @@
 {
-  "projectName": "litellm-domestic-fix",
+  "projectName": "litellm-codex-domestic",
   "realPath": "/opt/litellm-source",
   "status": "active",
-  "createdAt": "2026-05-11 01:23",
-  "lastSession": "2026-05-17 11:15",
+  "createdAt": "2026-05-12 21:16",
+  "lastSession": "2026-05-17 11:16",
   "lastAI": "注册",
   "currentTask": "项目初始化",
   "taskStatus": "✅",
@@ -29,5 +29,5 @@
   "totalSessions": 0,
   "daysSinceUpdate": 0,
   "indexed": true,
-  "indexUpdatedAt": "2026-05-11 01:23"
+  "indexUpdatedAt": "2026-05-12 21:16"
 }

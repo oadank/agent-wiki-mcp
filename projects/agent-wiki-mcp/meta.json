@@ -3,7 +3,7 @@
   "realPath": "/opt/agent-wiki-mcp",
   "status": "active",
   "createdAt": "2026-05-09T10:56:14.357Z",
-  "lastSession": "2026-05-10 00:06",
+  "lastSession": "2026-05-17 14:36",
   "lastAI": "Claude",
   "currentTask": "清理残留字段",
   "taskStatus": "✅",
@@ -15,7 +15,7 @@
       "path": "/opt/agent-wiki-mcp",
       "count": 4,
       "files": [
-        "./mcp_server/server.js",
+        "./projects/codex/meta.json",
         "./projects/registry.json",
         "./projects/agents-to-im/meta.json",
         "./projects/agent-wiki-mcp/meta.json"
