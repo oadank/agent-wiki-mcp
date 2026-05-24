@@ -6,13 +6,13 @@
       "path": "/opt/agent-wiki-mcp",
       "status": "active",
       "createdAt": "2026-05-09T10:56:14.354Z",
-      "lastCheck": "2026-05-17 14:36"
+      "lastCheck": "2026-05-24 15:26"
     },
     "agents-to-im": {
       "path": "/opt/.agents-to-im-claude",
       "status": "active",
       "createdAt": "2026-05-09T14:38:00.000Z",
-      "lastCheck": "2026-05-17 14:31",
+      "lastCheck": "2026-05-24 15:26",
       "description": "飞书桥接软件（Claude + Codex 两个实例 + 全局二进制程序）",
       "relatedPaths": [
         "/opt/.agents-to-im-codex",
@@ -23,19 +23,32 @@
       "path": "/opt/.codex",
       "status": "active",
       "createdAt": "2026-05-10 00:36",
-      "lastCheck": "2026-05-17 14:36"
+      "lastCheck": "2026-05-24 15:26"
     },
     "litellm-domestic-fix": {
       "path": "/opt/litellm-source",
       "status": "active",
       "createdAt": "2026-05-11 01:23",
-      "lastCheck": "2026-05-17 11:15"
+      "lastCheck": "2026-05-17 19:46"
     },
-    "litellm-codex-domestic": {
-      "path": "/opt/litellm-source",
+    "openhuman": {
+      "path": "/opt/openhuman",
       "status": "active",
-      "createdAt": "2026-05-12 21:16",
-      "lastCheck": "2026-05-17 11:16"
+      "createdAt": "2026-05-23",
+      "description": "OpenHuman 桌面/服务器版 AI 助手",
+      "relatedPaths": [
+        "/opt/.agents-to-im-openhuman",
+        "/root/.openhuman"
+      ],
+      "lastCheck": "2026-05-24 15:26"
+    },
+    "cc-haha": {
+      "path": "/home/code/cc-haha",
+      "status": "active",
+      "createdAt": "2026-05-24T15:25:52.054282",
+      "lastCheck": "2026-05-24 15:25",
+      "description": "Claude Code 本地源码（oadank/cc-haha 泄露版本）",
+      "github": "https://github.com/oadank/cc-haha"
     }
   }
 }
