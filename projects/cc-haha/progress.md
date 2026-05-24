@@ -3,6 +3,7 @@
 ## 项目信息
 - **路径**：`/home/code/cc-haha`
 - **GitHub**：https://github.com/oadank/cc-haha
+- **上游**：https://github.com/NanmiCoder/cc-haha
 - **描述**：Claude Code 本地源码（泄露版本），bun 直接运行，被 `/usr/local/bin/claude` 包装调用
 - **状态**：✅ active
 
@@ -23,7 +24,31 @@ bun --env-file=.env ./src/entrypoints/cli.tsx --dangerously-skip-permissions ...
 
 | 日期 | 任务 | AI | 状态 | 备注 |
 |------|------|-----|------|------|
-| 2026-05-24 15:21 | 修复 normalizeMessagesForAPI 数组保护 | Codex | ✅ | commit 456e97e，已 push 到 GitHub |
+| 2026-05-24 15:21 | 修复 normalizeMessagesForAPI 数组保护 | Codex | ✅ | commit 456e97e |
+| 2026-05-24 15:35 | 合并上游 v0.3.0（30 commits） | Codex | ✅ | commit 56cae6c，无冲突自动合并 |
+
+## 2026-05-24 合并上游 v0.3.0 详情
+
+**合并内容**：
+- 版本升级：v0.2.9 → v0.3.0
+- 新增：`reorderAssistantToolUseBlocks()` 函数（修复 Bedrock history validation）
+- Desktop 性能优化：虚拟化长 transcripts、markdown 缓存、减少滑动卡顿
+- Bug 修复：H5 LAN 地址、Telegram 流订阅、AskUserQuestion 状态、OpenAI proxy 超时
+
+**冲突检查**：
+- 只有 `src/utils/messages.ts` 共同修改
+- 本地改动：两处 `Array.isArray` guard（第 1751 行、第 2206 行）
+- 上游改动：新增 `reorderAssistantToolUseBlocks()` + 调用点
+- **结果**：无冲突，自动合并成功
+
+**合并命令**：
+```bash
+cd /home/code/cc-haha
+git remote add upstream https://github.com/NanmiCoder/cc-haha.git
+git fetch upstream
+git merge upstream/main -m "Merge upstream/main (v0.3.0)"
+git push origin main
+```
 
 ## 2026-05-24 修复详情：飞书 Claude 报错 content.map is not a function
 
@@ -54,3 +79,19 @@ Error: Claude Code returned an error result: message.message.content.map is not 
 1. 改完源码**不需要 build**，bun 直接跑 ts/tsx
 2. 但飞书 Claude 用的是 `@anthropic-ai/claude-agent-sdk` 调起独立的 claude CLI 子进程，所以必须 `systemctl restart feishu-claude` 让 SDK 重新拉起子进程
 3. agents-to-im 那边的 catch 拦截（`sdk-provider.ts`）也加了兜底，避免再出现类似 SDK bug 时崩溃
+
+## 同步策略
+
+**定期同步上游**：
+```bash
+cd /home/code/cc-haha
+git fetch upstream
+git merge upstream/main
+git push origin main
+```
+
+**冲突预检（不改工作区）**：
+```bash
+BASE=$(git merge-base HEAD upstream/main)
+git merge-tree "$BASE" HEAD upstream/main | grep -E '^(<<<<<<<|=======|>>>>>>>|CONFLICT)'
+```
