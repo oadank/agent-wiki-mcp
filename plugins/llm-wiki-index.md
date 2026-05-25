@@ -1,0 +1,1611 @@
+---
+title: "LLM Wiki Index"
+category: plugins
+tags: []
+sources:
+  - ./index.md
+sourceType: article
+certainty: question
+status: active
+created: "2026-05-22T17:50:05.938027+00:00"
+updated: "2026-05-22T17:50:05.938068+00:00"
+provenance:
+  extracted: 1.0
+  inferred: 0.0
+  ambiguous: 0.0
+---
+
+> **TL;DR** LLM Wiki Index
+
+# LLM Wiki Index
+
+> Auto-generated index. Each entry links to a wiki page with a one-line summary.
+
+
+## Automation
+
+- [[knowledge/openclaw/automation/auth-monitoring|knowledge/openclaw/automation/auth-monitoring]] — Redirect to /knowledge/gateway/authentication
+- [[knowledge/openclaw/automation/clawflow|knowledge/openclaw/automation/clawflow]] — Redirect to Task Flow
+- [[knowledge/openclaw/automation/cron-jobs|knowledge/openclaw/automation/cron-jobs]] — Scheduled jobs, webhooks, and Gmail PubSub triggers for the Gateway scheduler
+- [[knowledge/openclaw/automation/cron-vs-heartbeat|knowledge/openclaw/automation/cron-vs-heartbeat]] — Redirect to /automation
+- [[knowledge/openclaw/automation/gmail-pubsub|knowledge/openclaw/automation/gmail-pubsub]] — Redirect to /knowledge/openclaw/automation/cron-jobs
+- [[knowledge/openclaw/automation/hooks|knowledge/openclaw/automation/hooks]] — Hooks: event-driven automation for commands and lifecycle events
+- [[knowledge/openclaw/automation/index|knowledge/openclaw/automation/index]] — Overview of automation mechanisms: tasks, cron, hooks, standing orders, and Task Flow
+- [[knowledge/openclaw/automation/poll|knowledge/openclaw/automation/poll]] — Redirect to /knowledge/openclaw/cli/message
+- [[knowledge/openclaw/automation/standing-orders|knowledge/openclaw/automation/standing-orders]] — Define permanent operating authority for autonomous agent programs
+- [[knowledge/openclaw/automation/taskflow|knowledge/openclaw/automation/taskflow]] — Task Flow flow orchestration layer above background tasks
+- [[knowledge/openclaw/automation/tasks|knowledge/openclaw/automation/tasks]] — Background task tracking for ACP runs, subagents, isolated cron jobs, and CLI operations
+- [[knowledge/openclaw/automation/troubleshooting|knowledge/openclaw/automation/troubleshooting]] — Redirect to /knowledge/openclaw/automation/cron-jobs
+- [[knowledge/openclaw/automation/webhook|knowledge/openclaw/automation/webhook]] — Redirect to /knowledge/openclaw/automation/cron-jobs
+
+## Channels
+
+- [[knowledge/channels/bluebubbles|knowledge/channels/bluebubbles]] — iMessage via BlueBubbles macOS server (REST send/receive, typing, reactions, pairing, advanced actions).
+- [[knowledge/channels/broadcast-groups|knowledge/channels/broadcast-groups]] — Broadcast a WhatsApp message to multiple agents
+- [[knowledge/channels/channel-routing|knowledge/channels/channel-routing]] — Routing rules per channel (WhatsApp, Telegram, Discord, Slack) and shared context
+- [[knowledge/channels/discord|knowledge/channels/discord]] — Discord bot support status, capabilities, and configuration
+- [[knowledge/channels/feishu|knowledge/channels/feishu]] — Feishu bot overview, features, and configuration
+- [[knowledge/channels/googlechat|knowledge/channels/googlechat]] — Google Chat app support status, capabilities, and configuration
+- [[knowledge/channels/group-messages|knowledge/channels/group-messages]] — Behavior and config for WhatsApp group message handling (mentionPatterns are shared across surfaces)
+- [[knowledge/channels/groups|knowledge/channels/groups]] — Group chat behavior across surfaces (Discord/iMessage/Matrix/Microsoft Teams/Signal/Slack/Telegram/WhatsApp/Zalo)
+- [[knowledge/channels/imessage|knowledge/channels/imessage]] — Legacy iMessage support via imsg (JSON-RPC over stdio). New setups should use BlueBubbles.
+- [[knowledge/channels/index|knowledge/channels/index]] — Messaging platforms OpenClaw can connect to
+- [[knowledge/channels/irc|knowledge/channels/irc]] — IRC plugin setup, access controls, and troubleshooting
+- [[knowledge/channels/line|knowledge/channels/line]] — LINE Messaging API plugin setup, config, and usage
+- [[knowledge/channels/location|knowledge/channels/location]] — Inbound channel location parsing (Telegram/WhatsApp/Matrix) and context fields
+- [[knowledge/channels/matrix-push-rules|knowledge/channels/matrix-push-rules]] — Per-recipient Matrix push rules for quiet finalized preview edits
+- [[knowledge/channels/matrix|knowledge/channels/matrix]] — Matrix support status, setup, and configuration examples
+- [[knowledge/channels/mattermost|knowledge/channels/mattermost]] — Mattermost bot setup and OpenClaw config
+- [[knowledge/channels/msteams|knowledge/channels/msteams]] — Microsoft Teams bot support status, capabilities, and configuration
+- [[knowledge/channels/nextcloud-talk|knowledge/channels/nextcloud-talk]] — Nextcloud Talk support status, capabilities, and configuration
+- [[knowledge/channels/nostr|knowledge/channels/nostr]] — Nostr DM channel via NIP-04 encrypted messages
+- [[knowledge/channels/pairing|knowledge/channels/pairing]] — Pairing overview: approve who can DM you + which nodes can join
+- [[knowledge/channels/qa-channel|knowledge/channels/qa-channel]] — Synthetic Slack-class channel plugin for deterministic OpenClaw QA scenarios
+- [[knowledge/channels/qqbot|knowledge/channels/qqbot]] — QQ Bot setup, config, and usage
+- [[knowledge/channels/signal|knowledge/channels/signal]] — Signal support via signal-cli (JSON-RPC + SSE), setup paths, and number model
+- [[knowledge/channels/slack|knowledge/channels/slack]] — Slack setup and runtime behavior (Socket Mode + HTTP Request URLs)
+- [[knowledge/channels/synology-chat|knowledge/channels/synology-chat]] — Synology Chat webhook setup and OpenClaw config
+- [[knowledge/channels/telegram|knowledge/channels/telegram]] — Telegram bot support status, capabilities, and configuration
+- [[knowledge/channels/tlon|knowledge/channels/tlon]] — Tlon/Urbit support status, capabilities, and configuration
+- [[knowledge/channels/troubleshooting|knowledge/channels/troubleshooting]] — Fast channel level troubleshooting with per channel failure signatures and fixes
+- [[knowledge/channels/twitch|knowledge/channels/twitch]] — Twitch chat bot configuration and setup
+- [[knowledge/channels/wechat|knowledge/channels/wechat]] — WeChat channel setup through the external openclaw-weixin plugin
+- [[knowledge/channels/whatsapp|knowledge/channels/whatsapp]] — WhatsApp channel support, access controls, delivery behavior, and operations
+- [[knowledge/channels/zalo|knowledge/channels/zalo]] — Zalo (Bot API)
+- [[knowledge/channels/zalouser|knowledge/channels/zalouser]] — Zalo personal account support via native zca-js (QR login), capabilities, and configuration
+
+## Cli
+
+- [[knowledge/openclaw/cli/acp|knowledge/openclaw/cli/acp]] — Run the ACP bridge for IDE integrations
+- [[knowledge/openclaw/cli/agent|knowledge/openclaw/cli/agent]] — CLI reference for `openclaw agent` (send one agent turn via the Gateway)
+- [[knowledge/openclaw/cli/agents|knowledge/openclaw/cli/agents]] — CLI reference for `openclaw agents` (list/add/delete/bindings/bind/unbind/set identity)
+- [[knowledge/openclaw/cli/approvals|knowledge/openclaw/cli/approvals]] — CLI reference for `openclaw approvals` and `openclaw exec-policy`
+- [[knowledge/openclaw/cli/backup|knowledge/openclaw/cli/backup]] — CLI reference for `openclaw backup` (create local backup archives)
+- [[knowledge/openclaw/cli/browser|knowledge/openclaw/cli/browser]] — CLI reference for `openclaw browser` (lifecycle, profiles, tabs, actions, state, and debugging)
+- [[knowledge/openclaw/cli/channels|knowledge/openclaw/cli/channels]] — CLI reference for `openclaw channels` (accounts, status, login/logout, logs)
+- [[knowledge/openclaw/cli/clawbot|knowledge/openclaw/cli/clawbot]] — CLI reference for `openclaw clawbot` (legacy alias namespace)
+- [[knowledge/openclaw/cli/completion|knowledge/openclaw/cli/completion]] — CLI reference for `openclaw completion` (generate/install shell completion scripts)
+- [[knowledge/openclaw/cli/config|knowledge/openclaw/cli/config]] — CLI reference for `openclaw config` (get/set/unset/file/schema/validate)
+- [[knowledge/openclaw/cli/configure|knowledge/openclaw/cli/configure]] — CLI reference for `openclaw configure` (interactive configuration prompts)
+- [[knowledge/openclaw/cli/cron|knowledge/openclaw/cli/cron]] — CLI reference for `openclaw cron` (schedule and run background jobs)
+- [[knowledge/openclaw/cli/daemon|knowledge/openclaw/cli/daemon]] — CLI reference for `openclaw daemon` (legacy alias for gateway service management)
+- [[knowledge/openclaw/cli/dashboard|knowledge/openclaw/cli/dashboard]] — CLI reference for `openclaw dashboard` (open the Control UI)
+- [[knowledge/openclaw/cli/devices|knowledge/openclaw/cli/devices]] — CLI reference for `openclaw devices` (device pairing + token rotation/revocation)
+- [[knowledge/openclaw/cli/directory|knowledge/openclaw/cli/directory]] — CLI reference for `openclaw directory` (self, peers, groups)
+- [[knowledge/openclaw/cli/dns|knowledge/openclaw/cli/dns]] — CLI reference for `openclaw dns` (wide-area discovery helpers)
+- [[knowledge/openclaw/cli/docs|knowledge/openclaw/cli/docs]] — CLI reference for `openclaw docs` (search the live docs index)
+- [[knowledge/openclaw/cli/doctor|knowledge/openclaw/cli/doctor]] — CLI reference for `openclaw doctor` (health checks + guided repairs)
+- [[knowledge/openclaw/cli/flows|knowledge/openclaw/cli/flows]] — Redirect: flow commands live under `openclaw tasks flow`
+- [[knowledge/openclaw/cli/gateway|knowledge/openclaw/cli/gateway]] — OpenClaw Gateway CLI (`openclaw gateway`) — run, query, and discover gateways
+- [[knowledge/openclaw/cli/health|knowledge/openclaw/cli/health]] — CLI reference for `openclaw health` (gateway health snapshot via RPC)
+- [[knowledge/openclaw/cli/hooks|knowledge/openclaw/cli/hooks]] — CLI reference for `openclaw hooks` (agent hooks)
+- [[knowledge/openclaw/cli/index|knowledge/openclaw/cli/index]] — OpenClaw CLI index: command list, global flags, and links to per-command pages
+- [[knowledge/openclaw/cli/infer|knowledge/openclaw/cli/infer]] — Infer-first CLI for provider-backed model, image, audio, TTS, video, web, and embedding workflows
+- [[knowledge/openclaw/cli/logs|knowledge/openclaw/cli/logs]] — CLI reference for `openclaw logs` (tail gateway logs via RPC)
+- [[knowledge/openclaw/cli/mcp|knowledge/openclaw/cli/mcp]] — Expose OpenClaw channel conversations over MCP and manage saved MCP server definitions
+- [[knowledge/openclaw/cli/memory|knowledge/openclaw/cli/memory]] — CLI reference for `openclaw memory` (status/index/search/promote/promote-explain/rem-harness)
+- [[knowledge/openclaw/cli/message|knowledge/openclaw/cli/message]] — CLI reference for `openclaw message` (send + channel actions)
+- [[knowledge/openclaw/cli/models|knowledge/openclaw/cli/models]] — CLI reference for `openclaw models` (status/list/set/scan, aliases, fallbacks, auth)
+- [[knowledge/openclaw/cli/node|knowledge/openclaw/cli/node]] — CLI reference for `openclaw node` (headless node host)
+- [[knowledge/openclaw/cli/nodes|knowledge/openclaw/cli/nodes]] — CLI reference for `openclaw nodes` (status, pairing, invoke, camera/canvas/screen)
+- [[knowledge/openclaw/cli/onboard|knowledge/openclaw/cli/onboard]] — CLI reference for `openclaw onboard` (interactive onboarding)
+- [[knowledge/openclaw/cli/pairing|knowledge/openclaw/cli/pairing]] — CLI reference for `openclaw pairing` (approve/list pairing requests)
+- [[knowledge/openclaw/cli/plugins|knowledge/openclaw/cli/plugins]] — CLI reference for `openclaw plugins` (list, install, marketplace, uninstall, enable/disable, doctor)
+- [[knowledge/openclaw/cli/proxy|knowledge/openclaw/cli/proxy]] — CLI reference for `openclaw proxy`, the local debug proxy and capture inspector
+- [[knowledge/openclaw/cli/qr|knowledge/openclaw/cli/qr]] — CLI reference for `openclaw qr` (generate mobile pairing QR + setup code)
+- [[knowledge/openclaw/cli/reset|knowledge/openclaw/cli/reset]] — CLI reference for `openclaw reset` (reset local state/config)
+- [[knowledge/openclaw/cli/sandbox|knowledge/openclaw/cli/sandbox]] — Manage sandbox runtimes and inspect effective sandbox policy
+- [[knowledge/openclaw/cli/secrets|knowledge/openclaw/cli/secrets]] — CLI reference for `openclaw secrets` (reload, audit, configure, apply)
+- [[knowledge/openclaw/cli/security|knowledge/openclaw/cli/security]] — CLI reference for `openclaw security` (audit and fix common security footguns)
+- [[knowledge/openclaw/cli/sessions|knowledge/openclaw/cli/sessions]] — CLI reference for `openclaw sessions` (list stored sessions + usage)
+- [[knowledge/openclaw/cli/setup|knowledge/openclaw/cli/setup]] — CLI reference for `openclaw setup` (initialize config + workspace)
+- [[knowledge/openclaw/cli/skills|knowledge/openclaw/cli/skills]] — CLI reference for `openclaw skills` (search/knowledge/openclaw/install/update/list/info/check)
+- [[knowledge/openclaw/cli/status|knowledge/openclaw/cli/status]] — CLI reference for `openclaw status` (diagnostics, probes, usage snapshots)
+- [[knowledge/openclaw/cli/system|knowledge/openclaw/cli/system]] — CLI reference for `openclaw system` (system events, heartbeat, presence)
+- [[knowledge/openclaw/cli/tasks|knowledge/openclaw/cli/tasks]] — CLI reference for `openclaw tasks` (background task ledger and Task Flow state)
+- [[knowledge/openclaw/cli/tui|knowledge/openclaw/cli/tui]] — CLI reference for `openclaw tui` (Gateway-backed or local embedded terminal UI)
+- [[knowledge/openclaw/cli/uninstall|knowledge/openclaw/cli/uninstall]] — CLI reference for `openclaw uninstall` (remove gateway service + local data)
+- [[knowledge/openclaw/cli/update|knowledge/openclaw/cli/update]] — CLI reference for `openclaw update` (safe-ish source update + gateway auto-restart)
+- [[knowledge/openclaw/cli/voicecall|knowledge/openclaw/cli/voicecall]] — CLI reference for `openclaw voicecall` (voice-call plugin command surface)
+- [[knowledge/openclaw/cli/webhooks|knowledge/openclaw/cli/webhooks]] — CLI reference for `openclaw webhooks` (webhook helpers + Gmail Pub/Sub)
+- [[knowledge/openclaw/cli/wiki|knowledge/openclaw/cli/wiki]] — CLI reference for `openclaw wiki` (memory-wiki vault status, search, compile, lint, apply, bridge, and Obsidian helpers)
+
+## Concepts
+
+- [[knowledge/openclaw/concepts/active-memory|knowledge/openclaw/concepts/active-memory]] — A plugin-owned blocking memory sub-agent that injects relevant memory into interactive chat sessions
+- [[knowledge/openclaw/concepts/agent-loop|knowledge/openclaw/concepts/agent-loop]] — Agent loop lifecycle, streams, and wait semantics
+- [[knowledge/openclaw/concepts/agent-workspace|knowledge/openclaw/concepts/agent-workspace]] — Agent workspace: location, layout, and backup strategy
+- [[knowledge/openclaw/concepts/agent|knowledge/openclaw/concepts/agent]] — Agent runtime, workspace contract, and session bootstrap
+- [[knowledge/openclaw/concepts/architecture|knowledge/openclaw/concepts/architecture]] — WebSocket gateway architecture, components, and client flows
+- [[knowledge/openclaw/concepts/automation|knowledge/openclaw/concepts/automation]] — Overview of automation mechanisms: tasks, cron, hooks, standing orders, and Task Flow
+- [[knowledge/openclaw/concepts/compaction|knowledge/openclaw/concepts/compaction]] — How OpenClaw summarizes long conversations to stay within model limits
+- [[knowledge/openclaw/concepts/context-engine|knowledge/openclaw/concepts/context-engine]] — Context engine: pluggable context assembly, compaction, and subagent lifecycle
+- [[knowledge/openclaw/concepts/context|knowledge/openclaw/concepts/context]] — Context: what the model sees, how it is built, and how to inspect it
+- [[knowledge/openclaw/concepts/control-ui|knowledge/openclaw/concepts/control-ui]] — Browser-based Control UI for OpenClaw Gateway: Vite+Lit SPA served on the same port as the Gateway WebSocket, supporting chat, config, cron, skills, nodes, exec approvals, and debugging.
+- [[knowledge/openclaw/concepts/dashboard|knowledge/openclaw/concepts/dashboard]] — Gateway dashboard access, authentication modes, and troubleshooting — the browser Control UI served by the Gateway.
+- [[knowledge/openclaw/concepts/debugging|knowledge/openclaw/concepts/debugging]] — Debugging tools: watch mode, raw model streams, runtime overrides, and dev profile for isolated debugging
+- [[knowledge/openclaw/concepts/delegate-architecture|knowledge/openclaw/concepts/delegate-architecture]] — Delegate architecture: running OpenClaw as a named agent on behalf of an organization
+- [[knowledge/openclaw/concepts/diagnostics-flags|knowledge/openclaw/concepts/diagnostics-flags]] — Targeted debug log flags that let you enable subsystem-specific logging without raising global verbosity levels.
+- [[knowledge/openclaw/concepts/dreaming|knowledge/openclaw/concepts/dreaming]] — Background memory consolidation with light, deep, and REM phases plus a Dream Diary
+- [[knowledge/openclaw/concepts/environment|knowledge/openclaw/concepts/environment]] — Where OpenClaw loads environment variables from, precedence order, and runtime-injected env vars
+- [[knowledge/openclaw/concepts/experimental-features|knowledge/openclaw/concepts/experimental-features]] — What experimental flags mean in OpenClaw and which ones are currently documented
+- [[knowledge/openclaw/concepts/features|knowledge/openclaw/concepts/features]] — OpenClaw capabilities across channels, routing, media, and UX.
+- [[knowledge/openclaw/concepts/formal-verification|knowledge/openclaw/concepts/formal-verification]] — Machine-checked security models (TLA+/TLC) for OpenClaw's highest-risk paths — gateway exposure, node exec, pairing, routing
+- [[knowledge/openclaw/concepts/hooks|knowledge/openclaw/concepts/hooks]] — Event-driven automation for commands and lifecycle events in the Gateway
+- [[knowledge/openclaw/concepts/markdown-formatting|knowledge/openclaw/concepts/markdown-formatting]] — Markdown formatting pipeline for outbound channels
+- [[knowledge/openclaw/concepts/memory-builtin|knowledge/openclaw/concepts/memory-builtin]] — The default SQLite-based memory backend with keyword, vector, and hybrid search
+- [[knowledge/openclaw/concepts/memory-honcho|knowledge/openclaw/concepts/memory-honcho]] — AI-native cross-session memory via the Honcho plugin
+- [[knowledge/openclaw/concepts/memory-qmd|knowledge/openclaw/concepts/memory-qmd]] — Local-first search sidecar with BM25, vectors, reranking, and query expansion
+- [[knowledge/openclaw/concepts/memory-search|knowledge/openclaw/concepts/memory-search]] — How memory search finds relevant notes using embeddings and hybrid retrieval
+- [[knowledge/openclaw/concepts/memory|knowledge/openclaw/concepts/memory]] — How OpenClaw remembers things across sessions
+- [[knowledge/openclaw/concepts/messages|knowledge/openclaw/concepts/messages]] — Message flow, sessions, queueing, and reasoning visibility
+- [[knowledge/openclaw/concepts/model-failover|knowledge/openclaw/concepts/model-failover]] — How OpenClaw rotates auth profiles and falls back across models
+- [[knowledge/openclaw/concepts/model-providers|knowledge/openclaw/concepts/model-providers]] — Model provider overview with example configs + CLI flows
+- [[knowledge/openclaw/concepts/models-cli|knowledge/openclaw/concepts/models-cli]] — How OpenClaw selects models, CLI commands for managing models, aliases, fallbacks, and the model allowlist behavior.
+- [[knowledge/openclaw/concepts/models|knowledge/openclaw/concepts/models]] — Models CLI: list, set, aliases, fallbacks, scan, status
+- [[knowledge/openclaw/concepts/multi-agent|knowledge/openclaw/concepts/multi-agent]] — Multi-agent routing: isolated agents, channel accounts, and bindings
+- [[knowledge/openclaw/concepts/oauth|knowledge/openclaw/concepts/oauth]] — OAuth in OpenClaw: token exchange, storage, and multi-account patterns
+- [[knowledge/openclaw/concepts/presence|knowledge/openclaw/concepts/presence]] — How OpenClaw presence entries are produced, merged, and displayed
+- [[knowledge/openclaw/concepts/qa-e2e-automation|knowledge/openclaw/concepts/qa-e2e-automation]] — Private QA automation shape for qa-lab, qa-channel, seeded scenarios, and protocol reports
+- [[knowledge/openclaw/concepts/queue|knowledge/openclaw/concepts/queue]] — Command queue design that serializes inbound auto-reply runs
+- [[knowledge/openclaw/concepts/retry|knowledge/openclaw/concepts/retry]] — Retry policy for outbound provider calls
+- [[knowledge/openclaw/concepts/session-pruning|knowledge/openclaw/concepts/session-pruning]] — Trimming old tool results to keep context lean and caching efficient
+- [[knowledge/openclaw/concepts/session-tool|knowledge/openclaw/concepts/session-tool]] — Agent tools for cross-session status, recall, messaging, and sub-agent orchestration
+- [[knowledge/openclaw/concepts/session|knowledge/openclaw/concepts/session]] — How OpenClaw manages conversation sessions
+- [[knowledge/openclaw/concepts/soul|knowledge/openclaw/concepts/soul]] — Use SOUL.md to give your OpenClaw agent an actual voice instead of generic assistant sludge
+- [[knowledge/openclaw/concepts/streaming|knowledge/openclaw/concepts/streaming]] — Streaming + chunking behavior (block replies, channel preview streaming, mode mapping)
+- [[knowledge/openclaw/concepts/system-prompt|knowledge/openclaw/concepts/system-prompt]] — What the OpenClaw system prompt contains and how it is assembled
+- [[knowledge/openclaw/concepts/taskflow|knowledge/openclaw/concepts/taskflow]] — Durable multi-step flow orchestration above background tasks, with managed and mirrored sync modes
+- [[knowledge/openclaw/concepts/tasks|knowledge/openclaw/concepts/tasks]] — Background task tracking for ACP runs, subagents, isolated cron jobs, and CLI operations
+- [[knowledge/openclaw/concepts/threat-model-contributing|knowledge/openclaw/concepts/threat-model-contributing]] — Guidelines for contributing security findings, threat scenarios, and mitigations to the OpenClaw threat model
+- [[knowledge/openclaw/concepts/threat-model|knowledge/openclaw/concepts/threat-model]] — OpenClaw threat model mapped to MITRE ATLAS framework, covering 16 threats across 8 tactics from reconnaissance to impact
+- [[knowledge/openclaw/concepts/timezone|knowledge/openclaw/concepts/timezone]] — Timezone handling for agents, envelopes, and prompts
+- [[knowledge/openclaw/concepts/troubleshooting|knowledge/openclaw/concepts/troubleshooting]] — Symptom-first troubleshooting guide for OpenClaw: gateway issues, channels, automation, and node tools
+- [[knowledge/openclaw/concepts/tui|knowledge/openclaw/concepts/tui]] — Terminal-based UI for OpenClaw: gateway-connected and local modes, slash commands, keyboard shortcuts, and local shell integration.
+- [[knowledge/openclaw/concepts/typebox|knowledge/openclaw/concepts/typebox]] — TypeBox schemas as the single source of truth for the gateway protocol
+- [[knowledge/openclaw/concepts/typing-indicators|knowledge/openclaw/concepts/typing-indicators]] — When OpenClaw shows typing indicators and how to tune them
+- [[knowledge/openclaw/concepts/usage-tracking|knowledge/openclaw/concepts/usage-tracking]] — Usage tracking surfaces and credential requirements
+- [[knowledge/openclaw/concepts/web|knowledge/openclaw/concepts/web]] — Gateway web surfaces: Control UI, webhooks, bind modes (loopback, tailnet, funnel), Tailscale access patterns, and security notes.
+- [[knowledge/openclaw/concepts/webchat|knowledge/openclaw/concepts/webchat]] — Native WebChat UI for the Gateway — a macOS/iOS SwiftUI chat interface that talks directly to the Gateway WebSocket using the same sessions and routing as other channels.
+
+## Debug
+
+- [[knowledge/openclaw/debug/node-issue|knowledge/openclaw/debug/node-issue]] — Node + tsx "__name is not a function" crash notes and workarounds
+- [[knowledge/openclaw/debug/node-tsx-crash|knowledge/openclaw/debug/node-tsx-crash]] — Node + tsx runtime crash fix reference for __name is not a function startup error in OpenClaw dev scripts.
+
+## Diagnostics
+
+- [[knowledge/openclaw/diagnostics/flags|knowledge/openclaw/diagnostics/flags]] — Diagnostics flags for targeted debug logs
+
+## Docs
+
+- [[knowledge/openclaw/docs/AGENTS|knowledge/openclaw/docs/AGENTS]] — AGENTS
+- [[knowledge/openclaw/docs/auth-credential-semantics|knowledge/openclaw/docs/auth-credential-semantics]] — Canonical credential eligibility and resolution semantics for auth profiles
+- [[knowledge/openclaw/docs/brave-search|knowledge/openclaw/docs/brave-search]] — Brave Search API setup for web_search
+- [[knowledge/openclaw/docs/ci|knowledge/openclaw/docs/ci]] — CI job graph, scope gates, and local command equivalents
+- [[knowledge/openclaw/docs/date-time|knowledge/openclaw/docs/date-time]] — Date and time handling across envelopes, prompts, tools, and connectors
+- [[knowledge/openclaw/docs/logging|knowledge/openclaw/docs/logging]] — Logging overview: file logs, console output, CLI tailing, and the Control UI
+- [[knowledge/openclaw/docs/network|knowledge/openclaw/docs/network]] — Network hub: gateway surfaces, pairing, discovery, and security
+- [[knowledge/openclaw/docs/perplexity|knowledge/openclaw/docs/perplexity]] — Perplexity Search API and Sonar/OpenRouter compatibility for web_search
+- [[knowledge/openclaw/docs/pi-dev|knowledge/openclaw/docs/pi-dev]] — Developer workflow for Pi integration: build, test, and live validation
+- [[knowledge/openclaw/docs/pi|knowledge/openclaw/docs/pi]] — Architecture of OpenClaw's embedded Pi agent integration and session lifecycle
+- [[knowledge/openclaw/docs/prose|knowledge/openclaw/docs/prose]] — OpenProse: .prose workflows, slash commands, and state in OpenClaw
+- [[knowledge/openclaw/docs/tts|knowledge/openclaw/docs/tts]] — Redirect to /knowledge/openclaw/tools/tts
+- [[knowledge/openclaw/docs/vps|knowledge/openclaw/docs/vps]] — Run OpenClaw on a Linux server or cloud VPS — provider picker, architecture, and tuning
+
+## Gateway
+
+- [[knowledge/gateway/authentication|knowledge/gateway/authentication]] — Model authentication: OAuth, API keys, Claude CLI reuse, and Anthropic setup-token
+- [[knowledge/gateway/background-process|knowledge/gateway/background-process]] — Background exec execution and process management
+- [[knowledge/gateway/bonjour|knowledge/gateway/bonjour]] — Bonjour/mDNS discovery + debugging (Gateway beacons, clients, and common failure modes)
+- [[knowledge/gateway/bridge-protocol|knowledge/gateway/bridge-protocol]] — Historical bridge protocol (legacy nodes): TCP JSONL, pairing, scoped RPC
+- [[knowledge/gateway/cli-backends|knowledge/gateway/cli-backends]] — CLI backends: local AI CLI fallback with optional MCP tool bridge
+- [[knowledge/gateway/config-agents|knowledge/gateway/config-agents]] — Agent defaults, multi-agent routing, session, messages, and talk config
+- [[knowledge/gateway/config-channels|knowledge/gateway/config-channels]] — Channel configuration: access control, pairing, per-channel keys across Slack, Discord, Telegram, WhatsApp, Matrix, iMessage, and more
+- [[knowledge/gateway/config-tools|knowledge/gateway/config-tools]] — Tools config (policy, experimental toggles, provider-backed tools) and custom provider/base-URL setup
+- [[knowledge/gateway/configuration-examples|knowledge/gateway/configuration-examples]] — Schema-accurate configuration examples for common OpenClaw setups
+- [[knowledge/gateway/configuration-reference|knowledge/gateway/configuration-reference]] — Gateway config reference for core OpenClaw keys, defaults, and links to dedicated subsystem references
+- [[knowledge/gateway/configuration|knowledge/gateway/configuration]] — Configuration overview: common tasks, quick setup, and links to the full reference
+- [[knowledge/gateway/diagnostics|knowledge/gateway/diagnostics]] — Create shareable Gateway diagnostics bundles for bug reports
+- [[knowledge/gateway/discovery|knowledge/gateway/discovery]] — Node discovery and transports (Bonjour, Tailscale, SSH) for finding the gateway
+- [[knowledge/gateway/doctor|knowledge/gateway/doctor]] — Doctor command: health checks, config migrations, and repair steps
+- [[knowledge/gateway/gateway-lock|knowledge/gateway/gateway-lock]] — Gateway singleton guard using the WebSocket listener bind
+- [[knowledge/gateway/health|knowledge/gateway/health]] — Health check commands and gateway health monitoring
+- [[knowledge/gateway/heartbeat|knowledge/gateway/heartbeat]] — Heartbeat polling messages and notification rules
+- [[knowledge/gateway/index|knowledge/gateway/index]] — Runbook for the Gateway service, lifecycle, and operations
+- [[knowledge/gateway/local-models|knowledge/gateway/local-models]] — Run OpenClaw on local LLMs (LM Studio, vLLM, LiteLLM, custom OpenAI endpoints)
+- [[knowledge/gateway/logging|knowledge/gateway/logging]] — Logging surfaces, file logs, WS log styles, and console formatting
+- [[knowledge/gateway/multiple-gateways|knowledge/gateway/multiple-gateways]] — Run multiple OpenClaw Gateways on one host (isolation, ports, and profiles)
+- [[knowledge/gateway/network-model|knowledge/gateway/network-model]] — How the Gateway, nodes, and canvas host connect.
+- [[knowledge/gateway/openai-http-api|knowledge/gateway/openai-http-api]] — Expose an OpenAI-compatible /v1/chat/completions HTTP endpoint from the Gateway
+- [[knowledge/gateway/openresponses-api|knowledge/gateway/openresponses-api]] — OpenResponses-compatible /v1/responses endpoint: item-based input, client tools, files, and streaming
+- [[knowledge/gateway/openresponses-http-api|knowledge/gateway/openresponses-http-api]] — Expose an OpenResponses-compatible /v1/responses HTTP endpoint from the Gateway
+- [[knowledge/gateway/openshell|knowledge/gateway/openshell]] — Use OpenShell as a managed sandbox backend for OpenClaw agents
+- [[knowledge/gateway/pairing|knowledge/gateway/pairing]] — Gateway-owned node pairing (Option B) for iOS and other remote nodes
+- [[knowledge/gateway/protocol|knowledge/gateway/protocol]] — Gateway WebSocket protocol: handshake, frames, versioning
+- [[knowledge/gateway/remote-gateway-readme|knowledge/gateway/remote-gateway-readme]] — SSH tunnel setup for OpenClaw.app connecting to a remote gateway
+- [[knowledge/gateway/remote|knowledge/gateway/remote]] — Remote access using SSH tunnels (Gateway WS) and tailnets
+- [[knowledge/gateway/runbook|knowledge/gateway/runbook]] — Day-1 startup and day-2 operations guide for the OpenClaw Gateway service
+- [[knowledge/gateway/sandbox-vs-tool-policy-vs-elevated|knowledge/gateway/sandbox-vs-tool-policy-vs-elevated]] — Why a tool is blocked: sandbox runtime, tool allow/deny policy, and elevated exec gates
+- [[knowledge/gateway/sandboxing|knowledge/gateway/sandboxing]] — How OpenClaw sandboxing works: modes, scopes, workspace access, and images
+- [[knowledge/gateway/secrets-plan-contract|knowledge/gateway/secrets-plan-contract]] — Contract for `secrets apply` plans: target validation, path matching, and `auth-profiles.json` target scope
+- [[knowledge/gateway/secrets|knowledge/gateway/secrets]] — Secrets management: SecretRef contract, runtime snapshot behavior, and safe one-way scrubbing
+- [[knowledge/gateway/security|knowledge/gateway/security]] — Security considerations, trust model, hardening, and audit for OpenClaw Gateway
+- [[knowledge/gateway/tailscale|knowledge/gateway/tailscale]] — Integrated Tailscale Serve/Funnel for the Gateway dashboard
+- [[knowledge/gateway/tools-invoke-http-api|knowledge/gateway/tools-invoke-http-api]] — Invoke a single tool directly via the Gateway HTTP endpoint
+- [[knowledge/gateway/tools-invoke|knowledge/gateway/tools-invoke]] — HTTP endpoint for invoking a single tool directly without running a full agent turn
+- [[knowledge/gateway/troubleshooting|knowledge/gateway/troubleshooting]] — Deep troubleshooting runbook for gateway, channels, automation, nodes, and browser
+- [[knowledge/gateway/trusted-proxy-auth|knowledge/gateway/trusted-proxy-auth]] — Delegate gateway authentication to a trusted reverse proxy (Pomerium, Caddy, nginx + OAuth)
+
+## Help
+
+- [[knowledge/openclaw/help/debugging|knowledge/openclaw/help/debugging]] — Debugging tools: watch mode, raw model streams, and tracing reasoning leakage
+- [[knowledge/openclaw/help/environment|knowledge/openclaw/help/environment]] — Where OpenClaw loads environment variables and the precedence order
+- [[knowledge/openclaw/help/faq-first-run|knowledge/openclaw/help/faq-first-run]] — FAQ: quick-start and first-run setup — install, onboard, auth, subscriptions, initial failures
+- [[knowledge/openclaw/help/faq-models|knowledge/openclaw/help/faq-models]] — FAQ: model defaults, selection, aliases, switching, failover, and auth profiles
+- [[knowledge/openclaw/help/faq|knowledge/openclaw/help/faq]] — Frequently asked questions about OpenClaw setup, configuration, and usage
+- [[knowledge/openclaw/help/gpt54-codex-agentic-parity-maintainers|knowledge/openclaw/help/gpt54-codex-agentic-parity-maintainers]] — How to review the GPT-5.4 / Codex parity program as four merge units
+- [[knowledge/openclaw/help/gpt54-codex-agentic-parity|knowledge/openclaw/help/gpt54-codex-agentic-parity]] — How OpenClaw closes agentic execution gaps for GPT-5.4 and Codex-style models
+- [[knowledge/openclaw/help/index|knowledge/openclaw/help/index]] — Help hub: common fixes, install sanity, and where to look when something breaks
+- [[knowledge/openclaw/help/scripts|knowledge/openclaw/help/scripts]] — Repository scripts: purpose, scope, and safety notes
+- [[knowledge/openclaw/help/testing-live|knowledge/openclaw/help/testing-live]] — Live (network-touching) tests: model matrix, CLI backends, ACP, media providers, credentials
+- [[knowledge/openclaw/help/testing|knowledge/openclaw/help/testing]] — Testing kit: unit/e2e/live suites, Docker runners, and what each test covers
+- [[knowledge/openclaw/help/troubleshooting|knowledge/openclaw/help/troubleshooting]] — Symptom first troubleshooting hub for OpenClaw
+
+## Install
+
+- [[knowledge/openclaw/install/ansible|knowledge/openclaw/install/ansible]] — Ansible Installation
+- [[knowledge/openclaw/install/azure|knowledge/openclaw/install/azure]] — Run OpenClaw Gateway 24/7 on an Azure Linux VM with durable state
+- [[knowledge/openclaw/install/bun|knowledge/openclaw/install/bun]] — Bun workflow (experimental): installs and gotchas vs pnpm
+- [[knowledge/openclaw/install/clawdock|knowledge/openclaw/install/clawdock]] — ClawDock shell helpers for Docker-based OpenClaw installs
+- [[knowledge/openclaw/install/development-channels|knowledge/openclaw/install/development-channels]] — Stable, beta, and dev channels: semantics, switching, pinning, and tagging
+- [[knowledge/openclaw/install/digitalocean|knowledge/openclaw/install/digitalocean]] — Host OpenClaw on a DigitalOcean Droplet
+- [[knowledge/openclaw/install/docker-vm-runtime|knowledge/openclaw/install/docker-vm-runtime]] — Shared Docker VM runtime steps for long-lived OpenClaw Gateway hosts
+- [[knowledge/openclaw/install/docker|knowledge/openclaw/install/docker]] — Optional Docker-based setup and onboarding for OpenClaw
+- [[knowledge/openclaw/install/exe-dev|knowledge/openclaw/install/exe-dev]] — Run OpenClaw Gateway on exe.dev (VM + HTTPS proxy) for remote access
+- [[knowledge/openclaw/install/fly|knowledge/openclaw/install/fly]] — Step-by-step Fly.io deployment for OpenClaw with persistent storage and HTTPS
+- [[knowledge/openclaw/install/gcp|knowledge/openclaw/install/gcp]] — Run OpenClaw Gateway 24/7 on a GCP Compute Engine VM (Docker) with durable state
+- [[knowledge/openclaw/install/hetzner|knowledge/openclaw/install/hetzner]] — Run OpenClaw Gateway 24/7 on a cheap Hetzner VPS (Docker) with durable state and baked-in binaries
+- [[knowledge/openclaw/install/hostinger|knowledge/openclaw/install/hostinger]] — Host OpenClaw on Hostinger
+- [[knowledge/openclaw/install/index|knowledge/openclaw/install/index]] — Install OpenClaw — installer script, npm/pnpm/bun, from source, Docker, and more
+- [[knowledge/openclaw/install/installer|knowledge/openclaw/install/installer]] — How the installer scripts work (install.sh, install-cli.sh, install.ps1), flags, and automation
+- [[knowledge/openclaw/install/kubernetes|knowledge/openclaw/install/kubernetes]] — Deploy OpenClaw Gateway to a Kubernetes cluster with Kustomize
+- [[knowledge/openclaw/install/macos-vm|knowledge/openclaw/install/macos-vm]] — OpenClaw on macOS VMs (Sandboxing)
+- [[knowledge/openclaw/install/migrating-matrix|knowledge/openclaw/install/migrating-matrix]] — How OpenClaw upgrades the previous Matrix plugin in place, including encrypted-state recovery limits and manual recovery steps.
+- [[knowledge/openclaw/install/migrating|knowledge/openclaw/install/migrating]] — Move (migrate) an OpenClaw install from one machine to another
+- [[knowledge/openclaw/install/nix|knowledge/openclaw/install/nix]] — Nix Installation
+- [[knowledge/openclaw/install/node|knowledge/openclaw/install/node]] — Install and configure Node.js for OpenClaw — version requirements, install options, and PATH troubleshooting
+- [[knowledge/openclaw/install/oracle|knowledge/openclaw/install/oracle]] — Host OpenClaw on Oracle Cloud's Always Free ARM tier
+- [[knowledge/openclaw/install/podman|knowledge/openclaw/install/podman]] — Run OpenClaw in a rootless Podman container
+- [[knowledge/openclaw/install/raspberry-pi|knowledge/openclaw/install/raspberry-pi]] — Host OpenClaw on a Raspberry Pi for always-on self-hosting
+- [[knowledge/openclaw/install/uninstall|knowledge/openclaw/install/uninstall]] — Uninstall OpenClaw completely (CLI, service, state, workspace)
+- [[knowledge/openclaw/install/updating|knowledge/openclaw/install/updating]] — Updating OpenClaw safely (global install or source), plus rollback strategy
+
+## Mac
+
+- [[knowledge/openclaw/mac/bundled-gateway|knowledge/openclaw/mac/bundled-gateway]] — Gateway runtime on macOS (external launchd service)
+- [[knowledge/openclaw/mac/canvas|knowledge/openclaw/mac/canvas]] — Agent-controlled Canvas panel embedded via WKWebView + custom URL scheme
+- [[knowledge/openclaw/mac/child-process|knowledge/openclaw/mac/child-process]] — Gateway lifecycle on macOS (launchd)
+- [[knowledge/openclaw/mac/dev-setup|knowledge/openclaw/mac/dev-setup]] — Setup guide for developers working on the OpenClaw macOS app
+- [[knowledge/openclaw/mac/health|knowledge/openclaw/mac/health]] — How the macOS app reports knowledge/gateway/Baileys health states
+- [[knowledge/openclaw/mac/icon|knowledge/openclaw/mac/icon]] — Menu bar icon states and animations for OpenClaw on macOS
+- [[knowledge/openclaw/mac/logging|knowledge/openclaw/mac/logging]] — OpenClaw logging: rolling diagnostics file log + unified log privacy flags
+- [[knowledge/openclaw/mac/menu-bar|knowledge/openclaw/mac/menu-bar]] — Menu bar status logic and what is surfaced to users
+- [[knowledge/openclaw/mac/peekaboo|knowledge/openclaw/mac/peekaboo]] — PeekabooBridge integration for macOS UI automation
+- [[knowledge/openclaw/mac/permissions|knowledge/openclaw/mac/permissions]] — macOS permission persistence (TCC) and signing requirements
+- [[knowledge/openclaw/mac/remote|knowledge/openclaw/mac/remote]] — macOS app flow for controlling a remote OpenClaw gateway over SSH
+- [[knowledge/openclaw/mac/signing|knowledge/openclaw/mac/signing]] — Signing steps for macOS debug builds generated by packaging scripts
+- [[knowledge/openclaw/mac/skills|knowledge/openclaw/mac/skills]] — macOS Skills settings UI and gateway-backed status
+- [[knowledge/openclaw/mac/voice-overlay|knowledge/openclaw/mac/voice-overlay]] — Voice overlay lifecycle when wake-word and push-to-talk overlap
+- [[knowledge/openclaw/mac/voicewake|knowledge/openclaw/mac/voicewake]] — Voice wake and push-to-talk modes plus routing details in the mac app
+- [[knowledge/openclaw/mac/webchat|knowledge/openclaw/mac/webchat]] — How the mac app embeds the gateway WebChat and how to debug it
+- [[knowledge/openclaw/mac/xpc|knowledge/openclaw/mac/xpc]] — macOS IPC architecture for OpenClaw app, gateway node transport, and PeekabooBridge
+
+## Nodes
+
+- [[knowledge/openclaw/nodes/audio|knowledge/openclaw/nodes/audio]] — How inbound audio/voice notes are downloaded, transcribed, and injected into replies
+- [[knowledge/openclaw/nodes/camera|knowledge/openclaw/nodes/camera]] — Camera capture (iOS/Android nodes + macOS app) for agent use: photos (jpg) and short video clips (mp4)
+- [[knowledge/openclaw/nodes/images|knowledge/openclaw/nodes/images]] — Image and media handling rules for send, gateway, and agent replies
+- [[knowledge/openclaw/nodes/index|knowledge/openclaw/nodes/index]] — Nodes: pairing, capabilities, permissions, and CLI helpers for canvas/camera/screen/device/notifications/system
+- [[knowledge/openclaw/nodes/location-command|knowledge/openclaw/nodes/location-command]] — Location command for nodes (location.get), permission modes, and Android foreground behavior
+- [[knowledge/openclaw/nodes/media-understanding|knowledge/openclaw/nodes/media-understanding]] — Inbound image/audio/video understanding (optional) with provider + CLI fallbacks
+- [[knowledge/openclaw/nodes/talk|knowledge/openclaw/nodes/talk]] — Talk mode: continuous speech conversations with ElevenLabs TTS
+- [[knowledge/openclaw/nodes/troubleshooting|knowledge/openclaw/nodes/troubleshooting]] — Troubleshoot node pairing, foreground requirements, permissions, and tool failures
+- [[knowledge/openclaw/nodes/voicewake|knowledge/openclaw/nodes/voicewake]] — Global voice wake words (Gateway-owned) and how they sync across nodes
+
+## Plan
+
+- [[plan/channel-presentation-refactor|plan/channel-presentation-refactor]] — Refactor plan decoupling semantic message presentation from channel native UI renderers across Discord, Slack, Telegram, and other channels.
+- [[plan/codex-context-engine-harness|plan/codex-context-engine-harness]] — Specification for making the bundled Codex app-server harness honor OpenClaw context-engine plugins
+- [[plan/ui-channels|plan/ui-channels]] — Decouple semantic message presentation from channel native UI renderers.
+
+## Platforms
+
+- [[knowledge/openclaw/platforms/android|knowledge/openclaw/platforms/android]] — Android app (node): connection runbook + Connect/Chat/Voice/Canvas command surface
+- [[knowledge/openclaw/platforms/bundled-gateway|knowledge/openclaw/platforms/bundled-gateway]] — Gateway on macOS (external launchd)
+- [[knowledge/openclaw/platforms/canvas|knowledge/openclaw/platforms/canvas]] — Canvas (macOS app)
+- [[knowledge/openclaw/platforms/child-process|knowledge/openclaw/platforms/child-process]] — Gateway lifecycle on macOS
+- [[knowledge/openclaw/platforms/dev-setup|knowledge/openclaw/platforms/dev-setup]] — macOS Developer Setup
+- [[knowledge/openclaw/platforms/digitalocean|knowledge/openclaw/platforms/digitalocean]] — OpenClaw on DigitalOcean (simple paid VPS option)
+- [[knowledge/openclaw/platforms/health|knowledge/openclaw/platforms/health]] — Health Checks on macOS
+- [[knowledge/openclaw/platforms/icon|knowledge/openclaw/platforms/icon]] — Menu Bar Icon States
+- [[knowledge/openclaw/platforms/index|knowledge/openclaw/platforms/index]] — Platform support overview (Gateway + companion apps)
+- [[knowledge/openclaw/platforms/ios|knowledge/openclaw/platforms/ios]] — iOS node app: connect to the Gateway, pairing, canvas, and troubleshooting
+- [[knowledge/openclaw/platforms/linux|knowledge/openclaw/platforms/linux]] — Linux support + companion app status
+- [[knowledge/openclaw/platforms/logging|knowledge/openclaw/platforms/logging]] — Logging (macOS)
+- [[knowledge/openclaw/platforms/macos|knowledge/openclaw/platforms/macos]] — OpenClaw macOS companion app (menu bar + gateway broker)
+- [[knowledge/openclaw/platforms/menu-bar|knowledge/openclaw/platforms/menu-bar]] — Menu Bar Status Logic
+- [[knowledge/openclaw/platforms/oracle|knowledge/openclaw/platforms/oracle]] — OpenClaw on Oracle Cloud (Always Free ARM)
+- [[knowledge/openclaw/platforms/peekaboo|knowledge/openclaw/platforms/peekaboo]] — Peekaboo Bridge (macOS UI automation)
+- [[knowledge/openclaw/platforms/permissions|knowledge/openclaw/platforms/permissions]] — macOS permissions (TCC)
+- [[knowledge/openclaw/platforms/raspberry-pi|knowledge/openclaw/platforms/raspberry-pi]] — OpenClaw on Raspberry Pi (budget self-hosted setup)
+- [[knowledge/openclaw/platforms/remote|knowledge/openclaw/platforms/remote]] — Remote OpenClaw (macOS ⇄ remote host)
+- [[knowledge/openclaw/platforms/signing|knowledge/openclaw/platforms/signing]] — mac signing (debug builds)
+- [[knowledge/openclaw/platforms/skills|knowledge/openclaw/platforms/skills]] — Skills (macOS)
+- [[knowledge/openclaw/platforms/voice-overlay|knowledge/openclaw/platforms/voice-overlay]] — Voice Overlay Lifecycle (macOS)
+- [[knowledge/openclaw/platforms/voicewake|knowledge/openclaw/platforms/voicewake]] — Voice Wake & Push-to-Talk
+- [[knowledge/openclaw/platforms/webchat|knowledge/openclaw/platforms/webchat]] — WebChat (macOS app)
+- [[knowledge/openclaw/platforms/windows|knowledge/openclaw/platforms/windows]] — Windows support: native and WSL2 install paths, daemon, and current caveats
+- [[knowledge/openclaw/platforms/xpc|knowledge/openclaw/platforms/xpc]] — OpenClaw macOS IPC architecture
+
+## Plugins
+
+- [[knowledge/plugins/agent-tools|knowledge/plugins/agent-tools]] — Redirects to Building Plugins (registering tools section)
+- [[knowledge/plugins/architecture-internals|knowledge/plugins/architecture-internals]] — Plugin architecture internals: load pipeline, registry, runtime hooks, HTTP routes, and reference tables
+- [[knowledge/plugins/architecture|knowledge/plugins/architecture]] — Plugin internals: capability model, ownership, contracts, load pipeline, and runtime helpers
+- [[knowledge/plugins/building-extensions|knowledge/plugins/building-extensions]] — Redirects to the current Building Plugins guide
+- [[knowledge/plugins/building-plugins|knowledge/plugins/building-plugins]] — Create your first OpenClaw plugin in minutes
+- [[knowledge/plugins/bundles|knowledge/plugins/bundles]] — Install and use Codex, Claude, and Cursor bundles as OpenClaw plugins
+- [[knowledge/plugins/codex-harness|knowledge/plugins/codex-harness]] — Run OpenClaw embedded agent turns through the bundled Codex app-server harness
+- [[knowledge/plugins/community|knowledge/plugins/community]] — Community-maintained OpenClaw plugins: browse, install, and submit your own
+- [[knowledge/plugins/google-meet|knowledge/plugins/google-meet]] — Google Meet plugin: join explicit Meet URLs through Chrome or Twilio with realtime voice defaults
+- [[knowledge/plugins/manifest|knowledge/plugins/manifest]] — Plugin manifest + JSON schema requirements (strict config validation)
+- [[knowledge/plugins/memory-wiki|knowledge/plugins/memory-wiki]] — memory-wiki: compiled knowledge vault with provenance, claims, dashboards, and bridge mode
+- [[knowledge/plugins/message-presentation|knowledge/plugins/message-presentation]] — Semantic message cards, buttons, selects, fallback text, and delivery hints for channel plugins
+- [[knowledge/plugins/sdk-agent-harness|knowledge/plugins/sdk-agent-harness]] — Experimental SDK surface for plugins that replace the low level embedded agent executor
+- [[knowledge/plugins/sdk-channel-plugins|knowledge/plugins/sdk-channel-plugins]] — Step-by-step guide to building a messaging channel plugin for OpenClaw
+- [[knowledge/plugins/sdk-entrypoints|knowledge/plugins/sdk-entrypoints]] — Reference for definePluginEntry, defineChannelPluginEntry, and defineSetupPluginEntry
+- [[knowledge/plugins/sdk-migration|knowledge/plugins/sdk-migration]] — Migrate from the legacy backwards-compatibility layer to the modern plugin SDK
+- [[knowledge/plugins/sdk-overview|knowledge/plugins/sdk-overview]] — Import map, registration API reference, and SDK architecture
+- [[knowledge/plugins/sdk-provider-plugins|knowledge/plugins/sdk-provider-plugins]] — Step-by-step guide to building a model provider plugin for OpenClaw
+- [[knowledge/plugins/sdk-runtime|knowledge/plugins/sdk-runtime]] — api.runtime -- the injected runtime helpers available to plugins
+- [[knowledge/plugins/sdk-setup|knowledge/plugins/sdk-setup]] — Setup wizards, setup-entry.ts, config schemas, and package.json metadata
+- [[knowledge/plugins/sdk-subpaths|knowledge/plugins/sdk-subpaths]] — Plugin SDK subpath catalog: which imports live where, grouped by area
+- [[knowledge/plugins/sdk-testing|knowledge/plugins/sdk-testing]] — Testing utilities and patterns for OpenClaw plugins
+- [[knowledge/plugins/skill-workshop|knowledge/plugins/skill-workshop]] — Experimental capture of reusable procedures as workspace skills with review, approval, quarantine, and hot skill refresh
+- [[knowledge/plugins/voice-call|knowledge/plugins/voice-call]] — Voice Call plugin: outbound + inbound calls via Twilio/Telnyx/Plivo (plugin install + config + CLI)
+- [[knowledge/plugins/webhooks|knowledge/plugins/webhooks]] — Webhooks plugin: authenticated TaskFlow ingress for trusted external automation
+- [[knowledge/plugins/zalouser|knowledge/plugins/zalouser]] — Zalo Personal plugin: QR login + messaging via native zca-js (plugin install + channel config + tool)
+
+## Providers
+
+- [[knowledge/openclaw/providers/alibaba|knowledge/openclaw/providers/alibaba]] — Alibaba Model Studio Wan video generation in OpenClaw
+- [[knowledge/openclaw/providers/anthropic|knowledge/openclaw/providers/anthropic]] — Use Anthropic Claude via API keys or Claude CLI in OpenClaw
+- [[knowledge/openclaw/providers/arcee|knowledge/openclaw/providers/arcee]] — Arcee AI setup (auth + model selection)
+- [[knowledge/openclaw/providers/bedrock-mantle|knowledge/openclaw/providers/bedrock-mantle]] — Use Amazon Bedrock Mantle (OpenAI-compatible) models with OpenClaw
+- [[knowledge/openclaw/providers/bedrock|knowledge/openclaw/providers/bedrock]] — Use Amazon Bedrock (Converse API) models with OpenClaw
+- [[knowledge/openclaw/providers/chinese-ai-providers|knowledge/openclaw/providers/chinese-ai-providers]] — Chinese AI platforms: DeepSeek, Moonshot (Kimi), MiniMax, Z.AI/GLM, Qianfan, StepFun, Volcengine, Xiaomi, Tencent
+- [[knowledge/openclaw/providers/chutes|knowledge/openclaw/providers/chutes]] — Chutes setup (OAuth or API key, model discovery, aliases)
+- [[knowledge/openclaw/providers/claude-max-api-proxy|knowledge/openclaw/providers/claude-max-api-proxy]] — Community proxy to expose Claude subscription credentials as an OpenAI-compatible endpoint
+- [[knowledge/openclaw/providers/cloud-inference|knowledge/openclaw/providers/cloud-inference]] — Cloud inference platforms: Together AI, Fireworks, Groq, NVIDIA, Arcee AI, Mistral
+- [[knowledge/openclaw/providers/cloudflare-ai-gateway|knowledge/openclaw/providers/cloudflare-ai-gateway]] — Cloudflare AI Gateway setup (auth + model selection)
+- [[knowledge/openclaw/providers/comfy|knowledge/openclaw/providers/comfy]] — ComfyUI workflow image, video, and music generation setup in OpenClaw
+- [[knowledge/openclaw/providers/deepgram|knowledge/openclaw/providers/deepgram]] — Deepgram transcription for inbound voice notes
+- [[knowledge/openclaw/providers/deepseek|knowledge/openclaw/providers/deepseek]] — DeepSeek setup (auth + model selection)
+- [[knowledge/openclaw/providers/elevenlabs|knowledge/openclaw/providers/elevenlabs]] — Use ElevenLabs speech, Scribe STT, and realtime transcription with OpenClaw
+- [[knowledge/openclaw/providers/fal|knowledge/openclaw/providers/fal]] — fal image and video generation setup in OpenClaw
+- [[knowledge/openclaw/providers/fireworks|knowledge/openclaw/providers/fireworks]] — Fireworks setup (auth + model selection)
+- [[knowledge/openclaw/providers/github-copilot|knowledge/openclaw/providers/github-copilot]] — Sign in to GitHub Copilot from OpenClaw using the device flow
+- [[knowledge/openclaw/providers/glm|knowledge/openclaw/providers/glm]] — GLM model family overview + how to use it in OpenClaw
+- [[knowledge/openclaw/providers/google|knowledge/openclaw/providers/google]] — Google Gemini setup (API key + OAuth, image generation, media understanding, TTS, web search)
+- [[knowledge/openclaw/providers/groq|knowledge/openclaw/providers/groq]] — Groq setup (auth + model selection)
+- [[knowledge/openclaw/providers/huggingface|knowledge/openclaw/providers/huggingface]] — Hugging Face Inference setup (auth + model selection)
+- [[knowledge/openclaw/providers/index|knowledge/openclaw/providers/index]] — Model providers (LLMs) supported by OpenClaw
+- [[knowledge/openclaw/providers/inferrs|knowledge/openclaw/providers/inferrs]] — Run OpenClaw through inferrs (OpenAI-compatible local server)
+- [[knowledge/openclaw/providers/kilocode|knowledge/openclaw/providers/kilocode]] — Use Kilo Gateway's unified API to access many models in OpenClaw
+- [[knowledge/openclaw/providers/litellm|knowledge/openclaw/providers/litellm]] — Run OpenClaw through LiteLLM Proxy for unified model access and cost tracking
+- [[knowledge/openclaw/providers/lmstudio|knowledge/openclaw/providers/lmstudio]] — Run OpenClaw with LM Studio
+- [[knowledge/openclaw/providers/local-inference|knowledge/openclaw/providers/local-inference]] — Local/self-hosted inference servers: vLLM, SGLang, LM Studio, inferrs
+- [[knowledge/openclaw/providers/media-generation|knowledge/openclaw/providers/media-generation]] — Media generation: ComfyUI workflows, Runway video, fal image/video, Deepgram transcription
+- [[knowledge/openclaw/providers/minimax|knowledge/openclaw/providers/minimax]] — Use MiniMax models in OpenClaw
+- [[knowledge/openclaw/providers/mistral|knowledge/openclaw/providers/mistral]] — Use Mistral models and Voxtral transcription with OpenClaw
+- [[knowledge/openclaw/providers/model-directory|knowledge/openclaw/providers/model-directory]] — Directory of all LLM providers supported by OpenClaw, with quick-start setup guide.
+- [[knowledge/openclaw/providers/model-provider-quickstart|knowledge/openclaw/providers/model-provider-quickstart]] — Quick-start guide for selecting and configuring LLM model providers in OpenClaw.
+- [[knowledge/openclaw/providers/models|knowledge/openclaw/providers/models]] — Model providers (LLMs) supported by OpenClaw
+- [[knowledge/openclaw/providers/moonshot|knowledge/openclaw/providers/moonshot]] — Configure Moonshot K2 vs Kimi Coding (separate providers + keys)
+- [[knowledge/openclaw/providers/multi-model-providers|knowledge/openclaw/providers/multi-model-providers]] — Multi-model aggregator providers: HuggingFace, Venice AI, Chutes, OpenCode, Synthetic, Vydra
+- [[knowledge/openclaw/providers/nvidia|knowledge/openclaw/providers/nvidia]] — Use NVIDIA's OpenAI-compatible API in OpenClaw
+- [[knowledge/openclaw/providers/ollama|knowledge/openclaw/providers/ollama]] — Run OpenClaw with Ollama (cloud and local models)
+- [[knowledge/openclaw/providers/openai|knowledge/openclaw/providers/openai]] — Use OpenAI via API keys or Codex subscription in OpenClaw
+- [[knowledge/openclaw/providers/opencode-go|knowledge/openclaw/providers/opencode-go]] — Use the OpenCode Go catalog with the shared OpenCode setup
+- [[knowledge/openclaw/providers/opencode|knowledge/openclaw/providers/opencode]] — Use OpenCode Zen and Go catalogs with OpenClaw
+- [[knowledge/openclaw/providers/openrouter|knowledge/openclaw/providers/openrouter]] — Use OpenRouter's unified API to access many models in OpenClaw
+- [[knowledge/openclaw/providers/perplexity-provider|knowledge/openclaw/providers/perplexity-provider]] — Perplexity web search provider setup (API key, search modes, filtering)
+- [[knowledge/openclaw/providers/qianfan|knowledge/openclaw/providers/qianfan]] — Use Qianfan's unified API to access many models in OpenClaw
+- [[knowledge/openclaw/providers/qwen|knowledge/openclaw/providers/qwen]] — Use Qwen Cloud via OpenClaw's bundled qwen provider
+- [[knowledge/openclaw/providers/qwen_modelstudio|knowledge/openclaw/providers/qwen_modelstudio]] — Redirect to /knowledge/openclaw/providers/qwen
+- [[knowledge/openclaw/providers/runway|knowledge/openclaw/providers/runway]] — Runway video generation setup in OpenClaw
+- [[knowledge/openclaw/providers/sglang|knowledge/openclaw/providers/sglang]] — Run OpenClaw with SGLang (OpenAI-compatible self-hosted server)
+- [[knowledge/openclaw/providers/special-purpose|knowledge/openclaw/providers/special-purpose]] — Special purpose providers: GitHub Copilot (device login), Claude Max API Proxy (community), Perplexity (web search)
+- [[knowledge/openclaw/providers/stepfun|knowledge/openclaw/providers/stepfun]] — Use StepFun models with OpenClaw
+- [[knowledge/openclaw/providers/synthetic|knowledge/openclaw/providers/synthetic]] — Use Synthetic's Anthropic-compatible API in OpenClaw
+- [[knowledge/openclaw/providers/tencent|knowledge/openclaw/providers/tencent]] — Tencent Cloud TokenHub setup for Hy3 preview
+- [[knowledge/openclaw/providers/together|knowledge/openclaw/providers/together]] — Together AI setup (auth + model selection)
+- [[knowledge/openclaw/providers/unified-api-gateways|knowledge/openclaw/providers/unified-api-gateways]] — Unified API gateway providers: OpenRouter, LiteLLM, Kilo Gateway, Vercel AI Gateway, Cloudflare AI Gateway
+- [[knowledge/openclaw/providers/venice|knowledge/openclaw/providers/venice]] — Use Venice AI privacy-focused models in OpenClaw
+- [[knowledge/openclaw/providers/vercel-ai-gateway|knowledge/openclaw/providers/vercel-ai-gateway]] — Vercel AI Gateway setup (auth + model selection)
+- [[knowledge/openclaw/providers/vllm|knowledge/openclaw/providers/vllm]] — Run OpenClaw with vLLM (OpenAI-compatible local server)
+- [[knowledge/openclaw/providers/volcengine|knowledge/openclaw/providers/volcengine]] — Volcano Engine setup (Doubao models, general + coding endpoints)
+- [[knowledge/openclaw/providers/vydra|knowledge/openclaw/providers/vydra]] — Use Vydra image, video, and speech in OpenClaw
+- [[knowledge/openclaw/providers/xai|knowledge/openclaw/providers/xai]] — Use xAI Grok models in OpenClaw
+- [[knowledge/openclaw/providers/xiaomi|knowledge/openclaw/providers/xiaomi]] — Use Xiaomi MiMo models with OpenClaw
+- [[knowledge/openclaw/providers/zai|knowledge/openclaw/providers/zai]] — Use Z.AI (GLM models) with OpenClaw
+
+## Reference
+
+- [[knowledge/openclaw/reference/AGENTS.default|knowledge/openclaw/reference/AGENTS.default]] — Default OpenClaw agent instructions and skills roster for the personal assistant setup
+- [[knowledge/openclaw/reference/AGENTS.dev|knowledge/openclaw/reference/AGENTS.dev]] — AGENTS.md - OpenClaw Workspace
+- [[knowledge/openclaw/reference/AGENTS|knowledge/openclaw/reference/AGENTS]] — AGENTS.md - Your Workspace
+- [[knowledge/openclaw/reference/BOOT|knowledge/openclaw/reference/BOOT]] — BOOT.md
+- [[knowledge/openclaw/reference/BOOTSTRAP|knowledge/openclaw/reference/BOOTSTRAP]] — BOOTSTRAP.md - Hello, World
+- [[knowledge/openclaw/reference/CLAUDE|knowledge/openclaw/reference/CLAUDE]] — AGENTS.md - Your Workspace
+- [[knowledge/openclaw/reference/HEARTBEAT|knowledge/openclaw/reference/HEARTBEAT]] — HEARTBEAT.md Template
+- [[knowledge/openclaw/reference/IDENTITY.dev|knowledge/openclaw/reference/IDENTITY.dev]] — IDENTITY.md - Agent Identity
+- [[knowledge/openclaw/reference/IDENTITY|knowledge/openclaw/reference/IDENTITY]] — IDENTITY.md - Who Am I?
+- [[knowledge/openclaw/reference/RELEASING|knowledge/openclaw/reference/RELEASING]] — Public release channels, version naming, and cadence
+- [[knowledge/openclaw/reference/SOUL.dev|knowledge/openclaw/reference/SOUL.dev]] — SOUL.md - The Soul of C-3PO
+- [[knowledge/openclaw/reference/SOUL|knowledge/openclaw/reference/SOUL]] — SOUL.md - Who You Are
+- [[knowledge/openclaw/reference/TOOLS.dev|knowledge/openclaw/reference/TOOLS.dev]] — TOOLS.md - User Tool Notes (editable)
+- [[knowledge/openclaw/reference/TOOLS|knowledge/openclaw/reference/TOOLS]] — TOOLS.md - Local Notes
+- [[knowledge/openclaw/reference/USER.dev|knowledge/openclaw/reference/USER.dev]] — USER.md - User Profile
+- [[knowledge/openclaw/reference/USER|knowledge/openclaw/reference/USER]] — USER.md - About Your Human
+- [[knowledge/openclaw/reference/api-usage-costs|knowledge/openclaw/reference/api-usage-costs]] — Audit what can spend money, which keys are used, and how to view usage
+- [[knowledge/openclaw/reference/credits|knowledge/openclaw/reference/credits]] — Project origin, contributors, and license.
+- [[knowledge/openclaw/reference/device-models|knowledge/openclaw/reference/device-models]] — How OpenClaw vendors Apple device model identifiers for friendly names in the macOS app.
+- [[knowledge/openclaw/reference/memory-config|knowledge/openclaw/reference/memory-config]] — All configuration knobs for memory search, embedding providers, QMD, hybrid search, and multimodal indexing
+- [[knowledge/openclaw/reference/prompt-caching|knowledge/openclaw/reference/prompt-caching]] — Prompt caching knobs, merge order, provider behavior, and tuning patterns
+- [[knowledge/openclaw/reference/rich-output-protocol|knowledge/openclaw/reference/rich-output-protocol]] — Rich output shortcode protocol for embeds, media, audio hints, and replies
+- [[knowledge/openclaw/reference/rpc|knowledge/openclaw/reference/rpc]] — RPC adapters for external CLIs (signal-cli, legacy imsg) and gateway patterns
+- [[knowledge/openclaw/reference/secretref-credential-surface|knowledge/openclaw/reference/secretref-credential-surface]] — Canonical supported vs unsupported SecretRef credential surface
+- [[knowledge/openclaw/reference/session-management-compaction|knowledge/openclaw/reference/session-management-compaction]] — Deep dive: session store + transcripts, lifecycle, and (auto)compaction internals
+- [[knowledge/openclaw/reference/test|knowledge/openclaw/reference/test]] — How to run tests locally (vitest) and when to use force/coverage modes
+- [[knowledge/openclaw/reference/token-use|knowledge/openclaw/reference/token-use]] — How OpenClaw builds prompt context and reports token usage + costs
+- [[knowledge/openclaw/reference/transcript-hygiene|knowledge/openclaw/reference/transcript-hygiene]] — Reference: provider-specific transcript sanitization and repair rules
+- [[knowledge/openclaw/reference/wizard|knowledge/openclaw/reference/wizard]] — Full reference for CLI onboarding: every step, flag, and config field
+
+## References
+
+- [[knowledge/openclaw/references/background-tasks|knowledge/openclaw/references/background-tasks]] — Overview of background task tracking for ACP runs, subagents, isolated cron jobs, and CLI operations
+- [[knowledge/openclaw/references/cron-delivery|knowledge/openclaw/references/cron-delivery]] — Delivery modes for cron jobs: announce, webhook, none, failure notifications, and channel target configuration
+- [[knowledge/openclaw/references/cron-jobs|knowledge/openclaw/references/cron-jobs]] — Overview of OpenClaw's built-in cron scheduler: schedule types, execution styles, delivery modes, and configuration
+- [[knowledge/openclaw/references/cron-manage|knowledge/openclaw/references/cron-manage]] — CLI commands for listing, showing, editing, running, and deleting cron jobs; model overrides and agent selection
+- [[knowledge/openclaw/references/cron-schedules|knowledge/openclaw/references/cron-schedules]] — Schedule types for cron jobs: at (one-shot), every (interval), cron expressions, timezone handling, and OR logic gotchas
+- [[knowledge/openclaw/references/cron-webhooks|knowledge/openclaw/references/cron-webhooks]] — HTTP webhook endpoints for external triggers and Gmail PubSub inbox integration
+- [[knowledge/openclaw/references/faq-automation|knowledge/openclaw/references/faq-automation]] — Skills customization, sub-agents, cron jobs, scheduling, and automation workflows
+- [[knowledge/openclaw/references/faq-env|knowledge/openclaw/references/faq-env]] — Environment variable loading, precedence, and configuration in OpenClaw
+- [[knowledge/openclaw/references/faq-gateway|knowledge/openclaw/references/faq-gateway]] — Gateway ports, daemon management, remote mode, and connection troubleshooting
+- [[knowledge/openclaw/references/faq-installation|knowledge/openclaw/references/faq-installation]] — Frequently asked questions about installing OpenClaw on different platforms, troubleshooting common issues
+- [[knowledge/openclaw/references/faq-models|knowledge/openclaw/references/faq-models]] — Model defaults, selection, aliases, switching, and failover strategies
+- [[knowledge/openclaw/references/faq-sandboxing|knowledge/openclaw/references/faq-sandboxing]] — Sandboxing configuration, Docker setup, and how OpenClaw memory works
+- [[knowledge/openclaw/references/faq-security|knowledge/openclaw/references/faq-security]] — Security best practices, DM pairing, prompt injection mitigation, and access control
+- [[knowledge/openclaw/references/faq-sessions|knowledge/openclaw/references/faq-sessions]] — Session management, multi-agent routing, compaction, and chat configuration
+- [[knowledge/openclaw/references/faq|knowledge/openclaw/references/faq]] — Frequently asked questions about OpenClaw setup, configuration, and usage
+- [[knowledge/openclaw/references/hooks-overview|knowledge/openclaw/references/hooks-overview]] — Overview of event-driven automation hooks: event types, hook structure, discovery, and bundled hooks
+- [[knowledge/openclaw/references/hooks-troubleshoot|knowledge/openclaw/references/hooks-troubleshoot]] — Troubleshooting OpenClaw hooks: discovery issues, eligibility checks, execution problems, and common fixes
+- [[knowledge/openclaw/references/hooks-writing|knowledge/openclaw/references/hooks-writing]] — How to write OpenClaw hooks: directory structure, HOOK.md metadata, handler implementation, and event context details
+- [[knowledge/openclaw/references/openclaw-help-index|knowledge/openclaw/references/openclaw-help-index]] — Help hub for OpenClaw: common fixes, install sanity, and where to look when something breaks
+- [[knowledge/openclaw/references/tasks-cli|knowledge/openclaw/references/tasks-cli]] — CLI commands for background tasks: list, show, cancel, notify, audit, maintenance, and Task Flow commands
+- [[knowledge/openclaw/references/tasks-storage|knowledge/openclaw/references/tasks-storage]] — Background task storage in SQLite, automatic maintenance (reconciliation, cleanup, pruning), and integration with other systems
+
+## Refactor
+
+- [[refactor/async-exec-duplicate-completion|refactor/async-exec-duplicate-completion]] — Investigation notes for duplicate async exec completion injection
+- [[refactor/async-exec-duplicate-completion|refactor/async-exec-duplicate-completion]] — Investigation into duplicate async exec completion recordings — most likely caused by duplicate session injection via exec.finished path without runId idempotency check.
+
+## Security
+
+- [[knowledge/openclaw/security/CONTRIBUTING-THREAT-MODEL|knowledge/openclaw/security/CONTRIBUTING-THREAT-MODEL]] — How to contribute to the OpenClaw threat model
+- [[knowledge/openclaw/security/THREAT-MODEL-ATLAS|knowledge/openclaw/security/THREAT-MODEL-ATLAS]] — OpenClaw threat model mapped to the MITRE ATLAS framework
+- [[knowledge/openclaw/security/audit-checks|knowledge/openclaw/security/audit-checks]] — Reference catalog of checkIds emitted by openclaw security audit
+- [[knowledge/openclaw/security/formal-verification|knowledge/openclaw/security/formal-verification]] — Machine-checked security models for OpenClaw’s highest-risk paths.
+- [[knowledge/openclaw/security/index|knowledge/openclaw/security/index]] — Security considerations and threat model for running an AI gateway with shell access
+- [[knowledge/openclaw/security/threat-model-contributing|knowledge/openclaw/security/threat-model-contributing]] — How to contribute security findings, threat scenarios, and mitigations to the OpenClaw threat model.
+
+## Skills
+
+- [[knowledge/openclaw/skills/creating-skills|knowledge/openclaw/skills/creating-skills]] — Build and test custom workspace skills with SKILL.md
+- [[knowledge/openclaw/skills/cron|knowledge/openclaw/skills/cron]] — Gateway scheduler for precise timing: cron expressions, one-shot reminders, webhooks, and delivery options
+- [[knowledge/openclaw/skills/gmail-pubsub|knowledge/openclaw/skills/gmail-pubsub]] — Gmail inbox triggers via Google PubSub for event-driven automation
+- [[knowledge/openclaw/skills/scripts|knowledge/openclaw/skills/scripts]] — Repository scripts: purpose, scope, and safety notes for local workflows and ops tasks
+- [[knowledge/openclaw/skills/testing-e2e|knowledge/openclaw/skills/testing-e2e]] — End-to-end testing: Gateway stability tests, Docker integration runners, and real-world scenario validation
+- [[knowledge/openclaw/skills/testing-live|knowledge/openclaw/skills/testing-live]] — Live testing: Model/provider probes, media generation, and real API integration tests
+- [[knowledge/openclaw/skills/testing-unit|knowledge/openclaw/skills/testing-unit]] — Unit and integration testing: commands, project shards, and best practices for local development
+- [[knowledge/openclaw/skills/testing|knowledge/openclaw/skills/testing]] — Testing kit overview: unit/e2e/live suites, Docker runners, and what each test covers
+
+## Start
+
+- [[knowledge/openclaw/start/bootstrapping|knowledge/openclaw/start/bootstrapping]] — Agent bootstrapping ritual that seeds the workspace and identity files
+- [[knowledge/openclaw/start/docs-directory|knowledge/openclaw/start/docs-directory]] — Curated links to the most used OpenClaw docs.
+- [[knowledge/openclaw/start/getting-started|knowledge/openclaw/start/getting-started]] — Get OpenClaw installed and run your first chat in minutes.
+- [[knowledge/openclaw/start/hubs|knowledge/openclaw/start/hubs]] — Hubs that link to every OpenClaw doc
+- [[knowledge/openclaw/start/lore|knowledge/openclaw/start/lore]] — Backstory and lore of OpenClaw for context and tone
+- [[knowledge/openclaw/start/onboarding-overview|knowledge/openclaw/start/onboarding-overview]] — Overview of OpenClaw onboarding options and flows
+- [[knowledge/openclaw/start/onboarding|knowledge/openclaw/start/onboarding]] — First-run setup flow for OpenClaw (macOS app)
+- [[knowledge/openclaw/start/openclaw|knowledge/openclaw/start/openclaw]] — End-to-end guide for running OpenClaw as a personal assistant with safety cautions
+- [[knowledge/openclaw/start/quickstart|knowledge/openclaw/start/quickstart]] — Quick start has moved to Getting Started.
+- [[knowledge/openclaw/start/setup|knowledge/openclaw/start/setup]] — Advanced setup and development workflows for OpenClaw
+- [[knowledge/openclaw/start/showcase|knowledge/openclaw/start/showcase]] — Community-built projects and integrations powered by OpenClaw
+- [[knowledge/openclaw/start/wizard-cli-automation|knowledge/openclaw/start/wizard-cli-automation]] — Scripted onboarding and agent setup for the OpenClaw CLI
+- [[knowledge/openclaw/start/wizard-cli-reference|knowledge/openclaw/start/wizard-cli-reference]] — Complete reference for CLI setup flow, auth/model setup, outputs, and internals
+- [[knowledge/openclaw/start/wizard|knowledge/openclaw/start/wizard]] — CLI onboarding: guided setup for gateway, workspace, channels, and skills
+
+## Templates
+
+- [[knowledge/openclaw/templates/AGENTS.dev|knowledge/openclaw/templates/AGENTS.dev]] — Dev agent AGENTS.md (C-3PO)
+- [[knowledge/openclaw/templates/AGENTS|knowledge/openclaw/templates/AGENTS]] — Workspace template for AGENTS.md
+- [[knowledge/openclaw/templates/BOOT|knowledge/openclaw/templates/BOOT]] — Workspace template for BOOT.md
+- [[knowledge/openclaw/templates/BOOTSTRAP|knowledge/openclaw/templates/BOOTSTRAP]] — First-run ritual for new agents
+- [[knowledge/openclaw/templates/HEARTBEAT|knowledge/openclaw/templates/HEARTBEAT]] — Workspace template for HEARTBEAT.md
+- [[knowledge/openclaw/templates/IDENTITY.dev|knowledge/openclaw/templates/IDENTITY.dev]] — Dev agent identity (C-3PO)
+- [[knowledge/openclaw/templates/IDENTITY|knowledge/openclaw/templates/IDENTITY]] — Agent identity record
+- [[knowledge/openclaw/templates/SOUL.dev|knowledge/openclaw/templates/SOUL.dev]] — Dev agent soul (C-3PO)
+- [[knowledge/openclaw/templates/SOUL|knowledge/openclaw/templates/SOUL]] — Workspace template for SOUL.md
+- [[knowledge/openclaw/templates/TOOLS.dev|knowledge/openclaw/templates/TOOLS.dev]] — Dev agent tools notes (C-3PO)
+- [[knowledge/openclaw/templates/TOOLS|knowledge/openclaw/templates/TOOLS]] — Workspace template for TOOLS.md
+- [[knowledge/openclaw/templates/USER.dev|knowledge/openclaw/templates/USER.dev]] — Dev agent user profile (C-3PO)
+- [[knowledge/openclaw/templates/USER|knowledge/openclaw/templates/USER]] — User profile record
+
+## Tools
+
+- [[knowledge/openclaw/tools/acp-agents-setup|knowledge/openclaw/tools/acp-agents-setup]] — Setting up ACP agents: acpx harness config, plugin setup, permissions
+- [[knowledge/openclaw/tools/acp-agents|knowledge/openclaw/tools/acp-agents]] — Use ACP runtime sessions for Claude Code, Cursor, Gemini CLI, explicit Codex ACP fallback, OpenClaw ACP, and other harness agents
+- [[knowledge/openclaw/tools/agent-send|knowledge/openclaw/tools/agent-send]] — Run agent turns from the CLI and optionally deliver replies to channels
+- [[knowledge/openclaw/tools/apply-patch|knowledge/openclaw/tools/apply-patch]] — Apply multi-file patches with the apply_patch tool
+- [[knowledge/openclaw/tools/brave-search|knowledge/openclaw/tools/brave-search]] — Brave Search API setup for web_search
+- [[knowledge/openclaw/tools/browser-control|knowledge/openclaw/tools/browser-control]] — OpenClaw browser control API, CLI reference, and scripting actions
+- [[knowledge/openclaw/tools/browser-linux-troubleshooting|knowledge/openclaw/tools/browser-linux-troubleshooting]] — Fix Chrome/Brave/Edge/Chromium CDP startup issues for OpenClaw browser control on Linux
+- [[knowledge/openclaw/tools/browser-login|knowledge/openclaw/tools/browser-login]] — Manual logins for browser automation + X/Twitter posting
+- [[knowledge/openclaw/tools/browser-troubleshooting|knowledge/openclaw/tools/browser-troubleshooting]] — Fix Chrome/Brave/Edge/Chromium CDP startup issues on Linux, especially with snap Chromium
+- [[knowledge/openclaw/tools/browser-wsl2-windows-remote-cdp-troubleshooting|knowledge/openclaw/tools/browser-wsl2-windows-remote-cdp-troubleshooting]] — Troubleshoot WSL2 Gateway + Windows Chrome remote CDP in layers
+- [[knowledge/openclaw/tools/browser-wsl2-windows-remote-cdp|knowledge/openclaw/tools/browser-wsl2-windows-remote-cdp]] — Troubleshoot split-host browser control when OpenClaw runs in WSL2 and Chrome runs on Windows
+- [[knowledge/openclaw/tools/browser|knowledge/openclaw/tools/browser]] — Integrated browser control service + action commands
+- [[knowledge/openclaw/tools/btw|knowledge/openclaw/tools/btw]] — Ephemeral side questions with /btw
+- [[knowledge/openclaw/tools/capability-cookbook|knowledge/openclaw/tools/capability-cookbook]] — Contributor guide for adding a new shared capability to the OpenClaw plugin system
+- [[knowledge/openclaw/tools/clawhub|knowledge/openclaw/tools/clawhub]] — ClawHub guide: public registry, native OpenClaw install flows, and ClawHub CLI workflows
+- [[knowledge/openclaw/tools/code-execution|knowledge/openclaw/tools/code-execution]] — code_execution -- run sandboxed remote Python analysis with xAI
+- [[knowledge/openclaw/tools/creating-skills|knowledge/openclaw/tools/creating-skills]] — Build and test custom workspace skills with SKILL.md
+- [[knowledge/openclaw/tools/diffs|knowledge/openclaw/tools/diffs]] — Read-only diff viewer and file renderer for agents (optional plugin tool)
+- [[knowledge/openclaw/tools/duckduckgo-search|knowledge/openclaw/tools/duckduckgo-search]] — DuckDuckGo web search -- key-free fallback provider (experimental, HTML-based)
+- [[knowledge/openclaw/tools/elevated|knowledge/openclaw/tools/elevated]] — Elevated exec mode: run commands outside the sandbox from a sandboxed agent
+- [[knowledge/openclaw/tools/exa-search|knowledge/openclaw/tools/exa-search]] — Exa AI search -- neural and keyword search with content extraction
+- [[knowledge/openclaw/tools/exec-approvals-advanced|knowledge/openclaw/tools/exec-approvals-advanced]] — Advanced exec approvals: safe bins, interpreter binding, approval forwarding, native delivery
+- [[knowledge/openclaw/tools/exec-approvals|knowledge/openclaw/tools/exec-approvals]] — Exec approvals, allowlists, and sandbox escape prompts
+- [[knowledge/openclaw/tools/exec|knowledge/openclaw/tools/exec]] — Exec tool usage, stdin modes, and TTY support
+- [[knowledge/openclaw/tools/firecrawl|knowledge/openclaw/tools/firecrawl]] — Firecrawl search, scrape, and web_fetch fallback
+- [[knowledge/openclaw/tools/gemini-search|knowledge/openclaw/tools/gemini-search]] — Gemini web search with Google Search grounding
+- [[knowledge/openclaw/tools/grok-search|knowledge/openclaw/tools/grok-search]] — Grok web search via xAI web-grounded responses
+- [[knowledge/openclaw/tools/image-generation|knowledge/openclaw/tools/image-generation]] — Generate and edit images using configured providers (OpenAI, OpenAI Codex OAuth, Google Gemini, OpenRouter, fal, MiniMax, ComfyUI, Vydra, xAI)
+- [[knowledge/openclaw/tools/index|knowledge/openclaw/tools/index]] — OpenClaw tools and plugins overview: what the agent can do and how to extend it
+- [[knowledge/openclaw/tools/kimi-search|knowledge/openclaw/tools/kimi-search]] — Kimi web search via Moonshot web search
+- [[knowledge/openclaw/tools/llm-task|knowledge/openclaw/tools/llm-task]] — JSON-only LLM tasks for workflows (optional plugin tool)
+- [[knowledge/openclaw/tools/lobster|knowledge/openclaw/tools/lobster]] — Typed workflow runtime for OpenClaw with resumable approval gates.
+- [[knowledge/openclaw/tools/loop-detection|knowledge/openclaw/tools/loop-detection]] — How to enable and tune guardrails that detect repetitive tool-call loops
+- [[knowledge/openclaw/tools/media-overview|knowledge/openclaw/tools/media-overview]] — Unified landing page for media generation, understanding, and speech capabilities
+- [[knowledge/openclaw/tools/minimax-search|knowledge/openclaw/tools/minimax-search]] — MiniMax Search via the Coding Plan search API
+- [[knowledge/openclaw/tools/multi-agent-sandbox-tools|knowledge/openclaw/tools/multi-agent-sandbox-tools]] — “Per-agent sandbox + tool restrictions, precedence, and examples”
+- [[knowledge/openclaw/tools/music-generation|knowledge/openclaw/tools/music-generation]] — Generate music with shared providers, including workflow-backed plugins
+- [[knowledge/openclaw/tools/ollama-search|knowledge/openclaw/tools/ollama-search]] — Ollama Web Search via your configured Ollama host
+- [[knowledge/openclaw/tools/pdf|knowledge/openclaw/tools/pdf]] — Analyze one or more PDF documents with native provider support and extraction fallback
+- [[knowledge/openclaw/tools/perplexity-search|knowledge/openclaw/tools/perplexity-search]] — Perplexity Search API and Sonar/OpenRouter compatibility for web_search
+- [[knowledge/openclaw/tools/plugin|knowledge/openclaw/tools/plugin]] — Install, configure, and manage OpenClaw plugins
+- [[knowledge/openclaw/tools/reactions|knowledge/openclaw/tools/reactions]] — Reaction tool semantics across all supported channels
+- [[knowledge/openclaw/tools/search-overview|knowledge/openclaw/tools/search-overview]] — OpenClaw web_search tool: all providers, auto-detection order, and configuration
+- [[knowledge/openclaw/tools/searxng-search|knowledge/openclaw/tools/searxng-search]] — SearXNG web search -- self-hosted, key-free meta-search provider
+- [[knowledge/openclaw/tools/skills-config|knowledge/openclaw/tools/skills-config]] — Skills config schema and examples
+- [[knowledge/openclaw/tools/skills|knowledge/openclaw/tools/skills]] — Skills: managed vs workspace, gating rules, and config/env wiring
+- [[knowledge/openclaw/tools/slash-commands|knowledge/openclaw/tools/slash-commands]] — Slash commands: text vs native, config, and supported commands
+- [[knowledge/openclaw/tools/subagents|knowledge/openclaw/tools/subagents]] — Sub-agents: spawning isolated agent runs that announce results back to the requester chat
+- [[knowledge/openclaw/tools/tavily|knowledge/openclaw/tools/tavily]] — Tavily search and extract tools
+- [[knowledge/openclaw/tools/thinking|knowledge/openclaw/tools/thinking]] — Directive syntax for /think, /fast, /verbose, /trace, and reasoning visibility
+- [[knowledge/openclaw/tools/tokenjuice|knowledge/openclaw/tools/tokenjuice]] — Compact noisy exec and bash tool results with an optional bundled plugin
+- [[knowledge/openclaw/tools/tools-overview|knowledge/openclaw/tools/tools-overview]] — OpenClaw tools and plugins overview: what the agent can do and how to extend it
+- [[knowledge/openclaw/tools/trajectory|knowledge/openclaw/tools/trajectory]] — Export redacted trajectory bundles for debugging an OpenClaw agent session
+- [[knowledge/openclaw/tools/tts|knowledge/openclaw/tools/tts]] — Text-to-speech (TTS) for outbound replies
+- [[knowledge/openclaw/tools/video-generation|knowledge/openclaw/tools/video-generation]] — Generate videos from text, images, or existing videos using 14 provider backends
+- [[knowledge/openclaw/tools/web-fetch|knowledge/openclaw/tools/web-fetch]] — web_fetch tool -- HTTP fetch with readable content extraction
+- [[knowledge/openclaw/tools/web-search-overview|knowledge/openclaw/tools/web-search-overview]] — OpenClaw web_search tool: multi-provider search with auto-detection, config, and common parameters
+- [[knowledge/openclaw/tools/web-search|knowledge/openclaw/tools/web-search]] — OpenClaw web_search tool: all providers, auto-detection order, configuration
+- [[knowledge/openclaw/tools/web|knowledge/openclaw/tools/web]] — web_search, x_search, and web_fetch -- search the web, search X posts, or fetch page content
+
+## Web
+
+- [[knowledge/openclaw/web/control-ui|knowledge/openclaw/web/control-ui]] — Browser-based control UI for the Gateway (chat, nodes, config)
+- [[knowledge/openclaw/web/dashboard|knowledge/openclaw/web/dashboard]] — Gateway dashboard (Control UI) access and auth
+- [[knowledge/openclaw/web/index|knowledge/openclaw/web/index]] — Gateway web surfaces: Control UI, bind modes, and security
+- [[knowledge/openclaw/web/tui|knowledge/openclaw/web/tui]] — Terminal UI (TUI): connect to the Gateway or run locally in embedded mode
+- [[knowledge/openclaw/web/webchat|knowledge/openclaw/web/webchat]] — Loopback WebChat static host and Gateway WS usage for chat UI
+
+
+
+## litellm-providers
+## litellm-proxy
+## litellm-completion
+- [[knowledge/litellm/completion/anthropic_advisor_tool|knowledge/litellm/completion/anthropic_advisor_tool]] — Pair a faster executor model with a higher-intelligence advisor model that provides strategic guidance mid-generation.
+- [[litellm-knowledge/openclaw/providers/abliteration|litellm-knowledge/openclaw/providers/abliteration]] — | Property | Details |
+- [[knowledge/litellm/proxy/access_control|knowledge/litellm/proxy/access_control]] — Role-based access control (RBAC) is based on Organizations, Teams and Internal User Roles
+- [[knowledge/litellm/completion/audio|knowledge/litellm/completion/audio]] — How to send / receive audio to a `/chat/completions` endpoint
+- [[litellm-knowledge/openclaw/providers/ai21|litellm-knowledge/openclaw/providers/ai21]] — LiteLLM supports the following [AI21](https://www.ai21.com/studio/pricing) models:
+- [[knowledge/litellm/proxy/access_groups|knowledge/litellm/proxy/access_groups]] — Access Groups simplify how you define and manage resource access across your organization. Instead of configuring models, MCP servers, and agents separately on each key or team, you create one group t
+- [[litellm-knowledge/openclaw/providers/aiml|litellm-knowledge/openclaw/providers/aiml]] — https://aimlapi.com/
+- [[knowledge/litellm/completion/batching|knowledge/litellm/completion/batching]] — LiteLLM allows you to:
+- [[knowledge/litellm/proxy/admin_ui_sso|knowledge/litellm/proxy/admin_ui_sso]] — :::info
+- [[knowledge/litellm/completion/computer_use|knowledge/litellm/completion/computer_use]] — Computer use allows models to interact with computer interfaces by taking screenshots and performing actions like clicking, typing, and scrolling. This enables AI models to autonomously operate deskto
+- [[litellm-knowledge/openclaw/providers/aleph_alpha|litellm-knowledge/openclaw/providers/aleph_alpha]] — LiteLLM supports all models from [Aleph Alpha](https://www.aleph-alpha.com/). 
+- [[knowledge/litellm/proxy/agentic_loop_hook|knowledge/litellm/proxy/agentic_loop_hook]] — Build a `CustomLogger` callback that intercepts a model response, fulfills tool calls server-side, and reruns the model — transparently to the caller.
+- [[litellm-knowledge/openclaw/providers/amazon_nova|litellm-knowledge/openclaw/providers/amazon_nova]] — | Property | Details |
+- [[knowledge/litellm/completion/document_understanding|knowledge/litellm/completion/document_understanding]] — How to send / receive pdf's (other document types) to a `/chat/completions` endpoint
+- [[knowledge/litellm/proxy/ai_hub|knowledge/litellm/proxy/ai_hub]] — Share models and agents with your organization. Show developers what's available without needing to rebuild them.
+- [[knowledge/litellm/completion/drop_params|knowledge/litellm/completion/drop_params]] — Drop unsupported OpenAI params by your LLM Provider.
+- [[litellm-knowledge/openclaw/providers/anthropic|litellm-knowledge/openclaw/providers/anthropic]] — LiteLLM supports all anthropic models.
+- [[knowledge/litellm/proxy/alerting|knowledge/litellm/proxy/alerting]] — Get alerts for:
+- [[litellm-knowledge/openclaw/providers/anthropic_effort|litellm-knowledge/openclaw/providers/anthropic_effort]] — Control how many tokens Claude uses when responding with the `effort` parameter, trading off between response thoroughness and token efficiency.
+- [[knowledge/litellm/completion/function_call|knowledge/litellm/completion/function_call]] — Use `litellm.supports_function_calling(model="")` -> returns `True` if model supports Function calling, `False` if not
+- [[knowledge/litellm/proxy/architecture|knowledge/litellm/proxy/architecture]] — <Image img={require('../../img/litellm_gateway.png')} style={{ width: '100%', maxWidth: '4000px' }} />
+- [[knowledge/litellm/completion/http_handler_config|knowledge/litellm/completion/http_handler_config]] — Configure custom aiohttp sessions for better performance and control in LiteLLM completions.
+- [[litellm-knowledge/openclaw/providers/anthropic_programmatic_tool_calling|litellm-knowledge/openclaw/providers/anthropic_programmatic_tool_calling]] — Programmatic tool calling allows Claude to write code that calls your tools programmatically within a code execution container, rather than requiring round trips through the model for each tool invoca
+- [[knowledge/litellm/proxy/arize_phoenix_prompts|knowledge/litellm/proxy/arize_phoenix_prompts]] — Use prompt versions from [Arize Phoenix](https://phoenix.arize.com/) with LiteLLM SDK and Proxy.
+- [[knowledge/litellm/completion/image_generation_chat|knowledge/litellm/completion/image_generation_chat]] — This guide covers how to generate images when using the `chat/completions`. Note - if you want this on Responses API please file a Feature Request [here](https://github.com/BerriAI/litellm/issues/new)
+- [[litellm-knowledge/openclaw/providers/anthropic_tool_input_examples|litellm-knowledge/openclaw/providers/anthropic_tool_input_examples]] — Provide concrete examples of valid tool inputs to help Claude understand how to use your tools more effectively. This is particularly useful for complex tools with nested objects, optional parameters,
+- [[knowledge/litellm/completion/input|knowledge/litellm/completion/input]] — LiteLLM accepts and translates the [OpenAI Chat Completion params](https://platform.openai.com/knowledge/openclaw/docs/api-knowledge/openclaw/reference/chat/create) across all providers. 
+- [[litellm-knowledge/openclaw/providers/anthropic_tool_search|litellm-knowledge/openclaw/providers/anthropic_tool_search]] — Tool search enables Claude to dynamically discover and load tools on-demand from large tool catalogs (10,000+ tools). Instead of loading all tool definitions into the context window upfront, Claude se
+- [[knowledge/litellm/proxy/auto_routing|knowledge/litellm/proxy/auto_routing]] — LiteLLM can auto select the best model for a request based on rules you define.
+- [[knowledge/litellm/completion/json_mode|knowledge/litellm/completion/json_mode]] — <Tabs>
+- [[litellm-knowledge/openclaw/providers/anyscale|litellm-knowledge/openclaw/providers/anyscale]] — https://app.endpoints.anyscale.com/
+- [[knowledge/litellm/proxy/billing|knowledge/litellm/proxy/billing]] — Bill internal teams, external customers for their usage
+- [[knowledge/litellm/completion/knowledgebase|knowledge/litellm/completion/knowledgebase]] — <Image 
+- [[litellm-knowledge/openclaw/providers/apertis|litellm-knowledge/openclaw/providers/apertis]] — | Property | Details |
+- [[knowledge/litellm/proxy/budget_reset_and_tz|knowledge/litellm/proxy/budget_reset_and_tz]] — LiteLLM supports predictable budget reset times that align with natural calendar boundaries.
+- [[knowledge/litellm/completion/message_sanitization|knowledge/litellm/completion/message_sanitization]] — Automatically fix common message formatting issues when using tool calling with `modify_params=True`**
+- [[litellm-knowledge/openclaw/providers/aws_polly|litellm-knowledge/openclaw/providers/aws_polly]] — | Property | Details |
+- [[knowledge/litellm/proxy/caching|knowledge/litellm/proxy/caching]] — :::note
+- [[knowledge/litellm/completion/message_trimming|knowledge/litellm/completion/message_trimming]] — Use litellm.trim_messages() to ensure messages does not exceed a model's token limit or specified `max_tokens`**
+- [[litellm-knowledge/openclaw/providers/aws_sagemaker|litellm-knowledge/openclaw/providers/aws_sagemaker]] — LiteLLM supports All Sagemaker Huggingface Jumpstart Models
+- [[knowledge/litellm/proxy/call_hooks|knowledge/litellm/proxy/call_hooks]] — - Modify data before making llm api calls on proxy
+- [[knowledge/litellm/completion/mock_requests|knowledge/litellm/completion/mock_requests]] — For testing purposes, you can use `completion()` with `mock_response` to mock calling the completion endpoint. 
+- [[knowledge/litellm/proxy/cli|knowledge/litellm/proxy/cli]] — This page documents all command-line interface (CLI) arguments available for the LiteLLM proxy server.
+- [[litellm-knowledge/openclaw/providers/azure/azure|litellm-knowledge/openclaw/providers/azure/azure]] — | Property | Details |
+- [[knowledge/litellm/completion/model_alias|knowledge/litellm/completion/model_alias]] — The model name you show an end-user might be different from the one you pass to LiteLLM - e.g. Displaying `GPT-3.5` while calling `gpt-3.5-turbo-16k` on the backend. 
+- [[litellm-knowledge/openclaw/providers/azure/azure_anthropic|litellm-knowledge/openclaw/providers/azure/azure_anthropic]] — LiteLLM supports Claude models deployed via Microsoft Azure Foundry, including Claude Sonnet 4.5, Claude Haiku 4.5, and Claude Opus 4.1.
+- [[knowledge/litellm/proxy/cli_sso|knowledge/litellm/proxy/cli_sso]] — Use the litellm cli to authenticate to the LiteLLM Gateway. This is great if you're trying to give a large number of developers self-serve access to the LiteLLM Gateway.
+- [[knowledge/litellm/completion/multiple_deployments|knowledge/litellm/completion/multiple_deployments]] — If you have multiple deployments of the same model, you can pass the list of deployments, and LiteLLM will return the first result. 
+- [[litellm-knowledge/openclaw/providers/azure/azure_embedding|litellm-knowledge/openclaw/providers/azure/azure_embedding]] — This can be set as env variables or passed as **params to litellm.embedding()**
+- [[knowledge/litellm/proxy/clientside_auth|knowledge/litellm/proxy/clientside_auth]] — Allow your end-users to pass their model list, api base, OpenAI API key (any LiteLLM supported provider) to make requests 
+- [[knowledge/litellm/completion/output|knowledge/litellm/completion/output]] — Here's the exact json output and type you can expect from all litellm `completion` calls for all models
+- [[knowledge/litellm/proxy/config_management|knowledge/litellm/proxy/config_management]] — You can use `include` to include external YAML files in a config.yaml. 
+- [[litellm-knowledge/openclaw/providers/azure/azure_responses|litellm-knowledge/openclaw/providers/azure/azure_responses]] — | Property | Details |
+- [[knowledge/litellm/completion/predict_outputs|knowledge/litellm/completion/predict_outputs]] — | Property | Details |
+- [[knowledge/litellm/proxy/config_settings|knowledge/litellm/proxy/config_settings]] — ```yaml
+- [[litellm-knowledge/openclaw/providers/azure/azure_speech|litellm-knowledge/openclaw/providers/azure/azure_speech]] — | Property | Details |
+- [[knowledge/litellm/completion/prefix|knowledge/litellm/completion/prefix]] — Supported by:
+- [[knowledge/litellm/proxy/configs|knowledge/litellm/proxy/configs]] — Set model list, `api_base`, `api_key`, `temperature` & proxy server settings (`master-key`) on the config.yaml. 
+- [[litellm-knowledge/openclaw/providers/azure/videos|litellm-knowledge/openclaw/providers/azure/videos]] — LiteLLM supports Azure OpenAI's video generation models including Sora with full end-to-end integration.
+- [[knowledge/litellm/completion/prompt_caching|knowledge/litellm/completion/prompt_caching]] — Supported Providers:
+- [[knowledge/litellm/proxy/control_plane_and_data_plane|knowledge/litellm/proxy/control_plane_and_data_plane]] — Learn how to deploy LiteLLM across multiple regions while maintaining centralized administration and avoiding duplication of management overhead.
+- [[litellm-knowledge/openclaw/providers/azure_ai|litellm-knowledge/openclaw/providers/azure_ai]] — LiteLLM supports all models on Azure AI Studio
+- [[knowledge/litellm/completion/prompt_compression|knowledge/litellm/completion/prompt_compression]] — Use `litellm.compress()` to shrink long conversation history before calling `completion()`.
+- [[knowledge/litellm/proxy/cost_tracking|knowledge/litellm/proxy/cost_tracking]] — Track spend for keys, users, and teams across 100+ LLMs.
+- [[litellm-knowledge/openclaw/providers/azure_ai/azure_ai_vector_stores_passthrough|litellm-knowledge/openclaw/providers/azure_ai/azure_ai_vector_stores_passthrough]] — Use this to allow developers to **create** and **search** vector stores using the Azure AI Search API in the **native** Azure AI Search API format, without giving them the Azure AI credentials.
+- [[knowledge/litellm/completion/prompt_formatting|knowledge/litellm/completion/prompt_formatting]] — LiteLLM automatically translates the OpenAI ChatCompletions prompt format, to other models. You can control this by setting a custom prompt template for a model as well. 
+- [[knowledge/litellm/proxy/credential_routing|knowledge/litellm/proxy/credential_routing]] — Route the same model to different LLM provider endpoints (e.g. different Azure instances) based on which team or project makes the request.
+- [[litellm-knowledge/openclaw/providers/azure_ai/azure_model_router|litellm-knowledge/openclaw/providers/azure_ai/azure_model_router]] — Azure Model Router is a feature in Azure AI Foundry that automatically routes your requests to the best available model based on your requirements. This allows you to use a single endpoint that intell
+- [[knowledge/litellm/completion/provider_specific_params|knowledge/litellm/completion/provider_specific_params]] — Providers might offer params not supported by OpenAI (e.g. top_k). LiteLLM treats any non-openai param, as a provider-specific param, and passes it to the provider in the request body, as a kwarg. [**
+- [[knowledge/litellm/proxy/credential_usage_tracking|knowledge/litellm/proxy/credential_usage_tracking]] — When a model is attached to a [reusable credential](./ui_credentials.md), LiteLLM automatically injects the credential name as a tag on every request that uses that model. This means credential-level 
+- [[litellm-knowledge/openclaw/providers/azure_ai_agents|litellm-knowledge/openclaw/providers/azure_ai_agents]] — Call Azure AI Foundry Agents in the OpenAI Request/Response format.
+- [[knowledge/litellm/completion/reliable_completions|knowledge/litellm/completion/reliable_completions]] — LiteLLM helps prevent failed requests in 2 ways: 
+- [[knowledge/litellm/proxy/custom_auth|knowledge/litellm/proxy/custom_auth]] — You can now override the default api key auth.
+- [[litellm-knowledge/openclaw/providers/azure_ai_img|litellm-knowledge/openclaw/providers/azure_ai_img]] — Azure AI provides powerful image generation capabilities using FLUX models from Black Forest Labs to create high-quality images from text descriptions.
+- [[knowledge/litellm/completion/shared_session|knowledge/litellm/completion/shared_session]] — LiteLLM now supports sharing `aiohttp.ClientSession` instances across multiple API calls to avoid creating unnecessary new sessions. This improves performance and resource utilization.
+- [[knowledge/litellm/proxy/custom_pricing|knowledge/litellm/proxy/custom_pricing]] — LiteLLM provides flexible cost tracking and pricing customization for all LLM providers:
+- [[litellm-knowledge/openclaw/providers/azure_ai_img_edit|litellm-knowledge/openclaw/providers/azure_ai_img_edit]] — Azure AI provides powerful image editing capabilities using FLUX models from Black Forest Labs to modify existing images based on text descriptions.
+- [[knowledge/litellm/completion/stream|knowledge/litellm/completion/stream]] — | Feature | LiteLLM SDK | LiteLLM Proxy |
+- [[knowledge/litellm/proxy/custom_prompt_management|knowledge/litellm/proxy/custom_prompt_management]] — Connect LiteLLM to your prompt management system with custom hooks.
+- [[litellm-knowledge/openclaw/providers/azure_ai_speech|litellm-knowledge/openclaw/providers/azure_ai_speech]] — Azure AI Speech is Azure's Cognitive Services text-to-speech API, separate from Azure OpenAI. It provides high-quality neural voices with broader language support and advanced speech customization.
+- [[knowledge/litellm/completion/token_usage|knowledge/litellm/completion/token_usage]] — By default LiteLLM returns token usage in all completion requests ([See here](https://litellm.readthedocs.io/en/latest/output/))
+- [[knowledge/litellm/proxy/custom_root_ui|knowledge/litellm/proxy/custom_root_ui]] — 💥 Use this when you want to serve LiteLLM on a custom base url path like `https://localhost:4000/api/v1` 
+- [[litellm-knowledge/openclaw/providers/azure_ai_vector_stores|litellm-knowledge/openclaw/providers/azure_ai_vector_stores]] — Use this to **search** Azure AI Search Vector Stores, with LiteLLM's unified `/chat/completions` API.
+- [[knowledge/litellm/completion/usage|knowledge/litellm/completion/usage]] — LiteLLM returns the OpenAI compatible usage object across all providers.
+- [[knowledge/litellm/proxy/custom_sso|knowledge/litellm/proxy/custom_sso]] — :::info
+- [[litellm-knowledge/openclaw/providers/azure_document_intelligence|litellm-knowledge/openclaw/providers/azure_document_intelligence]] — | Property | Details |
+- [[knowledge/litellm/completion/vision|knowledge/litellm/completion/vision]] — Example passing images to a model 
+- [[knowledge/litellm/proxy/customer_routing|knowledge/litellm/proxy/customer_routing]] — :::info
+- [[litellm-knowledge/openclaw/providers/azure_ocr|litellm-knowledge/openclaw/providers/azure_ocr]] — | Property | Details |
+- [[knowledge/litellm/completion/web_fetch|knowledge/litellm/completion/web_fetch]] — The web fetch tool allows LLMs to retrieve full content from specified web pages and PDF documents. This enables AI models to access real-time information from the internet and incorporate web content
+- [[litellm-knowledge/openclaw/providers/baseten|litellm-knowledge/openclaw/providers/baseten]] — LiteLLM supports both Baseten Model APIs and dedicated deployments with automatic routing.
+- [[knowledge/litellm/proxy/customer_usage|knowledge/litellm/proxy/customer_usage]] — Track and visualize end-user spend directly in the dashboard. Monitor customer-level usage analytics, spend logs, and activity metrics to understand how your customers are using your LLM services.
+- [[knowledge/litellm/completion/web_search|knowledge/litellm/completion/web_search]] — Use web search with litellm
+- [[knowledge/litellm/proxy/customers|knowledge/litellm/proxy/customers]] — Track spend, set budgets and permissions for your customers.
+- [[litellm-knowledge/openclaw/providers/bedrock|litellm-knowledge/openclaw/providers/bedrock]] — ALL Bedrock models (Anthropic, Meta, Deepseek, Mistral, Amazon, etc.) are Supported
+- [[knowledge/litellm/proxy/db_deadlocks|knowledge/litellm/proxy/db_deadlocks]] — :::tip Essential for Production
+- [[litellm-knowledge/openclaw/providers/bedrock_agentcore|litellm-knowledge/openclaw/providers/bedrock_agentcore]] — Call Bedrock AgentCore in the OpenAI Request/Response format.
+- [[knowledge/litellm/proxy/db_info|knowledge/litellm/proxy/db_info]] — The LiteLLM Proxy uses a PostgreSQL database to store various information. Here's are the main features the DB is used for:
+- [[litellm-knowledge/openclaw/providers/bedrock_agents|litellm-knowledge/openclaw/providers/bedrock_agents]] — Call Bedrock Agents in the OpenAI Request/Response format.
+- [[knowledge/litellm/proxy/debugging|knowledge/litellm/proxy/debugging]] — 2 levels of debugging supported. 
+- [[knowledge/litellm/proxy/deleted_keys_teams|knowledge/litellm/proxy/deleted_keys_teams]] — <Image img={require('../../img/ui_deleted_keys_table.png')} />
+- [[litellm-knowledge/openclaw/providers/bedrock_batches|litellm-knowledge/openclaw/providers/bedrock_batches]] — Use Amazon Bedrock Batch Inference API through LiteLLM.
+- [[knowledge/litellm/proxy/deploy|knowledge/litellm/proxy/deploy]] — :::info No Limits on LiteLLM OSS
+- [[litellm-knowledge/openclaw/providers/bedrock_embedding|litellm-knowledge/openclaw/providers/bedrock_embedding]] — | Provider | LiteLLM Route | AWS Documentation | Cost Tracking |
+- [[litellm-knowledge/openclaw/providers/bedrock_image_gen|litellm-knowledge/openclaw/providers/bedrock_image_gen]] — Use Bedrock for image generation with Stable Diffusion, Amazon Titan Image Generator, and Amazon Nova Canvas models.
+- [[knowledge/litellm/proxy/docker_image_security|knowledge/litellm/proxy/docker_image_security]] — LiteLLM signs every Docker image published to GHCR with [cosign](https://docs.sigstore.dev/cosign/overview/) starting from **v1.83.0**. This page covers how to verify signatures, enforce verification 
+- [[litellm-knowledge/openclaw/providers/bedrock_imported|litellm-knowledge/openclaw/providers/bedrock_imported]] — Bedrock Imported Models (Deepseek, Deepseek R1, Qwen, OpenAI-compatible models)
+- [[knowledge/litellm/proxy/docker_quick_start|knowledge/litellm/proxy/docker_quick_start]] — End-to-End tutorial for LiteLLM Proxy to:
+- [[litellm-knowledge/openclaw/providers/bedrock_mantle|litellm-knowledge/openclaw/providers/bedrock_mantle]] — [Amazon Bedrock Mantle](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html) is Amazon Bedrock's distributed inference engine (Project Mantle) that exposes an **OpenAI-compatible 
+- [[knowledge/litellm/proxy/dynamic_logging|knowledge/litellm/proxy/dynamic_logging]] — :::info
+- [[litellm-knowledge/openclaw/providers/bedrock_realtime_with_audio|litellm-knowledge/openclaw/providers/bedrock_realtime_with_audio]] — Amazon Bedrock's Nova Sonic model supports real-time bidirectional audio streaming for voice conversations. This tutorial shows how to use it through LiteLLM Proxy.
+- [[knowledge/litellm/proxy/dynamic_rate_limit|knowledge/litellm/proxy/dynamic_rate_limit]] — Prevent projects from gobbling too much tpm/rpm.
+- [[litellm-knowledge/openclaw/providers/bedrock_rerank|litellm-knowledge/openclaw/providers/bedrock_rerank]] — Use Bedrock's Rerank API in the Cohere `/rerank` format.
+- [[knowledge/litellm/proxy/email|knowledge/litellm/proxy/email]] — <Image 
+- [[litellm-knowledge/openclaw/providers/bedrock_vector_store|litellm-knowledge/openclaw/providers/bedrock_vector_store]] — AWS Bedrock Knowledge Bases allows you to connect your LLM's to your organization's data, letting your models retrieve and reference information specific to your business.
+- [[knowledge/litellm/proxy/embedding|knowledge/litellm/proxy/embedding]] — See supported Embedding Providers & Models [here](https://docs.litellm.ai/knowledge/openclaw/docs/embedding/supported_embedding)
+- [[litellm-knowledge/openclaw/providers/bedrock_writer|litellm-knowledge/openclaw/providers/bedrock_writer]] — | Property | Details |
+- [[knowledge/litellm/proxy/endpoint_activity|knowledge/litellm/proxy/endpoint_activity]] — Track and visualize API endpoint usage directly in the dashboard. Monitor endpoint-level activity analytics, spend breakdowns, and performance metrics to understand which endpoints are receiving the m
+- [[litellm-knowledge/openclaw/providers/black_forest_labs|litellm-knowledge/openclaw/providers/black_forest_labs]] — Black Forest Labs provides state-of-the-art text-to-image generation using their FLUX models.
+- [[knowledge/litellm/proxy/error_diagnosis|knowledge/litellm/proxy/error_diagnosis]] — Having trouble diagnosing if an error is from the **LLM Provider** (OpenAI, Anthropic, etc.) or from the **LiteLLM AI Gateway** itself? Here's how to tell.
+- [[litellm-knowledge/openclaw/providers/black_forest_labs_img_edit|litellm-knowledge/openclaw/providers/black_forest_labs_img_edit]] — Black Forest Labs provides powerful image editing capabilities using their FLUX models to modify existing images based on text descriptions.
+- [[knowledge/litellm/proxy/fallback_management|knowledge/litellm/proxy/fallback_management]] — Dedicated endpoints for managing model fallbacks separately from the general configuration.
+- [[litellm-knowledge/openclaw/providers/bytez|litellm-knowledge/openclaw/providers/bytez]] — LiteLLM supports all chat models on [Bytez](https://www.bytez.com)!
+- [[knowledge/litellm/proxy/forward_client_headers|knowledge/litellm/proxy/forward_client_headers]] — Control which model groups can forward client headers to the underlying LLM provider APIs.
+- [[knowledge/litellm/proxy/guardrails/aim_security|knowledge/litellm/proxy/guardrails/aim_security]] — Go to [Aim Application](https://app.aim.knowledge/openclaw/security/inventory/custom-ai-apps) and create a new guard.
+- [[litellm-knowledge/openclaw/providers/cerebras|litellm-knowledge/openclaw/providers/cerebras]] — https://inference-docs.cerebras.ai/api-knowledge/openclaw/reference/chat-completions
+- [[litellm-knowledge/openclaw/providers/chatgpt|litellm-knowledge/openclaw/providers/chatgpt]] — Use ChatGPT Pro/Max subscription models through LiteLLM with OAuth device flow authentication.
+- [[knowledge/litellm/proxy/guardrails/akto|knowledge/litellm/proxy/guardrails/akto]] — [Akto](https://www.akto.io/) provides API security guardrails and data ingestion for LLM traffic.
+- [[knowledge/litellm/proxy/guardrails/aporia_api|knowledge/litellm/proxy/guardrails/aporia_api]] — Use [Aporia](https://www.aporia.com/) to  detect PII in requests and profanity in responses
+- [[litellm-knowledge/openclaw/providers/chutes|litellm-knowledge/openclaw/providers/chutes]] — | Property | Details |
+- [[litellm-knowledge/openclaw/providers/clarifai|litellm-knowledge/openclaw/providers/clarifai]] — Anthropic, OpenAI, Qwen, xAI, Gemini and most of Open soured LLMs are Supported on Clarifai.
+- [[knowledge/litellm/proxy/guardrails/azure_content_guardrail|knowledge/litellm/proxy/guardrails/azure_content_guardrail]] — LiteLLM supports Azure Content Safety guardrails via the [Azure Content Safety API](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview). 
+- [[knowledge/litellm/proxy/guardrails/bedrock|knowledge/litellm/proxy/guardrails/bedrock]] — :::tip ⚡️
+- [[litellm-knowledge/openclaw/providers/cloudflare_workers|litellm-knowledge/openclaw/providers/cloudflare_workers]] — https://developers.cloudflare.com/workers-ai/models/text-generation/
+- [[litellm-knowledge/openclaw/providers/codestral|litellm-knowledge/openclaw/providers/codestral]] — Codestral is available in select code-completion plugins but can also be queried directly. See the documentation for more details.
+- [[knowledge/litellm/proxy/guardrails/crowdstrike_aidr|knowledge/litellm/proxy/guardrails/crowdstrike_aidr]] — The CrowdStrike AIDR guardrail uses configurable detection policies to identify
+- [[litellm-knowledge/openclaw/providers/cohere|litellm-knowledge/openclaw/providers/cohere]] — ```python
+- [[knowledge/litellm/proxy/guardrails/custom_code_guardrail|knowledge/litellm/proxy/guardrails/custom_code_guardrail]] — Write custom guardrail logic using Python-like code that runs in a sandboxed environment.
+- [[litellm-knowledge/openclaw/providers/cometapi|litellm-knowledge/openclaw/providers/cometapi]] — LiteLLM supports all AI models from [CometAPI](https://www.cometapi.com/). CometAPI provides access to 500+ AI models through a unified API interface, including cutting-edge models like GPT-5, Claude 
+- [[knowledge/litellm/proxy/guardrails/custom_guardrail|knowledge/litellm/proxy/guardrails/custom_guardrail]] — Use this if you want to write code to run a custom guardrail
+- [[litellm-knowledge/openclaw/providers/compactifai|litellm-knowledge/openclaw/providers/compactifai]] — https://docs.compactif.ai/
+- [[knowledge/litellm/proxy/guardrails/dynamoai|knowledge/litellm/proxy/guardrails/dynamoai]] — LiteLLM supports DynamoAI guardrails for content moderation and policy enforcement on LLM inputs and outputs.
+- [[litellm-knowledge/openclaw/providers/custom_llm_server|litellm-knowledge/openclaw/providers/custom_llm_server]] — Call your custom torch-serve / internal LLM APIs via LiteLLM
+- [[knowledge/litellm/proxy/guardrails/enkryptai|knowledge/litellm/proxy/guardrails/enkryptai]] — LiteLLM supports EnkryptAI guardrails for content moderation and safety checks on LLM inputs and outputs.
+- [[litellm-knowledge/openclaw/providers/dashscope|litellm-knowledge/openclaw/providers/dashscope]] — https://dashscope.console.aliyun.com/
+- [[litellm-knowledge/openclaw/providers/databricks|litellm-knowledge/openclaw/providers/databricks]] — LiteLLM supports all models on Databricks
+- [[knowledge/litellm/proxy/guardrails/grayswan|knowledge/litellm/proxy/guardrails/grayswan]] — Use [Gray Swan Cygnal](https://docs.grayswan.ai/cygnal/monitor-requests) to continuously monitor conversations for policy violations, indirect prompt injection (IPI), jailbreak attempts, and other saf
+- [[litellm-knowledge/openclaw/providers/datarobot|litellm-knowledge/openclaw/providers/datarobot]] — LiteLLM supports all models from [DataRobot](https://datarobot.com). Select `datarobot` as the provider to route your request through the `datarobot` OpenAI-compatible endpoint using the upstream [off
+- [[knowledge/litellm/proxy/guardrails/guardrail_load_balancing|knowledge/litellm/proxy/guardrails/guardrail_load_balancing]] — Load balance guardrail requests across multiple guardrail deployments. This is useful when you have rate limits on guardrail providers (e.g., AWS Bedrock Guardrails) and want to distribute requests ac
+- [[litellm-knowledge/openclaw/providers/deepgram|litellm-knowledge/openclaw/providers/deepgram]] — LiteLLM supports Deepgram's `/listen` endpoint.
+- [[knowledge/litellm/proxy/guardrails/guardrail_policies|knowledge/litellm/proxy/guardrails/guardrail_policies]] — Use policies to group guardrails and control which ones run for specific teams, keys, or models.
+- [[litellm-knowledge/openclaw/providers/deepinfra|litellm-knowledge/openclaw/providers/deepinfra]] — https://deepinfra.com/
+- [[knowledge/litellm/proxy/guardrails/guardrails_ai|knowledge/litellm/proxy/guardrails/guardrails_ai]] — Use Guardrails AI ([guardrailsai.com](https://www.guardrailsai.com/)) to add checks to LLM output.
+- [[litellm-knowledge/openclaw/providers/deepseek|litellm-knowledge/openclaw/providers/deepseek]] — https://deepseek.com/
+- [[knowledge/litellm/proxy/guardrails/hiddenlayer|knowledge/litellm/proxy/guardrails/hiddenlayer]] — LiteLLM ships with a native integration for [HiddenLayer](https://hiddenlayer.com/). The proxy sends every request/response to HiddenLayer’s `/detection/v1/interactions` endpoint so you can block or
+- [[litellm-knowledge/openclaw/providers/docker_model_runner|litellm-knowledge/openclaw/providers/docker_model_runner]] — | Property | Details |
+- [[knowledge/litellm/proxy/guardrails/ibm_guardrails|knowledge/litellm/proxy/guardrails/ibm_guardrails]] — LiteLLM works with [IBM's FMS Guardrails](https://github.com/foundation-model-stack/fms-guardrails-orchestrator) for content safety. You can use it to detect jailbreaks, PII, hate speech, and more. 
+- [[litellm-knowledge/openclaw/providers/elevenlabs|litellm-knowledge/openclaw/providers/elevenlabs]] — ElevenLabs provides high-quality AI voice technology, including speech-to-text capabilities through their transcription API.
+- [[knowledge/litellm/proxy/guardrails/javelin|knowledge/litellm/proxy/guardrails/javelin]] — Javelin provides AI safety and content moderation services with support for prompt injection detection, trust & safety violations, and language detection.
+- [[litellm-knowledge/openclaw/providers/empower|litellm-knowledge/openclaw/providers/empower]] — LiteLLM supports all models on Empower. 
+- [[knowledge/litellm/proxy/guardrails/lakera_ai|knowledge/litellm/proxy/guardrails/lakera_ai]] — Supported endpoints:** The Lakera v2 integration only supports the **chat completions** endpoint (`/v1/chat/completions`). It is not supported for the Responses API, `/v1/messages`, MCP, A2A, or other
+- [[knowledge/litellm/proxy/guardrails/lasso_security|knowledge/litellm/proxy/guardrails/lasso_security]] — Use [Lasso Security](https://www.lasso.knowledge/openclaw/security/) to protect your LLM applications from prompt injection attacks, harmful content generation, and other security threats through comprehensive input and
+- [[litellm-knowledge/openclaw/providers/fal_ai|litellm-knowledge/openclaw/providers/fal_ai]] — Fal AI provides fast, scalable access to state-of-the-art image generation models including FLUX, Stable Diffusion, Imagen, and more.
+- [[knowledge/litellm/proxy/guardrails/litellm_content_filter|knowledge/litellm/proxy/guardrails/litellm_content_filter]] — Built-in guardrail** for detecting and filtering sensitive information using regex patterns and keyword matching. No external dependencies required.
+- [[litellm-knowledge/openclaw/providers/featherless_ai|litellm-knowledge/openclaw/providers/featherless_ai]] — https://featherless.ai/
+- [[litellm-knowledge/openclaw/providers/fireworks_ai|litellm-knowledge/openclaw/providers/fireworks_ai]] — :::info
+- [[knowledge/litellm/proxy/guardrails/model_armor|knowledge/litellm/proxy/guardrails/model_armor]] — LiteLLM supports Google Cloud Model Armor guardrails via the [Model Armor API](https://cloud.google.com/security-command-center/knowledge/openclaw/docs/model-armor-overview). 
+- [[litellm-knowledge/openclaw/providers/friendliai|litellm-knowledge/openclaw/providers/friendliai]] — :::info
+- [[knowledge/litellm/proxy/guardrails/noma_security|knowledge/litellm/proxy/guardrails/noma_security]] — Use [Noma Security](https://noma.knowledge/openclaw/security/) to protect your LLM applications with comprehensive AI content moderation and safety guardrails.
+- [[litellm-knowledge/openclaw/providers/galadriel|litellm-knowledge/openclaw/providers/galadriel]] — https://docs.galadriel.com/api-knowledge/openclaw/reference/chat-completion-API
+- [[knowledge/litellm/proxy/guardrails/onyx_security|knowledge/litellm/proxy/guardrails/onyx_security]] — Go to [Onyx's platform](https://app.onyx.security) and create a new AI Guard policy.
+- [[litellm-knowledge/openclaw/providers/gemini|litellm-knowledge/openclaw/providers/gemini]] — | Property | Details |
+- [[knowledge/litellm/proxy/guardrails/openai_moderation|knowledge/litellm/proxy/guardrails/openai_moderation]] — | Property | Details |
+- [[litellm-knowledge/openclaw/providers/gemini/music|litellm-knowledge/openclaw/providers/gemini/music]] — Google Lyria 3 preview models are listed in LiteLLM’s [model cost map](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json) under the `gemini/` provider for metadata an
+- [[knowledge/litellm/proxy/guardrails/pangea|knowledge/litellm/proxy/guardrails/pangea]] — The Pangea guardrail uses configurable detection policies (called *recipes*) from its AI Guard service to identify and mitigate risks in AI application traffic, including:
+- [[litellm-knowledge/openclaw/providers/gemini/videos|litellm-knowledge/openclaw/providers/gemini/videos]] — LiteLLM supports Google's Veo video generation models through a unified API interface.
+- [[knowledge/litellm/proxy/guardrails/panw_prisma_airs|knowledge/litellm/proxy/guardrails/panw_prisma_airs]] — LiteLLM supports PANW Prisma AIRS (AI Runtime Security) guardrails via the [Prisma AIRS Scan API](https://pan.dev/prisma-airs/api/airuntimeknowledge/openclaw/security/airuntimesecurityapi/). This integration provides Se
+- [[litellm-knowledge/openclaw/providers/gemini_file_search|litellm-knowledge/openclaw/providers/gemini_file_search]] — Use Google Gemini's File Search for Retrieval Augmented Generation (RAG) with LiteLLM.
+- [[knowledge/litellm/proxy/guardrails/pii_masking_v2|knowledge/litellm/proxy/guardrails/pii_masking_v2]] — | Property | Details |
+- [[litellm-knowledge/openclaw/providers/gigachat|litellm-knowledge/openclaw/providers/gigachat]] — https://developers.sber.ru/knowledge/openclaw/docs/ru/gigachat/api/overview
+- [[knowledge/litellm/proxy/guardrails/pillar_security|knowledge/litellm/proxy/guardrails/pillar_security]] — Pillar Security integrates with [LiteLLM Proxy](https://docs.litellm.ai) via the [Generic Guardrail API](https://docs.litellm.ai/knowledge/openclaw/docs/adding_provider/generic_guardrail_api), providing comprehensive AI
+- [[litellm-knowledge/openclaw/providers/github|litellm-knowledge/openclaw/providers/github]] — https://github.com/marketplace/models
+- [[knowledge/litellm/proxy/guardrails/policy_flow_builder|knowledge/litellm/proxy/guardrails/policy_flow_builder]] — The Policy Flow Builder lets you design guardrail pipelines with **conditional execution**. Instead of running guardrails independently, you chain them into ordered steps and control what happens when
+- [[litellm-knowledge/openclaw/providers/github_copilot|litellm-knowledge/openclaw/providers/github_copilot]] — https://docs.github.com/en/copilot
+- [[knowledge/litellm/proxy/guardrails/policy_tags|knowledge/litellm/proxy/guardrails/policy_tags]] — Apply guardrail policies automatically to any key or team that has a specific tag. Instead of attaching policies one-by-one, tag your keys and let the policy engine handle the rest.
+- [[litellm-knowledge/openclaw/providers/gmi|litellm-knowledge/openclaw/providers/gmi]] — | Property | Details |
+- [[knowledge/litellm/proxy/guardrails/policy_templates|knowledge/litellm/proxy/guardrails/policy_templates]] — Policy templates provide pre-configured guardrail policies that you can use as a starting point for your organization. Instead of manually creating policies and guardrails, you can select a template t
+- [[litellm-knowledge/openclaw/providers/google_ai_studio/files|litellm-knowledge/openclaw/providers/google_ai_studio/files]] — Use this to upload files to Google AI Studio (Gemini).
+- [[knowledge/litellm/proxy/guardrails/prompt_injection|knowledge/litellm/proxy/guardrails/prompt_injection]] — LiteLLM Supports the following methods for detecting prompt injection attacks
+- [[litellm-knowledge/openclaw/providers/google_ai_studio/image_gen|litellm-knowledge/openclaw/providers/google_ai_studio/image_gen]] — Google AI Studio provides powerful image generation capabilities using Google's Imagen models to create high-quality images from text descriptions.
+- [[knowledge/litellm/proxy/guardrails/prompt_security|knowledge/litellm/proxy/guardrails/prompt_security]] — Use [Prompt Security](https://prompt.knowledge/openclaw/security/) to protect your LLM applications from prompt injection attacks, jailbreaks, harmful content, PII leakage, and malicious file uploads through comprehensi
+- [[litellm-knowledge/openclaw/providers/google_ai_studio/realtime|litellm-knowledge/openclaw/providers/google_ai_studio/realtime]] — | Feature | Description | Comments |
+- [[knowledge/litellm/proxy/guardrails/promptguard|knowledge/litellm/proxy/guardrails/promptguard]] — Use [PromptGuard](https://promptguard.co/) to protect your LLM applications with prompt injection detection, PII redaction, topic filtering, entity blocklists, and hallucination detection. PromptGuard
+- [[litellm-knowledge/openclaw/providers/gradient_ai|litellm-knowledge/openclaw/providers/gradient_ai]] — https://digitalocean.com/products/gradientai
+- [[knowledge/litellm/proxy/guardrails/qualifire|knowledge/litellm/proxy/guardrails/qualifire]] — Use [Qualifire](https://qualifire.ai) to evaluate LLM outputs for quality, safety, and reliability. Detect prompt injections, hallucinations, PII, harmful content, and validate that your AI follows in
+- [[litellm-knowledge/openclaw/providers/groq|litellm-knowledge/openclaw/providers/groq]] — https://groq.com/
+- [[litellm-knowledge/openclaw/providers/helicone|litellm-knowledge/openclaw/providers/helicone]] — | Property | Details |
+- [[knowledge/litellm/proxy/guardrails/quick_start|knowledge/litellm/proxy/guardrails/quick_start]] — Setup Prompt Injection Detection, PII Masking on LiteLLM Proxy (AI Gateway)
+- [[litellm-knowledge/openclaw/providers/heroku|litellm-knowledge/openclaw/providers/heroku]] — To use Heroku with LiteLLM, [configure a Heroku app and attach a supported model](https://devcenter.heroku.com/articles/heroku-inference#provision-access-to-an-ai-model-resource).
+- [[knowledge/litellm/proxy/guardrails/realtime_guardrails|knowledge/litellm/proxy/guardrails/realtime_guardrails]] — Guard voice conversations in the [Realtime API](/knowledge/openclaw/docs/realtime) — intercept speech transcriptions **before** the LLM responds.
+- [[litellm-knowledge/openclaw/providers/huggingface|litellm-knowledge/openclaw/providers/huggingface]] — LiteLLM supports running inference across multiple services for models hosted on the Hugging Face Hub.
+- [[knowledge/litellm/proxy/guardrails/secret_detection|knowledge/litellm/proxy/guardrails/secret_detection]] — ❓ Use this to REDACT API Keys, Secrets sent in requests to an LLM. 
+- [[litellm-knowledge/openclaw/providers/huggingface_rerank|litellm-knowledge/openclaw/providers/huggingface_rerank]] — HuggingFace Rerank allows you to use reranking models hosted on Hugging Face infrastructure or your custom endpoints to reorder documents based on their relevance to a query.
+- [[knowledge/litellm/proxy/guardrails/team_based_guardrails|knowledge/litellm/proxy/guardrails/team_based_guardrails]] — Team-based guardrails let **developers** register a guardrail for their team via the API; an **admin** then reviews and approves or rejects it in the LiteLLM UI. Only [Generic Guardrail API](/knowledge/openclaw/docs/add
+- [[litellm-knowledge/openclaw/providers/hyperbolic|litellm-knowledge/openclaw/providers/hyperbolic]] — | Property | Details |
+- [[knowledge/litellm/proxy/guardrails/test_playground|knowledge/litellm/proxy/guardrails/test_playground]] — Test and compare multiple guardrails in real-time with an interactive playground interface.
+- [[litellm-knowledge/openclaw/providers/infinity|litellm-knowledge/openclaw/providers/infinity]] — | Property                  | Details                                                                                                    |
+- [[litellm-knowledge/openclaw/providers/jina_ai|litellm-knowledge/openclaw/providers/jina_ai]] — https://jina.ai/embeddings/
+- [[knowledge/litellm/proxy/guardrails/tool_permission|knowledge/litellm/proxy/guardrails/tool_permission]] — LiteLLM provides the LiteLLM Tool Permission Guardrail that lets you control which **tool calls** a model is allowed to invoke, using configurable allow/deny rules. This offers fine-grained, provider-
+- [[litellm-knowledge/openclaw/providers/lambda_ai|litellm-knowledge/openclaw/providers/lambda_ai]] — | Property | Details |
+- [[knowledge/litellm/proxy/guardrails/zscaler_ai_guard|knowledge/litellm/proxy/guardrails/zscaler_ai_guard]] — Zscaler AI Guard enforces security policies for all traffic to AI sites, models, and applications. As part of the Zero Trust Exchange, it provides a comprehensive platform for visibility, control, and
+- [[litellm-knowledge/openclaw/providers/langgraph|litellm-knowledge/openclaw/providers/langgraph]] — Call LangGraph agents through LiteLLM using the OpenAI chat completions format.
+- [[knowledge/litellm/proxy/health|knowledge/litellm/proxy/health]] — Use this to health check all LLMs defined in your config.yaml
+- [[litellm-knowledge/openclaw/providers/lemonade|litellm-knowledge/openclaw/providers/lemonade]] — [Lemonade Server](https://lemonade-server.ai/) is an OpenAI-compatible local language model inference provider optimized for AMD GPUs and NPUs. The `lemonade` litellm provider supports standard chat c
+- [[knowledge/litellm/proxy/health_check_routing|knowledge/litellm/proxy/health_check_routing]] — Route traffic away from unhealthy deployments before users hit errors. Background health checks run on a configurable interval, and any deployment that fails gets removed from the routing pool proacti
+- [[litellm-knowledge/openclaw/providers/litellm_proxy|litellm-knowledge/openclaw/providers/litellm_proxy]] — | Property | Details |
+- [[knowledge/litellm/proxy/high_availability_control_plane|knowledge/litellm/proxy/high_availability_control_plane]] — Deploy a single LiteLLM UI that manages multiple independent LiteLLM proxy instances, each with its own database, Redis, and master key.
+- [[litellm-knowledge/openclaw/providers/llamafile|litellm-knowledge/openclaw/providers/llamafile]] — LiteLLM supports all models on Llamafile.
+- [[knowledge/litellm/proxy/image_handling|knowledge/litellm/proxy/image_handling]] — <Image img={require('../../img/image_handling.png')}  style={{ width: '900px', height: 'auto' }} />
+- [[litellm-knowledge/openclaw/providers/llamagate|litellm-knowledge/openclaw/providers/llamagate]] — | Property | Details |
+- [[knowledge/litellm/proxy/ip_address|knowledge/litellm/proxy/ip_address]] — :::info
+- [[litellm-knowledge/openclaw/providers/lm_studio|litellm-knowledge/openclaw/providers/lm_studio]] — https://lmstudio.ai/knowledge/openclaw/docs/basics/server
+- [[knowledge/litellm/proxy/jwt_auth_arch|knowledge/litellm/proxy/jwt_auth_arch]] — :::info
+- [[litellm-knowledge/openclaw/providers/manus|litellm-knowledge/openclaw/providers/manus]] — Use Manus AI agents through LiteLLM's OpenAI-compatible Responses API.
+- [[knowledge/litellm/proxy/jwt_key_mapping|knowledge/litellm/proxy/jwt_key_mapping]] — :::info Enterprise
+- [[litellm-knowledge/openclaw/providers/meta_llama|litellm-knowledge/openclaw/providers/meta_llama]] — | Property | Details |
+- [[knowledge/litellm/proxy/keys_teams_router_settings|knowledge/litellm/proxy/keys_teams_router_settings]] — Configure router settings at the key and team level to achieve granular control over routing behavior, fallbacks, retries, and other router configurations. This enables you to customize routing behavi
+- [[litellm-knowledge/openclaw/providers/milvus_vector_stores|litellm-knowledge/openclaw/providers/milvus_vector_stores]] — Use Milvus as a vector store for RAG.
+- [[knowledge/litellm/proxy/litellm_managed_files|knowledge/litellm/proxy/litellm_managed_files]] — - Reuse the same file across different providers.
+- [[litellm-knowledge/openclaw/providers/minimax|litellm-knowledge/openclaw/providers/minimax]] — Litellm provides anthropic specs compatible support for minmax
+- [[litellm-knowledge/openclaw/providers/mistral|litellm-knowledge/openclaw/providers/mistral]] — https://docs.mistral.ai/api/
+- [[knowledge/litellm/proxy/litellm_prompt_management|knowledge/litellm/proxy/litellm_prompt_management]] — Use the LiteLLM AI Gateway to create, manage and version your prompts.
+- [[litellm-knowledge/openclaw/providers/moonshot|litellm-knowledge/openclaw/providers/moonshot]] — | Property | Details |
+- [[knowledge/litellm/proxy/load_balancing|knowledge/litellm/proxy/load_balancing]] — Load balance multiple instances of the same model
+- [[litellm-knowledge/openclaw/providers/morph|litellm-knowledge/openclaw/providers/morph]] — LiteLLM supports all models on [Morph](https://morphllm.com)
+- [[knowledge/litellm/proxy/logging|knowledge/litellm/proxy/logging]] — Log Proxy input, output, and exceptions using:
+- [[litellm-knowledge/openclaw/providers/nano-gpt|litellm-knowledge/openclaw/providers/nano-gpt]] — | Property | Details |
+- [[litellm-knowledge/openclaw/providers/nebius|litellm-knowledge/openclaw/providers/nebius]] — https://docs.nebius.com/studio/inference/quickstart
+- [[knowledge/litellm/proxy/logging_spec|knowledge/litellm/proxy/logging_spec]] — Found under `kwargs["standard_logging_object"]`. This is a standard payload, logged for every successful and failed response.
+- [[knowledge/litellm/proxy/managed_batches|knowledge/litellm/proxy/managed_batches]] — :::info
+- [[litellm-knowledge/openclaw/providers/nlp_cloud|litellm-knowledge/openclaw/providers/nlp_cloud]] — LiteLLM supports all LLMs on NLP Cloud.
+- [[knowledge/litellm/proxy/managed_finetuning|knowledge/litellm/proxy/managed_finetuning]] — :::info
+- [[litellm-knowledge/openclaw/providers/novita|litellm-knowledge/openclaw/providers/novita]] — | Property | Details |
+- [[knowledge/litellm/proxy/management_cli|knowledge/litellm/proxy/management_cli]] — The `litellm-proxy` CLI is a command-line tool for managing your LiteLLM proxy
+- [[litellm-knowledge/openclaw/providers/nscale|litellm-knowledge/openclaw/providers/nscale]] — https://docs.nscale.com/knowledge/openclaw/docs/inference/chat
+- [[knowledge/litellm/proxy/master_key_rotations|knowledge/litellm/proxy/master_key_rotations]] — Here are our recommended steps for rotating your master key.
+- [[litellm-knowledge/openclaw/providers/nvidia_nim|litellm-knowledge/openclaw/providers/nvidia_nim]] — https://docs.api.nvidia.com/nim/knowledge/openclaw/reference/
+- [[knowledge/litellm/proxy/metrics|knowledge/litellm/proxy/metrics]] — ```shell
+- [[litellm-knowledge/openclaw/providers/nvidia_nim_rerank|litellm-knowledge/openclaw/providers/nvidia_nim_rerank]] — Use Nvidia NIM Rerank models through LiteLLM.
+- [[knowledge/litellm/proxy/model_access|knowledge/litellm/proxy/model_access]] — Set allowed models for a key using the `models` param
+- [[litellm-knowledge/openclaw/providers/oci|litellm-knowledge/openclaw/providers/oci]] — LiteLLM supports the following models for OCI on-demand GenAI API.
+- [[knowledge/litellm/proxy/model_access_groups|knowledge/litellm/proxy/model_access_groups]] — Group multiple models under a single name, then grant keys or teams access to the entire group. Add or remove models from a group without updating individual keys.
+- [[litellm-knowledge/openclaw/providers/ollama|litellm-knowledge/openclaw/providers/ollama]] — LiteLLM supports all models from [Ollama](https://github.com/ollama/ollama)
+- [[knowledge/litellm/proxy/model_access_guide|knowledge/litellm/proxy/model_access_guide]] — Each model onboarded is a "model deployment" in LiteLLM. 
+- [[litellm-knowledge/openclaw/providers/openai|litellm-knowledge/openclaw/providers/openai]] — LiteLLM supports OpenAI Chat + Embedding calls.
+- [[knowledge/litellm/proxy/model_compare_ui|knowledge/litellm/proxy/model_compare_ui]] — Compare multiple LLM models side-by-side in an interactive playground interface. Evaluate model responses, performance metrics, and costs to make informed decisions about which models work best for yo
+- [[litellm-knowledge/openclaw/providers/openai/responses_api|litellm-knowledge/openclaw/providers/openai/responses_api]] — ```python showLineNumbers title="OpenAI Non-streaming Response"
+- [[knowledge/litellm/proxy/model_discovery|knowledge/litellm/proxy/model_discovery]] — Use this to give users an accurate list of models available behind provider endpoint, when calling `/v1/models` for wildcard models.
+- [[litellm-knowledge/openclaw/providers/openai/text_to_speech|litellm-knowledge/openclaw/providers/openai/text_to_speech]] — | Feature | Supported | Notes |
+- [[knowledge/litellm/proxy/model_management|knowledge/litellm/proxy/model_management]] — Add new models + Get model info without restarting proxy.
+- [[litellm-knowledge/openclaw/providers/openai/videos|litellm-knowledge/openclaw/providers/openai/videos]] — LiteLLM supports OpenAI's video generation models including Sora.
+- [[knowledge/litellm/proxy/multi_tenant_architecture|knowledge/litellm/proxy/multi_tenant_architecture]] — LiteLLM provides a centralized solution that scales across multiple tenants, enabling organizations to:
+- [[litellm-knowledge/openclaw/providers/openai_compatible|litellm-knowledge/openclaw/providers/openai_compatible]] — :::info
+- [[knowledge/litellm/proxy/multiple_admins|knowledge/litellm/proxy/multiple_admins]] — <Image 
+- [[litellm-knowledge/openclaw/providers/openrouter|litellm-knowledge/openclaw/providers/openrouter]] — LiteLLM supports all the text / chat / vision / embedding models from [OpenRouter](https://openrouter.ai/docs)
+- [[knowledge/litellm/proxy/native_litellm_prompt|knowledge/litellm/proxy/native_litellm_prompt]] — Store prompts as `.prompt` files in your repository and use them directly with LiteLLM. No external services required.
+- [[litellm-knowledge/openclaw/providers/ovhcloud|litellm-knowledge/openclaw/providers/ovhcloud]] — Leading French Cloud provider in Europe with data sovereignty and privacy.
+- [[knowledge/litellm/proxy/oauth2|knowledge/litellm/proxy/oauth2]] — Use this if you want to use an Oauth2.0 token to make `/chat`, `/embeddings` requests to the LiteLLM Proxy
+- [[litellm-knowledge/openclaw/providers/perplexity|litellm-knowledge/openclaw/providers/perplexity]] — https://www.perplexity.ai
+- [[knowledge/litellm/proxy/pagerduty|knowledge/litellm/proxy/pagerduty]] — :::info
+- [[litellm-knowledge/openclaw/providers/perplexity_embedding|litellm-knowledge/openclaw/providers/perplexity_embedding]] — https://docs.perplexity.ai/knowledge/openclaw/docs/embeddings/quickstart
+- [[knowledge/litellm/proxy/pass_through|knowledge/litellm/proxy/pass_through]] — Route requests from your LiteLLM proxy to any external API. Perfect for custom models, image generation APIs, or any service you want to proxy through LiteLLM.
+- [[litellm-knowledge/openclaw/providers/petals|litellm-knowledge/openclaw/providers/petals]] — Petals: https://github.com/bigscience-workshop/petals
+- [[knowledge/litellm/proxy/pass_through_guardrails|knowledge/litellm/proxy/pass_through_guardrails]] — import Image from '@theme/IdealImage';
+- [[litellm-knowledge/openclaw/providers/poe|litellm-knowledge/openclaw/providers/poe]] — | Property | Details |
+- [[knowledge/litellm/proxy/perf|knowledge/litellm/proxy/perf]] — LiteLLM proxy + Load Balancer gives **30% increase** in throughput compared to Raw OpenAI API
+- [[litellm-knowledge/openclaw/providers/predibase|litellm-knowledge/openclaw/providers/predibase]] — LiteLLM supports all models on Predibase
+- [[knowledge/litellm/proxy/pricing_calculator|knowledge/litellm/proxy/pricing_calculator]] — Estimate LLM costs based on expected token usage and request volume. This tool helps developers and platform teams forecast spending before deploying models to production.
+- [[litellm-knowledge/openclaw/providers/publicai|litellm-knowledge/openclaw/providers/publicai]] — | Property | Details |
+- [[litellm-knowledge/openclaw/providers/pydantic_ai_agent|litellm-knowledge/openclaw/providers/pydantic_ai_agent]] — Call Pydantic AI Agents via LiteLLM's A2A Gateway.
+- [[knowledge/litellm/proxy/prod|knowledge/litellm/proxy/prod]] — Use this config.yaml in production (with your own LLMs)
+- [[litellm-knowledge/openclaw/providers/ragflow|litellm-knowledge/openclaw/providers/ragflow]] — Litellm supports Ragflow's chat completions APIs
+- [[knowledge/litellm/proxy/project_management|knowledge/litellm/proxy/project_management]] — :::info
+- [[litellm-knowledge/openclaw/providers/ragflow_vector_store|litellm-knowledge/openclaw/providers/ragflow_vector_store]] — Litellm support creation and management of datasets for document processing and knowledge base management in Ragflow.
+- [[knowledge/litellm/proxy/prometheus|knowledge/litellm/proxy/prometheus]] — LiteLLM Exposes a `/metrics` endpoint for Prometheus to Poll
+- [[litellm-knowledge/openclaw/providers/recraft|litellm-knowledge/openclaw/providers/recraft]] — https://www.recraft.ai/
+- [[knowledge/litellm/proxy/prompt_management|knowledge/litellm/proxy/prompt_management]] — Run experiments or change the specific model (e.g. from gpt-4o to gpt4o-mini finetune) from your prompt management tool (e.g. Langfuse) instead of making changes in the application. 
+- [[litellm-knowledge/openclaw/providers/replicate|litellm-knowledge/openclaw/providers/replicate]] — LiteLLM supports all models on Replicate
+- [[knowledge/litellm/proxy/provider_budget_routing|knowledge/litellm/proxy/provider_budget_routing]] — LiteLLM Supports setting the following budgets:
+- [[litellm-knowledge/openclaw/providers/runwayml/images|litellm-knowledge/openclaw/providers/runwayml/images]] — | Property | Details |
+- [[knowledge/litellm/proxy/provider_discounts|knowledge/litellm/proxy/provider_discounts]] — Apply percentage-based discounts to specific providers. This is useful for negotiated enterprise pricing with providers.
+- [[litellm-knowledge/openclaw/providers/runwayml/text-to-speech|litellm-knowledge/openclaw/providers/runwayml/text-to-speech]] — | Property | Details |
+- [[knowledge/litellm/proxy/provider_margins|knowledge/litellm/proxy/provider_margins]] — Apply percentage-based or fixed-amount margins to specific providers or globally. This is useful for enterprises that need to add operational overhead costs to bill internal consumers.
+- [[litellm-knowledge/openclaw/providers/runwayml/videos|litellm-knowledge/openclaw/providers/runwayml/videos]] — LiteLLM supports RunwayML's Gen-4 video generation API, allowing you to generate videos from text prompts and images.
+- [[knowledge/litellm/proxy/public_routes|knowledge/litellm/proxy/public_routes]] — :::info
+- [[litellm-knowledge/openclaw/providers/sambanova|litellm-knowledge/openclaw/providers/sambanova]] — [https://cloud.sambanova.ai/](http://cloud.sambanova.ai?utm_source=litellm&utm_medium=external&utm_campaign=cloud_signup)
+- [[knowledge/litellm/proxy/public_teams|knowledge/litellm/proxy/public_teams]] — Expose available teams to your users to join on signup.
+- [[litellm-knowledge/openclaw/providers/sap|litellm-knowledge/openclaw/providers/sap]] — LiteLLM supports SAP Generative AI Hub's Orchestration Service.
+- [[knowledge/litellm/proxy/pyroscope_profiling|knowledge/litellm/proxy/pyroscope_profiling]] — LiteLLM proxy can send continuous CPU profiles to [Grafana Pyroscope](https://grafana.com/knowledge/openclaw/docs/pyroscope/latest/) when enabled via environment variables. This is optional and off by default.
+- [[litellm-knowledge/openclaw/providers/sarvam|litellm-knowledge/openclaw/providers/sarvam]] — import Tabs from '@theme/Tabs';
+- [[knowledge/litellm/proxy/quick_start|knowledge/litellm/proxy/quick_start]] — Setup LiteLLM Proxy quickly via CLI. 
+- [[litellm-knowledge/openclaw/providers/scaleway|litellm-knowledge/openclaw/providers/scaleway]] — LiteLLM supports all [models available on Scaleway Generative APIs ↗](https://www.scaleway.com/en/knowledge/openclaw/docs/generative-apis/reference-content/supported-models/). 
+- [[knowledge/litellm/proxy/rate_limit_tiers|knowledge/litellm/proxy/rate_limit_tiers]] — Define tiers with rate limits. Assign them to keys. 
+- [[litellm-knowledge/openclaw/providers/snowflake|litellm-knowledge/openclaw/providers/snowflake]] — | Property                   | Details                                                                                                   |
+- [[knowledge/litellm/proxy/realtime_webrtc|knowledge/litellm/proxy/realtime_webrtc]] — Connect to the Realtime API via WebRTC from browser/mobile clients. LiteLLM handles auth; audio streams directly to OpenAI/Azure.
+- [[litellm-knowledge/openclaw/providers/stability|litellm-knowledge/openclaw/providers/stability]] — https://stability.ai/
+- [[litellm-knowledge/openclaw/providers/synthetic|litellm-knowledge/openclaw/providers/synthetic]] — | Property | Details |
+- [[knowledge/litellm/proxy/reject_clientside_metadata_tags|knowledge/litellm/proxy/reject_clientside_metadata_tags]] — The `reject_clientside_metadata_tags` setting allows you to prevent users from passing client-side `metadata.tags` in their API requests. This ensures that tags are only inherited from the API key met
+- [[litellm-knowledge/openclaw/providers/text_completion_openai|litellm-knowledge/openclaw/providers/text_completion_openai]] — LiteLLM supports OpenAI text completion models
+- [[knowledge/litellm/proxy/release_cycle|knowledge/litellm/proxy/release_cycle]] — Litellm Proxy has the following release cycle:
+- [[litellm-knowledge/openclaw/providers/togetherai|litellm-knowledge/openclaw/providers/togetherai]] — LiteLLM supports all models on Together AI. 
+- [[knowledge/litellm/proxy/reliability|knowledge/litellm/proxy/reliability]] — If a call fails after num_retries, fallback to another model group. 
+- [[litellm-knowledge/openclaw/providers/topaz|litellm-knowledge/openclaw/providers/topaz]] — | Property | Details |
+- [[knowledge/litellm/proxy/request_headers|knowledge/litellm/proxy/request_headers]] — Special headers that are supported by LiteLLM.
+- [[knowledge/litellm/proxy/request_tags|knowledge/litellm/proxy/request_tags]] — Add tags to model deployments to track spend by environment, AWS account, or any custom label.
+- [[litellm-knowledge/openclaw/providers/triton-inference-server|litellm-knowledge/openclaw/providers/triton-inference-server]] — LiteLLM supports Embedding Models on Triton Inference Servers
+- [[litellm-knowledge/openclaw/providers/v0|litellm-knowledge/openclaw/providers/v0]] — | Property | Details |
+- [[knowledge/litellm/proxy/response_headers|knowledge/litellm/proxy/response_headers]] — When you make a request to the proxy, the proxy will return the following headers:
+- [[knowledge/litellm/proxy/rules|knowledge/litellm/proxy/rules]] — Use this to fail a request based on the output of an llm api call.
+- [[litellm-knowledge/openclaw/providers/vercel_ai_gateway|litellm-knowledge/openclaw/providers/vercel_ai_gateway]] — | Property | Details |
+- [[knowledge/litellm/proxy/security_encryption_faq|knowledge/litellm/proxy/security_encryption_faq]] — Yes**, LiteLLM encrypts data in transit using TLS/SSL.
+- [[litellm-knowledge/openclaw/providers/vertex|litellm-knowledge/openclaw/providers/vertex]] — | Property | Details |
+- [[knowledge/litellm/proxy/self_serve|knowledge/litellm/proxy/self_serve]] — 1. Add user with permissions to a team on proxy 
+- [[litellm-knowledge/openclaw/providers/vertex_ai/videos|litellm-knowledge/openclaw/providers/vertex_ai/videos]] — LiteLLM supports Vertex AI's Veo video generation models using the unified OpenAI video API surface.
+- [[knowledge/litellm/proxy/service_accounts|knowledge/litellm/proxy/service_accounts]] — Use this if you want to create Virtual Keys that are not owned by a specific user but instead created for production projects
+- [[litellm-knowledge/openclaw/providers/vertex_ai_agent_engine|litellm-knowledge/openclaw/providers/vertex_ai_agent_engine]] — Call Vertex AI Agent Engine (Reasoning Engines) in the OpenAI Request/Response format.
+- [[knowledge/litellm/proxy/shared_health_check|knowledge/litellm/proxy/shared_health_check]] — This feature enables coordination of health checks across multiple LiteLLM proxy pods to avoid duplicate health checks and reduce costs.
+- [[litellm-knowledge/openclaw/providers/vertex_batch|litellm-knowledge/openclaw/providers/vertex_batch]] — Just add the following Vertex env vars to your environment. 
+- [[knowledge/litellm/proxy/spend_logs_deletion|knowledge/litellm/proxy/spend_logs_deletion]] — This walks through how to set the maximum retention period for spend logs. This helps manage database size by deleting old logs automatically.
+- [[litellm-knowledge/openclaw/providers/vertex_embedding|litellm-knowledge/openclaw/providers/vertex_embedding]] — <Tabs>
+- [[knowledge/litellm/proxy/sync_anthropic_beta_headers|knowledge/litellm/proxy/sync_anthropic_beta_headers]] — Automatically keep your Anthropic beta headers configuration up to date without restarting your service. **This allows you to support new Anthropic beta features across all providers without restartin
+- [[litellm-knowledge/openclaw/providers/vertex_image|litellm-knowledge/openclaw/providers/vertex_image]] — Vertex AI supports two types of image generation:
+- [[knowledge/litellm/proxy/sync_models_github|knowledge/litellm/proxy/sync_models_github]] — Automatically keep your model pricing and context window data up to date without restarting your service. **This allows you to add day-0 support for new models without restarting your service.**
+- [[litellm-knowledge/openclaw/providers/vertex_ocr|litellm-knowledge/openclaw/providers/vertex_ocr]] — | Property | Details |
+- [[knowledge/litellm/proxy/tag_budgets|knowledge/litellm/proxy/tag_budgets]] — Track spend and set budgets for your API requests using tags. Tags allow you to categorize and monitor costs across different cost centers, projects, and departments.
+- [[litellm-knowledge/openclaw/providers/vertex_partner|litellm-knowledge/openclaw/providers/vertex_partner]] — | Provider | LiteLLM Route | Vertex Documentation |
+- [[knowledge/litellm/proxy/tag_routing|knowledge/litellm/proxy/tag_routing]] — Route requests based on tags. 
+- [[litellm-knowledge/openclaw/providers/vertex_realtime|litellm-knowledge/openclaw/providers/vertex_realtime]] — Use Vertex AI's Gemini Live API (BidiGenerateContent) through LiteLLM's unified `/realtime` endpoint, which speaks the OpenAI Realtime protocol.
+- [[knowledge/litellm/proxy/team_based_routing|knowledge/litellm/proxy/team_based_routing]] — :::info
+- [[litellm-knowledge/openclaw/providers/vertex_self_deployed|litellm-knowledge/openclaw/providers/vertex_self_deployed]] — Deploy and use your own models on Vertex AI through Model Garden or custom endpoints.
+- [[knowledge/litellm/proxy/team_budgets|knowledge/litellm/proxy/team_budgets]] — - You must set up a Postgres database (e.g. Supabase, Neon, etc.)
+- [[litellm-knowledge/openclaw/providers/vertex_speech|litellm-knowledge/openclaw/providers/vertex_speech]] — | Property | Details |
+- [[knowledge/litellm/proxy/team_logging|knowledge/litellm/proxy/team_logging]] — Allow each key/team to use their own Langfuse Project / custom callbacks. This enables granular control over logging and compliance requirements.
+- [[litellm-knowledge/openclaw/providers/vllm|litellm-knowledge/openclaw/providers/vllm]] — LiteLLM supports all models on VLLM.
+- [[knowledge/litellm/proxy/team_model_add|knowledge/litellm/proxy/team_model_add]] — :::info
+- [[litellm-knowledge/openclaw/providers/vllm_batches|litellm-knowledge/openclaw/providers/vllm_batches]] — LiteLLM supports vLLM's Batch and Files API for processing large volumes of requests asynchronously.
+- [[knowledge/litellm/proxy/temporary_budget_increase|knowledge/litellm/proxy/temporary_budget_increase]] — Set temporary budget increase for a LiteLLM Virtual Key. Use this if you get asked to increase the budget for a key temporarily.
+- [[litellm-knowledge/openclaw/providers/volcano|litellm-knowledge/openclaw/providers/volcano]] — https://www.volcengine.com/knowledge/openclaw/docs/82379/1263482
+- [[knowledge/litellm/proxy/timeout|knowledge/litellm/proxy/timeout]] — The timeout set in router is for the entire length of the call, and is passed down to the completion() call level as well. 
+- [[litellm-knowledge/openclaw/providers/voyage|litellm-knowledge/openclaw/providers/voyage]] — https://docs.voyageai.com/embeddings/
+- [[knowledge/litellm/proxy/token_auth|knowledge/litellm/proxy/token_auth]] — Use JWT's to auth admins / users / projects into the proxy.
+- [[litellm-knowledge/openclaw/providers/wandb_inference|litellm-knowledge/openclaw/providers/wandb_inference]] — https://weave-docs.wandb.ai/quickstart-inference
+- [[knowledge/litellm/proxy/ui|knowledge/litellm/proxy/ui]] — Create keys, track spend, add models without worrying about the config / CRUD endpoints.
+- [[litellm-knowledge/openclaw/providers/watsonx/audio_transcription|litellm-knowledge/openclaw/providers/watsonx/audio_transcription]] — | Property | Details |
+- [[knowledge/litellm/proxy/ui/bulk_edit_users|knowledge/litellm/proxy/ui/bulk_edit_users]] — Assign existing users to a default team and default model access. 
+- [[litellm-knowledge/openclaw/providers/watsonx/index|litellm-knowledge/openclaw/providers/watsonx/index]] — LiteLLM supports all IBM [watsonx.ai](https://watsonx.ai/) foundational models and embeddings.
+- [[knowledge/litellm/proxy/ui/page_visibility|knowledge/litellm/proxy/ui/page_visibility]] — Configure which navigation tabs and pages are visible to internal users (non-admin developers) in the LiteLLM UI.
+- [[litellm-knowledge/openclaw/providers/watsonx/rerank|litellm-knowledge/openclaw/providers/watsonx/rerank]] — | Property | Details                                                                  |
+- [[knowledge/litellm/proxy/ui/ui_edit_logo|knowledge/litellm/proxy/ui/ui_edit_logo]] — Personalize your LiteLLM dashboard by replacing the default logo with your own company branding. You can set a custom logo via the UI or the API.
+- [[litellm-knowledge/openclaw/providers/xai|litellm-knowledge/openclaw/providers/xai]] — https://docs.x.ai/docs
+- [[knowledge/litellm/proxy/ui_credentials|knowledge/litellm/proxy/ui_credentials]] — You can add LLM provider credentials on the UI. Once you add credentials you can reuse them when adding new models
+- [[knowledge/litellm/proxy/ui_logs|knowledge/litellm/proxy/ui_logs]] — View Spend, Token Usage, Key, Team Name for Each Request to LiteLLM
+- [[litellm-knowledge/openclaw/providers/xai_realtime|litellm-knowledge/openclaw/providers/xai_realtime]] — xAI's Grok Voice Agent provides real-time voice conversation capabilities through WebSocket connections, enabling natural bidirectional audio interactions.
+- [[knowledge/litellm/proxy/ui_logs_sessions|knowledge/litellm/proxy/ui_logs_sessions]] — Group requests into sessions. This allows you to group related requests together.
+- [[litellm-knowledge/openclaw/providers/xiaomi_mimo|litellm-knowledge/openclaw/providers/xiaomi_mimo]] — https://platform.xiaomimimo.com/#/docs
+- [[litellm-knowledge/openclaw/providers/xinference|litellm-knowledge/openclaw/providers/xinference]] — https://inference.readthedocs.io/en/latest/index.html
+- [[knowledge/litellm/proxy/ui_project_management|knowledge/litellm/proxy/ui_project_management]] — :::info
+- [[litellm-knowledge/openclaw/providers/zai|litellm-knowledge/openclaw/providers/zai]] — https://z.ai/
+- [[knowledge/litellm/proxy/ui_spend_log_settings|knowledge/litellm/proxy/ui_spend_log_settings]] — Configure spend log behavior directly from the Admin UI—no config file edits or proxy restart required. This is especially useful for cloud deployments where updating the config is difficult or requ
+- [[knowledge/litellm/proxy/ui_store_model_db_setting|knowledge/litellm/proxy/ui_store_model_db_setting]] — Enable or disable storing model definitions in the database directly from the Admin UI—no config file edits or proxy restart required. This is especially useful for cloud deployments where updating 
+- [[knowledge/litellm/proxy/ui_team_soft_budget_alerts|knowledge/litellm/proxy/ui_team_soft_budget_alerts]] — :::info
+- [[knowledge/litellm/proxy/user_keys|knowledge/litellm/proxy/user_keys]] — LiteLLM Proxy is **OpenAI-Compatible**, and supports:
+- [[knowledge/litellm/proxy/user_management_heirarchy|knowledge/litellm/proxy/user_management_heirarchy]] — <Image img={require('../../img/litellm_user_heirarchy.png')} style={{ width: '100%', maxWidth: '4000px' }} />
+- [[knowledge/litellm/proxy/user_onboarding|knowledge/litellm/proxy/user_onboarding]] — A step-by-step guide to help admins onboard users to your LiteLLM proxy instance and help users get started with their API key.
+- [[knowledge/litellm/proxy/users|knowledge/litellm/proxy/users]] — :::info **Budget Setup Options**
+- [[knowledge/litellm/proxy/veo_video_generation|knowledge/litellm/proxy/veo_video_generation]] — Generate videos using Google's Veo model through LiteLLM's pass-through endpoints.
+- [[knowledge/litellm/proxy/virtual_keys|knowledge/litellm/proxy/virtual_keys]] — Track Spend, and control model access via virtual keys for the proxy
+- [[knowledge/litellm/proxy/worker_startup_hooks|knowledge/litellm/proxy/worker_startup_hooks]] — Use `LITELLM_WORKER_STARTUP_HOOKS` to run custom initialization functions in **each worker process** during proxy startup. This is essential when using multi-worker deployments (`--num_workers > 1`) w
+
+## litellm-troubleshoot
+
+## litellm-debugging
+- [[knowledge/litellm/troubleshoot/cost_discrepancy|knowledge/litellm/troubleshoot/cost_discrepancy]] — Cost discrepancies between LiteLLM and your provider bill usually come from one of three areas: token ingestion, the cost formula LiteLLM applies, or stale or incorrect pricing in the model map. This 
+- [[knowledge/litellm/debugging/hosted_debugging|knowledge/litellm/debugging/hosted_debugging]] — LiteLLM documentation: Hosted debugging
+- [[knowledge/litellm/troubleshoot/cpu_issues|knowledge/litellm/troubleshoot/cpu_issues]] — Select the options that best describes the CPU behavior observed.
+- [[knowledge/litellm/debugging/local_debugging|knowledge/litellm/debugging/local_debugging]] — There's 2 ways to do local debugging - `litellm._turn_on_debug()` and by passing in a custom function `completion(...logger_fn=<your_local_function>)`. Warning: Make sure to not use `_turn_on_debug()`
+- [[knowledge/litellm/troubleshoot/latency_overhead|knowledge/litellm/troubleshoot/latency_overhead]] — Use this guide when you see unexpected latency overhead between LiteLLM proxy and the LLM provider.
+- [[knowledge/litellm/troubleshoot/max_callbacks|knowledge/litellm/troubleshoot/max_callbacks]] — ```
+- [[knowledge/litellm/troubleshoot/memory_issues|knowledge/litellm/troubleshoot/memory_issues]] — Select the option(s) that best describe the memory behavior observed:
+- [[knowledge/litellm/troubleshoot/pip_venv_upgrade|knowledge/litellm/troubleshoot/pip_venv_upgrade]] — Guide for upgrading LiteLLM Proxy when installed via uv in a virtual environment.
+- [[knowledge/litellm/troubleshoot/prisma_migrations|knowledge/litellm/troubleshoot/prisma_migrations]] — Common Prisma migration issues encountered when upgrading or downgrading LiteLLM proxy versions, and how to fix them.
+- [[knowledge/litellm/troubleshoot/rollback|knowledge/litellm/troubleshoot/rollback]] — This guide outlines the process for safely rolling back a LiteLLM Proxy deployment to a previous version.
+- [[knowledge/litellm/troubleshoot/spend_queue_warnings|knowledge/litellm/troubleshoot/spend_queue_warnings]] — The "Spend update queue is full" warning occurs in high-volume LiteLLM proxy deployments when the internal spend tracking queue reaches capacity. This is a protective mechanism to prevent memory issue
+- [[knowledge/litellm/troubleshoot/ui_issues|knowledge/litellm/troubleshoot/ui_issues]] — If you're experiencing issues with the LiteLLM Admin UI, please include the following information when reporting.
+
+## litellm-embedding
+
+## litellm-caching
+- [[knowledge/litellm/embedding/async_embedding|knowledge/litellm/embedding/async_embedding]] — LiteLLM provides an asynchronous version of the `embedding` function called `aembedding`
+
+## litellm-observability
+
+## litellm-guides
+- [[knowledge/litellm/caching/all_caches|knowledge/litellm/caching/all_caches]] — [**See Code**](https://github.com/BerriAI/litellm/blob/main/litellm/caching/caching.py)
+- [[knowledge/litellm/observability/agentops_integration|knowledge/litellm/observability/agentops_integration]] — :::tip
+- [[knowledge/litellm/embedding/moderation|knowledge/litellm/embedding/moderation]] — LiteLLM supports the moderation endpoint for OpenAI
+- [[knowledge/litellm/guides/code_interpreter|knowledge/litellm/guides/code_interpreter]] — Use OpenAI's Code Interpreter tool to execute Python code in a secure, sandboxed environment.
+- [[knowledge/litellm/caching/caching_api|knowledge/litellm/caching/caching_api]] — Use api.litellm.ai for caching `completion()` and `embedding()` responses
+- [[knowledge/litellm/observability/argilla|knowledge/litellm/observability/argilla]] — Argilla is a collaborative annotation tool for AI engineers and domain experts who need to build high-quality datasets for their projects.
+- [[knowledge/litellm/embedding/supported_embedding|knowledge/litellm/embedding/supported_embedding]] — ```python
+- [[knowledge/litellm/guides/finetuned_models|knowledge/litellm/guides/finetuned_models]] — | Model Name                | Function Call                                                          |
+- [[knowledge/litellm/caching/local_caching|knowledge/litellm/caching/local_caching]] — liteLLM implements exact match caching and supports the following Caching:
+- [[knowledge/litellm/observability/arize_integration|knowledge/litellm/observability/arize_integration]] — AI Observability and Evaluation Platform
+- [[knowledge/litellm/guides/index|knowledge/litellm/guides/index]] — LiteLLM documentation: Index
+- [[knowledge/litellm/observability/athina_integration|knowledge/litellm/observability/athina_integration]] — :::tip
+- [[knowledge/litellm/guides/security_settings|knowledge/litellm/guides/security_settings]] — If you're in an environment using an older TTS bundle, with an older encryption, follow this guide. By default
+- [[knowledge/litellm/observability/azure_sentinel|knowledge/litellm/observability/azure_sentinel]] — <Image img={require('../../img/sentinel.png')} />
+- [[knowledge/litellm/observability/braintrust|knowledge/litellm/observability/braintrust]] — [Braintrust](https://www.braintrust.dev/) manages evaluations, logging, prompt playground, to data management for AI products.
+- [[knowledge/litellm/observability/callbacks|knowledge/litellm/observability/callbacks]] — liteLLM provides `input_callbacks`, `success_callbacks` and `failure_callbacks`, making it easy for you to send data to a particular provider depending on the status of your responses.
+- [[knowledge/litellm/observability/cloudzero|knowledge/litellm/observability/cloudzero]] — LiteLLM provides an integration with CloudZero's AnyCost API, allowing you to export your LLM usage data to CloudZero for cost tracking analysis.
+- [[knowledge/litellm/observability/custom_callback|knowledge/litellm/observability/custom_callback]] — :::info
+- [[knowledge/litellm/observability/datadog|knowledge/litellm/observability/datadog]] — LiteLLM Supports logging to the following Datdog Integrations:
+- [[knowledge/litellm/observability/deepeval_integration|knowledge/litellm/observability/deepeval_integration]] — [DeepEval](https://deepeval.com) is an open-source evaluation framework for LLMs ([Github](https://github.com/confident-ai/deepeval)). 
+- [[knowledge/litellm/observability/focus|knowledge/litellm/observability/focus]] — :::caution Experimental feature
+- [[knowledge/litellm/observability/gcs_bucket_integration|knowledge/litellm/observability/gcs_bucket_integration]] — Log LLM Logs to [Google Cloud Storage Buckets](https://cloud.google.com/storage?hl=en)
+- [[knowledge/litellm/observability/generic_api|knowledge/litellm/observability/generic_api]] — Send LiteLLM logs to any HTTP endpoint.
+- [[knowledge/litellm/observability/greenscale_integration|knowledge/litellm/observability/greenscale_integration]] — :::tip
+- [[knowledge/litellm/observability/helicone_integration|knowledge/litellm/observability/helicone_integration]] — :::tip
+- [[knowledge/litellm/observability/humanloop|knowledge/litellm/observability/humanloop]] — [Humanloop](https://humanloop.com/knowledge/openclaw/docs/v5/getting-started/overview) enables product teams to build robust AI features with LLMs, using best-in-class tooling for Evaluation, Prompt Management, and Obse
+- [[knowledge/litellm/observability/lago|knowledge/litellm/observability/lago]] — [Lago](https://www.getlago.com/) offers a self-hosted and cloud, metering and usage-based billing solution.
+- [[knowledge/litellm/observability/langfuse_integration|knowledge/litellm/observability/langfuse_integration]] — Langfuse ([GitHub](https://github.com/langfuse/langfuse)) is an open-source LLM engineering platform for model [tracing](https://langfuse.com/knowledge/openclaw/docs/tracing), [prompt management](https://langfuse.com/do
+- [[knowledge/litellm/observability/langfuse_otel_integration|knowledge/litellm/observability/langfuse_otel_integration]] — The Langfuse OpenTelemetry integration allows you to send LiteLLM traces and observability data to Langfuse using the OpenTelemetry protocol. This provides a standardized way to collect and analyze yo
+- [[knowledge/litellm/observability/langsmith_integration|knowledge/litellm/observability/langsmith_integration]] — An all-in-one developer platform for every step of the application lifecycle
+- [[knowledge/litellm/observability/langtrace_integration|knowledge/litellm/observability/langtrace_integration]] — Monitor, evaluate & improve your LLM apps
+- [[knowledge/litellm/observability/levo_integration|knowledge/litellm/observability/levo_integration]] — <div className="levo-logo-container" style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>
+- [[knowledge/litellm/observability/literalai_integration|knowledge/litellm/observability/literalai_integration]] — [Literal AI](https://literalai.com) is a collaborative observability, evaluation and analytics platform for building production-grade LLM apps.
+- [[knowledge/litellm/observability/logfire_integration|knowledge/litellm/observability/logfire_integration]] — Logfire is open Source Observability & Analytics for LLM Apps
+- [[knowledge/litellm/observability/lunary_integration|knowledge/litellm/observability/lunary_integration]] — [Lunary](https://lunary.ai/) is an open-source platform providing [observability](https://lunary.ai/knowledge/openclaw/docs/features/observe), [prompt management](https://lunary.ai/knowledge/openclaw/docs/features/prompts), and [analytics
+- [[knowledge/litellm/observability/mlflow|knowledge/litellm/observability/mlflow]] — MLflow** is an end-to-end open source MLOps platform for [experiment tracking](https://www.mlflow.org/knowledge/openclaw/docs/latest/tracking.html), [model management](https://www.mlflow.org/knowledge/openclaw/docs/latest/models.html), [e
+- [[knowledge/litellm/observability/openmeter|knowledge/litellm/observability/openmeter]] — [OpenMeter](https://openmeter.io/) is an Open Source Usage-Based Billing solution for AI/Cloud applications. It integrates with Stripe for easy billing.
+- [[knowledge/litellm/observability/opentelemetry_integration|knowledge/litellm/observability/opentelemetry_integration]] — OpenTelemetry is a CNCF standard for observability. It connects to any observability tool, such as Jaeger, Zipkin, Datadog, New Relic, Traceloop, Levo AI and others.
+- [[knowledge/litellm/observability/opik_integration|knowledge/litellm/observability/opik_integration]] — Opik is an open source end-to-end [LLM Evaluation Platform](https://www.comet.com/site/products/opik/?utm_source=litelllm&utm_medium=docs&utm_content=intro_paragraph) that helps developers track their
+- [[knowledge/litellm/observability/phoenix_integration|knowledge/litellm/observability/phoenix_integration]] — Open source tracing and evaluation platform
+- [[knowledge/litellm/observability/posthog_integration|knowledge/litellm/observability/posthog_integration]] — PostHog is an open-source product analytics platform that helps you track and analyze how users interact with your product. For LLM applications, PostHog provides specialized AI features to track mode
+- [[knowledge/litellm/observability/promptlayer_integration|knowledge/litellm/observability/promptlayer_integration]] — :::tip
+- [[knowledge/litellm/observability/qualifire_integration|knowledge/litellm/observability/qualifire_integration]] — [Qualifire](https://qualifire.ai/) provides real-time Agentic evaluations, guardrails and observability for production AI applications.
+- [[knowledge/litellm/observability/ramp_integration|knowledge/litellm/observability/ramp_integration]] — Send AI usage and cost data to Ramp for automated spend tracking.
+- [[knowledge/litellm/observability/raw_request_response|knowledge/litellm/observability/raw_request_response]] — See the raw request/response sent by LiteLLM in your logging provider (OTEL/Langfuse/etc.).
+- [[knowledge/litellm/observability/scrub_data|knowledge/litellm/observability/scrub_data]] — Redact messages / mask PII before sending data to logging integrations (langfuse/etc.).
+- [[knowledge/litellm/observability/sentry|knowledge/litellm/observability/sentry]] — import Image from '@theme/IdealImage';
+- [[knowledge/litellm/observability/signoz|knowledge/litellm/observability/signoz]] — For more details on setting up observability for LiteLLM, check out the [SigNoz LiteLLM observability docs](https://signoz.io/knowledge/openclaw/docs/knowledge/litellm/observability/).
+- [[knowledge/litellm/observability/slack_integration|knowledge/litellm/observability/slack_integration]] — <Image img={require('../../img/slack.png')} />
+- [[knowledge/litellm/observability/splunk_observability_cloud|knowledge/litellm/observability/splunk_observability_cloud]] — Send LiteLLM traces to [Splunk Observability Cloud](https://www.splunk.com/en_us/products/observability-cloud.html) using the built-in **`otel`** callback and standard OpenTelemetry OTLP environment v
+- [[knowledge/litellm/observability/sumologic_integration|knowledge/litellm/observability/sumologic_integration]] — Send LiteLLM logs to Sumo Logic for observability, monitoring, and analysis.
+- [[knowledge/litellm/observability/supabase_integration|knowledge/litellm/observability/supabase_integration]] — :::tip
+- [[knowledge/litellm/observability/telemetry|knowledge/litellm/observability/telemetry]] — There is no Telemetry on LiteLLM - no data is stored by us
+- [[knowledge/litellm/observability/vantage|knowledge/litellm/observability/vantage]] — LiteLLM can export proxy spend data to [Vantage](https://vantage.sh) as [FOCUS 1.2](https://focus.finops.org/) formatted cost reports. This lets you visualize LLM spend alongside your cloud infrastruc
+- [[knowledge/litellm/observability/wandb_integration|knowledge/litellm/observability/wandb_integration]] — :::tip
+
+## litellm-secrets
+
+## litellm-adding-provider
+- [[knowledge/litellm/secrets/aws_kms|knowledge/litellm/secrets/aws_kms]] — :::info
+
+## litellm-integrations
+
+## litellm-anthropic-unified
+- [[knowledge/litellm/adding-provider/adding_guardrail_support|knowledge/litellm/adding-provider/adding_guardrail_support]] — This guide explains how to add guardrail translation support to new LiteLLM endpoints (e.g., Chat Completions, Responses API, etc.).
+- [[knowledge/litellm/secrets/aws_secret_manager|knowledge/litellm/secrets/aws_secret_manager]] — :::info
+- [[knowledge/litellm/integrations/community|knowledge/litellm/integrations/community]] — Welcome, integration partners! 👋
+- [[knowledge/litellm/anthropic-unified/index|knowledge/litellm/anthropic-unified/index]] — Use LiteLLM to call all your LLM APIs in the Anthropic `v1/messages` format. 
+- [[knowledge/litellm/secrets/azure_key_vault|knowledge/litellm/secrets/azure_key_vault]] — :::info
+- [[knowledge/litellm/adding-provider/directory_structure|knowledge/litellm/adding-provider/directory_structure]] — When adding a new provider, you need to create a directory for the provider that follows the following structure:
+- [[knowledge/litellm/integrations/index|knowledge/litellm/integrations/index]] — LiteLLM documentation: Index
+- [[knowledge/litellm/anthropic-unified/messages_to_responses_mapping|knowledge/litellm/anthropic-unified/messages_to_responses_mapping]] — When you send a request to `/v1/messages` targeting an OpenAI or Azure model, LiteLLM internally routes it through the OpenAI Responses API. This page documents exactly how every parameter gets transl
+- [[knowledge/litellm/secrets/custom_secret_manager|knowledge/litellm/secrets/custom_secret_manager]] — Integrate your custom secret management system with LiteLLM.
+- [[knowledge/litellm/adding-provider/generic_guardrail_api|knowledge/litellm/adding-provider/generic_guardrail_api]] — As a guardrail provider, integrating with LiteLLM traditionally requires:
+- [[knowledge/litellm/integrations/letta|knowledge/litellm/integrations/letta]] — [Letta](https://github.com/letta-ai/letta) (formerly MemGPT) is a framework for building stateful LLM agents with persistent memory. This guide shows how to integrate both LiteLLM SDK and LiteLLM Prox
+- [[knowledge/litellm/secrets/cyberark|knowledge/litellm/secrets/cyberark]] — import Image from '@theme/IdealImage';
+- [[knowledge/litellm/anthropic-unified/structured_output|knowledge/litellm/anthropic-unified/structured_output]] — Use LiteLLM to call Anthropic's structured output feature via the `/v1/messages` endpoint.
+- [[knowledge/litellm/adding-provider/generic_prompt_management_api|knowledge/litellm/adding-provider/generic_prompt_management_api]] — As a prompt management provider, integrating with LiteLLM traditionally requires:
+- [[knowledge/litellm/integrations/observability_index|knowledge/litellm/integrations/observability_index]] — LiteLLM documentation: Observability index
+- [[knowledge/litellm/secrets/google_kms|knowledge/litellm/secrets/google_kms]] — :::info
+- [[knowledge/litellm/adding-provider/new_rerank_provider|knowledge/litellm/adding-provider/new_rerank_provider]] — LiteLLM **follows the Cohere Rerank API format** for all rerank providers. Here's how to add a new rerank provider:
+- [[knowledge/litellm/integrations/websearch_interception|knowledge/litellm/integrations/websearch_interception]] — Enable transparent server-side web search execution for any LLM provider. LiteLLM automatically intercepts web search tool calls and executes them using your configured search provider (Perplexity, Ta
+- [[knowledge/litellm/secrets/google_secret_manager|knowledge/litellm/secrets/google_secret_manager]] — :::info
+- [[knowledge/litellm/adding-provider/simple_guardrail_tutorial|knowledge/litellm/adding-provider/simple_guardrail_tutorial]] — You're going to create a class that checks text before it goes to the LLM or after it comes back. If it violates your rules, you block it.
+- [[knowledge/litellm/secrets/hashicorp_vault|knowledge/litellm/secrets/hashicorp_vault]] — :::info
+- [[knowledge/litellm/secrets/overview|knowledge/litellm/secrets/overview]] — :::info
+
+## litellm-contributing
+
+## litellm-langchain
+
+## litellm-pass-through
+- [[knowledge/litellm/contributing/adding_openai_compatible_providers|knowledge/litellm/contributing/adding_openai_compatible_providers]] — For simple OpenAI-compatible providers (like Hyperbolic, Nscale, etc.), you can add support by editing a single JSON file.
+
+## litellm-vector-stores
+- [[knowledge/litellm/langchain/langchain|knowledge/litellm/langchain/langchain]] — ```shell
+- [[knowledge/litellm/pass-through/anthropic_completion|knowledge/litellm/pass-through/anthropic_completion]] — Pass-through endpoints for Anthropic - call provider-specific endpoint, in native format (no translation).
+- [[knowledge/litellm/vector-stores/create|knowledge/litellm/vector-stores/create]] — Create a vector store which can be used to store and search document chunks for retrieval-augmented generation (RAG) use cases.
+- [[knowledge/litellm/pass-through/assembly_ai|knowledge/litellm/pass-through/assembly_ai]] — Pass-through endpoints for AssemblyAI - call AssemblyAI endpoints, in native format (no translation).
+- [[knowledge/litellm/vector-stores/search|knowledge/litellm/vector-stores/search]] — Search a vector store for relevant chunks based on a query and file attributes filter. This is useful for retrieval-augmented generation (RAG) use cases.
+- [[knowledge/litellm/pass-through/azure_passthrough|knowledge/litellm/pass-through/azure_passthrough]] — Pass-through endpoints for `/azure`
+- [[knowledge/litellm/pass-through/bedrock|knowledge/litellm/pass-through/bedrock]] — Pass-through endpoints for Bedrock - call provider-specific endpoint, in native format (no translation).
+- [[knowledge/litellm/pass-through/cohere|knowledge/litellm/pass-through/cohere]] — Pass-through endpoints for Cohere - call provider-specific endpoint, in native format (no translation).
+- [[knowledge/litellm/pass-through/cursor|knowledge/litellm/pass-through/cursor]] — Pass-through endpoints for the [Cursor Cloud Agents API](https://docs.cursor.com/account/api) — launch and manage cloud agents that work on your repositories, in native format (no translation).
+- [[knowledge/litellm/pass-through/google_ai_studio|knowledge/litellm/pass-through/google_ai_studio]] — Pass-through endpoints for Google AI Studio - call provider-specific endpoint, in native format (no translation).
+- [[knowledge/litellm/pass-through/intro|knowledge/litellm/pass-through/intro]] — These endpoints are useful for 2 scenarios:
+- [[knowledge/litellm/pass-through/langfuse|knowledge/litellm/pass-through/langfuse]] — Pass-through endpoints for Langfuse - call langfuse endpoints with LiteLLM Virtual Key.
+- [[knowledge/litellm/pass-through/mistral|knowledge/litellm/pass-through/mistral]] — Pass-through endpoints for Mistral - call provider-specific endpoint, in native format (no translation).
+- [[knowledge/litellm/pass-through/openai_passthrough|knowledge/litellm/pass-through/openai_passthrough]] — Pass-through endpoints for direct OpenAI API access
+- [[knowledge/litellm/pass-through/vertex_ai|knowledge/litellm/pass-through/vertex_ai]] — Pass-through endpoints for Vertex AI - call provider-specific endpoint, in native format (no translation).
+- [[knowledge/litellm/pass-through/vertex_ai_live_websocket|knowledge/litellm/pass-through/vertex_ai_live_websocket]] — LiteLLM now supports WebSocket passthrough for the Vertex AI Live API, enabling real-time bidirectional communication with Gemini models.
+- [[knowledge/litellm/pass-through/vertex_ai_search_datastores|knowledge/litellm/pass-through/vertex_ai_search_datastores]] — Call Vertex AI Discovery Engine Search API through LiteLLM.
+- [[knowledge/litellm/pass-through/vllm|knowledge/litellm/pass-through/vllm]] — Pass-through endpoints for VLLM - call provider-specific endpoint, in native format (no translation).
+
+## litellm-extras
+
+## litellm-learn
+- [[knowledge/litellm/extras/code_quality|knowledge/litellm/extras/code_quality]] — 🚅 LiteLLM follows the [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html).
+
+## litellm-projects
+
+## litellm-provider-registration
+- [[knowledge/litellm/learn/gateway_quickstart|knowledge/litellm/learn/gateway_quickstart]] — LiteLLM documentation: Gateway quickstart
+- [[knowledge/litellm/extras/contributing|knowledge/litellm/extras/contributing]] — This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+- [[litellm-knowledge/openclaw/projects/Agent Lightning|litellm-knowledge/openclaw/projects/Agent Lightning]] — [Agent Lightning](https://github.com/microsoft/agent-lightning) is Microsoft's open-source framework for training and optimizing AI agents with Reinforcement Learning, Automatic Prompt Optimization, a
+- [[knowledge/litellm/extras/contributing_code|knowledge/litellm/extras/contributing_code]] — Here are the core requirements for any PR submitted to LiteLLM:
+- [[knowledge/litellm/provider-registration/add_model_pricing|knowledge/litellm/provider-registration/add_model_pricing]] — LiteLLM documentation: Add model pricing
+- [[knowledge/litellm/learn/index|knowledge/litellm/learn/index]] — LiteLLM documentation: Index
+- [[litellm-knowledge/openclaw/projects/Codium PR Agent|litellm-knowledge/openclaw/projects/Codium PR Agent]] — LiteLLM documentation: Codium PR Agent
+- [[knowledge/litellm/extras/creating_adapters|knowledge/litellm/extras/creating_adapters]] — Use this to call any LiteLLM supported `.completion()` model, in your custom format. Useful if you have a custom API and want to support any LiteLLM supported model.
+- [[knowledge/litellm/provider-registration/index|knowledge/litellm/provider-registration/index]] — elif model.startswith("bytez/"):
+- [[knowledge/litellm/learn/sdk_quickstart|knowledge/litellm/learn/sdk_quickstart]] — LiteLLM documentation: Sdk quickstart
+- [[litellm-knowledge/openclaw/projects/Docq.AI|litellm-knowledge/openclaw/projects/Docq.AI]] — LiteLLM documentation: Docq.AI
+- [[knowledge/litellm/extras/gemini_img_migration|knowledge/litellm/extras/gemini_img_migration]] — Anyone using the following models with /chat/completions:
+- [[litellm-knowledge/openclaw/projects/Elroy|litellm-knowledge/openclaw/projects/Elroy]] — Elroy is a scriptable AI assistant that remembers and sets goals.
+- [[litellm-knowledge/openclaw/projects/FastREPL|litellm-knowledge/openclaw/projects/FastREPL]] — LiteLLM documentation: FastREPL
+- [[litellm-knowledge/openclaw/projects/GPT Migrate|litellm-knowledge/openclaw/projects/GPT Migrate]] — LiteLLM documentation: GPT Migrate
+- [[litellm-knowledge/openclaw/projects/GPTLocalhost|litellm-knowledge/openclaw/projects/GPTLocalhost]] — [GPTLocalhost](https://gptlocalhost.com/demo#LiteLLM) - LiteLLM is supported by GPTLocalhost, a local Word Add-in for you to use models in LiteLLM within Microsoft Word. 100% Private.
+- [[litellm-knowledge/openclaw/projects/Google ADK|litellm-knowledge/openclaw/projects/Google ADK]] — [Google ADK](https://github.com/google/adk-python) is an open-source, code-first Python framework for building, evaluating, and deploying sophisticated AI agents. While optimized for Gemini, ADK is mo
+- [[litellm-knowledge/openclaw/projects/GraphRAG|litellm-knowledge/openclaw/projects/GraphRAG]] — GraphRAG is a data pipeline and transformation suite that extracts meaningful, structured data from unstructured text using the power of LLMs. It uses a graph-based approach to RAG (Retrieval-Augmente
+- [[litellm-knowledge/openclaw/projects/Harbor|litellm-knowledge/openclaw/projects/Harbor]] — [Harbor](https://github.com/laude-institute/harbor) is a framework from the creators of Terminal-Bench for evaluating and optimizing agents and language models. It uses LiteLLM to call 100+ LLM provid
+- [[litellm-knowledge/openclaw/projects/HolmesGPT|litellm-knowledge/openclaw/projects/HolmesGPT]] — [HolmesGPT](https://github.com/robusta-dev/holmesgpt) is an AI-powered observability tool designed to enhance incident response and troubleshooting processes. It's like your 24/7 on-call assistant, he
+- [[litellm-knowledge/openclaw/projects/Langstream|litellm-knowledge/openclaw/projects/Langstream]] — LiteLLM documentation: Langstream
+- [[litellm-knowledge/openclaw/projects/LiteLLM Proxy|litellm-knowledge/openclaw/projects/LiteLLM Proxy]] — LiteLLM documentation: LiteLLM Proxy
+- [[litellm-knowledge/openclaw/projects/OpenInterpreter|litellm-knowledge/openclaw/projects/OpenInterpreter]] — LiteLLM documentation: OpenInterpreter
+- [[litellm-knowledge/openclaw/projects/Otter|litellm-knowledge/openclaw/projects/Otter]] — LiteLLM documentation: Otter
+- [[litellm-knowledge/openclaw/projects/PDL|litellm-knowledge/openclaw/projects/PDL]] — LiteLLM documentation: PDL
+- [[litellm-knowledge/openclaw/projects/PROMPTMETHEUS|litellm-knowledge/openclaw/projects/PROMPTMETHEUS]] — LiteLLM documentation: PROMPTMETHEUS
+- [[litellm-knowledge/openclaw/projects/Prompt2Model|litellm-knowledge/openclaw/projects/Prompt2Model]] — LiteLLM documentation: Prompt2Model
+- [[litellm-knowledge/openclaw/projects/Quivr|litellm-knowledge/openclaw/projects/Quivr]] — LiteLLM documentation: Quivr
+- [[litellm-knowledge/openclaw/projects/Railtracks|litellm-knowledge/openclaw/projects/Railtracks]] — `Railtracks` is an open-source agentic framework that helps developers build resilient agentic systems offering local and remote monitoring tools.
+- [[litellm-knowledge/openclaw/projects/SalesGPT|litellm-knowledge/openclaw/projects/SalesGPT]] — LiteLLM documentation: SalesGPT
+- [[litellm-knowledge/openclaw/projects/Softgen|litellm-knowledge/openclaw/projects/Softgen]] — `Softgen` is an AI-powered platform that builds full-stack web apps from your plain instructions.
+- [[litellm-knowledge/openclaw/projects/YiVal|litellm-knowledge/openclaw/projects/YiVal]] — LiteLLM documentation: YiVal
+- [[litellm-knowledge/openclaw/projects/dbally|litellm-knowledge/openclaw/projects/dbally]] — LiteLLM documentation: Dbally
+- [[litellm-knowledge/openclaw/projects/llm_cord|litellm-knowledge/openclaw/projects/llm_cord]] — llmcord.py lets you and your friends chat with LLMs directly in your Discord server. It works with practically any LLM, remote or locally hosted.
+- [[litellm-knowledge/openclaw/projects/mini-swe-agent|litellm-knowledge/openclaw/projects/mini-swe-agent]] — mini-swe-agent** The 100 line AI agent that solves GitHub issues & more.
+- [[litellm-knowledge/openclaw/projects/openai-agents|litellm-knowledge/openclaw/projects/openai-agents]] — Use OpenAI Agents SDK with any LLM provider through LiteLLM Proxy.
+- [[litellm-knowledge/openclaw/projects/pgai|litellm-knowledge/openclaw/projects/pgai]] — [pgai](https://github.com/timescale/pgai) is a suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL.
+- [[litellm-knowledge/openclaw/projects/smolagents|litellm-knowledge/openclaw/projects/smolagents]] — `smolagents` is a barebones library for agents. Agents write python code to call tools and orchestrate other agents.
+
+## litellm-search
+
+## litellm-contribute-integration
+- [[knowledge/litellm/search/brave|knowledge/litellm/search/brave]] — Get started by creating a free API key via https://brave.com/search/api/.
+- [[knowledge/litellm/contribute-integration/custom_webhook_api|knowledge/litellm/contribute-integration/custom_webhook_api]] — If your API just needs a Webhook event from LiteLLM, here's how to add a 'native' integration for it on LiteLLM: 
+- [[knowledge/litellm/search/dataforseo|knowledge/litellm/search/dataforseo]] — Get API Access:** [DataForSEO](https://dataforseo.com/)
+- [[knowledge/litellm/search/exa_ai|knowledge/litellm/search/exa_ai]] — Get API Key:** [https://exa.ai](https://exa.ai)
+- [[knowledge/litellm/search/firecrawl|knowledge/litellm/search/firecrawl]] — Get API Key:** [https://firecrawl.dev](https://firecrawl.dev)
+- [[knowledge/litellm/search/google_pse|knowledge/litellm/search/google_pse]] — Get API Key:** [Google Cloud Console](https://console.cloud.google.com/apis/credentials)  
+- [[knowledge/litellm/search/index|knowledge/litellm/search/index]] — | Feature | Supported | 
+- [[knowledge/litellm/search/linkup|knowledge/litellm/search/linkup]] — Get API Key:** [https://linkup.so](https://linkup.so)
+- [[knowledge/litellm/search/parallel_ai|knowledge/litellm/search/parallel_ai]] — Get API Key:** [https://www.parallel.ai](https://www.parallel.ai)
+- [[knowledge/litellm/search/perplexity|knowledge/litellm/search/perplexity]] — Get API Key:** [https://www.perplexity.ai/settings/api](https://www.perplexity.ai/settings/api)
+- [[knowledge/litellm/search/searchapi|knowledge/litellm/search/searchapi]] — Get started by creating a free API key via https://www.searchapi.io/.
+- [[knowledge/litellm/search/searxng|knowledge/litellm/search/searxng]] — Open Source:** [https://github.com/searxng/searxng](https://github.com/searxng/searxng)
+- [[knowledge/litellm/search/serper|knowledge/litellm/search/serper]] — Get API Key:** [https://serper.dev](https://serper.dev)
+- [[knowledge/litellm/search/tavily|knowledge/litellm/search/tavily]] — Get API Key:** [https://tavily.com](https://tavily.com)
+
+## litellm-core
+- [[knowledge/litellm/core/a2a|knowledge/litellm/core/a2a]] — Add A2A Agents on LiteLLM AI Gateway, Invoke agents in A2A Protocol, track request/response logs in LiteLLM Logs. Manage which Teams, Keys can access which Agents onboarded.
+- [[knowledge/litellm/core/a2a_agent_headers|knowledge/litellm/core/a2a_agent_headers]] — Forward authentication credentials (Bearer tokens, API keys, etc.) from clients to backend A2A agents.
+- [[knowledge/litellm/core/a2a_agent_permissions|knowledge/litellm/core/a2a_agent_permissions]] — Control which A2A agents can be accessed by specific keys or teams in LiteLLM.
+- [[knowledge/litellm/core/a2a_cost_tracking|knowledge/litellm/core/a2a_cost_tracking]] — LiteLLM supports adding custom cost tracking for A2A agents. You can configure:
+- [[knowledge/litellm/core/a2a_invoking_agents|knowledge/litellm/core/a2a_invoking_agents]] — Learn how to invoke A2A agents through LiteLLM using different methods.
+- [[knowledge/litellm/core/a2a_iteration_budgets|knowledge/litellm/core/a2a_iteration_budgets]] — Control runaway costs from agentic loops with per-session iteration and budget caps.
+- [[knowledge/litellm/core/adaptive_router|knowledge/litellm/core/adaptive_router]] — :::info
+- [[knowledge/litellm/core/aiohttp_benchmarks|knowledge/litellm/core/aiohttp_benchmarks]] — This document presents performance benchmarks comparing LiteLLM's v1.71.1 to prior litellm versions.
+- [[knowledge/litellm/core/anthropic_count_tokens|knowledge/litellm/core/anthropic_count_tokens]] — Anthropic-compatible token counting endpoint. Count tokens for messages before sending them to the model.
+- [[knowledge/litellm/core/apply_guardrail|knowledge/litellm/core/apply_guardrail]] — Use this endpoint to directly call a guardrail configured on your LiteLLM instance. This is useful when you have services that need to directly call a guardrail.
+- [[knowledge/litellm/core/assistants|knowledge/litellm/core/assistants]] — :::warning Deprecation Notice
+- [[knowledge/litellm/core/audio_transcription|knowledge/litellm/core/audio_transcription]] — | Feature | Supported | Notes | 
+- [[knowledge/litellm/core/batches|knowledge/litellm/core/batches]] — Covers Batches, Files
+- [[knowledge/litellm/core/bedrock_converse|knowledge/litellm/core/bedrock_converse]] — Call Bedrock's `/converse` endpoint through LiteLLM Proxy.
+- [[knowledge/litellm/core/bedrock_invoke|knowledge/litellm/core/bedrock_invoke]] — Call Bedrock's `/invoke` endpoint through LiteLLM Proxy.
+- [[knowledge/litellm/core/benchmarks|knowledge/litellm/core/benchmarks]] — Benchmarks for LiteLLM Gateway (Proxy Server) tested against a fake OpenAI endpoint.
+- [[knowledge/litellm/core/budget_manager|knowledge/litellm/core/budget_manager]] — Don't want to get crazy bills because either while you're calling LLM APIs **or** while your users are calling them? use this. 
+- [[knowledge/litellm/core/contact|knowledge/litellm/core/contact]] — [![](https://dcbadge.vercel.app/api/server/wuPM9dRgDw)](https://discord.gg/wuPM9dRgDw)
+- [[knowledge/litellm/core/container_files|knowledge/litellm/core/container_files]] — Manage files within Code Interpreter containers. Files are created automatically when code interpreter generates outputs (charts, CSVs, images, etc.).
+- [[knowledge/litellm/core/containers|knowledge/litellm/core/containers]] — Manage OpenAI code interpreter containers (sessions) for executing code in isolated environments.
+- [[knowledge/litellm/core/contributing|knowledge/litellm/core/contributing]] — Thanks for contributing to the LiteLLM UI! This guide will help you set up your local development environment.
+- [[knowledge/litellm/core/count_tokens|knowledge/litellm/core/count_tokens]] — LiteLLM provides exact token counting by calling provider-specific token counting APIs. This gives you accurate token counts before sending requests, helping with cost estimation and context window ma
+- [[knowledge/litellm/core/data_retention|knowledge/litellm/core/data_retention]] — This policy outlines the requirements and controls/procedures LiteLLM Cloud has implemented to manage the retention and deletion of customer data.
+- [[knowledge/litellm/core/data_security|knowledge/litellm/core/data_security]] — At LiteLLM, **safeguarding your data privacy and security** is our top priority. We recognize the critical importance of the data you share with us and handle it with the highest level of diligence.
+- [[knowledge/litellm/core/default_code_snippet|knowledge/litellm/core/default_code_snippet]] — import QueryParamReader from '../src/components/queryParamReader.js'
+- [[knowledge/litellm/core/enterprise|knowledge/litellm/core/enterprise]] — :::info
+- [[knowledge/litellm/core/evals_api|knowledge/litellm/core/evals_api]] — LiteLLM Proxy supports OpenAI's Evaluations (Evals) API, allowing you to create, manage, and run evaluations to measure model performance against defined testing criteria.
+- [[knowledge/litellm/core/exception_mapping|knowledge/litellm/core/exception_mapping]] — LiteLLM maps exceptions across all providers to their OpenAI counterparts.
+- [[knowledge/litellm/core/files_endpoints|knowledge/litellm/core/files_endpoints]] — Files are used to upload documents that can be used with features like Assistants, Fine-tuning, and Batch API.
+- [[knowledge/litellm/core/fine_tuning|knowledge/litellm/core/fine_tuning]] — :::info
+- [[knowledge/litellm/core/generateContent|knowledge/litellm/core/generateContent]] — Use LiteLLM to call Google AI's generateContent endpoints for text generation, multimodal interactions, and streaming responses.
+- [[knowledge/litellm/core/image_edits|knowledge/litellm/core/image_edits]] — LiteLLM provides image editing functionality that maps to OpenAI's `/images/edits` API endpoint. Now supports both single and multiple image editing.
+- [[knowledge/litellm/core/image_generation|knowledge/litellm/core/image_generation]] — | Feature | Supported | Notes |
+- [[knowledge/litellm/core/image_variations|knowledge/litellm/core/image_variations]] — OpenAI's `/image/variations` endpoint is now supported.
+- [[knowledge/litellm/core/index|knowledge/litellm/core/index]] — os.environ["VERTEXAI_PROJECT"] = "your-project-id"
+- [[knowledge/litellm/core/interactions|knowledge/litellm/core/interactions]] — | Feature | Supported | Notes |
+- [[knowledge/litellm/core/load_test|knowledge/litellm/core/load_test]] — 1. Add `fake-openai-endpoint` to your proxy config.yaml and start your litellm proxy.
+- [[knowledge/litellm/core/load_test_advanced|knowledge/litellm/core/load_test_advanced]] — Tutorial on how to get to 1K+ RPS with LiteLLM Proxy on locust
+- [[knowledge/litellm/core/load_test_rpm|knowledge/litellm/core/load_test_rpm]] — Test if your defined tpm/rpm limits are respected across multiple instances of the Router object. 
+- [[knowledge/litellm/core/load_test_sdk|knowledge/litellm/core/load_test_sdk]] — Here is a script to load test LiteLLM vs OpenAI 
+- [[knowledge/litellm/core/mcp|knowledge/litellm/core/mcp]] — LiteLLM Proxy provides an MCP Gateway that allows you to use a fixed endpoint for all MCP tools and control MCP access by Key, Team. 
+- [[knowledge/litellm/core/mcp_aws_sigv4|knowledge/litellm/core/mcp_aws_sigv4]] — Use AWS SigV4 authentication to connect LiteLLM to MCP servers hosted on [AWS Bedrock AgentCore](https://docs.aws.amazon.com/bedrock/latest/userguide/agentcore.html).
+- [[knowledge/litellm/core/mcp_control|knowledge/litellm/core/mcp_control]] — Control which MCP servers and tools can be accessed by specific keys, teams, or organizations in LiteLLM. When a client attempts to list or call tools, LiteLLM enforces access controls based on config
+- [[knowledge/litellm/core/mcp_cost|knowledge/litellm/core/mcp_cost]] — LiteLLM provides two ways to track costs for MCP tool calls:
+- [[knowledge/litellm/core/mcp_deployment|knowledge/litellm/core/mcp_deployment]] — How to deploy LiteLLM as a central gateway for LLMs, MCP servers, and agents.
+- [[knowledge/litellm/core/mcp_guardrail|knowledge/litellm/core/mcp_guardrail]] — LiteLLM supports applying guardrails to MCP tool calls to ensure security and compliance. You can configure guardrails to run before or during MCP calls to validate inputs and block or mask sensitive 
+- [[knowledge/litellm/core/mcp_oauth|knowledge/litellm/core/mcp_oauth]] — LiteLLM supports two OAuth 2.0 flows for MCP servers:
+- [[knowledge/litellm/core/mcp_openapi|knowledge/litellm/core/mcp_openapi]] — LiteLLM can convert any OpenAPI/Swagger spec into an MCP server — no custom MCP server code required.
+- [[knowledge/litellm/core/mcp_public_internet|knowledge/litellm/core/mcp_public_internet]] — Control which MCP servers are visible to external callers (e.g., ChatGPT, Claude Desktop) vs. internal-only callers. This is useful when you want a subset of your MCP servers available publicly while 
+- [[knowledge/litellm/core/mcp_semantic_filter|knowledge/litellm/core/mcp_semantic_filter]] — Automatically filter MCP tools by semantic relevance. When you have many MCP tools registered, LiteLLM semantically matches the user's query against tool descriptions and sends only the most relevant 
+- [[knowledge/litellm/core/mcp_server_submissions|knowledge/litellm/core/mcp_server_submissions]] — LiteLLM supports a submission and approval workflow for MCP servers. Team members can submit MCP servers for admin review — the server is held in a `pending_review` state until an admin approves or 
+- [[knowledge/litellm/core/mcp_toolsets|knowledge/litellm/core/mcp_toolsets]] — A **Toolset** is a named collection of specific tools drawn from one or more MCP servers. Instead of giving an agent access to every tool on every server, you pick exactly which tools it needs — fro
+- [[knowledge/litellm/core/mcp_troubleshoot|knowledge/litellm/core/mcp_troubleshoot]] — When LiteLLM acts as an MCP proxy, traffic normally flows `Client → LiteLLM Proxy → MCP Server`, while OAuth-enabled setups add an authorization server for metadata discovery.
+- [[knowledge/litellm/core/mcp_usage|knowledge/litellm/core/mcp_usage]] — This document covers how to use LiteLLM as an MCP Gateway. You can see how to use it with Responses API, Cursor IDE, and OpenAI SDK.
+- [[knowledge/litellm/core/mcp_zero_trust|knowledge/litellm/core/mcp_zero_trust]] — ![Zero Trust MCP Gateway](/img/mcp_zero_trust_gateway.png)
+- [[knowledge/litellm/core/migration|knowledge/litellm/core/migration]] — When we have breaking changes (i.e. going from 1.x.x to 2.x.x), we will document those changes here.
+- [[knowledge/litellm/core/migration_policy|knowledge/litellm/core/migration_policy]] — - If we introduce a new feature that may move to the Enterprise Tier it will be clearly labeled as **Beta**. With the following example disclaimer
+- [[knowledge/litellm/core/moderation|knowledge/litellm/core/moderation]] — <Tabs>
+- [[knowledge/litellm/core/ocr|knowledge/litellm/core/ocr]] — | Feature | Supported | 
+- [[knowledge/litellm/core/oidc|knowledge/litellm/core/oidc]] — LiteLLM supports using OpenID Connect (OIDC) for authentication to upstream services . This allows you to avoid storing sensitive credentials in your configuration files.
+- [[knowledge/litellm/core/old_guardrails|knowledge/litellm/core/old_guardrails]] — Setup Prompt Injection Detection, Secret Detection on LiteLLM Proxy
+- [[knowledge/litellm/core/projects|knowledge/litellm/core/projects]] — Chat and Ask on your own data.
+- [[knowledge/litellm/core/prompt_management|knowledge/litellm/core/prompt_management]] — Use LiteLLM Prompt Management with `/v1/responses` by passing `prompt_id` and optional `prompt_variables`.
+- [[knowledge/litellm/core/proxy_api|knowledge/litellm/core/proxy_api]] — Use this if you're trying to add support for new LLMs and need access for testing. We provide a free $10 community-key for testing all providers on LiteLLM: 
+- [[knowledge/litellm/core/proxy_auth|knowledge/litellm/core/proxy_auth]] — Automatically obtain and refresh OAuth2/JWT tokens when using the LiteLLM Python SDK with a LiteLLM Proxy that requires JWT authentication.
+- [[knowledge/litellm/core/proxy_server|knowledge/litellm/core/proxy_server]] — A fast, and lightweight OpenAI-compatible server to call 100+ LLM APIs. 
+- [[knowledge/litellm/core/rag_ingest|knowledge/litellm/core/rag_ingest]] — All-in-one document ingestion pipeline: **Upload → Chunk → Embed → Vector Store**
+- [[knowledge/litellm/core/rag_query|knowledge/litellm/core/rag_query]] — RAG Query endpoint: **Search Vector Store → (Rerank) → LLM Completion**
+- [[knowledge/litellm/core/realtime|knowledge/litellm/core/realtime]] — Use this to loadbalance across Azure + OpenAI + xAI and more. 
+- [[knowledge/litellm/core/reasoning_content|knowledge/litellm/core/reasoning_content]] — :::info
+- [[knowledge/litellm/core/rerank|knowledge/litellm/core/rerank]] — :::tip
+- [[knowledge/litellm/core/response_api|knowledge/litellm/core/response_api]] — LiteLLM provides an endpoint in the spec of [OpenAI's `/responses` API](https://platform.openai.com/knowledge/openclaw/docs/api-knowledge/openclaw/reference/responses)
+- [[knowledge/litellm/core/response_api_compact|knowledge/litellm/core/response_api_compact]] — Compress conversation history using OpenAI's `/responses/compact` endpoint.
+- [[knowledge/litellm/core/router_architecture|knowledge/litellm/core/router_architecture]] — <Image img={require('../img/router_architecture.png')} style={{ width: '100%', maxWidth: '4000px' }} />
+- [[knowledge/litellm/core/routing|knowledge/litellm/core/routing]] — LiteLLM manages:
+- [[knowledge/litellm/core/rules|knowledge/litellm/core/rules]] — Use this to fail a request based on the input or output of an llm api call. 
+- [[knowledge/litellm/core/scheduler|knowledge/litellm/core/scheduler]] — :::info 
+- [[knowledge/litellm/core/sdk_custom_pricing|knowledge/litellm/core/sdk_custom_pricing]] — Register custom pricing for sagemaker completion model. 
+- [[knowledge/litellm/core/secret|knowledge/litellm/core/secret]] — :::info
+- [[knowledge/litellm/core/set_keys|knowledge/litellm/core/set_keys]] — LiteLLM allows you to specify the following:
+- [[knowledge/litellm/core/skills|knowledge/litellm/core/skills]] — | Feature | Supported | 
+- [[knowledge/litellm/core/skills_gateway|knowledge/litellm/core/skills_gateway]] — <iframe width="840" height="500" src="https://www.loom.com/embed/cb74eb79df3e4c2b83a6efae54a589f9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+- [[knowledge/litellm/core/text_completion|knowledge/litellm/core/text_completion]] — | Feature | Supported | Notes |
+- [[knowledge/litellm/core/text_to_speech|knowledge/litellm/core/text_to_speech]] — | Feature | Supported | Notes |
+- [[knowledge/litellm/core/traffic_mirroring|knowledge/litellm/core/traffic_mirroring]] — Traffic mirroring allows you to "mimic" production traffic to a secondary (silent) model for evaluation purposes. The silent model's response is gathered in the background and does not affect the late
+- [[knowledge/litellm/core/troubleshoot|knowledge/litellm/core/troubleshoot]] — When reporting issues, please include as much of the following as possible. It's okay if you can't provide everything—especially in production scenarios where the trigger might be unknown. Sharing m
+- [[knowledge/litellm/core/vector_store_files|knowledge/litellm/core/vector_store_files]] — Vector store files represent the individual files that live inside a vector store.
+- [[knowledge/litellm/core/vertex_batch_passthrough|knowledge/litellm/core/vertex_batch_passthrough]] — LiteLLM supports Vertex AI batch prediction jobs through passthrough endpoints, allowing you to create and manage batch jobs directly through the proxy server.
+- [[knowledge/litellm/core/videos|knowledge/litellm/core/videos]] — | Feature | Supported | 
+- [[knowledge/litellm/core/wildcard_routing|knowledge/litellm/core/wildcard_routing]] — Proxy all models from a provider**
+
+## 补充条目（自动生成）
+- [[.drafts/agent-loop|.drafts/agent-loop]] — OpenClaw
+- [[README|README]] — README
+- [[SKILL|SKILL]] — SKILL
+- [[_meta/taxonomy|_meta/taxonomy]] — taxonomy
+- [[knowledge/openclaw/automation/gpt-5-5-codex-agentic-parity|knowledge/openclaw/automation/gpt-5-5-codex-agentic-parity]] — How OpenClaw closes agentic execution gaps for GPT-5.5 and Codex-style models
+- [[knowledge/openclaw/automation/gpt-5-5-codex-parity-maintainer-notes|knowledge/openclaw/automation/gpt-5-5-codex-parity-maintainer-notes]] — How to review the GPT-5.5 / Codex parity program as four merge units
+- [[knowledge/openclaw/concepts/测试文件|knowledge/openclaw/concepts/测试文件]] — 测试文件
+- [[knowledge/gateway/agent-bootstrapping|knowledge/gateway/agent-bootstrapping]] — Agent bootstrapping ritual that seeds the workspace and identity files
+- [[knowledge/gateway/agent-runtime|knowledge/gateway/agent-runtime]] — Agent runtime, workspace contract, and session bootstrap
+- [[knowledge/gateway/agent-workspace|knowledge/gateway/agent-workspace]] — Agent workspace: location, layout, and backup strategy
+- [[knowledge/gateway/agents-md-template|knowledge/gateway/agents-md-template]] — Workspace template for AGENTS.md
+- [[knowledge/gateway/ansible|knowledge/gateway/ansible]] — Automated, hardened OpenClaw installation with Ansible, Tailscale VPN, and firew
+- [[knowledge/gateway/audio-and-voice-notes|knowledge/gateway/audio-and-voice-notes]] — How inbound audio/voice notes are downloaded, transcribed, and injected into rep
+- [[knowledge/gateway/auth-monitoring|knowledge/gateway/auth-monitoring]] — Redirect to /knowledge/gateway/authentication
+- [[knowledge/gateway/azure-speech|knowledge/gateway/azure-speech]] — Azure AI Speech text-to-speech for OpenClaw replies
+- [[knowledge/gateway/background-exec-and-process-tool|knowledge/gateway/background-exec-and-process-tool]] — Background exec execution and process management
+- [[knowledge/gateway/background-tasks|knowledge/gateway/background-tasks]] — Background task tracking for ACP runs, subagents, isolated cron jobs, and CLI op
+- [[knowledge/gateway/broadcast-groups|knowledge/gateway/broadcast-groups]] — Broadcast a WhatsApp message to multiple agents
+- [[knowledge/gateway/browser-troubleshooting|knowledge/gateway/browser-troubleshooting]] — Fix Chrome/Brave/Edge/Chromium CDP startup issues for OpenClaw browser control o
+- [[knowledge/gateway/builtin-memory-engine|knowledge/gateway/builtin-memory-engine]] — The default SQLite-based memory backend with keyword, vector, and hybrid search
+- [[knowledge/gateway/bun-experimental|knowledge/gateway/bun-experimental]] — Bun workflow (experimental): installs and gotchas vs pnpm
+- [[knowledge/gateway/cli-automation|knowledge/gateway/cli-automation]] — Scripted onboarding and agent setup for the OpenClaw CLI
+- [[knowledge/gateway/cloudflare-ai-gateway|knowledge/gateway/cloudflare-ai-gateway]] — Cloudflare AI Gateway setup (auth + model selection)
+- [[knowledge/gateway/command-queue|knowledge/gateway/command-queue]] — Command queue design that serializes inbound auto-reply runs
+- [[knowledge/gateway/contributing-to-the-threat-model|knowledge/gateway/contributing-to-the-threat-model]] — How to contribute to the OpenClaw threat model
+- [[knowledge/gateway/cron|knowledge/gateway/cron]] — CLI reference for `openclaw cron` (schedule and run background jobs)
+- [[knowledge/gateway/cron-vs-heartbeat|knowledge/gateway/cron-vs-heartbeat]] — Redirect to /automation
+- [[knowledge/gateway/dashboard|knowledge/gateway/dashboard]] — CLI reference for `openclaw dashboard` (open the Control UI)
+- [[knowledge/gateway/default-agents-md|knowledge/gateway/default-agents-md]] — Default OpenClaw agent instructions and skills roster for the personal assistant
+- [[knowledge/gateway/delegate-architecture-read_when|knowledge/gateway/delegate-architecture-read_when]] — Delegate architecture: running OpenClaw as a named agent on behalf of an organiz
+- [[knowledge/gateway/devices|knowledge/gateway/devices]] — CLI reference for `openclaw devices` (device pairing + token rotation/revocation
+- [[knowledge/gateway/digitalocean-platform|knowledge/gateway/digitalocean-platform]] — OpenClaw on DigitalOcean (simple paid VPS option)
+- [[knowledge/gateway/discovery-and-transports|knowledge/gateway/discovery-and-transports]] — Node discovery and transports (Bonjour, Tailscale, SSH) for finding the gateway
+- [[knowledge/gateway/exe-dev|knowledge/gateway/exe-dev]] — Run OpenClaw Gateway on exe.dev (VM + HTTPS proxy) for remote access
+- [[knowledge/gateway/exec-approvals|knowledge/gateway/exec-approvals]] — Host exec approvals: policy knobs, allowlists, and the YOLO/strict workflow
+- [[knowledge/gateway/exec-tool|knowledge/gateway/exec-tool]] — Exec tool usage, stdin modes, and TTY support
+- [[knowledge/gateway/fal|knowledge/gateway/fal]] — fal image and video generation setup in OpenClaw
+- [[knowledge/gateway/faq-models-and-auth|knowledge/gateway/faq-models-and-auth]] — FAQ: model defaults, selection, aliases, switching, failover, and auth profiles
+- [[knowledge/gateway/feishu|knowledge/gateway/feishu]] — Feishu bot overview, features, and configuration
+- [[knowledge/gateway/gateway-logging|knowledge/gateway/gateway-logging]] — Logging surfaces, file logs, WS log styles, and console formatting
+- [[knowledge/gateway/gateway-owned-pairing|knowledge/gateway/gateway-owned-pairing]] — Gateway-owned node pairing (Option B) for iOS and other remote nodes
+- [[knowledge/gateway/gateway-runbook|knowledge/gateway/gateway-runbook]] — Runbook for the Gateway service, lifecycle, and operations
+- [[knowledge/gateway/gradium|knowledge/gateway/gradium]] — Use Gradium text-to-speech in OpenClaw
+- [[knowledge/gateway/groq|knowledge/gateway/groq]] — Groq setup (auth + model selection)
+- [[knowledge/gateway/group-messages|knowledge/gateway/group-messages]] — Behavior and config for WhatsApp group message handling (mentionPatterns are sha
+- [[knowledge/gateway/groups|knowledge/gateway/groups]] — Group chat behavior across surfaces (Discord/iMessage/Matrix/Microsoft Teams/Sig
+- [[knowledge/gateway/health-checks|knowledge/gateway/health-checks]] — Health check commands and gateway health monitoring
+- [[knowledge/gateway/hetzner|knowledge/gateway/hetzner]] — Run OpenClaw Gateway 24/7 on a cheap Hetzner VPS (Docker) with durable state and
+- [[knowledge/gateway/image-and-media-support|knowledge/gateway/image-and-media-support]] — Image and media handling rules for send, gateway, and agent replies
+- [[knowledge/gateway/imessage|knowledge/gateway/imessage]] — Legacy iMessage support via imsg (JSON-RPC over stdio). New setups should use Bl
+- [[knowledge/gateway/install|knowledge/gateway/install]] — Install OpenClaw — installer script, npm/pnpm/bun, from source, Docker, and mo
+- [[knowledge/gateway/installer-internals|knowledge/gateway/installer-internals]] — How the installer scripts work (install.sh, install-cli.sh, install.ps1), flags,
+- [[knowledge/gateway/inworld|knowledge/gateway/inworld]] — Inworld streaming text-to-speech for OpenClaw replies
+- [[knowledge/gateway/litellm|knowledge/gateway/litellm]] — Run OpenClaw through LiteLLM Proxy for unified model access and cost tracking
+- [[knowledge/gateway/macos-app|knowledge/gateway/macos-app]] — OpenClaw macOS companion app (menu bar + gateway broker)
+- [[knowledge/gateway/macos-vms|knowledge/gateway/macos-vms]] — Run OpenClaw in a sandboxed macOS VM (local or hosted) when you need isolation o
+- [[knowledge/gateway/matrix-push-rules-for-quiet-previews|knowledge/gateway/matrix-push-rules-for-quiet-previews]] — Per-recipient Matrix push rules for quiet finalized preview edits
+- [[knowledge/gateway/memory-search|knowledge/gateway/memory-search]] — How memory search finds relevant notes using embeddings and hybrid retrieval
+- [[knowledge/gateway/model-provider-quickstart|knowledge/gateway/model-provider-quickstart]] — Model providers (LLMs) supported by OpenClaw
+- [[knowledge/gateway/models-cli|knowledge/gateway/models-cli]] — Models CLI: list, set, aliases, fallbacks, scan, status
+- [[knowledge/gateway/multi-agent-routing|knowledge/gateway/multi-agent-routing]] — Multi-agent routing: isolated agents, channel accounts, and bindings
+- [[knowledge/gateway/node|knowledge/gateway/node]] — CLI reference for `openclaw node` (headless node host)
+- [[knowledge/gateway/nodes|knowledge/gateway/nodes]] — CLI reference for `openclaw nodes` (status, pairing, invoke, camera/canvas/scree
+- [[knowledge/gateway/openai-chat-completions|knowledge/gateway/openai-chat-completions]] — Expose an OpenAI-compatible /v1/chat/completions HTTP endpoint from the Gateway
+- [[knowledge/gateway/openclaw-skills-ai-configuration-guide-pdf|knowledge/gateway/openclaw-skills-ai-configuration-guide-pdf]] — openclaw-skills-ai-configuration-guide-pdf
+- [[knowledge/gateway/openclaw-tasks|knowledge/gateway/openclaw-tasks]] — CLI reference for `openclaw tasks` (background task ledger and Task Flow state)
+- [[knowledge/gateway/opencode|knowledge/gateway/opencode]] — Use OpenCode Zen and Go catalogs with OpenClaw
+- [[knowledge/gateway/opencode-go|knowledge/gateway/opencode-go]] — Use the OpenCode Go catalog with the shared OpenCode setup
+- [[knowledge/gateway/personal-assistant-setup|knowledge/gateway/personal-assistant-setup]] — End-to-end guide for running OpenClaw as a personal assistant with safety cautio
+- [[knowledge/gateway/prompt-caching|knowledge/gateway/prompt-caching]] — Prompt caching knobs, merge order, provider behavior, and tuning patterns
+- [[knowledge/gateway/qmd-memory-engine|knowledge/gateway/qmd-memory-engine]] — Local-first search sidecar with BM25, vectors, reranking, and query expansion
+- [[knowledge/gateway/raspberry-pi-platform|knowledge/gateway/raspberry-pi-platform]] — OpenClaw on Raspberry Pi (budget self-hosted setup)
+- [[knowledge/gateway/remote-access|knowledge/gateway/remote-access]] — Remote access using SSH tunnels (Gateway WS) and tailnets
+- [[knowledge/gateway/remote-gateway-setup|knowledge/gateway/remote-gateway-setup]] — SSH tunnel setup for OpenClaw.app connecting to a remote gateway
+- [[knowledge/gateway/senseaudio|knowledge/gateway/senseaudio]] — SenseAudio batch speech-to-text for inbound voice notes
+- [[knowledge/gateway/session-management|knowledge/gateway/session-management]] — How OpenClaw manages conversation sessions
+- [[knowledge/gateway/session-pruning|knowledge/gateway/session-pruning]] — Trimming old tool results to keep context lean and caching efficient
+- [[knowledge/gateway/session-tools|knowledge/gateway/session-tools]] — Agent tools for cross-session status, recall, messaging, and sub-agent orchestra
+- [[knowledge/gateway/sessions|knowledge/gateway/sessions]] — CLI reference for `openclaw sessions` (list stored sessions + usage)
+- [[knowledge/gateway/setup|knowledge/gateway/setup]] — CLI reference for `openclaw setup` (initialize config + workspace)
+- [[knowledge/gateway/signal|knowledge/gateway/signal]] — Signal support via signal-cli (JSON-RPC + SSE), setup paths, and number model
+- [[knowledge/gateway/skills|knowledge/gateway/skills]] — CLI reference for `openclaw skills` (search/knowledge/openclaw/install/update/list/info/check)
+- [[knowledge/gateway/standing-orders|knowledge/gateway/standing-orders]] — Define permanent operating authority for autonomous agent programs
+- [[knowledge/gateway/streaming-and-chunking|knowledge/gateway/streaming-and-chunking]] — Streaming + chunking behavior (block replies, channel preview streaming, mode ma
+- [[knowledge/gateway/talk-mode|knowledge/gateway/talk-mode]] — Talk mode: continuous speech conversations with configured TTS providers
+- [[knowledge/gateway/threat-model-mitre-atlas|knowledge/gateway/threat-model-mitre-atlas]] — OpenClaw threat model mapped to the MITRE ATLAS framework
+- [[knowledge/gateway/token-use-and-costs|knowledge/gateway/token-use-and-costs]] — How OpenClaw builds prompt context and reports token usage + costs
+- [[knowledge/gateway/tool-loop-detection|knowledge/gateway/tool-loop-detection]] — How to enable and tune guardrails that detect repetitive tool-call loops
+- [[knowledge/gateway/transcript-hygiene|knowledge/gateway/transcript-hygiene]] — Reference: provider-specific transcript sanitization and repair rules
+- [[knowledge/gateway/tui|knowledge/gateway/tui]] — Terminal UI (TUI): connect to the Gateway or run locally in embedded mode
+- [[knowledge/gateway/tweakcn-custom-theme-import-design|knowledge/gateway/tweakcn-custom-theme-import-design]] — Tweakcn Custom Theme Import Design
+- [[knowledge/gateway/venice-ai|knowledge/gateway/venice-ai]] — Use Venice AI privacy-focused models in OpenClaw
+- [[knowledge/gateway/voice-wake|knowledge/gateway/voice-wake]] — Global voice wake words (Gateway-owned) and how they sync across nodes
+- [[knowledge/gateway/web|knowledge/gateway/web]] — Gateway web surfaces: Control UI, bind modes, and security
+- [[knowledge/gateway/wsl2-windows-remote-chrome-cdp-troubleshooting|knowledge/gateway/wsl2-windows-remote-chrome-cdp-troubleshooting]] — Troubleshoot WSL2 Gateway + Windows Chrome remote CDP in layers
+- [[log|log]] — log
+- [[knowledge/plugins/acp-agents|knowledge/plugins/acp-agents]] — Run external coding harnesses (Claude Code, Cursor, Gemini CLI, explicit Codex A
+- [[knowledge/plugins/acp-agents-setup|knowledge/plugins/acp-agents-setup]] — Setting up ACP agents: acpx harness config, plugin setup, permissions
+- [[knowledge/plugins/adding-capabilities-contributor-guide|knowledge/plugins/adding-capabilities-contributor-guide]] — Contributor guide for adding a new shared capability to the OpenClaw plugin syst
+- [[knowledge/plugins/agent|knowledge/plugins/agent]] — CLI reference for `openclaw agent` (send one agent turn via the Gateway)
+- [[knowledge/plugins/agent-harness-plugins|knowledge/plugins/agent-harness-plugins]] — Experimental SDK surface for plugins that replace the low level embedded agent e
+- [[knowledge/plugins/agent-loop|knowledge/plugins/agent-loop]] — Agent loop lifecycle, streams, and wait semantics
+- [[knowledge/plugins/agent-runtimes|knowledge/plugins/agent-runtimes]] — How OpenClaw separates model providers, models, channels, and agent runtimes
+- [[knowledge/plugins/agents|knowledge/plugins/agents]] — CLI reference for `openclaw agents` (list/add/delete/bindings/bind/unbind/set id
+- [[knowledge/plugins/android-app|knowledge/plugins/android-app]] — Android app (node): connection runbook + Connect/Chat/Voice/Canvas command surfa
+- [[knowledge/plugins/anthropic|knowledge/plugins/anthropic]] — Use Anthropic Claude via API keys or Claude CLI in OpenClaw
+- [[knowledge/plugins/api-usage-and-costs|knowledge/plugins/api-usage-and-costs]] — Audit what can spend money, which keys are used, and how to view usage
+- [[knowledge/plugins/application-modernization-plan|knowledge/plugins/application-modernization-plan]] — Comprehensive application modernization plan with frontend delivery skill update
+- [[knowledge/plugins/automation-tasks|knowledge/plugins/automation-tasks]] — Overview of automation mechanisms: tasks, cron, hooks, standing orders, and Task
+- [[knowledge/plugins/backup|knowledge/plugins/backup]] — CLI reference for `openclaw backup` (create local backup archives)
+- [[knowledge/plugins/bluebubbles|knowledge/plugins/bluebubbles]] — iMessage via BlueBubbles macOS server (REST send/receive, typing, reactions, pai
+- [[knowledge/plugins/bonjour-discovery|knowledge/plugins/bonjour-discovery]] — Bonjour/mDNS discovery + debugging (Gateway beacons, clients, and common failure
+- [[knowledge/plugins/browser|knowledge/plugins/browser]] — CLI reference for `openclaw browser` (lifecycle, profiles, tabs, actions, state,
+- [[knowledge/plugins/browser-control-api|knowledge/plugins/browser-control-api]] — OpenClaw browser control API, CLI reference, and scripting actions
+- [[knowledge/plugins/browser-openclaw-managed|knowledge/plugins/browser-openclaw-managed]] — Integrated browser control service + action commands
+- [[knowledge/plugins/building-channel-plugins|knowledge/plugins/building-channel-plugins]] — Step-by-step guide to building a messaging channel plugin for OpenClaw
+- [[knowledge/plugins/building-provider-plugins|knowledge/plugins/building-provider-plugins]] — Step-by-step guide to building a model provider plugin for OpenClaw
+- [[knowledge/plugins/cerebras|knowledge/plugins/cerebras]] — Cerebras setup (auth + model selection)
+- [[knowledge/plugins/channel-docking|knowledge/plugins/channel-docking]] — Move one OpenClaw session's reply route between linked chat channels
+- [[knowledge/plugins/channel-presentation-refactor-plan|knowledge/plugins/channel-presentation-refactor-plan]] — Decouple semantic message presentation from channel native UI renderers.
+- [[knowledge/plugins/channel-routing|knowledge/plugins/channel-routing]] — Routing rules per channel (WhatsApp, Telegram, Discord, Slack) and shared contex
+- [[knowledge/plugins/channel-troubleshooting|knowledge/plugins/channel-troubleshooting]] — Fast channel level troubleshooting with per channel failure signatures and fixes
+- [[knowledge/plugins/channels|knowledge/plugins/channels]] — CLI reference for `openclaw channels` (accounts, status, login/logout, logs)
+- [[knowledge/plugins/chat-channels|knowledge/plugins/chat-channels]] — Messaging platforms OpenClaw can connect to
+- [[knowledge/plugins/clawhub|knowledge/plugins/clawhub]] — ClawHub: public registry for OpenClaw skills and plugins, native install flows, 
+- [[knowledge/plugins/cli-backends|knowledge/plugins/cli-backends]] — CLI backends: local AI CLI fallback with optional MCP tool bridge
+- [[knowledge/plugins/cli-reference|knowledge/plugins/cli-reference]] — OpenClaw CLI index: command list, global flags, and links to per-command pages
+- [[knowledge/plugins/cli-setup-reference|knowledge/plugins/cli-setup-reference]] — Complete reference for CLI setup flow, auth/model setup, outputs, and internals
+- [[knowledge/plugins/code-execution|knowledge/plugins/code-execution]] — code_execution -- run sandboxed remote Python analysis with xAI
+- [[knowledge/plugins/codex-computer-use|knowledge/plugins/codex-computer-use]] — Set up Codex Computer Use for Codex-mode OpenClaw agents
+- [[knowledge/plugins/codex-harness-context-engine-port|knowledge/plugins/codex-harness-context-engine-port]] — Specification for making the bundled Codex app-server harness honor OpenClaw con
+- [[knowledge/plugins/comfyui|knowledge/plugins/comfyui]] — ComfyUI workflow image, video, and music generation setup in OpenClaw
+- [[knowledge/plugins/community-plugins|knowledge/plugins/community-plugins]] — Community-maintained OpenClaw plugins: browse, install, and submit your own
+- [[knowledge/plugins/compaction|knowledge/plugins/compaction]] — How OpenClaw summarizes long conversations to stay within model limits
+- [[knowledge/plugins/config|knowledge/plugins/config]] — CLI reference for `openclaw config` (get/set/unset/file/schema/validate)
+- [[knowledge/plugins/configuration|knowledge/plugins/configuration]] — Configuration overview: common tasks, quick setup, and links to the full referen
+- [[knowledge/plugins/configuration-agents|knowledge/plugins/configuration-agents]] — Agent defaults, multi-agent routing, session, messages, and talk config
+- [[knowledge/plugins/configuration-channels|knowledge/plugins/configuration-channels]] — Channel configuration: access control, pairing, per-channel keys across Slack, D
+- [[knowledge/plugins/configuration-reference|knowledge/plugins/configuration-reference]] — Gateway config reference for core OpenClaw keys, defaults, and links to dedicate
+- [[knowledge/plugins/configuration-tools-and-custom-providers|knowledge/plugins/configuration-tools-and-custom-providers]] — Tools config (policy, experimental toggles, provider-backed tools) and custom pr
+- [[knowledge/plugins/configure|knowledge/plugins/configure]] — CLI reference for `openclaw configure` (interactive configuration prompts)
+- [[knowledge/plugins/context-engine|knowledge/plugins/context-engine]] — Context engine: pluggable context assembly, compaction, and subagent lifecycle
+- [[knowledge/plugins/control-ui|knowledge/plugins/control-ui]] — Browser-based control UI for the Gateway (chat, nodes, config)
+- [[knowledge/plugins/crestodian|knowledge/plugins/crestodian]] — CLI reference and security model for Crestodian, the configless-safe setup and r
+- [[knowledge/plugins/debugging|knowledge/plugins/debugging]] — Debugging tools: watch mode, raw model streams, and tracing reasoning leakage
+- [[knowledge/plugins/deepgram|knowledge/plugins/deepgram]] — Deepgram transcription for inbound voice notes
+- [[knowledge/plugins/deepinfra|knowledge/plugins/deepinfra]] — Use DeepInfra's unified API to access the most popular open source and frontier 
+- [[knowledge/plugins/deepseek|knowledge/plugins/deepseek]] — DeepSeek setup (auth + model selection)
+- [[knowledge/plugins/diagnostics-export|knowledge/plugins/diagnostics-export]] — Create shareable Gateway diagnostics bundles for bug reports
+- [[knowledge/plugins/diffs|knowledge/plugins/diffs]] — Read-only diff viewer and file renderer for agents (optional plugin tool)
+- [[knowledge/plugins/discord|knowledge/plugins/discord]] — Discord bot support status, capabilities, and configuration
+- [[knowledge/plugins/docker|knowledge/plugins/docker]] — Optional Docker-based setup and onboarding for OpenClaw
+- [[knowledge/plugins/docs-hubs|knowledge/plugins/docs-hubs]] — Hubs that link to every OpenClaw doc
+- [[knowledge/plugins/doctor|knowledge/plugins/doctor]] — CLI reference for `openclaw doctor` (health checks + guided repairs)
+- [[knowledge/plugins/dreaming|knowledge/plugins/dreaming]] — Background memory consolidation with light, deep, and REM phases plus a Dream Di
+- [[knowledge/plugins/elevenlabs|knowledge/plugins/elevenlabs]] — Use ElevenLabs speech, Scribe STT, and realtime transcription with OpenClaw
+- [[knowledge/plugins/exec-approvals-advanced|knowledge/plugins/exec-approvals-advanced]] — Advanced exec approvals: safe bins, interpreter binding, approval forwarding, na
+- [[knowledge/plugins/faq-first-run-setup|knowledge/plugins/faq-first-run-setup]] — FAQ: quick-start and first-run setup — install, onboard, auth, subscriptions, 
+- [[knowledge/plugins/fly-io-read_when-deploying-openclaw-on-fly-io-setting-up-fly-volumes-secrets-and-first-run-config|knowledge/plugins/fly-io-read_when-deploying-openclaw-on-fly-io-setting-up-fly-volumes-secrets-and-first-run-config]] — Step-by-step Fly.io deployment for OpenClaw with persistent storage and HTTPS
+- [[knowledge/plugins/gateway|knowledge/plugins/gateway]] — OpenClaw Gateway CLI (`openclaw gateway`) — run, query, and discover gateways
+- [[knowledge/plugins/gateway-protocol|knowledge/plugins/gateway-protocol]] — Gateway WebSocket protocol: handshake, frames, versioning
+- [[knowledge/plugins/github-copilot|knowledge/plugins/github-copilot]] — Sign in to GitHub Copilot from OpenClaw using the device flow or non-interactive
+- [[knowledge/plugins/google-gemini|knowledge/plugins/google-gemini]] — Google Gemini setup (API key + OAuth, image generation, media understanding, TTS
+- [[knowledge/plugins/google-meet-plugin|knowledge/plugins/google-meet-plugin]] — Google Meet plugin: join explicit Meet URLs through Chrome or Twilio with realti
+- [[knowledge/plugins/heartbeat|knowledge/plugins/heartbeat]] — Heartbeat polling messages and notification rules
+- [[knowledge/plugins/hooks|knowledge/plugins/hooks]] — Hooks: event-driven automation for commands and lifecycle events
+- [[knowledge/plugins/image-generation|knowledge/plugins/image-generation]] — Generate and edit images via image_generate across OpenAI, Google, fal, MiniMax,
+- [[knowledge/plugins/inference-cli|knowledge/plugins/inference-cli]] — Infer-first CLI for provider-backed model, image, audio, TTS, video, web, and em
+- [[knowledge/plugins/ios-app|knowledge/plugins/ios-app]] — iOS node app: connect to the Gateway, pairing, canvas, and troubleshooting
+- [[knowledge/plugins/lm-studio|knowledge/plugins/lm-studio]] — Run OpenClaw with LM Studio
+- [[knowledge/plugins/lobster-read_when-you-want-deterministic-multi-step-workflows-with-explicit-approvals-you-need-to-resume-a-workflow-without-re-running-earlier-steps|knowledge/plugins/lobster-read_when-you-want-deterministic-multi-step-workflows-with-explicit-approvals-you-need-to-resume-a-workflow-without-re-running-earlier-steps]] — Typed workflow runtime for OpenClaw with resumable approval gates.
+- [[knowledge/plugins/macos-dev-setup|knowledge/plugins/macos-dev-setup]] — Setup guide for developers working on the OpenClaw macOS app
+- [[knowledge/plugins/matrix|knowledge/plugins/matrix]] — Matrix support status, setup, and configuration examples
+- [[knowledge/plugins/matrix-migration|knowledge/plugins/matrix-migration]] — How OpenClaw upgrades the previous Matrix plugin in place, including encrypted-s
+- [[knowledge/plugins/matrix-qa|knowledge/plugins/matrix-qa]] — Maintainer reference for the Docker-backed Matrix live QA lane: CLI, profiles, e
+- [[knowledge/plugins/mattermost|knowledge/plugins/mattermost]] — Mattermost bot setup and OpenClaw config
+- [[knowledge/plugins/mcp|knowledge/plugins/mcp]] — Expose OpenClaw channel conversations over MCP and manage saved MCP server defin
+- [[knowledge/plugins/media-overview|knowledge/plugins/media-overview]] — Image, video, music, speech, and media-understanding capabilities at a glance
+- [[knowledge/plugins/media-understanding|knowledge/plugins/media-understanding]] — Inbound image/audio/video understanding (optional) with provider + CLI fallbacks
+- [[knowledge/plugins/memory|knowledge/plugins/memory]] — CLI reference for `openclaw memory` (status/index/search/promote/promote-explain
+- [[knowledge/plugins/memory-configuration-reference|knowledge/plugins/memory-configuration-reference]] — All configuration knobs for memory search, embedding providers, QMD, hybrid sear
+- [[knowledge/plugins/memory-lancedb|knowledge/plugins/memory-lancedb]] — Configure the bundled LanceDB memory plugin, including local Ollama-compatible e
+- [[knowledge/plugins/memory-overview|knowledge/plugins/memory-overview]] — How OpenClaw remembers things across sessions
+- [[knowledge/plugins/message|knowledge/plugins/message]] — CLI reference for `openclaw message` (send + channel actions)
+- [[knowledge/plugins/messages|knowledge/plugins/messages]] — Message flow, sessions, queueing, and reasoning visibility
+- [[knowledge/plugins/microsoft-teams|knowledge/plugins/microsoft-teams]] — Microsoft Teams bot support status, capabilities, and configuration
+- [[knowledge/plugins/migrate|knowledge/plugins/migrate]] — CLI reference for `openclaw migrate` (import state from another agent system)
+- [[knowledge/plugins/migrating-from-claude|knowledge/plugins/migrating-from-claude]] — Move Claude Code and Claude Desktop local state into OpenClaw with a previewed i
+- [[knowledge/plugins/migrating-from-hermes|knowledge/plugins/migrating-from-hermes]] — Move from Hermes to OpenClaw with a previewed, reversible import
+- [[knowledge/plugins/migration-guide|knowledge/plugins/migration-guide]] — Migration hub: cross-system imports, machine-to-machine moves, and plugin upgrad
+- [[knowledge/plugins/minimax|knowledge/plugins/minimax]] — Use MiniMax models in OpenClaw
+- [[knowledge/plugins/model-failover|knowledge/plugins/model-failover]] — How OpenClaw rotates auth profiles and falls back across models
+- [[knowledge/plugins/model-providers|knowledge/plugins/model-providers]] — Model provider overview with example configs + CLI flows
+- [[knowledge/plugins/models|knowledge/plugins/models]] — CLI reference for `openclaw models` (status/list/set/scan, aliases, fallbacks, a
+- [[knowledge/plugins/moonshot-ai|knowledge/plugins/moonshot-ai]] — Configure Moonshot K2 vs Kimi Coding (separate providers + keys)
+- [[knowledge/plugins/multi-agent-sandbox-and-tools|knowledge/plugins/multi-agent-sandbox-and-tools]] — Per-agent sandbox + tool restrictions, precedence, and examples
+- [[knowledge/plugins/music-generation|knowledge/plugins/music-generation]] — Generate music via music_generate across Google Lyria, MiniMax, and ComfyUI work
+- [[knowledge/plugins/nix|knowledge/plugins/nix]] — Install OpenClaw declaratively with Nix
+- [[knowledge/plugins/oauth|knowledge/plugins/oauth]] — OAuth in OpenClaw: token exchange, storage, and multi-account patterns
+- [[knowledge/plugins/ollama|knowledge/plugins/ollama]] — Run OpenClaw with Ollama (cloud and local models)
+- [[knowledge/plugins/ollama-web-search|knowledge/plugins/ollama-web-search]] — Ollama Web Search via a local Ollama host or the hosted Ollama API
+- [[knowledge/plugins/onboard|knowledge/plugins/onboard]] — CLI reference for `openclaw onboard` (interactive onboarding)
+- [[knowledge/plugins/onboarding-reference|knowledge/plugins/onboarding-reference]] — Full reference for CLI onboarding: every step, flag, and config field
+- [[knowledge/plugins/openai|knowledge/plugins/openai]] — Use OpenAI via API keys or Codex subscription in OpenClaw
+- [[knowledge/plugins/openresponses-api|knowledge/plugins/openresponses-api]] — Expose an OpenResponses-compatible /v1/responses HTTP endpoint from the Gateway
+- [[knowledge/plugins/openrouter|knowledge/plugins/openrouter]] — Use OpenRouter's unified API to access many models in OpenClaw
+- [[knowledge/plugins/openshell-read_when-you-want-cloud-managed-sandboxes-instead-of-local-docker-you-are-setting-up-the-openshell-plugin-you-need-to-choose-between-mirror-and-remote-workspace-modes|knowledge/plugins/openshell-read_when-you-want-cloud-managed-sandboxes-instead-of-local-docker-you-are-setting-up-the-openshell-plugin-you-need-to-choose-between-mirror-and-remote-workspace-modes]] — Use OpenShell as a managed sandbox backend for OpenClaw agents
+- [[knowledge/plugins/opentelemetry-export|knowledge/plugins/opentelemetry-export]] — Export OpenClaw diagnostics to any OpenTelemetry collector via the diagnostics-o
+- [[knowledge/plugins/oracle-cloud-platform|knowledge/plugins/oracle-cloud-platform]] — OpenClaw on Oracle Cloud (Always Free ARM)
+- [[knowledge/plugins/pairing|knowledge/plugins/pairing]] — Pairing overview: approve who can DM you + which nodes can join
+- [[knowledge/plugins/pdf-tool|knowledge/plugins/pdf-tool]] — Analyze one or more PDF documents with native provider support and extraction fa
+- [[knowledge/plugins/peekaboo-bridge|knowledge/plugins/peekaboo-bridge]] — PeekabooBridge integration for macOS UI automation
+- [[knowledge/plugins/perplexity|knowledge/plugins/perplexity]] — Perplexity web search provider setup (API key, search modes, filtering)
+- [[knowledge/plugins/plugin-architecture-internals|knowledge/plugins/plugin-architecture-internals]] — Plugin architecture internals: load pipeline, registry, runtime hooks, HTTP rout
+- [[knowledge/plugins/plugin-bundles|knowledge/plugins/plugin-bundles]] — Install and use Codex, Claude, and Cursor bundles as OpenClaw plugins
+- [[knowledge/plugins/plugin-compatibility|knowledge/plugins/plugin-compatibility]] — Plugin compatibility contracts, deprecation metadata, and migration expectations
+- [[knowledge/plugins/plugin-entry-points|knowledge/plugins/plugin-entry-points]] — Reference for definePluginEntry, defineChannelPluginEntry, and defineSetupPlugin
+- [[knowledge/plugins/plugin-hooks|knowledge/plugins/plugin-hooks]] — Plugin hooks: intercept agent, tool, message, session, and Gateway lifecycle eve
+- [[knowledge/plugins/plugin-internals|knowledge/plugins/plugin-internals]] — Plugin internals: capability model, ownership, contracts, load pipeline, and run
+- [[knowledge/plugins/plugin-manifest|knowledge/plugins/plugin-manifest]] — Plugin manifest + JSON schema requirements (strict config validation)
+- [[knowledge/plugins/plugin-runtime-helpers|knowledge/plugins/plugin-runtime-helpers]] — api.runtime -- the injected runtime helpers available to plugins
+- [[knowledge/plugins/plugin-sdk-migration|knowledge/plugins/plugin-sdk-migration]] — Migrate from the legacy backwards-compatibility layer to the modern plugin SDK
+- [[knowledge/plugins/plugin-sdk-overview|knowledge/plugins/plugin-sdk-overview]] — Import map, registration API reference, and SDK architecture
+- [[knowledge/plugins/plugin-sdk-subpaths|knowledge/plugins/plugin-sdk-subpaths]] — Plugin SDK subpath catalog: which imports live where, grouped by area
+- [[knowledge/plugins/plugin-setup-and-config|knowledge/plugins/plugin-setup-and-config]] — Setup wizards, setup-entry.ts, config schemas, and package.json metadata
+- [[knowledge/plugins/plugin-testing|knowledge/plugins/plugin-testing]] — Testing utilities and patterns for OpenClaw plugins
+- [[knowledge/plugins/plugins|knowledge/plugins/plugins]] — CLI reference for `openclaw plugins` (list, install, marketplace, uninstall, ena
+- [[knowledge/plugins/prometheus-metrics|knowledge/plugins/prometheus-metrics]] — Expose OpenClaw diagnostics as Prometheus text metrics through the diagnostics-p
+- [[knowledge/plugins/provider-directory|knowledge/plugins/provider-directory]] — Model providers (LLMs) supported by OpenClaw
+- [[knowledge/plugins/qa-channel|knowledge/plugins/qa-channel]] — Synthetic Slack-class channel plugin for deterministic OpenClaw QA scenarios
+- [[knowledge/plugins/qa-overview|knowledge/plugins/qa-overview]] — QA stack overview: qa-lab, qa-channel, repo-backed scenarios, live transport lan
+- [[knowledge/plugins/qq-bot|knowledge/plugins/qq-bot]] — QQ Bot setup, config, and usage
+- [[knowledge/plugins/qwen|knowledge/plugins/qwen]] — Use Qwen Cloud via OpenClaw's bundled qwen provider
+- [[knowledge/plugins/release-channels|knowledge/plugins/release-channels]] — Stable, beta, and dev channels: semantics, switching, pinning, and tagging
+- [[knowledge/plugins/release-policy|knowledge/plugins/release-policy]] — Release lanes, operator checklist, validation boxes, version naming, and cadence
+- [[knowledge/plugins/remote-control|knowledge/plugins/remote-control]] — macOS app flow for controlling a remote OpenClaw gateway over SSH
+- [[knowledge/plugins/sandbox-cli-read_when|knowledge/plugins/sandbox-cli-read_when]] — Manage sandbox runtimes and inspect effective sandbox policy
+- [[knowledge/plugins/sandboxing|knowledge/plugins/sandboxing]] — How OpenClaw sandboxing works: modes, scopes, workspace access, and images
+- [[knowledge/plugins/scheduled-tasks|knowledge/plugins/scheduled-tasks]] — Scheduled jobs, webhooks, and Gmail PubSub triggers for the Gateway scheduler
+- [[knowledge/plugins/secretref-credential-surface|knowledge/plugins/secretref-credential-surface]] — Canonical supported vs unsupported SecretRef credential surface
+- [[knowledge/plugins/secrets-management|knowledge/plugins/secrets-management]] — Secrets management: SecretRef contract, runtime snapshot behavior, and safe one-
+- [[knowledge/plugins/security|knowledge/plugins/security]] — Security considerations and threat model for running an AI gateway with shell ac
+- [[knowledge/plugins/security-audit-checks|knowledge/plugins/security-audit-checks]] — Reference catalog of checkIds emitted by openclaw security audit
+- [[knowledge/plugins/session-management-deep-dive|knowledge/plugins/session-management-deep-dive]] — Deep dive: session store + transcripts, lifecycle, and (auto)compaction internal
+- [[knowledge/plugins/skills|knowledge/plugins/skills]] — Skills: managed vs workspace, gating rules, agent allowlists, and config wiring
+- [[knowledge/plugins/slack|knowledge/plugins/slack]] — Slack setup and runtime behavior (Socket Mode + HTTP Request URLs)
+- [[knowledge/plugins/slash-commands|knowledge/plugins/slash-commands]] — Slash commands: text vs native, config, and supported commands
+- [[knowledge/plugins/status|knowledge/plugins/status]] — CLI reference for `openclaw status` (diagnostics, probes, usage snapshots)
+- [[knowledge/plugins/sub-agents|knowledge/plugins/sub-agents]] — Spawn isolated background agent runs that announce results back to the requester
+- [[knowledge/plugins/system-prompt|knowledge/plugins/system-prompt]] — What the OpenClaw system prompt contains and how it is assembled
+- [[knowledge/plugins/task-flow|knowledge/plugins/task-flow]] — Task Flow flow orchestration layer above background tasks
+- [[knowledge/plugins/telegram|knowledge/plugins/telegram]] — Telegram bot support status, capabilities, and configuration
+- [[knowledge/plugins/testing|knowledge/plugins/testing]] — Testing kit: unit/e2e/live suites, Docker runners, and what each test covers
+- [[knowledge/plugins/testing-live-suites|knowledge/plugins/testing-live-suites]] — Live (network-touching) tests: model matrix, CLI backends, ACP, media providers,
+- [[knowledge/plugins/tests|knowledge/plugins/tests]] — How to run tests locally (vitest) and when to use force/coverage modes
+- [[knowledge/plugins/text-to-speech|knowledge/plugins/text-to-speech]] — Text-to-speech for outbound replies — providers, personas, slash commands, and
+- [[knowledge/plugins/thinking-levels|knowledge/plugins/thinking-levels]] — Directive syntax for /think, /fast, /verbose, /trace, and reasoning visibility
+- [[knowledge/plugins/tokenjuice|knowledge/plugins/tokenjuice]] — Compact noisy exec and bash tool results with an optional bundled plugin
+- [[knowledge/plugins/tools-and-plugins|knowledge/plugins/tools-and-plugins]] — OpenClaw tools and plugins overview: what the agent can do and how to extend it
+- [[knowledge/plugins/trajectory-bundles|knowledge/plugins/trajectory-bundles]] — Export redacted trajectory bundles for debugging an OpenClaw agent session
+- [[knowledge/plugins/troubleshooting|knowledge/plugins/troubleshooting]] — Deep troubleshooting runbook for gateway, channels, automation, nodes, and brows
+- [[knowledge/plugins/trusted-proxy-auth|knowledge/plugins/trusted-proxy-auth]] — Delegate gateway authentication to a trusted reverse proxy (Pomerium, Caddy, ngi
+- [[knowledge/plugins/twitch|knowledge/plugins/twitch]] — Twitch chat bot configuration and setup
+- [[knowledge/plugins/update|knowledge/plugins/update]] — CLI reference for `openclaw update` (safe-ish source update + gateway auto-resta
+- [[knowledge/plugins/updating|knowledge/plugins/updating]] — Updating OpenClaw safely (global install or source), plus rollback strategy
+- [[knowledge/plugins/video-generation|knowledge/plugins/video-generation]] — Generate videos via video_generate from text, image, or video references across 
+- [[knowledge/plugins/vllm|knowledge/plugins/vllm]] — Run OpenClaw with vLLM (OpenAI-compatible local server)
+- [[knowledge/plugins/voice-call-plugin|knowledge/plugins/voice-call-plugin]] — Place outbound and accept inbound voice calls via Twilio, Telnyx, or Plivo, with
+- [[knowledge/plugins/voicecall|knowledge/plugins/voicecall]] — CLI reference for `openclaw voicecall` (voice-call plugin command surface)
+- [[knowledge/plugins/volcengine-doubao|knowledge/plugins/volcengine-doubao]] — Volcano Engine setup (Doubao models, coding endpoints, and Seed Speech TTS)
+- [[knowledge/plugins/web-search|knowledge/plugins/web-search]] — web_search, x_search, and web_fetch -- search the web, search X posts, or fetch 
+- [[knowledge/plugins/webchat|knowledge/plugins/webchat]] — Loopback WebChat static host and Gateway WS usage for chat UI
+- [[knowledge/plugins/whatsapp|knowledge/plugins/whatsapp]] — WhatsApp channel support, access controls, delivery behavior, and operations
+- [[knowledge/plugins/xai|knowledge/plugins/xai]] — Use xAI Grok models in OpenClaw
+- [[knowledge/plugins/xiaomi-mimo|knowledge/plugins/xiaomi-mimo]] — Use Xiaomi MiMo models with OpenClaw
+- [[knowledge/plugins/yuanbao|knowledge/plugins/yuanbao]] — Yuanbao bot overview, features, and configuration
+- [[knowledge/plugins/z-ai|knowledge/plugins/z-ai]] — Use Z.AI (GLM models) with OpenClaw
+- [[knowledge/plugins/zalo|knowledge/plugins/zalo]] — Zalo bot support status, capabilities, and configuration
+- [[knowledge/plugins/zalo-personal|knowledge/plugins/zalo-personal]] — Zalo personal account support via native zca-js (QR login), capabilities, and co
+- [[knowledge/plugins/zalo-personal-plugin|knowledge/plugins/zalo-personal-plugin]] — Zalo Personal plugin: QR login + messaging via native zca-js (plugin install + c
+- [[knowledge/openclaw/projects/openclaw-wiki-本地知识库|knowledge/openclaw/projects/openclaw-wiki-本地知识库]] — LanceDB wiki with hybrid search for OpenClaw. v2.11.0 adds file monitoring, pipe
+- [[knowledge/openclaw/references/device-model-database|knowledge/openclaw/references/device-model-database]] — How OpenClaw vendors Apple device model identifiers for friendly names in the ma
+- [[knowledge/openclaw/skills/rich-output-protocol|knowledge/openclaw/skills/rich-output-protocol]] — Rich output shortcode protocol for embeds, media, audio hints, and replies
+- [[knowledge/openclaw/tools/search/brave-search|knowledge/openclaw/tools/search/brave-search]] — Brave Search API setup for web_search in OpenClaw

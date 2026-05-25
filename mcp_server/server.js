@@ -33,6 +33,7 @@ import { execSync } from 'child_process';
 import { readFile, readdir, stat, writeFile, appendFile } from 'fs/promises';
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
+import { ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -947,6 +948,79 @@ server.tool(
       return { content: [{ type: 'text', text: `📦 项目已归档: ${project}\n原因: ${reason || '用户手动归档'}\n记录保留在: projects/_archived/${project}/` }] };
     } catch (err) {
       return { content: [{ type: 'text', text: `归档失败: ${err.message}` }], isError: true };
+    }
+  }
+);
+
+
+// ── 资源定义 ──────────────────────────────────────────────
+
+// 1. 静态资源：Wiki状态
+server.resource(
+  'wiki-status',
+  'wiki://status',
+  { title: 'Wiki 状态', description: 'Wiki 知识库状态信息', mimeType: 'text/markdown' },
+  async () => {
+    const indexPath = join(WIKI_DIR, 'index.md');
+    const manifestPath = join(WIKI_DIR, '.manifest.json');
+    
+    let status = `# Wiki 状态\n\n`;
+    status += `- Wiki 目录: ${WIKI_DIR}\n`;
+    status += `- 索引文件: ${existsSync(indexPath) ? '✅ 存在' : '❌ 不存在'}\n`;
+    status += `- 清单文件: ${existsSync(manifestPath) ? '✅ 存在' : '❌ 不存在'}\n`;
+    
+    try {
+      const files = await readdir(WIKI_DIR).catch(() => []);
+      const mdFiles = files.filter(f => f.endsWith('.md'));
+      status += `- Markdown 文件: ${mdFiles.length} 个\n`;
+    } catch (e) {
+      status += `- 读取目录失败: ${e.message}\n`;
+    }
+    
+    return { contents: [{ uri: 'wiki://status', mimeType: 'text/markdown', text: status }] };
+  }
+);
+
+// 2. 资源模板：Wiki搜索
+server.resource(
+  'wiki-search',
+  new ResourceTemplate('wiki://search{?query,limit}', { list: undefined }),
+  { title: 'Wiki 搜索', description: '搜索 Wiki 知识库', mimeType: 'text/markdown' },
+  async (uri, variables) => {
+    const query = variables.query || '';
+    const limit = parseInt(variables.limit || '10', 10);
+    
+    if (!query) {
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: '# 错误\n\n缺少查询参数: query' }] };
+    }
+    
+    try {
+      const output = await runScript('unified-search.js', [query, String(limit)], 30000);
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: output }] };
+    } catch (err) {
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: `# 搜索失败\n\n${err.message}` }] };
+    }
+  }
+);
+
+// 3. 资源模板：Wiki深度搜索
+server.resource(
+  'wiki-deep-search',
+  new ResourceTemplate('wiki://deep{?query,limit}', { list: undefined }),
+  { title: 'Wiki 深度搜索', description: '深度搜索 Wiki 知识库（LLM综合）', mimeType: 'text/markdown' },
+  async (uri, variables) => {
+    const query = variables.query || '';
+    const limit = parseInt(variables.limit || '10', 10);
+    
+    if (!query) {
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: '# 错误\n\n缺少查询参数: query' }] };
+    }
+    
+    try {
+      const output = await runScript('unified-search.js', [query, String(limit), '--mode', 'deep'], 180000);
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: output }] };
+    } catch (err) {
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: `# 深度搜索失败\n\n${err.message}` }] };
     }
   }
 );
