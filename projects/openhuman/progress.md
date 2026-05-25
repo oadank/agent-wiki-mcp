@@ -113,5 +113,5 @@ class OpenHumanManager(QObject):
 
 | 日期 | 变更 |
 |------|------|
-| 2026-05-23 | 模型组从 chat-v1 改为 codex-model |
-| 2026-05-23 | 删除 system-tray.py，内容归档到此 |
+| 2026-05-25 | ToolCallCompleted 添加 output_preview 字段，飞书审批卡片可显示错误消息 |
+| 2026-05-25 | 清空飞书聊天记录，仓库已同步到 oadank/openhuman |

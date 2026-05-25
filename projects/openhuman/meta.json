@@ -1,32 +1,14 @@
 {
-  "projectName": "openhuman",
-  "realPath": "/opt/openhuman",
-  "status": "active",
-  "createdAt": "2026-05-23",
-  "lastSession": "2026-05-25 15:32",
-  "lastAI": "暴躁老青鱼",
-  "currentTask": "权限配置修复完成",
-  "taskStatus": "✅",
-  "documents": [
-    "progress.md",
-    "permission-config.md"
-  ],
-  "relatedPaths": [
-    "/opt/.agents-to-im-openhuman",
-    "/root/.openhuman"
-  ],
-  "keyChanges": {
-    "permission-config.md": "源码修改：StreamMode、AutonomyLevel、allowed_commands、forbidden_paths 默认值"
-  },
-  "indexed": false,
+  "lastSession": "2026-05-25 18:24",
   "daysSinceUpdate": 0,
   "pendingChanges": [
     {
       "type": "files_modified",
       "path": "/root/.openhuman",
-      "count": 1,
+      "count": 2,
       "files": [
-        "./logs/core.log"
+        "./users/6a0bd5556b16f2d8e561ee92/workspace/memory/memory.db-shm",
+        "./users/6a0bd5556b16f2d8e561ee92/workspace/memory/memory.db-wal"
       ]
     }
   ]
