@@ -19,3 +19,10 @@
 - 捕获 "message withdrawn" 错误，fallback 到创建新消息
 - 防止 session lost 导致注入错误历史
 - 推送到 oadank/agents-to-im (commit e5bce2a) |
+| 2026-05-25 | Claude | 飞书语音消息支持（ASR + TTS） | ✅ | - inbound-audio-service.ts：语音转写（sherpa-onnx）
+- outbound-audio-service.ts：语音回复（小米 TTS）
+- inbound-handler.ts：标记 fromAudio，触发语音回复
+- adapter.ts：pendingAudioReply 状态管理
+- tts-wrapper.mjs：[TTS_OUTPUT] stderr 输出
+- 用户发语音 → Claude 自动语音回复
+- 推送到 oadank/agents-to-im (commit f8c1899) |
