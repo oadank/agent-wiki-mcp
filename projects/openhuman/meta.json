@@ -1,14 +1,13 @@
 {
-  "lastSession": "2026-05-25 18:24",
+  "lastSession": "2026-05-27 19:21",
   "daysSinceUpdate": 0,
   "pendingChanges": [
     {
       "type": "files_modified",
-      "path": "/root/.openhuman",
-      "count": 2,
+      "path": "/opt/.agents-to-im-openhuman",
+      "count": 1,
       "files": [
-        "./users/6a0bd5556b16f2d8e561ee92/workspace/memory/memory.db-shm",
-        "./users/6a0bd5556b16f2d8e561ee92/workspace/memory/memory.db-wal"
+        "./logs/bridge.log"
       ]
     }
   ]

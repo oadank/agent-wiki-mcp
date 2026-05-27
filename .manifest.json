@@ -1,9 +1,9 @@
 {
   "version": "1",
-  "updatedAt": "2026-05-25T01:13:35.119897+00:00",
+  "updatedAt": "2026-05-27T06:24:26.211881+00:00",
   "stats": {
-    "totalSourcesIngested": 2345,
-    "totalPages": 2345,
+    "totalSourcesIngested": 2346,
+    "totalPages": 2346,
     "total_sources_ingested": 487,
     "total_pages": 487
   },
@@ -28619,6 +28619,18 @@
       "hash": "90b69f78f0087ae3",
       "ingested": "2026-05-25T01:30:58.673623+00:00",
       "category": "knowledge"
+    },
+    "knowledge/shared/CONTEXT.md": {
+      "ingestedAt": "2026-05-27T06:24:26.211861+00:00",
+      "modifiedAt": 1779862918.4619062,
+      "sizeBytes": 3800,
+      "contentHash": "sha256:67e5dbad7100b243361ccea9eddad87fd63a15ba6fea27bbb40d4d0c7d834df6",
+      "sourceType": "document",
+      "format": "md",
+      "project": "manual",
+      "pagesCreated": [
+        "shared/context-md-\u5171\u4eab\u8bed\u8a00.md"
+      ]
     }
   },
   "last_updated": "2026-04-24T07:08:43Z",
