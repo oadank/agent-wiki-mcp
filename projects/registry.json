@@ -6,13 +6,13 @@
       "path": "/opt/agent-wiki-mcp",
       "status": "active",
       "createdAt": "2026-05-09T10:56:14.354Z",
-      "lastCheck": "2026-05-27 19:21"
+      "lastCheck": "2026-06-02 10:37"
     },
     "agents-to-im": {
       "path": "/opt/.agents-to-im-claude",
       "status": "active",
       "createdAt": "2026-05-09T14:38:00.000Z",
-      "lastCheck": "2026-05-27 19:21",
+      "lastCheck": "2026-06-02 10:37",
       "description": "飞书桥接软件（Claude + Codex 两个实例 + 全局二进制程序）",
       "relatedPaths": [
         "/opt/.agents-to-im-codex",
@@ -23,7 +23,7 @@
       "path": "/opt/.codex",
       "status": "active",
       "createdAt": "2026-05-10 00:36",
-      "lastCheck": "2026-05-27 19:21"
+      "lastCheck": "2026-06-02 10:37"
     },
     "litellm-domestic-fix": {
       "path": "/opt/litellm-source",
@@ -40,15 +40,27 @@
         "/opt/.agents-to-im-openhuman",
         "/root/.openhuman"
       ],
-      "lastCheck": "2026-05-27 19:21"
+      "lastCheck": "2026-06-02 10:37"
     },
     "cc-haha": {
       "path": "/home/code/cc-haha",
       "status": "active",
       "createdAt": "2026-05-24T15:25:52.054282",
-      "lastCheck": "2026-05-24 15:46",
+      "lastCheck": "2026-05-31 17:19",
       "description": "Claude Code 本地源码（oadank/cc-haha 泄露版本）",
       "github": "https://github.com/oadank/cc-haha"
+    },
+    "debian13-rdp": {
+      "path": "/opt/agent-wiki-mcp/projects/debian13",
+      "status": "active",
+      "createdAt": "2026-06-02",
+      "description": "Debian 13 远程桌面终极方案 (XRDP + NoVNC + LightDM AutoLogin)",
+      "relatedPaths": [
+        "/etc/lightdm/lightdm.conf.d/50-autologin.conf",
+        "/etc/systemd/system/x11vnc.service",
+        "/etc/xrdp/xrdp.ini"
+      ],
+      "lastCheck": "2026-06-02 10:40"
     }
   }
 }

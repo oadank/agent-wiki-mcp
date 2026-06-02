@@ -3,9 +3,9 @@
   "realPath": "/opt/.agents-to-im-claude",
   "status": "active",
   "createdAt": "2026-05-09T15:38:00.000Z",
-  "lastSession": "2026-05-27 19:21",
+  "lastSession": "2026-06-02 10:37",
   "lastAI": "Claude",
-  "currentTask": "seenMessageIds 持久化修复 + MiMo 缓存优化",
+  "currentTask": "compact 全面升级 + 两轮代码审计共 11 bug 修复",
   "taskStatus": "✅",
   "indexed": false,
   "daysSinceUpdate": 0,
@@ -13,22 +13,24 @@
     {
       "type": "files_modified",
       "path": "/opt/.agents-to-im-claude",
-      "count": 6,
+      "count": 5,
       "files": [
         "./logs/bridge.log",
         "./data/audit.json",
         "./data/bindings.json",
         "./data/sessions.json",
-        "./data/messages/3f3f14bd-62cb-4614-acce-c82967faa91e.json",
-        "./runtime/seen-messages.json"
+        "./data/messages/3f3f14bd-62cb-4614-acce-c82967faa91e.json"
       ]
     },
     {
       "type": "files_modified",
       "path": "/opt/.agents-to-im-codex",
-      "count": 1,
+      "count": 4,
       "files": [
-        "./logs/bridge.log"
+        "./logs/bridge.log",
+        "./data/audit.json",
+        "./data/sessions.json",
+        "./data/messages/966d6413-2766-45a8-8490-de59d16a203f.json"
       ]
     },
     {
