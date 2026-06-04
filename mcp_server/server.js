@@ -6,7 +6,8 @@
  * 支持跨平台：Claude Code、Codex、Cursor、VS Code Copilot
  *
  * 用法:
- *   node server.js                    # 使用默认 wiki 路径
+ *   node server.js                    # stdio 模式（默认）
+ *   node server.js --http 3456        # HTTP 模式，监听 0.0.0.0:3456
  *   node server.js --wiki /path/wiki  # 自定义 wiki 路径
  *
  * MCP 配置示例 (Claude Code settings.json):
@@ -27,9 +28,12 @@
 
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { z } from 'zod';
 import { spawn } from 'child_process';
 import { execSync } from 'child_process';
+import { createServer } from 'http';
+import { randomUUID } from 'crypto';
 import { readFile, readdir, stat, writeFile, appendFile } from 'fs/promises';
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
@@ -45,6 +49,10 @@ const wikiArgIdx = args.indexOf('--wiki');
 if (wikiArgIdx >= 0 && args[wikiArgIdx + 1]) {
   WIKI_DIR = args[wikiArgIdx + 1];
 }
+
+// HTTP 模式：--http <port>
+const httpPortIdx = args.indexOf('--http');
+const HTTP_PORT = httpPortIdx >= 0 ? parseInt(args[httpPortIdx + 1], 10) : null;
 
 const SCRIPTS_DIR = join(WIKI_DIR, 'scripts');
 const MEMORIES_DIR = join(WIKI_DIR, 'memories');
@@ -1040,9 +1048,55 @@ function startAutoSync() {
 
 // ── 启动 Server ──────────────────────────────────────────────
 async function main() {
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
-  console.error('[openclaw-wiki-mcp] Server 已启动，等待 MCP 客户端连接...');
+  if (HTTP_PORT) {
+    // HTTP 模式：每个请求一个 stateless transport，共享同一个 McpServer
+    const httpServer = createServer(async (req, res) => {
+      // CORS headers
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Mcp-Session-Id');
+
+      if (req.method === 'OPTIONS') {
+        res.writeHead(204);
+        res.end();
+        return;
+      }
+
+      // 只处理 /mcp 路径
+      if (req.url !== '/mcp' && !req.url.startsWith('/mcp/')) {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Not Found. Use POST /mcp');
+        return;
+      }
+
+      // 解析请求体
+      let body = '';
+      for await (const chunk of req) body += chunk;
+      let parsedBody;
+      try { parsedBody = JSON.parse(body); } catch { parsedBody = undefined; }
+
+      // 每个请求创建 stateless transport
+      const transport = new StreamableHTTPServerTransport({
+        sessionIdGenerator: undefined, // stateless 模式
+      });
+
+      // 连接到共享的 McpServer
+      await server.connect(transport);
+
+      // 处理请求
+      await transport.handleRequest(req, res, parsedBody);
+    });
+
+    httpServer.listen(HTTP_PORT, '0.0.0.0', () => {
+      console.error(`[openclaw-wiki-mcp] HTTP 模式启动: http://0.0.0.0:${HTTP_PORT}/mcp`);
+      console.error(`[openclaw-wiki-mcp] Wiki 目录: ${WIKI_DIR}`);
+    });
+  } else {
+    // stdio 模式（默认）
+    const transport = new StdioServerTransport();
+    await server.connect(transport);
+    console.error('[openclaw-wiki-mcp] stdio 模式启动，等待 MCP 客户端连接...');
+  }
 
   // 启动自动同步（后台定时检查）
   startAutoSync();
