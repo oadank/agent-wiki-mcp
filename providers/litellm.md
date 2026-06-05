@@ -1,18 +1,22 @@
 ---
 title: "LiteLLM"
 category: providers
-tags:
-  - providers
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/providers/litellm.md"
-summary: "Run OpenClaw through LiteLLM Proxy for unified model access and cost tracking"
-read_when:
-  - You want to route OpenClaw through a LiteLLM proxy
+  - "/usr/lib/node_modules/openclaw/docs/providers/litellm.md"
+tags: [providers]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.170551+00:00
 ---
 
-sourceType: article
-certainty: question
-status: active
+---
+summary: "Run OpenClaw through LiteLLM Proxy for unified model access and cost tracking"
+title: "LiteLLM"
+read_when:
+  - You want to route OpenClaw through a LiteLLM proxy
+  - You need cost tracking, logging, or model routing through LiteLLM
+---
 
 [LiteLLM](https://litellm.ai) is an open-source LLM gateway that provides a unified API to 100+ model providers. Route OpenClaw through LiteLLM to get centralized cost tracking, logging, and the flexibility to switch backends without changing your OpenClaw config.
 
@@ -37,6 +41,12 @@ status: active
       <Step title="Run onboarding">
         ```bash
         openclaw onboard --auth-choice litellm-api-key
+        ```
+
+        For non-interactive setup against a remote proxy, pass the proxy URL explicitly:
+
+        ```bash
+        openclaw onboard --non-interactive --auth-choice litellm-api-key --litellm-api-key "$LITELLM_API_KEY" --custom-base-url "https://litellm.example/v1"
         ```
       </Step>
     </Steps>
@@ -115,6 +125,38 @@ export LITELLM_API_KEY="sk-litellm-key"
 ```
 
 ## Advanced configuration
+
+### Image generation
+
+LiteLLM can also back the `image_generate` tool through OpenAI-compatible
+`/images/generations` and `/images/edits` routes. Configure a LiteLLM image
+model under `agents.defaults.imageGenerationModel`:
+
+```json5
+{
+  models: {
+    providers: {
+      litellm: {
+        baseUrl: "http://localhost:4000",
+        apiKey: "${LITELLM_API_KEY}",
+      },
+    },
+  },
+  agents: {
+    defaults: {
+      imageGenerationModel: {
+        primary: "litellm/gpt-image-2",
+        timeoutMs: 180_000,
+      },
+    },
+  },
+}
+```
+
+Loopback LiteLLM URLs such as `http://localhost:4000` work without a global
+private-network override. For a LAN-hosted proxy, set
+`models.providers.litellm.request.allowPrivateNetwork: true` because the API key
+will be sent to the configured proxy host.
 
 <AccordionGroup>
   <Accordion title="Virtual keys">

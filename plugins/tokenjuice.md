@@ -1,84 +1,35 @@
 ---
-summary: "Compact noisy exec and bash tool results with an optional bundled plugin"
 title: "Tokenjuice"
-read_when:
-  - You want shorter `exec` or `bash` tool results in OpenClaw
-  - You want to enable the bundled tokenjuice plugin
-  - You need to understand what tokenjuice changes and what it leaves raw
+category: plugins
+sources:
+  - "/usr/lib/node_modules/openclaw/docs/plugins/reference/tokenjuice.md"
+tags: [plugins]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:58.931723+00:00
 ---
 
-sourceType: report
-certainty: inference
-status: active
-`tokenjuice` is an optional bundled plugin that compacts noisy `exec` and `bash`
-tool results after the command has already run.
+---
+summary: "Compacts exec and bash tool results with tokenjuice reducers."
+read_when:
+  - You are installing, configuring, or auditing the tokenjuice plugin
+title: "Tokenjuice plugin"
+---
 
-It changes the returned `tool_result`, not the command itself. Tokenjuice does
-not rewrite shell input, rerun commands, or change exit codes.
+# Tokenjuice plugin
 
-Today this applies to PI embedded runs and OpenClaw dynamic tools in the Codex
-app-server harness. Tokenjuice hooks OpenClaw's tool-result middleware and
-trims the output before it goes back into the active harness session.
+Compacts exec and bash tool results with tokenjuice reducers.
 
-## Enable the plugin
+## Distribution
 
-Fast path:
+- Package: `@openclaw/tokenjuice`
+- Install route: npm; ClawHub: `clawhub:@openclaw/tokenjuice`
 
-```bash
-openclaw config set plugins.entries.tokenjuice.enabled true
-```
+## Surface
 
-Equivalent:
+contracts: agentToolResultMiddleware
 
-```bash
-openclaw plugins enable tokenjuice
-```
+## Related docs
 
-OpenClaw already ships the plugin. There is no separate `plugins install`
-or `tokenjuice install openclaw` step.
-
-If you prefer editing config directly:
-
-```json5
-{
-  plugins: {
-    entries: {
-      tokenjuice: {
-        enabled: true,
-      },
-    },
-  },
-}
-```
-
-## What tokenjuice changes
-
-- Compacts noisy `exec` and `bash` results before they are fed back into the session.
-- Keeps the original command execution untouched.
-- Preserves exact file-content reads and other commands that tokenjuice should leave raw.
-- Stays opt-in: disable the plugin if you want verbatim output everywhere.
-
-## Verify it is working
-
-1. Enable the plugin.
-2. Start a session that can call `exec`.
-3. Run a noisy command such as `git status`.
-4. Check that the returned tool result is shorter and more structured than the raw shell output.
-
-## Disable the plugin
-
-```bash
-openclaw config set plugins.entries.tokenjuice.enabled false
-```
-
-Or:
-
-```bash
-openclaw plugins disable tokenjuice
-```
-
-## Related
-
-- [Exec tool](/tools/exec)
-- [Thinking levels](/tools/thinking)
-- [Context engine](/concepts/context-engine)
+- [tokenjuice](/tools/tokenjuice)

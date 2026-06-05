@@ -1,21 +1,22 @@
 ---
 title: "Nostr"
 category: channels
-tags:
-  - channels
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/channels/nostr.md"
+  - "/usr/lib/node_modules/openclaw/docs/channels/nostr.md"
+tags: [channels]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:58.726536+00:00
+---
+
+---
 summary: "Nostr DM channel via NIP-04 encrypted messages"
 read_when:
   - You want OpenClaw to receive DMs via Nostr
+  - You're setting up decentralized messaging
+title: "Nostr"
 ---
-
-> **TL;DR** Using nak
-
-
-sourceType: article
-certainty: fact
-status: active
 
 **Status:** Optional bundled plugin (disabled by default until configured).
 
@@ -30,11 +31,14 @@ builds do not need a separate install.
 
 - Onboarding (`openclaw onboard`) and `openclaw channels add` still surface
   Nostr from the shared channel catalog.
-- If your build excludes bundled Nostr, install it manually.
+- If your build excludes bundled Nostr, install the npm package directly.
 
 ```bash
 openclaw plugins install @openclaw/nostr
 ```
+
+Use the bare package to follow the current official release tag. Pin an exact
+version only when you need a reproducible install.
 
 Use a local checkout (dev workflows):
 

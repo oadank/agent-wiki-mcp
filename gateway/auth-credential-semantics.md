@@ -1,17 +1,22 @@
 ---
 title: "Auth credential semantics"
-category: docs
-tags:
-  - docs
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/auth-credential-semantics.md"
-summary: "Canonical credential eligibility and resolution semantics for auth profiles"
-read_when:
-  - Working on auth profile resolution or credential routing
+  - "/usr/lib/node_modules/openclaw/docs/auth-credential-semantics.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:58.710355+00:00
 ---
 
-sourceType: document
-certainty: inference
+---
+summary: "Canonical credential eligibility and resolution semantics for auth profiles"
+title: "Auth credential semantics"
+read_when:
+  - Working on auth profile resolution or credential routing
+  - Debugging model auth failures or profile order
+---
 
 This document defines the canonical credential eligibility and resolution semantics used across:
 
@@ -22,7 +27,7 @@ This document defines the canonical credential eligibility and resolution semant
 
 The goal is to keep selection-time and runtime behavior aligned.
 
-## Stable Probe Reason Codes
+## Stable probe reason codes
 
 - `ok`
 - `excluded_by_auth_order`
@@ -32,7 +37,7 @@ The goal is to keep selection-time and runtime behavior aligned.
 - `unresolved_ref`
 - `no_model`
 
-## Token Credentials
+## Token credentials
 
 Token credentials (`type: "token"`) support inline `token` and/or `tokenRef`.
 
@@ -51,7 +56,37 @@ Token credentials (`type: "token"`) support inline `token` and/or `tokenRef`.
 2. For eligible profiles, token material may be resolved from inline value or `tokenRef`.
 3. Unresolvable refs produce `unresolved_ref` in `models status --probe` output.
 
-## Explicit Auth Order Filtering
+## Agent copy portability
+
+Agent auth inheritance is read-through. When an agent has no local profile, it
+can resolve profiles from the default/main agent store at runtime without
+copying secret material into its own `auth-profiles.json`.
+
+Explicit copy flows, such as `openclaw agents add`, use this portability policy:
+
+- `api_key` profiles are portable unless `copyToAgents: false`.
+- `token` profiles are portable unless `copyToAgents: false`.
+- `oauth` profiles are not portable by default because refresh tokens can be
+  single-use or rotation-sensitive.
+- Provider-owned OAuth flows may opt in with `copyToAgents: true` only when
+  copying refresh material across agents is known safe.
+
+Non-portable profiles remain available through read-through inheritance unless
+the target agent signs in separately and creates its own local profile.
+
+## Config-only auth routes
+
+`auth.profiles` entries with `mode: "aws-sdk"` are routing metadata, not stored
+credentials. They are valid when the target provider uses
+`models.providers.<id>.auth: "aws-sdk"` or plugin-owned Amazon Bedrock setup
+AWS SDK route. These profile ids may appear in `auth.order` and session
+overrides even when no matching entry exists in `auth-profiles.json`.
+
+Do not write `type: "aws-sdk"` into `auth-profiles.json`. If a legacy install
+has such a marker, `openclaw doctor --fix` moves it to `auth.profiles` and
+removes the marker from the credential store.
+
+## Explicit auth order filtering
 
 - When `auth.order.<provider>` or the auth-store order override is set for a
   provider, `models status --probe` only probes profile ids that remain in the
@@ -61,13 +96,24 @@ Token credentials (`type: "token"`) support inline `token` and/or `tokenRef`.
   `reasonCode: excluded_by_auth_order` and the detail
   `Excluded by auth.order for this provider.`
 
-## Probe Target Resolution
+## Probe target resolution
 
 - Probe targets can come from auth profiles, environment credentials, or
   `models.json`.
 - If a provider has credentials but OpenClaw cannot resolve a probeable model
   candidate for it, `models status --probe` reports `status: no_model` with
   `reasonCode: no_model`.
+
+## External CLI credential discovery
+
+- Runtime-only credentials owned by external CLIs are discovered only when the
+  provider, runtime, or auth profile is in scope for the current operation, or
+  when a stored local profile for that external source already exists.
+- Auth-store callers should choose an explicit external-CLI discovery mode:
+  `none` for persisted/plugin auth only, `existing` for refreshing already
+  stored external CLI profiles, or `scoped` for a concrete provider/profile set.
+- Read-only/status paths pass `allowKeychainPrompt: false`; they use file-backed
+  external CLI credentials only and do not read or reuse macOS Keychain results.
 
 ## OAuth SecretRef Policy Guard
 

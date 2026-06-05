@@ -1,18 +1,21 @@
 ---
 title: "Cron vs heartbeat"
 category: automation
-tags:
-  - automation
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/automation/cron-vs-heartbeat.md"
-summary: "Redirect to /automation"
+  - "/usr/lib/node_modules/openclaw/docs/automation/cron-vs-heartbeat.md"
+tags: [automation]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.044747+00:00
 ---
 
-sourceType: report
-certainty: fact
-status: active
+---
+summary: "Redirect to /automation"
+title: "Cron vs heartbeat"
+---
 
-This page moved to [Automation & Tasks](/automation). See [Automation & Tasks](/automation) for the decision guide comparing cron and heartbeat.
+The decision guide for cron vs heartbeat lives under [Automation](/automation).
 
 ## Related
 

@@ -1,21 +1,22 @@
 ---
 title: "Uninstall"
-category: cli
-tags:
-  - cli
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/cli/uninstall.md"
+  - "/usr/lib/node_modules/openclaw/docs/cli/uninstall.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.063917+00:00
+---
+
+---
 summary: "CLI reference for `openclaw uninstall` (remove gateway service + local data)"
 read_when:
   - You want to remove the gateway service and/or local state
+  - You want a dry-run first
+title: "Uninstall"
 ---
-
-> **TL;DR** `openclaw uninstall`
-
-
-sourceType: document
-certainty: fact
-status: active
 
 # `openclaw uninstall`
 
@@ -46,6 +47,7 @@ openclaw uninstall --dry-run
 Notes:
 
 - Run `openclaw backup create` first if you want a restorable snapshot before removing state or workspaces.
+- `--state` preserves configured workspace directories unless `--workspace` is also selected.
 - `--all` is shorthand for removing service, state, workspace, and app together.
 - `--non-interactive` requires `--yes`.
 

@@ -1,179 +1,90 @@
 ---
 title: "TUI"
-category: web
-tags:
-  - web
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/web/tui.md"
-summary: "Terminal UI (TUI): connect to the Gateway or run locally in embedded mode"
-read_when:
-  - You want a beginner-friendly walkthrough of the TUI
+  - "/usr/lib/node_modules/openclaw/docs/cli/tui.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.080101+00:00
 ---
 
-> **TL;DR** or
+---
+summary: "CLI reference for `openclaw tui` (Gateway-backed or local embedded terminal UI)"
+read_when:
+  - You want a terminal UI for the Gateway (remote-friendly)
+  - You want to pass url/token/session from scripts
+  - You want to run the TUI in local embedded mode without a Gateway
+  - You want to use openclaw chat or openclaw tui --local
+title: "TUI"
+---
 
+# `openclaw tui`
 
-sourceType: document
-certainty: inference
-status: active
+Open the terminal UI connected to the Gateway, or run it in local embedded
+mode.
 
-## Quick start
+Related:
 
-### Gateway mode
+- TUI guide: [TUI](/web/tui)
 
-1. Start the Gateway.
+## Options
 
-```bash
-openclaw gateway
-```
+| Flag                  | Default                                   | Description                                                                        |
+| --------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------- |
+| `--local`             | `false`                                   | Run against the local embedded agent runtime instead of a Gateway.                 |
+| `--url <url>`         | `gateway.remote.url` from config          | Gateway WebSocket URL.                                                             |
+| `--token <token>`     | (none)                                    | Gateway token if required.                                                         |
+| `--password <pass>`   | (none)                                    | Gateway password if required.                                                      |
+| `--session <key>`     | `main` (or `global` when scope is global) | Session key. Inside an agent workspace it auto-selects that agent unless prefixed. |
+| `--deliver`           | `false`                                   | Deliver assistant replies through configured channels.                             |
+| `--thinking <level>`  | (model default)                           | Thinking level override.                                                           |
+| `--message <text>`    | (none)                                    | Send an initial message after connecting.                                          |
+| `--timeout-ms <ms>`   | `agents.defaults.timeoutSeconds`          | Agent timeout. Invalid values log a warning and are ignored.                       |
+| `--history-limit <n>` | `200`                                     | History entries to load on attach.                                                 |
 
-2. Open the TUI.
-
-```bash
-openclaw tui
-```
-
-3. Type a message and press Enter.
-
-Remote Gateway:
-
-```bash
-openclaw tui --url ws://<host>:<port> --token <gateway-token>
-```
-
-Use `--password` if your Gateway uses password auth.
-
-### Local mode
-
-Run the TUI without a Gateway:
-
-```bash
-openclaw chat
-# or
-openclaw tui --local
-```
+Aliases: `openclaw chat` and `openclaw terminal` invoke the same command with `--local` implied.
 
 Notes:
 
-- `openclaw chat` and `openclaw terminal` are aliases for `openclaw tui --local`.
+- `chat` and `terminal` are aliases for `openclaw tui --local`.
 - `--local` cannot be combined with `--url`, `--token`, or `--password`.
+- `tui` resolves configured gateway auth SecretRefs for token/password auth when possible (`env`/`file`/`exec` providers).
+- When launched from inside a configured agent workspace directory, TUI auto-selects that agent for the session key default (unless `--session` is explicitly `agent:<id>:...`).
 - Local mode uses the embedded agent runtime directly. Most local tools work, but Gateway-only features are unavailable.
+- Local mode adds `/auth [provider]` inside the TUI command surface.
+- Plugin approval gates still apply in local mode. Tools that require approval prompt for a decision in the terminal; nothing is silently auto-approved because the Gateway is not involved.
+- Session [goals](/tools/goal) appear in the footer and can be managed with `/goal`.
 
-## What you see
+## Examples
 
-- Header: connection URL, current agent, current session.
-- Chat log: user messages, assistant replies, system notices, tool cards.
-- Status line: connection/run state (connecting, running, streaming, idle, error).
-- Footer: connection state + agent + session + model + think/fast/verbose/trace/reasoning + token counts + deliver.
-- Input: text editor with autocomplete.
+```bash
+openclaw chat
+openclaw tui --local
+openclaw tui
+openclaw tui --url ws://127.0.0.1:18789 --token <token>
+openclaw tui --session main --deliver
+openclaw chat --message "Compare my config to the docs and tell me what to fix"
+# when run inside an agent workspace, infers that agent automatically
+openclaw tui --session bugfix
+```
 
-## Mental model: agents + sessions
-
-- Agents are unique slugs (e.g. `main`, `research`). The Gateway exposes the list.
-- Sessions belong to the current agent.
-- Session keys are stored as `agent:<agentId>:<sessionKey>`.
-  - If you type `/session main`, the TUI expands it to `agent:<currentAgent>:main`.
-  - If you type `/session agent:other:main`, you switch to that agent session explicitly.
-- Session scope:
-  - `per-sender` (default): each agent has many sessions.
-  - `global`: the TUI always uses the `global` session (the picker may be empty).
-- The current agent + session are always visible in the footer.
-
-## Sending + delivery
-
-- Messages are sent to the Gateway; delivery to providers is off by default.
-- Turn delivery on:
-  - `/deliver on`
-  - or the Settings panel
-  - or start with `openclaw tui --deliver`
-
-## Pickers + overlays
-
-- Model picker: list available models and set the session override.
-- Agent picker: choose a different agent.
-- Session picker: shows only sessions for the current agent.
-- Settings: toggle deliver, tool output expansion, and thinking visibility.
-
-## Keyboard shortcuts
-
-- Enter: send message
-- Esc: abort active run
-- Ctrl+C: clear input (press twice to exit)
-- Ctrl+D: exit
-- Ctrl+L: model picker
-- Ctrl+G: agent picker
-- Ctrl+P: session picker
-- Ctrl+O: toggle tool output expansion
-- Ctrl+T: toggle thinking visibility (reloads history)
-
-## Slash commands
-
-Core:
-
-- `/help`
-- `/status`
-- `/agent <id>` (or `/agents`)
-- `/session <key>` (or `/sessions`)
-- `/model <provider/model>` (or `/models`)
-
-Session controls:
-
-- `/think <off|minimal|low|medium|high>`
-- `/fast <status|on|off>`
-- `/verbose <on|full|off>`
-- `/trace <on|off>`
-- `/reasoning <on|off|stream>`
-- `/usage <off|tokens|full>`
-- `/elevated <on|off|ask|full>` (alias: `/elev`)
-- `/activation <mention|always>`
-- `/deliver <on|off>`
-
-Session lifecycle:
-
-- `/new` or `/reset` (reset the session)
-- `/abort` (abort the active run)
-- `/settings`
-- `/exit`
-
-Local mode only:
-
-- `/auth [provider]` opens the provider auth/login flow inside the TUI.
-
-Other Gateway slash commands (for example, `/context`) are forwarded to the Gateway and shown as system output. See [Slash commands](/tools/slash-commands).
-
-## Local shell commands
-
-- Prefix a line with `!` to run a local shell command on the TUI host.
-- The TUI prompts once per session to allow local execution; declining keeps `!` disabled for the session.
-- Commands run in a fresh, non-interactive shell in the TUI working directory (no persistent `cd`/env).
-- Local shell commands receive `OPENCLAW_SHELL=tui-local` in their environment.
-- A lone `!` is sent as a normal message; leading spaces do not trigger local exec.
-
-## Repair configs from the local TUI
+## Config repair loop
 
 Use local mode when the current config already validates and you want the
-embedded agent to inspect it on the same machine, compare it against the docs,
-and help repair drift without depending on a running Gateway.
+embedded agent to inspect it, compare it against the docs, and help repair it
+from the same terminal:
 
-If `openclaw config validate` is already failing, start with `openclaw configure`
-or `openclaw doctor --fix` first. `openclaw chat` does not bypass the invalid-
+If `openclaw config validate` is already failing, use `openclaw configure` or
+`openclaw doctor --fix` first. `openclaw chat` does not bypass the invalid-
 config guard.
-
-Typical loop:
-
-1. Start local mode:
 
 ```bash
 openclaw chat
 ```
 
-2. Ask the agent what you want checked, for example:
-
-```text
-Compare my gateway auth config with the docs and suggest the smallest fix.
-```
-
-3. Use local shell commands for exact evidence and validation:
+Then inside the TUI:
 
 ```text
 !openclaw config file
@@ -182,73 +93,11 @@ Compare my gateway auth config with the docs and suggest the smallest fix.
 !openclaw doctor
 ```
 
-4. Apply narrow changes with `openclaw config set` or `openclaw configure`, then rerun `!openclaw config validate`.
-5. If Doctor recommends an automatic migration or repair, review it and run `!openclaw doctor --fix`.
-
-Tips:
-
-- Prefer `openclaw config set` or `openclaw configure` over hand-editing `openclaw.json`.
-- `openclaw docs "<query>"` searches the live docs index from the same machine.
-- `openclaw config validate --json` is useful when you want structured schema and SecretRef/resolvability errors.
-
-## Tool output
-
-- Tool calls show as cards with args + results.
-- Ctrl+O toggles between collapsed/expanded views.
-- While tools run, partial updates stream into the same card.
-
-## Terminal colors
-
-- The TUI keeps assistant body text in your terminal's default foreground so dark and light terminals both stay readable.
-- If your terminal uses a light background and auto-detection is wrong, set `OPENCLAW_THEME=light` before launching `openclaw tui`.
-- To force the original dark palette instead, set `OPENCLAW_THEME=dark`.
-
-## History + streaming
-
-- On connect, the TUI loads the latest history (default 200 messages).
-- Streaming responses update in place until finalized.
-- The TUI also listens to agent tool events for richer tool cards.
-
-## Connection details
-
-- The TUI registers with the Gateway as `mode: "tui"`.
-- Reconnects show a system message; event gaps are surfaced in the log.
-
-## Options
-
-- `--local`: Run against the local embedded agent runtime
-- `--url <url>`: Gateway WebSocket URL (defaults to config or `ws://127.0.0.1:<port>`)
-- `--token <token>`: Gateway token (if required)
-- `--password <password>`: Gateway password (if required)
-- `--session <key>`: Session key (default: `main`, or `global` when scope is global)
-- `--deliver`: Deliver assistant replies to the provider (default off)
-- `--thinking <level>`: Override thinking level for sends
-- `--message <text>`: Send an initial message after connecting
-- `--timeout-ms <ms>`: Agent timeout in ms (defaults to `agents.defaults.timeoutSeconds`)
-- `--history-limit <n>`: History entries to load (default `200`)
-
-Note: when you set `--url`, the TUI does not fall back to config or environment credentials.
-Pass `--token` or `--password` explicitly. Missing explicit credentials is an error.
-In local mode, do not pass `--url`, `--token`, or `--password`.
-
-## Troubleshooting
-
-No output after sending a message:
-
-- Run `/status` in the TUI to confirm the Gateway is connected and idle/busy.
-- Check the Gateway logs: `openclaw logs --follow`.
-- Confirm the agent can run: `openclaw status` and `openclaw models status`.
-- If you expect messages in a chat channel, enable delivery (`/deliver on` or `--deliver`).
-
-## Connection troubleshooting
-
-- `disconnected`: ensure the Gateway is running and your `--url/--token/--password` are correct.
-- No agents in picker: check `openclaw agents list` and your routing config.
-- Empty session picker: you might be in global scope or have no sessions yet.
+Apply targeted fixes with `openclaw config set` or `openclaw configure`, then
+rerun `openclaw config validate`. See [TUI](/web/tui) and [Config](/cli/config).
 
 ## Related
 
-- [Control UI](/web/control-ui) — web-based control interface
-- [Config](/cli/config) — inspect, validate, and edit `openclaw.json`
-- [Doctor](/cli/doctor) — guided repair and migration checks
-- [CLI Reference](/cli) — full CLI command reference
+- [CLI reference](/cli)
+- [TUI](/web/tui)
+- [Goal](/tools/goal)

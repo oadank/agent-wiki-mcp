@@ -1,18 +1,22 @@
 ---
 title: "Uninstall"
 category: install
-tags:
-  - install
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/install/uninstall.md"
+  - "/usr/lib/node_modules/openclaw/docs/install/uninstall.md"
+tags: [install]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.027130+00:00
+---
+
+---
 summary: "Uninstall OpenClaw completely (CLI, service, state, workspace)"
 read_when:
   - You want to remove OpenClaw from a machine
+  - The gateway service is still running after uninstall
+title: "Uninstall"
 ---
-
-sourceType: article
-certainty: fact
-status: active
 
 Two paths:
 
@@ -26,6 +30,8 @@ Recommended: use the built-in uninstaller:
 ```bash
 openclaw uninstall
 ```
+
+When using the CLI, state removal preserves configured workspace directories unless you also select `--workspace`.
 
 Non-interactive (automation / npx):
 
@@ -55,6 +61,7 @@ rm -rf "${OPENCLAW_STATE_DIR:-$HOME/.openclaw}"
 ```
 
 If you set `OPENCLAW_CONFIG_PATH` to a custom location outside the state dir, delete that file too.
+If you want to keep a workspace inside the state dir, such as `~/.openclaw/workspace`, move it aside before running `rm -rf` or delete state contents selectively.
 
 4. Delete your workspace (optional, removes agent files):
 

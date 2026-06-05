@@ -1,18 +1,22 @@
 ---
 title: "Synthetic"
 category: providers
-tags:
-  - providers
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/providers/synthetic.md"
+  - "/usr/lib/node_modules/openclaw/docs/providers/synthetic.md"
+tags: [providers]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.147749+00:00
+---
+
+---
 summary: "Use Synthetic's Anthropic-compatible API in OpenClaw"
 read_when:
   - You want to use Synthetic as a model provider
+  - You need a Synthetic API key or base URL setup
+title: "Synthetic"
 ---
-
-sourceType: document
-certainty: fact
-status: active
 
 [Synthetic](https://synthetic.new) exposes Anthropic-compatible endpoints.
 OpenClaw registers it as the `synthetic` provider and uses the Anthropic

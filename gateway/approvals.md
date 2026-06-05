@@ -1,21 +1,22 @@
 ---
 title: "Approvals"
-category: cli
-tags:
-  - cli
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/cli/approvals.md"
+  - "/usr/lib/node_modules/openclaw/docs/cli/approvals.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.048874+00:00
+---
+
+---
 summary: "CLI reference for `openclaw approvals` and `openclaw exec-policy`"
 read_when:
   - You want to edit exec approvals from the CLI
+  - You need to manage allowlists on gateway or node hosts
+title: "Approvals"
 ---
-
-> **TL;DR** `openclaw approvals`
-
-
-sourceType: article
-certainty: fact
-status: active
 
 # `openclaw approvals`
 

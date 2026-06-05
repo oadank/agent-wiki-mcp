@@ -1,29 +1,38 @@
 ---
 title: "SGLang"
 category: providers
-tags:
-  - providers
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/providers/sglang.md"
+  - "/usr/lib/node_modules/openclaw/docs/providers/sglang.md"
+tags: [providers]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.169488+00:00
+---
+
+---
 summary: "Run OpenClaw with SGLang (OpenAI-compatible self-hosted server)"
 read_when:
   - You want to run OpenClaw against a local SGLang server
+  - You want OpenAI-compatible /v1 endpoints with your own models
+title: "SGLang"
 ---
 
-sourceType: document
-certainty: fact
-status: active
+SGLang serves open-weight models via an OpenAI-compatible HTTP API. OpenClaw connects to SGLang using the `openai-completions` provider family with auto-discovery of available models.
 
-SGLang can serve open-source models via an **OpenAI-compatible** HTTP API.
-OpenClaw can connect to SGLang using the `openai-completions` API.
+| Property                  | Value                                                        |
+| ------------------------- | ------------------------------------------------------------ |
+| Provider id               | `sglang`                                                     |
+| Plugin                    | bundled, `enabledByDefault: true`                            |
+| Auth env var              | `SGLANG_API_KEY` (any non-empty value if server has no auth) |
+| Onboarding flag           | `--auth-choice sglang`                                       |
+| API                       | OpenAI-compatible (`openai-completions`)                     |
+| Default base URL          | `http://127.0.0.1:30000/v1`                                  |
+| Default model placeholder | `sglang/Qwen/Qwen3-8B`                                       |
+| Streaming usage           | Yes (`supportsStreamingUsage: true`)                         |
+| Pricing                   | Marked external-free (`modelPricing.external: false`)        |
 
-OpenClaw can also **auto-discover** available models from SGLang when you opt
-in with `SGLANG_API_KEY` (any value works if your server does not enforce auth)
-and you do not define an explicit `models.providers.sglang` entry.
-
-OpenClaw treats `sglang` as a local OpenAI-compatible provider that supports
-streamed usage accounting, so status/context token counts can update from
-`stream_options.include_usage` responses.
+OpenClaw also **auto-discovers** available models from SGLang when you opt in with `SGLANG_API_KEY`. Use `sglang/*` in `agents.defaults.models` to keep discovery dynamic when you also configure a custom SGLang base URL. See [Model discovery (implicit provider)](#model-discovery-implicit-provider) below.
 
 ## Getting started
 
@@ -74,8 +83,10 @@ define `models.providers.sglang`, OpenClaw will query:
 and convert the returned IDs into model entries.
 
 <Note>
-If you set `models.providers.sglang` explicitly, auto-discovery is skipped and
-you must define models manually.
+If you set `models.providers.sglang` explicitly, OpenClaw uses your declared
+models by default. Add `"sglang/*": {}` to `agents.defaults.models` when you
+want OpenClaw to query that configured provider's `/models` endpoint and include
+all advertised SGLang models.
 </Note>
 
 ## Explicit configuration (manual models)

@@ -1,18 +1,21 @@
 ---
 title: "ClawFlow"
 category: automation
-tags:
-  - automation
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/automation/clawflow.md"
-summary: "Redirect to Task Flow"
+  - "/usr/lib/node_modules/openclaw/docs/automation/clawflow.md"
+tags: [automation]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.042770+00:00
 ---
 
-sourceType: document
-certainty: fact
-status: active
+---
+summary: "Redirect to Task Flow"
+title: "ClawFlow"
+---
 
-ClawFlow was renamed to [Task Flow](/automation/taskflow). See [Task Flow](/automation/taskflow) for the current documentation.
+ClawFlow was renamed to [Task flow](/automation/taskflow).
 
 ## Related
 

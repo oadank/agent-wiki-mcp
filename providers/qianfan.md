@@ -1,18 +1,22 @@
 ---
 title: "Qianfan"
 category: providers
-tags:
-  - providers
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/providers/qianfan.md"
+  - "/usr/lib/node_modules/openclaw/docs/providers/qianfan.md"
+tags: [providers]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.176975+00:00
+---
+
+---
 summary: "Use Qianfan's unified API to access many models in OpenClaw"
 read_when:
   - You want a single API key for many LLMs
+  - You need Baidu Qianfan setup guidance
+title: "Qianfan"
 ---
-
-sourceType: document
-certainty: fact
-status: active
 
 Qianfan is Baidu's MaaS platform, providing a **unified API** that routes requests to many models behind a single
 endpoint and API key. It is OpenAI-compatible, so most OpenAI SDKs work by switching the base URL.
@@ -118,6 +122,7 @@ The default bundled model ref is `qianfan/deepseek-v3.2`. You only need to overr
     - Ensure your API key starts with `bce-v3/ALTAK-` and has Qianfan API access enabled in the Baidu Cloud console.
     - If models are not listed, confirm your account has the Qianfan service activated.
     - The default base URL is `https://qianfan.baidubce.com/v2`. Only change it if you use a custom endpoint or proxy.
+
   </Accordion>
 </AccordionGroup>
 

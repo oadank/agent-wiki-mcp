@@ -1,21 +1,21 @@
 ---
 title: "Pairing"
-category: cli
-tags:
-  - cli
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/cli/pairing.md"
-summary: "CLI reference for `openclaw pairing` (approve/list pairing requests)"
-read_when:
-  - You’re using pairing-mode DMs and need to approve senders
+  - "/usr/lib/node_modules/openclaw/docs/cli/pairing.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.049698+00:00
 ---
 
-> **TL;DR** `openclaw pairing`
-
-
-sourceType: document
-certainty: fact
-status: active
+---
+summary: "CLI reference for `openclaw pairing` (approve/list pairing requests)"
+read_when:
+  - You're using pairing-mode DMs and need to approve senders
+title: "Pairing"
+---
 
 # `openclaw pairing`
 
@@ -69,12 +69,19 @@ Options:
 - `--account <accountId>`: account id for multi-account channels
 - `--notify`: send a confirmation back to the requester on the same channel
 
+Owner bootstrap:
+
+- If `commands.ownerAllowFrom` is empty when you approve a pairing code, OpenClaw also records the approved sender as the command owner, using a channel-scoped entry such as `telegram:123456789`.
+- This only bootstraps the first owner. Later pairing approvals do not replace or expand `commands.ownerAllowFrom`.
+- The command owner is the human operator account allowed to run owner-only commands and approve dangerous actions such as `/diagnostics`, `/export-trajectory`, `/config`, and exec approvals.
+
 ## Notes
 
 - Channel input: pass it positionally (`pairing list telegram`) or with `--channel <channel>`.
 - `pairing list` supports `--account <accountId>` for multi-account channels.
 - `pairing approve` supports `--account <accountId>` and `--notify`.
 - If only one pairing-capable channel is configured, `pairing approve <code>` is allowed.
+- If you approved a sender before this bootstrap existed, run `openclaw doctor`; it warns when no command owner is configured and shows the `openclaw config set commands.ownerAllowFrom ...` command to fix it.
 
 ## Related
 

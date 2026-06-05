@@ -1,21 +1,22 @@
 ---
 title: "Reset"
-category: cli
-tags:
-  - cli
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/cli/reset.md"
+  - "/usr/lib/node_modules/openclaw/docs/cli/reset.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.078505+00:00
+---
+
+---
 summary: "CLI reference for `openclaw reset` (reset local state/config)"
 read_when:
   - You want to wipe local state while keeping the CLI installed
+  - You want a dry-run of what would be removed
+title: "Reset"
 ---
-
-> **TL;DR** `openclaw reset`
-
-
-sourceType: document
-certainty: fact
-status: active
 
 # `openclaw reset`
 

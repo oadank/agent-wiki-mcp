@@ -1,190 +1,353 @@
 ---
 title: "Debugging"
-category: "litellm-proxy"
-tags:
-  - litellm
-  - litellm-proxy
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/litellm-docs/docs/proxy/debugging.md"
-summary: "2 levels of debugging supported. "
+  - "/usr/lib/node_modules/openclaw/docs/help/debugging.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:58.957070+00:00
 ---
 
-> **TL;DR** Debugging
+---
+summary: "Debugging tools: watch mode, raw model streams, and tracing reasoning leakage"
+read_when:
+  - You need to inspect raw model output for reasoning leakage
+  - You want to run the Gateway in watch mode while iterating
+  - You need a repeatable debugging workflow
+title: "Debugging"
+---
 
+Debugging helpers for streaming output, especially when a provider mixes reasoning into normal text.
 
-sourceType: article
-certainty: question
-status: active
-# Debugging
+## Runtime debug overrides
 
-# Debugging
+Use `/debug` in chat to set **runtime-only** config overrides (memory, not disk).
+`/debug` is disabled by default; enable with `commands.debug: true`.
+This is handy when you need to toggle obscure settings without editing `openclaw.json`.
 
-2 levels of debugging supported. 
-
-- debug (prints info logs)
-- detailed debug (prints debug logs)
-
-The proxy also supports json logs. [See here](#json-logs)
-
-## `debug`
-
-**via cli**
-
-```bash showLineNumbers
-$ litellm --debug
-```
-
-**via env**
-
-```python showLineNumbers
-os.environ["LITELLM_LOG"] = "INFO"
-```
-
-## `detailed debug`
-
-**via cli**
-
-```bash showLineNumbers
-$ litellm --detailed_debug
-```
-
-**via env**
-
-```python showLineNumbers
-os.environ["LITELLM_LOG"] = "DEBUG"
-```
-
-### Debug Logs 
-
-Run the proxy with `--detailed_debug` to view detailed debug logs
-```shell showLineNumbers
-litellm --config /path/to/config.yaml --detailed_debug
-```
-
-When making requests you should see the POST request sent by LiteLLM to the LLM on the Terminal output
-```shell showLineNumbers
-POST Request Sent from LiteLLM:
-curl -X POST \
-https://api.openai.com/v1/chat/completions \
--H 'content-type: application/json' -H 'Authorization: Bearer sk-qnWGUIW9****************************************' \
--d '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "this is a test request, write a short poem"}]}'
-```
-
-## Debug single request
-
-Pass in `litellm_request_debug=True` in the request body
-
-```bash showLineNumbers
-curl -L -X POST 'http://0.0.0.0:4000/chat/completions' \
--H 'Content-Type: application/json' \
--H 'Authorization: Bearer sk-1234' \
--d '{ 
-    "model":"fake-openai-endpoint",
-    "messages": [{"role": "user","content": "How many r in the word strawberry?"}],
-    "litellm_request_debug": true
-}'
-```
-
-This will emit the raw request sent by LiteLLM to the API Provider and raw response received from the API Provider for **just** this request in the logs. 
-
-
-```bash showLineNumbers
-INFO:     Uvicorn running on http://0.0.0.0:4000 (Press CTRL+C to quit)
-20:14:06 - LiteLLM:WARNING: litellm_logging.py:938 - 
-
-POST Request Sent from LiteLLM:
-curl -X POST \
-https://exampleopenaiendpoint-production.up.railway.app/chat/completions \
--H 'Authorization: Be****ey' -H 'Content-Type: application/json' \
--d '{'model': 'fake', 'messages': [{'role': 'user', 'content': 'How many r in the word strawberry?'}], 'stream': False}'
-
-
-20:14:06 - LiteLLM:WARNING: litellm_logging.py:1015 - RAW RESPONSE:
-{"id":"chatcmpl-817fc08f0d6c451485d571dab39b26a1","object":"chat.completion","created":1677652288,"model":"gpt-3.5-turbo-0301","system_fingerprint":"fp_44709d6fcb","choices":[{"index":0,"message":{"role":"assistant","content":"\n\nHello there, how may I assist you today?"},"logprobs":null,"finish_reason":"stop"}],"usage":{"prompt_tokens":9,"completion_tokens":12,"total_tokens":21}}
-
-
-INFO:     127.0.0.1:56155 - "POST /chat/completions HTTP/1.1" 200 OK
+Examples:
 
 ```
-
-
-## JSON LOGS
-
-Set `JSON_LOGS="True"` in your env:
-
-```bash showLineNumbers
-```
-**OR**
-
-Set `json_logs: true` in your yaml: 
-
-```yaml showLineNumbers
-litellm_settings:
-    json_logs: true
+/debug show
+/debug set messages.responsePrefix="[openclaw]"
+/debug unset messages.responsePrefix
+/debug reset
 ```
 
-Start proxy 
+`/debug reset` clears all overrides and returns to the on-disk config.
 
-```bash showLineNumbers
-$ litellm
+## Session trace output
+
+Use `/trace` when you want to see plugin-owned trace/debug lines in one session
+without turning on full verbose mode.
+
+Examples:
+
+```text
+/trace
+/trace on
+/trace off
 ```
 
-The proxy will now all logs in json format.
+Use `/trace` for plugin diagnostics such as Active Memory debug summaries.
+Keep using `/verbose` for normal verbose status/tool output, and keep using
+`/debug` for runtime-only config overrides.
 
-## Control Log Output 
+## Plugin lifecycle trace
 
-Turn off fastapi's default 'INFO' logs 
+Use `OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1` when plugin lifecycle commands feel slow
+and you need a built-in phase breakdown for plugin metadata, discovery, registry,
+runtime mirror, config mutation, and refresh work. The trace is opt-in and writes
+to stderr, so JSON command output remains parseable.
 
-1. Turn on 'json logs' 
-```yaml showLineNumbers
-litellm_settings:
-    json_logs: true
+Example:
+
+```bash
+OPENCLAW_PLUGIN_LIFECYCLE_TRACE=1 openclaw plugins install tokenjuice --force
 ```
 
-2. Set `LITELLM_LOG` to 'ERROR' 
+Example output:
 
-Only get logs if an error occurs. 
-
-```bash showLineNumbers
-LITELLM_LOG="ERROR"
+```text
+[plugins:lifecycle] phase="config read" ms=6.83 status=ok command="install"
+[plugins:lifecycle] phase="slot selection" ms=94.31 status=ok command="install" pluginId="tokenjuice"
+[plugins:lifecycle] phase="registry refresh" ms=51.56 status=ok command="install" reason="source-changed"
 ```
 
-3. Start proxy 
+Use this for plugin lifecycle investigation before reaching for a CPU profiler.
+If the command is running from a source checkout, prefer measuring the built
+runtime with `node dist/entry.js ...` after `pnpm build`; `pnpm openclaw ...`
+also measures source-runner overhead.
 
+## CLI startup and command profiling
 
-```bash showLineNumbers
-$ litellm
+Use the checked-in startup benchmark when a command feels slow:
+
+```bash
+pnpm test:startup:bench:smoke
+pnpm tsx scripts/bench-cli-startup.ts --preset real --case status --runs 3
+pnpm tsx scripts/bench-cli-startup.ts --preset real --cpu-prof-dir .artifacts/cli-cpu
 ```
 
-Expected Output: 
+For one-off profiling through the normal source runner, set
+`OPENCLAW_RUN_NODE_CPU_PROF_DIR`:
 
-```bash showLineNumbers
-# no info statements
+```bash
+OPENCLAW_RUN_NODE_CPU_PROF_DIR=.artifacts/cli-cpu pnpm openclaw status
 ```
 
-## Common Errors 
+The source runner adds Node CPU profile flags and writes a `.cpuprofile` for the
+command. Use this before adding temporary instrumentation to command code.
 
-1. "No available deployments..."
+For startup stalls that look like synchronous filesystem or module-loader work,
+add Node's sync I/O trace flag through the source runner:
 
-```
-No deployments available for selected model, Try again in 60 seconds. Passed model=claude-3-5-sonnet. pre-call-checks=False, allowed_model_region=n/a.
-```
-
-This can be caused due to all your models hitting rate limit errors, causing the cooldown to kick in. 
-
-How to control this? 
-- Adjust the cooldown time
-
-```yaml showLineNumbers
-router_settings:
-    cooldown_time: 0 # 👈 KEY CHANGE
+```bash
+OPENCLAW_TRACE_SYNC_IO=1 pnpm openclaw gateway --force
 ```
 
-- Disable Cooldowns [NOT RECOMMENDED]
+`pnpm gateway:watch` leaves this flag disabled by default for the watched
+Gateway child. Set `OPENCLAW_TRACE_SYNC_IO=1` when you explicitly want Node
+sync I/O trace output in watch mode.
 
-```yaml showLineNumbers
-router_settings:
-    disable_cooldowns: True
+## Gateway watch mode
+
+For fast iteration, run the gateway under the file watcher:
+
+```bash
+pnpm gateway:watch
 ```
 
-This is not recommended, as it will lead to requests being routed to deployments over their tpm/rpm limit.
+By default, this starts or restarts a tmux session named
+`openclaw-gateway-watch-main` (or a profile/port-specific variant such as
+`openclaw-gateway-watch-dev-19001`) and auto-attaches from interactive terminals.
+Non-interactive shells, CI, and agent exec calls stay detached and print attach
+instructions instead. Attach manually when needed:
+
+```bash
+tmux attach -t openclaw-gateway-watch-main
+```
+
+The tmux pane runs the raw watcher:
+
+```bash
+node scripts/watch-node.mjs gateway --force
+```
+
+Use foreground mode when tmux is not wanted:
+
+```bash
+pnpm gateway:watch:raw
+# or
+OPENCLAW_GATEWAY_WATCH_TMUX=0 pnpm gateway:watch
+```
+
+Disable auto-attach while keeping tmux management:
+
+```bash
+OPENCLAW_GATEWAY_WATCH_ATTACH=0 pnpm gateway:watch
+```
+
+Profile watched Gateway CPU time when debugging startup/runtime hotspots:
+
+```bash
+pnpm gateway:watch --benchmark
+```
+
+The watch wrapper consumes `--benchmark` before invoking the Gateway and writes
+one V8 `.cpuprofile` per Gateway child exit under
+`.artifacts/gateway-watch-profiles/`. Stop or restart the watched gateway to
+flush the current profile, then open it with Chrome DevTools or Speedscope:
+
+```bash
+npx speedscope .artifacts/gateway-watch-profiles/*.cpuprofile
+```
+
+Use `--benchmark-dir <path>` when you want profiles somewhere else.
+Use `--benchmark-no-force` when you want the benchmarked child to skip the
+default `--force` port cleanup and fail fast if the Gateway port is already in
+use.
+Benchmark mode suppresses sync-I/O trace spam by default. Set
+`OPENCLAW_TRACE_SYNC_IO=1` with `--benchmark` when you explicitly want both CPU
+profiles and Node sync-I/O stack traces. In benchmark mode those trace blocks
+are written to `gateway-watch-output.log` under the benchmark directory and
+filtered from the terminal pane; normal Gateway logs remain visible.
+
+The tmux wrapper carries common non-secret runtime selectors such as
+`OPENCLAW_PROFILE`, `OPENCLAW_CONFIG_PATH`, `OPENCLAW_STATE_DIR`,
+`OPENCLAW_GATEWAY_PORT`, and `OPENCLAW_SKIP_CHANNELS` into the pane. Put
+provider credentials in your normal profile/config, or use raw foreground mode
+for one-off ephemeral secrets.
+If the watched Gateway exits during startup, the watcher runs
+`openclaw doctor --fix --non-interactive` once and restarts the Gateway child.
+Use `OPENCLAW_GATEWAY_WATCH_AUTO_DOCTOR=0` when you want the original startup
+failure without the dev-only repair pass.
+The managed tmux pane also defaults to colored Gateway logs for readability;
+set `FORCE_COLOR=0` when starting `pnpm gateway:watch` to disable ANSI output.
+
+The watcher restarts on build-relevant files under `src/`, extension source files,
+extension `package.json` and `openclaw.plugin.json` metadata, `tsconfig.json`,
+`package.json`, and `tsdown.config.ts`. Extension metadata changes restart the
+gateway without forcing a `tsdown` rebuild; source and config changes still
+rebuild `dist` first.
+
+Add any gateway CLI flags after `gateway:watch` and they will be passed through on
+each restart. Re-running the same watch command respawns the named tmux pane, and
+the raw watcher still keeps its single-watcher lock so duplicate watcher parents
+are replaced instead of piling up.
+
+## Dev profile + dev gateway (--dev)
+
+Use the dev profile to isolate state and spin up a safe, disposable setup for
+debugging. There are **two** `--dev` flags:
+
+- **Global `--dev` (profile):** isolates state under `~/.openclaw-dev` and
+  defaults the gateway port to `19001` (derived ports shift with it).
+- **`gateway --dev`: tells the Gateway to auto-create a default config +
+  workspace** when missing (and skip BOOTSTRAP.md).
+
+Recommended flow (dev profile + dev bootstrap):
+
+```bash
+pnpm gateway:dev
+OPENCLAW_PROFILE=dev openclaw tui
+```
+
+If you don't have a global install yet, run the CLI via `pnpm openclaw ...`.
+
+What this does:
+
+1. **Profile isolation** (global `--dev`)
+   - `OPENCLAW_PROFILE=dev`
+   - `OPENCLAW_STATE_DIR=~/.openclaw-dev`
+   - `OPENCLAW_CONFIG_PATH=~/.openclaw-dev/openclaw.json`
+   - `OPENCLAW_GATEWAY_PORT=19001` (browser/canvas shift accordingly)
+
+2. **Dev bootstrap** (`gateway --dev`)
+   - Writes a minimal config if missing (`gateway.mode=local`, bind loopback).
+   - Sets `agent.workspace` to the dev workspace.
+   - Sets `agent.skipBootstrap=true` (no BOOTSTRAP.md).
+   - Seeds the workspace files if missing:
+     `AGENTS.md`, `SOUL.md`, `TOOLS.md`, `IDENTITY.md`, `USER.md`, `HEARTBEAT.md`.
+   - Default identity: **C3-PO** (protocol droid).
+   - Skips channel providers in dev mode (`OPENCLAW_SKIP_CHANNELS=1`).
+
+Reset flow (fresh start):
+
+```bash
+pnpm gateway:dev:reset
+```
+
+<Note>
+`--dev` is a **global** profile flag and gets eaten by some runners. If you need to spell it out, use the env var form:
+
+```bash
+OPENCLAW_PROFILE=dev openclaw gateway --dev --reset
+```
+
+</Note>
+
+`--reset` wipes config, credentials, sessions, and the dev workspace (using
+`trash`, not `rm`), then recreates the default dev setup.
+
+<Tip>
+If a non-dev gateway is already running (launchd or systemd), stop it first:
+
+```bash
+openclaw gateway stop
+```
+
+</Tip>
+
+## Raw stream logging (OpenClaw)
+
+OpenClaw can log the **raw assistant stream** before any filtering/formatting.
+This is the best way to see whether reasoning is arriving as plain text deltas
+(or as separate thinking blocks).
+
+Enable it via CLI:
+
+```bash
+pnpm gateway:watch --raw-stream
+```
+
+Optional path override:
+
+```bash
+pnpm gateway:watch --raw-stream --raw-stream-path ~/.openclaw/logs/raw-stream.jsonl
+```
+
+Equivalent env vars:
+
+```bash
+OPENCLAW_RAW_STREAM=1
+OPENCLAW_RAW_STREAM_PATH=~/.openclaw/logs/raw-stream.jsonl
+```
+
+Default file:
+
+`~/.openclaw/logs/raw-stream.jsonl`
+
+## Raw OpenAI-compatible chunk logging
+
+To capture **raw OpenAI-compat chunks** before they are parsed into blocks,
+enable the transport logger:
+
+```bash
+OPENCLAW_RAW_STREAM=1
+```
+
+Optional path:
+
+```bash
+OPENCLAW_RAW_STREAM_PATH=~/.openclaw/logs/raw-openai-completions.jsonl
+```
+
+Default file:
+
+`~/.openclaw/logs/raw-openai-completions.jsonl`
+
+## Safety notes
+
+- Raw stream logs can include full prompts, tool output, and user data.
+- Keep logs local and delete them after debugging.
+- If you share logs, scrub secrets and PII first.
+
+## Debugging in VSCode
+
+Source maps are required to enable debugging in VSCode-based IDEs because many of the generated files end up with hashed names as part of the build process. The included `launch.json` configurations target the Gateway service, but can be adapted quickly for other purposes:
+
+1. **Rebuild and Debug Gateway** - Debugs the Gateway service after creating a new build
+2. **Debug Gateway** - Debugs the Gateway service of a pre-existing build
+
+### Setup
+
+The default **Rebuild and Debug Gateway** configuration is batteries-included, it will automatically delete the `/dist` folder and rebuild the project with debugging enabled:
+
+1. Open the **Run and Debug** panel from the Activity Bar or press `Ctrl`+`Shift`+`D`
+2. In the IDE, ensure **Rebuild and Debug Gateway** is selected in the configuration dropdown and then press the **Start Debugging** button
+
+Alternatively - if you prefer to manage the build and debug processes manually:
+
+1. Open a terminal and enable source maps:
+   - **Linux/macOS**: `export OUTPUT_SOURCE_MAPS=1`
+   - **Windows (PowerShell)**: `$env:OUTPUT_SOURCE_MAPS="1"`
+   - **Windows (CMD)**: `set OUTPUT_SOURCE_MAPS=1`
+2. In the same terminal, rebuild the project: `pnpm clean:dist && pnpm build`
+3. In the IDE, select the **Debug Gateway** option in the **Run and Debug** configuration dropdown and then press the **Start Debugging** button
+
+You can now set breakpoints in your TypeScript source files (`src/` directory) and the debugger will correctly map breakpoints to the compiled JavaScript via source maps. You'll be able to inspect variables, step through code, and examine call stacks as expected.
+
+### Notes
+
+- If using the **"Rebuild and Debug Gateway"** option - each time the debugger is launched it will completely delete the `/dist` folder and run a full `pnpm build` with source maps enabled before starting the Gateway
+- If using the **"Debug Gateway"** option - debug sessions can be started and stopped at any time without affecting the `/dist` folder, but you must use a separate terminal process to both enable debugging and manage the build cycle
+- Modify the `launch.json` settings for `args` to debug other sections of the project
+- If you need to use the built OpenClaw CLI for other tasks (i.e. `dashboard --no-open` if your debug session spawns a new auth token), you can execute it in another terminal as `node ./openclaw.mjs` or create a shell alias like `alias openclaw-build="node $(pwd)/openclaw.mjs"`
+
+## Related
+
+- [Troubleshooting](/help/troubleshooting)
+- [FAQ](/help/faq)

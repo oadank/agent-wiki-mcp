@@ -1,18 +1,21 @@
 ---
 title: "Auth monitoring"
 category: automation
-tags:
-  - automation
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/automation/auth-monitoring.md"
-summary: "Redirect to /gateway/authentication"
+  - "/usr/lib/node_modules/openclaw/docs/automation/auth-monitoring.md"
+tags: [automation]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.037721+00:00
 ---
 
-sourceType: document
-certainty: fact
-status: active
+---
+summary: "Redirect to /gateway/authentication"
+title: "Auth monitoring"
+---
 
-This page moved to [Authentication](/gateway/authentication). See [Authentication](/gateway/authentication) for auth monitoring documentation.
+Auth monitoring lives under [Authentication](/gateway/authentication).
 
 ## Related
 

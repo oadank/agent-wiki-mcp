@@ -1,21 +1,23 @@
 ---
 title: "Secrets"
-category: cli
-tags:
-  - cli
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/cli/secrets.md"
+  - "/usr/lib/node_modules/openclaw/docs/cli/secrets.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.061692+00:00
+---
+
+---
 summary: "CLI reference for `openclaw secrets` (reload, audit, configure, apply)"
 read_when:
   - Re-resolving secret refs at runtime
+  - Auditing plaintext residues and unresolved refs
+  - Configuring SecretRefs and applying one-way scrub changes
+title: "Secrets"
 ---
-
-> **TL;DR** `openclaw secrets`
-
-
-sourceType: article
-certainty: question
-status: active
 
 # `openclaw secrets`
 

@@ -1,18 +1,21 @@
 ---
 title: "Podman"
 category: install
-tags:
-  - install
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/install/podman.md"
+  - "/usr/lib/node_modules/openclaw/docs/install/podman.md"
+tags: [install]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.034601+00:00
+---
+
+---
 summary: "Run OpenClaw in a rootless Podman container"
 read_when:
   - You want a containerized gateway with Podman instead of Docker
+title: "Podman"
 ---
-
-sourceType: document
-certainty: fact
-status: active
 
 Run the OpenClaw Gateway in a rootless Podman container, managed by your current non-root user.
 
@@ -70,8 +73,10 @@ You can also set `OPENCLAW_PODMAN_QUADLET=1`.
 Optional build/setup env vars:
 
 - `OPENCLAW_IMAGE` or `OPENCLAW_PODMAN_IMAGE` -- use an existing/pulled image instead of building `openclaw:local`
-- `OPENCLAW_DOCKER_APT_PACKAGES` -- install extra apt packages during image build
+- `OPENCLAW_IMAGE_APT_PACKAGES` -- install extra apt packages during image build (also accepts legacy `OPENCLAW_DOCKER_APT_PACKAGES`)
+- `OPENCLAW_IMAGE_PIP_PACKAGES` -- install extra Python packages during image build; pin versions and use only package indexes you trust
 - `OPENCLAW_EXTENSIONS` -- pre-install plugin dependencies at build time
+- `OPENCLAW_INSTALL_BROWSER` -- pre-install Chromium and Xvfb for browser automation (set to `1` to enable)
 
 Container start:
 
@@ -88,6 +93,12 @@ Onboarding:
 ```
 
 Then open `http://127.0.0.1:18789/` and use the token from `~/.openclaw/.env`.
+
+Model auth in Podman:
+
+- Use OpenClaw-managed auth during setup: Anthropic API keys for Anthropic, or OpenAI Codex browser OAuth/device-code auth for Codex-backed OpenAI.
+- The Podman launcher does not mount host CLI credential homes such as `~/.claude` or `~/.codex` into the setup or gateway container.
+- Existing host CLI logins are same-host convenience paths. For container installs, keep provider auth in the mounted `~/.openclaw` state that setup manages.
 
 Host CLI default:
 
@@ -106,11 +117,11 @@ openclaw channels login
 
 On macOS, Podman machine may make the browser appear non-local to the gateway.
 If the Control UI reports device-auth errors after launch, use the Tailscale guidance in
-[Podman + Tailscale](#podman--tailscale).
+[Podman and Tailscale](#podman--tailscale).
 
 <a id="podman--tailscale"></a>
 
-## Podman + Tailscale
+## Podman and Tailscale
 
 For HTTPS or remote browser access, follow the main Tailscale docs.
 

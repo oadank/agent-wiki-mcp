@@ -1,23 +1,22 @@
 ---
 title: "Kubernetes"
 category: install
-tags:
-  - install
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/install/kubernetes.md"
+  - "/usr/lib/node_modules/openclaw/docs/install/kubernetes.md"
+tags: [install]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.020588+00:00
+---
+
+---
 summary: "Deploy OpenClaw Gateway to a Kubernetes cluster with Kustomize"
 read_when:
   - You want to run OpenClaw on a Kubernetes cluster
+  - You want to test OpenClaw in a Kubernetes environment
+title: "Kubernetes"
 ---
-
-> **TL;DR** OpenClaw on Kubernetes
-
-
-sourceType: article
-certainty: question
-status: active
-
-# OpenClaw on Kubernetes
 
 A minimal starting point for running OpenClaw on Kubernetes — not a production-ready deployment. It covers the core resources and is meant to be adapted to your environment.
 

@@ -1,18 +1,22 @@
 ---
 title: "StepFun"
 category: providers
-tags:
-  - providers
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/providers/stepfun.md"
+  - "/usr/lib/node_modules/openclaw/docs/providers/stepfun.md"
+tags: [providers]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.155708+00:00
+---
+
+---
 summary: "Use StepFun models with OpenClaw"
 read_when:
   - You want StepFun models in OpenClaw
+  - You need StepFun setup guidance
+title: "StepFun"
 ---
-
-sourceType: article
-certainty: fact
-status: active
 
 OpenClaw includes a bundled StepFun provider plugin with two provider ids:
 
@@ -211,6 +215,7 @@ Choose your provider surface and follow the setup steps.
     - `step-3.5-flash-2603` is currently exposed only on `stepfun-plan`.
     - A single auth flow writes region-matched profiles for both `stepfun` and `stepfun-plan`, so both surfaces can be discovered together.
     - Use `openclaw models list` and `openclaw models set <provider/model>` to inspect or switch models.
+
   </Accordion>
 </AccordionGroup>
 

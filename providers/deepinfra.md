@@ -1,203 +1,104 @@
 ---
 title: "DeepInfra"
-category: "litellm-providers"
-tags:
-  - litellm
-  - litellm-providers
+category: providers
 sources:
-  - "/opt/openclaw/data/workspace/refs/litellm-docs/docs/providers/deepinfra.md"
-summary: "https://deepinfra.com/"
+  - "/usr/lib/node_modules/openclaw/docs/providers/deepinfra.md"
+tags: [providers]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.154241+00:00
 ---
 
-> **TL;DR** DeepInfra
+---
+summary: "Use DeepInfra's unified API to access the most popular open source and frontier models in OpenClaw"
+read_when:
+  - You want a single API key for the top open source LLMs
+  - You want to run models via DeepInfra's API in OpenClaw
+title: "DeepInfra"
+---
 
+DeepInfra provides a **unified API** that routes requests to the most popular open source and frontier models behind a single
+endpoint and API key. It is OpenAI-compatible, so most OpenAI SDKs work by switching the base URL.
 
-sourceType: article
-certainty: question
-status: active
-# DeepInfra
+## Getting an API key
 
+1. Go to [https://deepinfra.com/](https://deepinfra.com/)
+2. Sign in or create an account
+3. Navigate to Dashboard / Keys and generate a new API key or use the auto created one
 
-# DeepInfra
-https://deepinfra.com/
-
-#### 💡 Tip
-
-**We support ALL DeepInfra models, just set `model=deepinfra/<any-model-on-deepinfra>` as a prefix when sending litellm requests**
-
-
-
-## Table of Contents
-
-- [API Key](#api-key)
-- [Chat Models](#chat-models)
-- [Rerank Endpoint](#rerank-endpoint)
-
-## API Key
-```python
-# env variable
-os.environ['DEEPINFRA_API_KEY']
-```
-
-## Sample Usage
-```python
-from litellm import completion
-
-os.environ['DEEPINFRA_API_KEY'] = ""
-response = completion(
-    model="deepinfra/meta-llama/Llama-2-70b-chat-hf", 
-    messages=[{"role": "user", "content": "write code for saying hi from LiteLLM"}]
-)
-```
-
-## Sample Usage - Streaming
-```python
-from litellm import completion
-
-os.environ['DEEPINFRA_API_KEY'] = ""
-response = completion(
-    model="deepinfra/meta-llama/Llama-2-70b-chat-hf", 
-    messages=[{"role": "user", "content": "write code for saying hi from LiteLLM"}],
-    stream=True
-)
-
-for chunk in response:
-    print(chunk)
-```
-
-## Chat Models
-| Model Name       | Function Call                        |
-|------------------|--------------------------------------|
-| meta-llama/Meta-Llama-3-8B-Instruct  | `completion(model="deepinfra/meta-llama/Meta-Llama-3-8B-Instruct", messages)` | 
-| meta-llama/Meta-Llama-3-70B-Instruct  | `completion(model="deepinfra/meta-llama/Meta-Llama-3-70B-Instruct", messages)` | 
-| meta-llama/Llama-2-70b-chat-hf  | `completion(model="deepinfra/meta-llama/Llama-2-70b-chat-hf", messages)` | 
-| meta-llama/Llama-2-7b-chat-hf  | `completion(model="deepinfra/meta-llama/Llama-2-7b-chat-hf", messages)` | 
-| meta-llama/Llama-2-13b-chat-hf | `completion(model="deepinfra/meta-llama/Llama-2-13b-chat-hf", messages)` | 
-| codellama/CodeLlama-34b-Instruct-hf | `completion(model="deepinfra/codellama/CodeLlama-34b-Instruct-hf", messages)` |
-| mistralai/Mistral-7B-Instruct-v0.1 | `completion(model="deepinfra/mistralai/Mistral-7B-Instruct-v0.1", messages)` | 
-| jondurbin/airoboros-l2-70b-gpt4-1.4.1 | `completion(model="deepinfra/jondurbin/airoboros-l2-70b-gpt4-1.4.1", messages)` |
-
-## Rerank Endpoint
-
-LiteLLM provides a Cohere API compatible `/rerank` endpoint for DeepInfra rerank models.
-
-### Supported Rerank Models
-
-| Model Name | Description |
-|------------|-------------|
-| `deepinfra/Qwen/Qwen3-Reranker-0.6B` | Lightweight rerank model (0.6B parameters) |
-| `deepinfra/Qwen/Qwen3-Reranker-4B` | Medium rerank model (4B parameters) |
-| `deepinfra/Qwen/Qwen3-Reranker-8B` | Large rerank model (8B parameters) |
-
-### Usage - LiteLLM Python SDK
-
-
-```python
-from litellm import rerank
-
-os.environ["DEEPINFRA_API_KEY"] = "your-api-key"
-
-response = rerank(
-    model="deepinfra/Qwen/Qwen3-Reranker-0.6B",
-    query="What is the capital of France?",
-    documents=[
-        "Paris is the capital of France.",
-        "London is the capital of the United Kingdom.",
-        "Berlin is the capital of Germany.",
-        "Madrid is the capital of Spain.",
-        "Rome is the capital of Italy."
-    ]
-)
-print(response)
-```
-
-
-1. Add to config.yaml
-```yaml
-model_list:
-  - model_name: Qwen/Qwen3-Reranker-0.6B
-    litellm_params:
-      model: deepinfra/Qwen/Qwen3-Reranker-0.6B
-      api_key: os.environ/DEEPINFRA_API_KEY
-```
-
-2. Start proxy 
+## CLI setup
 
 ```bash
-litellm --config /path/to/config.yaml
-
-# RUNNING on http://0.0.0.0:4000/
+openclaw onboard --deepinfra-api-key <key>
 ```
 
-3. Test it! 
+Or set the environment variable:
 
-```bash 
-curl -L -X POST 'http://0.0.0.0:4000/rerank' \
--H 'Authorization: Bearer sk-1234' \
--H 'Content-Type: application/json' \
--d '{
-    "model": "Qwen/Qwen3-Reranker-0.6B",
-    "query": "What is the capital of France?",
-    "documents": [
-        "Paris is the capital of France.",
-        "London is the capital of the United Kingdom.",
-        "Berlin is the capital of Germany.",
-        "Madrid is the capital of Spain.",
-        "Rome is the capital of Italy."
-    ]
-}'
+```bash
+export DEEPINFRA_API_KEY="<your-deepinfra-api-key>" # pragma: allowlist secret
 ```
 
+## Config snippet
 
-### Supported Cohere Rerank API Params
-
-| Param              | Type        | Description                                     |
-| ------------------ | ----------- | ----------------------------------------------- |
-| `query`            | `str`       | The query to rerank the documents against       |
-| `documents`        | `list[str]` | The documents to rerank                         |
-
-
-### Provider-specific parameters
-Pass any deepinfra specific parameters as a keyword argument to the rerank function, e.g.
-
-```
-response = rerank(
-    model="deepinfra/Qwen/Qwen3-Reranker-0.6B",
-    query="What is the capital of France?",
-    documents=[
-        "Paris is the capital of France.",
-        "London is the capital of the United Kingdom.",
-        "Berlin is the capital of Germany.",
-        "Madrid is the capital of Spain.",
-        "Rome is the capital of Italy."
-    ],
-    my_custom_param="my_custom_value", # any other deepinfra specific parameters
-)
-```
-
-### Response Format
-
-```json
+```json5
 {
-  "id": "request-id",
-  "results": [
-    {
-      "index": 0,
-      "relevance_score": 0.9975274205207825
+  env: { DEEPINFRA_API_KEY: "<your-deepinfra-api-key>" }, // pragma: allowlist secret
+  agents: {
+    defaults: {
+      model: { primary: "deepinfra/deepseek-ai/DeepSeek-V4-Flash" },
     },
-    {
-      "index": 1,
-      "relevance_score": 0.011687257327139378
-    }
-  ],
-  "meta": {
-    "billed_units": {
-      "total_tokens": 427
-    },
-    "tokens": {
-      "input_tokens": 427,
-      "output_tokens": 0
-    }
-  }
+  },
 }
 ```
+
+## Supported OpenClaw surfaces
+
+The bundled plugin registers all DeepInfra surfaces that match current
+OpenClaw provider contracts. Chat, image generation, and video generation
+refresh their model catalogues live from `/v1/openai/models?sort_by=openclaw&filter=with_meta`
+when `DEEPINFRA_API_KEY` is configured; the other surfaces use the curated
+static defaults below.
+
+| Surface                  | Default model                                                                                         | OpenClaw config/tool                                     |
+| ------------------------ | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Chat / model provider    | first chat-tagged entry from live catalog (manifest fallback `deepseek-ai/DeepSeek-V4-Flash`)         | `agents.defaults.model`                                  |
+| Image generation/editing | first `image-gen`-tagged entry from live catalog (static fallback `black-forest-labs/FLUX-1-schnell`) | `image_generate`, `agents.defaults.imageGenerationModel` |
+| Media understanding      | `moonshotai/Kimi-K2.5` for images                                                                     | inbound image understanding                              |
+| Speech-to-text           | `openai/whisper-large-v3-turbo`                                                                       | inbound audio transcription                              |
+| Text-to-speech           | `hexgrad/Kokoro-82M`                                                                                  | `messages.tts.provider: "deepinfra"`                     |
+| Video generation         | first `video-gen`-tagged entry from live catalog (static fallback `Pixverse/Pixverse-T2V`)            | `video_generate`, `agents.defaults.videoGenerationModel` |
+| Memory embeddings        | `BAAI/bge-m3`                                                                                         | `agents.defaults.memorySearch.provider: "deepinfra"`     |
+
+DeepInfra also exposes reranking, classification, object-detection, and other
+native model types. OpenClaw does not currently have first-class provider
+contracts for those categories, so this plugin does not register them yet.
+
+## Available models
+
+OpenClaw dynamically discovers available DeepInfra models at startup. Use
+`/models deepinfra` to see the full list of models available.
+
+Any model available on [DeepInfra.com](https://deepinfra.com/) can be used with the `deepinfra/` prefix:
+
+```
+deepinfra/deepseek-ai/DeepSeek-V4-Flash
+deepinfra/deepseek-ai/DeepSeek-V3.2
+deepinfra/MiniMaxAI/MiniMax-M2.5
+deepinfra/moonshotai/Kimi-K2.5
+deepinfra/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B
+deepinfra/zai-org/GLM-5.1
+...and many more
+```
+
+## Notes
+
+- Model refs are `deepinfra/<provider>/<model>` (e.g., `deepinfra/Qwen/Qwen3-Max`).
+- Default model: `deepinfra/deepseek-ai/DeepSeek-V4-Flash`
+- Base URL: `https://api.deepinfra.com/v1/openai`
+- Native video generation uses `https://api.deepinfra.com/v1/inference/<model>`.
+
+## Related
+
+- [Model providers](/concepts/model-providers)
+- [All providers](/providers/index)

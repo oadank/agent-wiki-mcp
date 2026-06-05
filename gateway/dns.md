@@ -1,21 +1,22 @@
 ---
 title: "DNS"
-category: cli
-tags:
-  - cli
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/cli/dns.md"
+  - "/usr/lib/node_modules/openclaw/docs/cli/dns.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.069200+00:00
+---
+
+---
 summary: "CLI reference for `openclaw dns` (wide-area discovery helpers)"
 read_when:
   - You want wide-area discovery (DNS-SD) via Tailscale + CoreDNS
+  - You're setting up split DNS for a custom discovery domain (example: openclaw.internal)
+title: "DNS"
 ---
-
-> **TL;DR** `openclaw dns`
-
-
-sourceType: document
-certainty: fact
-status: active
 
 # `openclaw dns`
 

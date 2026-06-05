@@ -1,18 +1,21 @@
 ---
 title: "Nextcloud Talk"
 category: channels
-tags:
-  - channels
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/channels/nextcloud-talk.md"
+  - "/usr/lib/node_modules/openclaw/docs/channels/nextcloud-talk.md"
+tags: [channels]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:58.728309+00:00
+---
+
+---
 summary: "Nextcloud Talk support status, capabilities, and configuration"
 read_when:
   - Working on Nextcloud Talk channel features
+title: "Nextcloud Talk"
 ---
-
-sourceType: article
-certainty: fact
-status: active
 
 Status: bundled plugin (webhook bot). Direct messages, rooms, reactions, and markdown messages are supported.
 
@@ -22,13 +25,16 @@ Nextcloud Talk ships as a bundled plugin in current OpenClaw releases, so
 normal packaged builds do not need a separate install.
 
 If you are on an older build or a custom install that excludes Nextcloud Talk,
-install it manually:
+install the npm package directly:
 
 Install via CLI (npm registry):
 
 ```bash
 openclaw plugins install @openclaw/nextcloud-talk
 ```
+
+Use the bare package to follow the current official release tag. Pin an exact
+version only when you need a reproducible install.
 
 Local checkout (when running from a git repo):
 
@@ -46,7 +52,7 @@ Details: [Plugins](/tools/plugin)
 2. On your Nextcloud server, create a bot:
 
    ```bash
-   ./occ talk:bot:install "OpenClaw" "<shared-secret>" "<webhook-url>" --feature reaction
+   ./occ talk:bot:install "OpenClaw" "<shared-secret>" "<webhook-url>" --feature webhook --feature response --feature reaction
    ```
 
 3. Enable the bot in the target room settings.
@@ -163,6 +169,7 @@ Provider options:
 - `channels.nextcloud-talk.groupPolicy`: `allowlist | open | disabled`.
 - `channels.nextcloud-talk.groupAllowFrom`: group allowlist (user IDs).
 - `channels.nextcloud-talk.rooms`: per-room settings and allowlist.
+- Static sender access groups can be referenced from `allowFrom` and `groupAllowFrom` with `accessGroup:<name>`.
 - `channels.nextcloud-talk.historyLimit`: group history limit (0 disables).
 - `channels.nextcloud-talk.dmHistoryLimit`: DM history limit (0 disables).
 - `channels.nextcloud-talk.dms`: per-DM overrides (historyLimit).

@@ -1,18 +1,23 @@
 ---
 title: "Hostinger"
 category: install
-tags:
-  - install
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/install/hostinger.md"
+  - "/usr/lib/node_modules/openclaw/docs/install/hostinger.md"
+tags: [install]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.032492+00:00
+---
+
+---
 summary: "Host OpenClaw on Hostinger"
 read_when:
   - Setting up OpenClaw on Hostinger
+  - Looking for a managed VPS for OpenClaw
+  - Using Hostinger 1-Click OpenClaw
+title: "Hostinger"
 ---
-
-sourceType: article
-certainty: fact
-status: active
 
 Run a persistent OpenClaw Gateway on [Hostinger](https://www.hostinger.com/openclaw) via a **1-Click** managed deployment or a **VPS** install.
 

@@ -3,7 +3,7 @@
   "realPath": "/opt/.codex",
   "status": "active",
   "createdAt": "2026-05-10 00:36",
-  "lastSession": "2026-06-02 10:37",
+  "lastSession": "2026-06-05 14:40",
   "lastAI": "注册",
   "currentTask": "项目初始化",
   "taskStatus": "✅",
@@ -11,12 +11,9 @@
     {
       "type": "files_modified",
       "path": "/opt/.codex",
-      "count": 6,
+      "count": 3,
       "files": [
-        "./state_5.sqlite-wal",
         "./logs_2.sqlite-shm",
-        "./state_5.sqlite-shm",
-        "./sessions/2026/06/01/rollout-2026-06-01T20-37-24-019e8330-5aa0-78e1-b502-736e6339f03c.jsonl",
         "./logs_2.sqlite",
         "./logs_2.sqlite-wal"
       ]

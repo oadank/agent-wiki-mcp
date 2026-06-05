@@ -1,23 +1,23 @@
 ---
 title: "Network"
-category: docs
-tags:
-  - docs
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/network.md"
+  - "/usr/lib/node_modules/openclaw/docs/network.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:58.720855+00:00
+---
+
+---
 summary: "Network hub: gateway surfaces, pairing, discovery, and security"
 read_when:
   - You need the network architecture + security overview
+  - You are debugging local vs tailnet access or pairing
+  - You want the canonical list of networking docs
+title: "Network"
 ---
-
-> **TL;DR** Network hub
-
-
-sourceType: article
-certainty: fact
-status: active
-
-# Network hub
 
 This hub links the core docs for how OpenClaw connects, pairs, and secures
 devices across localhost, LAN, and tailnet.
@@ -59,7 +59,7 @@ Local trust:
 
 ## Discovery + transports
 
-- [Discovery & transports](/gateway/discovery)
+- [Discovery and transports](/gateway/discovery)
 - [Bonjour / mDNS](/gateway/bonjour)
 - [Remote access (SSH)](/gateway/remote)
 - [Tailscale](/gateway/tailscale)
@@ -80,5 +80,5 @@ Local trust:
 
 ## Related
 
-- [Gateway network model](/gateway/network-model)
+- [Gateway runbook](/gateway)
 - [Remote access](/gateway/remote)

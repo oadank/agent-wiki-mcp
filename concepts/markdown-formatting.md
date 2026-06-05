@@ -1,18 +1,23 @@
 ---
 title: "Markdown formatting"
 category: concepts
-tags:
-  - concepts
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/concepts/markdown-formatting.md"
+  - "/usr/lib/node_modules/openclaw/docs/concepts/markdown-formatting.md"
+tags: [concepts]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.096954+00:00
+---
+
+---
 summary: "Markdown formatting pipeline for outbound channels"
 read_when:
   - You are changing markdown formatting or chunking for outbound channels
+  - You are adding a new channel formatter or style mapping
+  - You are debugging formatting regressions across channels
+title: "Markdown formatting"
 ---
-
-sourceType: document
-certainty: fact
-status: active
 
 OpenClaw formats outbound Markdown by converting it into a shared intermediate
 representation (IR) before rendering channel-specific output. The IR keeps the
@@ -46,14 +51,14 @@ stay consistent across channels.
 Input Markdown:
 
 ```markdown
-Hello **world** — see [docs](https://docs.openclaw.ai).
+Hello **world** - see [docs](https://docs.openclaw.ai).
 ```
 
 IR (schematic):
 
 ```json
 {
-  "text": "Hello world — see docs.",
+  "text": "Hello world - see docs.",
   "styles": [{ "start": 6, "end": 11, "style": "bold" }],
   "links": [{ "start": 19, "end": 23, "href": "https://docs.openclaw.ai" }]
 }
@@ -72,7 +77,7 @@ Markdown tables are not consistently supported across chat clients. Use
 `markdown.tables` to control conversion per channel (and per account).
 
 - `code`: render tables as code blocks (default for most channels).
-- `bullets`: convert each row into bullet points (default for Signal + WhatsApp).
+- `bullets`: convert each row into bullet points (default for Matrix, Signal, and WhatsApp).
 - `off`: disable table parsing and conversion; raw table text passes through.
 
 Config keys:
@@ -136,5 +141,11 @@ SPOILER style ranges. Other channels treat them as plain text.
 
 ## Related
 
-- [Streaming and chunking](/concepts/streaming)
-- [System prompt](/concepts/system-prompt)
+<CardGroup cols={2}>
+  <Card title="Streaming and chunking" href="/concepts/streaming" icon="bars-staggered">
+    Outbound streaming behavior, chunk boundaries, and channel-specific delivery.
+  </Card>
+  <Card title="System prompt" href="/concepts/system-prompt" icon="message-lines">
+    What the model sees before the conversation, including injected workspace files.
+  </Card>
+</CardGroup>

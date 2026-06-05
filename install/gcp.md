@@ -1,25 +1,23 @@
 ---
 title: "GCP"
 category: install
-tags:
-  - install
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/install/gcp.md"
+  - "/usr/lib/node_modules/openclaw/docs/install/gcp.md"
+tags: [install]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.023516+00:00
+---
+
+---
 summary: "Run OpenClaw Gateway 24/7 on a GCP Compute Engine VM (Docker) with durable state"
 read_when:
   - You want OpenClaw running 24/7 on GCP
+  - You want a production-grade, always-on Gateway on your own VM
+  - You want full control over persistence, binaries, and restart behavior
+title: "GCP"
 ---
-
-> **TL;DR** OpenClaw on GCP Compute Engine (Docker, Production VPS Guide)
-
-
-sourceType: article
-certainty: question
-status: active
-
-# OpenClaw on GCP Compute Engine (Docker, Production VPS Guide)
-
-## Goal
 
 Run a persistent OpenClaw Gateway on a GCP Compute Engine VM using Docker, with durable state, baked-in binaries, and safe restart behavior.
 
@@ -234,10 +232,11 @@ For the generic Docker flow, see [Docker](/install/docker).
     XDG_CONFIG_HOME=/home/node/.openclaw
     ```
 
-    Leave `OPENCLAW_GATEWAY_TOKEN` blank unless you explicitly want to
-    manage it through `.env`; OpenClaw writes a random gateway token to
-    config on first start. Generate a keyring password and paste it into
-    `GOG_KEYRING_PASSWORD`:
+    Set `OPENCLAW_GATEWAY_TOKEN` when you want to manage the stable gateway
+    token through `.env`; otherwise configure `gateway.auth.token` before
+    relying on clients across restarts. If neither source exists, OpenClaw uses
+    a runtime-only token for that startup. Generate a keyring password and paste
+    it into `GOG_KEYRING_PASSWORD`:
 
     ```bash
     openssl rand -hex 32

@@ -1,18 +1,23 @@
 ---
 title: "Chutes"
 category: providers
-tags:
-  - providers
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/providers/chutes.md"
-summary: "Chutes setup (OAuth or API key, model discovery, aliases)"
-read_when:
-  - You want to use Chutes with OpenClaw
+  - "/usr/lib/node_modules/openclaw/docs/providers/chutes.md"
+tags: [providers]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.148582+00:00
 ---
 
-sourceType: article
-certainty: fact
-status: active
+---
+summary: "Chutes setup (OAuth or API key, model discovery, aliases)"
+title: "Chutes"
+read_when:
+  - You want to use Chutes with OpenClaw
+  - You need the OAuth or API key setup path
+  - You want the default model, aliases, or discovery behavior
+---
 
 [Chutes](https://chutes.ai) exposes open-source model catalogs through an
 OpenAI-compatible API. OpenClaw supports both browser OAuth and direct API-key
@@ -138,6 +143,7 @@ The bundled fallback catalog includes current Chutes refs:
     - API-key and OAuth discovery both use the same `chutes` provider id.
     - Chutes models are registered as `chutes/<model-id>`.
     - If discovery fails at startup, the bundled static catalog is used automatically.
+
   </Accordion>
 </AccordionGroup>
 

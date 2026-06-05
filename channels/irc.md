@@ -1,18 +1,22 @@
 ---
 title: "IRC"
 category: channels
-tags:
-  - channels
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/channels/irc.md"
-summary: "IRC plugin setup, access controls, and troubleshooting"
-read_when:
-  - You want to connect OpenClaw to IRC channels or DMs
+  - "/usr/lib/node_modules/openclaw/docs/channels/irc.md"
+tags: [channels]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:58.757887+00:00
 ---
 
-sourceType: article
-certainty: fact
-status: active
+---
+summary: "IRC plugin setup, access controls, and troubleshooting"
+title: IRC
+read_when:
+  - You want to connect OpenClaw to IRC channels or DMs
+  - You are configuring IRC allowlists, group policy, or mention gating
+---
 
 Use IRC when you want OpenClaw in classic channels (`#room`) and direct messages.
 IRC ships as a bundled plugin, but it is configured in the main config under `channels.irc`.
@@ -47,6 +51,7 @@ openclaw gateway run
 
 ## Security defaults
 
+- IRC uses raw TCP/TLS sockets outside OpenClaw operator-managed forward proxy routing. In deployments that require all egress through that forward proxy, set `channels.irc.enabled=false` unless direct IRC egress is explicitly approved.
 - `channels.irc.dmPolicy` defaults to `"pairing"`.
 - `channels.irc.groupPolicy` defaults to `"allowlist"`.
 - With `groupPolicy="allowlist"`, set `channels.irc.groups` to define allowed channels.
@@ -54,7 +59,7 @@ openclaw gateway run
 
 ## Access control
 
-There are two separate “gates” for IRC channels:
+There are two separate "gates" for IRC channels:
 
 1. **Channel access** (`groupPolicy` + `groups`): whether the bot accepts messages from a channel at all.
 2. **Sender access** (`groupAllowFrom` / per-channel `groups["#channel"].allowFrom`): who is allowed to trigger the bot inside that channel.
@@ -75,7 +80,7 @@ If you see logs like:
 
 - `irc: drop group sender alice!ident@host (policy=allowlist)`
 
-…it means the sender wasn’t allowed for **group/channel** messages. Fix it by either:
+...it means the sender wasn't allowed for **group/channel** messages. Fix it by either:
 
 - setting `channels.irc.groupAllowFrom` (global for all channels), or
 - setting per-channel sender allowlists: `channels.irc.groups["#channel"].allowFrom`

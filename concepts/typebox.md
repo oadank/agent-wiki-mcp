@@ -1,25 +1,21 @@
 ---
 title: "TypeBox"
 category: concepts
-tags:
-  - concepts
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/concepts/typebox.md"
+  - "/usr/lib/node_modules/openclaw/docs/concepts/typebox.md"
+tags: [concepts]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.105267+00:00
+---
+
+---
 summary: "TypeBox schemas as the single source of truth for the gateway protocol"
 read_when:
   - Updating protocol schemas or codegen
+title: "TypeBox"
 ---
-
-> **TL;DR** TypeBox as protocol source of truth
-
-
-sourceType: document
-certainty: question
-status: active
-
-# TypeBox as protocol source of truth
-
-Last updated: 2026-01-10
 
 TypeBox is a TypeScript-first schema library. We use it to define the **Gateway
 WebSocket protocol** (handshake, request/response, server events). Those schemas
@@ -69,8 +65,8 @@ Authoritative advertised **discovery** inventory lives in
 
 ## Where the schemas live
 
-- Source: `src/gateway/protocol/schema.ts`
-- Runtime validators (AJV): `src/gateway/protocol/index.ts`
+- Source: `packages/gateway-protocol/src/schema.ts`
+- Runtime validators (AJV): `packages/gateway-protocol/src/index.ts`
 - Advertised feature/discovery registry: `src/gateway/server-methods-list.ts`
 - Server handshake + method dispatch: `src/gateway/server.impl.ts`
 - Node client: `src/gateway/client.ts`
@@ -80,7 +76,7 @@ Authoritative advertised **discovery** inventory lives in
 ## Current pipeline
 
 - `pnpm protocol:gen`
-  - writes JSON Schema (draft‑07) to `dist/protocol.schema.json`
+  - writes JSON Schema (draft-07) to `dist/protocol.schema.json`
 - `pnpm protocol:gen:swift`
   - generates Swift gateway models
 - `pnpm protocol:check`
@@ -111,7 +107,7 @@ Connect (first message):
   "method": "connect",
   "params": {
     "minProtocol": 3,
-    "maxProtocol": 3,
+    "maxProtocol": 4,
     "client": {
       "id": "openclaw-macos",
       "displayName": "macos",
@@ -133,7 +129,7 @@ Hello-ok response:
   "ok": true,
   "payload": {
     "type": "hello-ok",
-    "protocol": 3,
+    "protocol": 4,
     "server": { "version": "dev", "connId": "ws-1" },
     "features": { "methods": ["health"], "events": ["tick"] },
     "snapshot": {
@@ -179,8 +175,8 @@ ws.on("open", () => {
       id: "c1",
       method: "connect",
       params: {
-        minProtocol: 3,
-        maxProtocol: 3,
+        minProtocol: 4,
+        maxProtocol: 4,
         client: {
           id: "cli",
           displayName: "example",
@@ -211,7 +207,7 @@ Example: add a new `system.echo` request that returns `{ ok: true, text }`.
 
 1. **Schema (source of truth)**
 
-Add to `src/gateway/protocol/schema.ts`:
+Add to `packages/gateway-protocol/src/schema.ts`:
 
 ```ts
 export const SystemEchoParamsSchema = Type.Object(
@@ -239,7 +235,7 @@ export type SystemEchoResult = Static<typeof SystemEchoResultSchema>;
 
 2. **Validation**
 
-In `src/gateway/protocol/index.ts`, export an AJV validator:
+In `packages/gateway-protocol/src/index.ts`, export an AJV validator:
 
 ```ts
 export const validateSystemEchoParams = ajv.compile<SystemEchoParams>(SystemEchoParamsSchema);
@@ -282,14 +278,15 @@ The Swift generator emits:
 
 - `GatewayFrame` enum with `req`, `res`, `event`, and `unknown` cases
 - Strongly typed payload structs/enums
-- `ErrorCode` values and `GATEWAY_PROTOCOL_VERSION`
+- `ErrorCode` values, `GATEWAY_PROTOCOL_VERSION`, and `GATEWAY_MIN_PROTOCOL_VERSION`
 
 Unknown frame types are preserved as raw payloads for forward compatibility.
 
 ## Versioning + compatibility
 
-- `PROTOCOL_VERSION` lives in `src/gateway/protocol/schema.ts`.
-- Clients send `minProtocol` + `maxProtocol`; the server rejects mismatches.
+- `PROTOCOL_VERSION` lives in `packages/gateway-protocol/src/version.ts`.
+- Clients send `minProtocol` + `maxProtocol`; the server rejects ranges that
+  do not include its current protocol.
 - The Swift models keep unknown frame types to avoid breaking older clients.
 
 ## Schema patterns and conventions

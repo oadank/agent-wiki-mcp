@@ -1,20 +1,29 @@
 ---
 title: "DigitalOcean"
 category: install
-tags:
-  - install
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/install/digitalocean.md"
+  - "/usr/lib/node_modules/openclaw/docs/install/digitalocean.md"
+tags: [install]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.033754+00:00
+---
+
+---
 summary: "Host OpenClaw on a DigitalOcean Droplet"
 read_when:
   - Setting up OpenClaw on DigitalOcean
+  - Looking for a simple paid VPS for OpenClaw
+title: "DigitalOcean"
 ---
 
-sourceType: article
-certainty: fact
-status: active
+Run a persistent OpenClaw Gateway on a DigitalOcean Droplet (~$6/month for the 1 GB Basic plan).
 
-Run a persistent OpenClaw Gateway on a DigitalOcean Droplet.
+DigitalOcean is the simplest paid VPS path. If you prefer cheaper or free options:
+
+- [Hetzner](/install/hetzner) — €3.79/mo, more cores/RAM per dollar.
+- [Oracle Cloud](/install/oracle) — Always Free ARM (up to 4 OCPU, 24 GB RAM), but signup can be finicky and ARM-only.
 
 ## Prerequisites
 
@@ -53,8 +62,17 @@ Run a persistent OpenClaw Gateway on a DigitalOcean Droplet.
 
     # Install OpenClaw
     curl -fsSL https://openclaw.ai/install.sh | bash
+
+    # Create the non-root user that will own OpenClaw state and services.
+    adduser openclaw
+    usermod -aG sudo openclaw
+    loginctl enable-linger openclaw
+
+    su - openclaw
     openclaw --version
     ```
+
+    Use the root shell only for system bootstrap. Run OpenClaw commands as the non-root `openclaw` user so state lives under `/home/openclaw/.openclaw/` and the Gateway installs as that user's systemd service.
 
   </Step>
 
@@ -100,13 +118,15 @@ Run a persistent OpenClaw Gateway on a DigitalOcean Droplet.
     **Option B: Tailscale Serve**
 
     ```bash
-    curl -fsSL https://tailscale.com/install.sh | sh
-    tailscale up
+    curl -fsSL https://tailscale.com/install.sh | sudo sh
+    sudo tailscale up
     openclaw config set gateway.tailscale.mode serve
     openclaw gateway restart
     ```
 
     Then open `https://<magicdns>/` from any device on your tailnet.
+
+    Tailscale Serve authenticates Control UI and WebSocket traffic via tailnet identity headers, which assumes the gateway host itself is trusted. HTTP API endpoints follow the gateway's normal auth mode (token/password) regardless. To require explicit shared-secret credentials over Serve, set `gateway.auth.allowTailscale: false` and use `gateway.auth.mode: "token"` or `"password"`.
 
     **Option C: Tailnet bind (no Serve)**
 
@@ -119,6 +139,30 @@ Run a persistent OpenClaw Gateway on a DigitalOcean Droplet.
 
   </Step>
 </Steps>
+
+## Persistence and backups
+
+OpenClaw state lives under:
+
+- `~/.openclaw/` — `openclaw.json`, per-agent `auth-profiles.json`, channel/provider state, and session data.
+- `~/.openclaw/workspace/` — the agent workspace (SOUL.md, memory, artifacts).
+
+These survive Droplet reboots. To take a portable snapshot:
+
+```bash
+openclaw backup create
+```
+
+DigitalOcean snapshots back the whole Droplet up; `openclaw backup create` is portable across hosts.
+
+## 1 GB RAM tips
+
+The $6 Droplet only has 1 GB RAM. To keep things smooth:
+
+- Make sure the swap step above is in `/etc/fstab` so it survives reboots.
+- Prefer API-based models (Claude, GPT) over local ones — local LLM inference does not fit in 1 GB.
+- Set `agents.defaults.model.primary` to a smaller model if you hit OOMs on large prompts.
+- Monitor with `free -h` and `htop`.
 
 ## Troubleshooting
 

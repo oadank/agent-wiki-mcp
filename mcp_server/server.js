@@ -153,7 +153,7 @@ server.tool(
   },
   async ({ query, limit }) => {
     try {
-      const output = await runScript('unified-search.js', [query, String(limit)], 30000);
+      const output = await runScript('unified-search.cjs', [query, String(limit)], 30000);
       return { content: [{ type: 'text', text: output }] };
     } catch (err) {
       return { content: [{ type: 'text', text: `搜索失败: ${err.message}` }], isError: true };
@@ -171,7 +171,7 @@ server.tool(
   },
   async ({ query, limit }) => {
     try {
-      const output = await runScript('unified-search.js', [query, String(limit), '--mode', 'deep'], 180000);
+      const output = await runScript('unified-search.cjs', [query, String(limit), '--mode', 'deep'], 180000);
       return { content: [{ type: 'text', text: output }] };
     } catch (err) {
       return { content: [{ type: 'text', text: `深度搜索失败: ${err.message}` }], isError: true };
@@ -430,7 +430,7 @@ server.tool(
           let result = `# 项目进度: ${project}\n\n${progress}`;
           // 同时搜索项目相关内容
           const projectQuery = `projects/${project} ${query}`;
-          const related = await runScript('unified-search.js', [projectQuery, String(limit)], 30000);
+          const related = await runScript('unified-search.cjs', [projectQuery, String(limit)], 30000);
           result += `\n\n---\n\n## 相关内容\n\n${related}`;
           return { content: [{ type: 'text', text: result }] };
         }
@@ -439,7 +439,7 @@ server.tool(
 
       // 默认搜索 shared + projects 目录
       const sharedQuery = `shared ${query}`;
-      const output = await runScript('unified-search.js', [sharedQuery, String(limit)], 30000);
+      const output = await runScript('unified-search.cjs', [sharedQuery, String(limit)], 30000);
       return { content: [{ type: 'text', text: output }] };
     } catch (err) {
       return { content: [{ type: 'text', text: `查询记忆失败: ${err.message}` }], isError: true };
@@ -1003,7 +1003,7 @@ server.resource(
     }
     
     try {
-      const output = await runScript('unified-search.js', [query, String(limit)], 30000);
+      const output = await runScript('unified-search.cjs', [query, String(limit)], 30000);
       return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: output }] };
     } catch (err) {
       return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: `# 搜索失败\n\n${err.message}` }] };
@@ -1025,7 +1025,7 @@ server.resource(
     }
     
     try {
-      const output = await runScript('unified-search.js', [query, String(limit), '--mode', 'deep'], 180000);
+      const output = await runScript('unified-search.cjs', [query, String(limit), '--mode', 'deep'], 180000);
       return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: output }] };
     } catch (err) {
       return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: `# 深度搜索失败\n\n${err.message}` }] };

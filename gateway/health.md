@@ -1,32 +1,34 @@
 ---
 title: "Health"
-category: cli
-tags:
-  - cli
+category: gateway
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/cli/health.md"
-summary: "CLI reference for `openclaw health` (gateway health snapshot via RPC)"
-read_when:
-  - You want to quickly check the running Gateway’s health
+  - "/usr/lib/node_modules/openclaw/docs/cli/health.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.046151+00:00
 ---
 
-> **TL;DR** `openclaw health`
-
-
-sourceType: document
-certainty: fact
-status: active
+---
+summary: "CLI reference for `openclaw health` (gateway health snapshot via RPC)"
+read_when:
+  - You want to quickly check the running Gateway's health
+title: "Health"
+---
 
 # `openclaw health`
 
 Fetch health from the running Gateway.
 
-Options:
+## Options
 
-- `--json`: machine-readable output
-- `--timeout <ms>`: connection timeout in milliseconds (default `10000`)
-- `--verbose`: verbose logging
-- `--debug`: alias for `--verbose`
+| Flag             | Default | Description                                                        |
+| ---------------- | ------- | ------------------------------------------------------------------ |
+| `--json`         | `false` | Print machine-readable JSON instead of text.                       |
+| `--timeout <ms>` | `10000` | Connection timeout in milliseconds.                                |
+| `--verbose`      | `false` | Verbose logging. Forces a live probe and expands per-agent output. |
+| `--debug`        | `false` | Alias for `--verbose`.                                             |
 
 Examples:
 

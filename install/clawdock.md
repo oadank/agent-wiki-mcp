@@ -1,18 +1,22 @@
 ---
 title: "ClawDock"
 category: install
-tags:
-  - install
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/install/clawdock.md"
+  - "/usr/lib/node_modules/openclaw/docs/install/clawdock.md"
+tags: [install]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.027967+00:00
+---
+
+---
 summary: "ClawDock shell helpers for Docker-based OpenClaw installs"
 read_when:
   - You run OpenClaw with Docker often and want shorter day-to-day commands
+  - You want a helper layer for dashboard, logs, token setup, and pairing flows
+title: "ClawDock"
 ---
-
-sourceType: document
-certainty: fact
-status: active
 
 ClawDock is a small shell-helper layer for Docker-based OpenClaw installs.
 
@@ -105,8 +109,16 @@ ClawDock works with the same Docker config split described in [Docker](/install/
 
 Use `clawdock-show-config` when you want to inspect the `.env` files and `openclaw.json` quickly. It redacts `.env` values in its printed output.
 
-## Related pages
+## Related
 
-- [Docker](/install/docker)
-- [Docker VM Runtime](/install/docker-vm-runtime)
-- [Updating](/install/updating)
+<CardGroup cols={2}>
+  <Card title="Docker" href="/install/docker" icon="docker">
+    Canonical Docker install for OpenClaw.
+  </Card>
+  <Card title="Docker VM runtime" href="/install/docker-vm-runtime" icon="cube">
+    Docker-managed VM runtime for hardened isolation.
+  </Card>
+  <Card title="Updating" href="/install/updating" icon="arrow-up-right-from-square">
+    Updating the OpenClaw package and managed services.
+  </Card>
+</CardGroup>

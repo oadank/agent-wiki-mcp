@@ -1,29 +1,30 @@
 ---
 title: "Hetzner"
 category: install
-tags:
-  - install
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/install/hetzner.md"
+  - "/usr/lib/node_modules/openclaw/docs/install/hetzner.md"
+tags: [install]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.028843+00:00
+---
+
+---
 summary: "Run OpenClaw Gateway 24/7 on a cheap Hetzner VPS (Docker) with durable state and baked-in binaries"
 read_when:
   - You want OpenClaw running 24/7 on a cloud VPS (not your laptop)
+  - You want a production-grade, always-on Gateway on your own VPS
+  - You want full control over persistence, binaries, and restart behavior
+  - You are running OpenClaw in Docker on Hetzner or a similar provider
+title: "Hetzner"
 ---
-
-> **TL;DR** OpenClaw on Hetzner (Docker, Production VPS Guide)
-
-
-sourceType: article
-certainty: question
-status: active
-
-# OpenClaw on Hetzner (Docker, Production VPS Guide)
 
 ## Goal
 
 Run a persistent OpenClaw Gateway on a Hetzner VPS using Docker, with durable state, baked-in binaries, and safe restart behavior.
 
-If you want “OpenClaw 24/7 for ~$5”, this is the simplest reliable setup.
+If you want "OpenClaw 24/7 for ~$5", this is the simplest reliable setup.
 Hetzner pricing changes; pick the smallest Debian/Ubuntu VPS and scale up if you hit OOMs.
 
 Security model reminder:
@@ -130,10 +131,10 @@ For the generic Docker flow, see [Docker](/install/docker).
     All long-lived state must live on the host.
 
     ```bash
-    mkdir -p /opt/.openclaw/workspace
+    mkdir -p /root/.openclaw/workspace
 
     # Set ownership to the container user (uid 1000):
-    chown -R 1000:1000 /opt/.openclaw
+    chown -R 1000:1000 /root/.openclaw
     ```
 
   </Step>
@@ -147,17 +148,18 @@ For the generic Docker flow, see [Docker](/install/docker).
     OPENCLAW_GATEWAY_BIND=lan
     OPENCLAW_GATEWAY_PORT=18789
 
-    OPENCLAW_CONFIG_DIR=/opt/.openclaw
-    OPENCLAW_WORKSPACE_DIR=/opt/.openclaw/workspace
+    OPENCLAW_CONFIG_DIR=/root/.openclaw
+    OPENCLAW_WORKSPACE_DIR=/root/.openclaw/workspace
 
     GOG_KEYRING_PASSWORD=
     XDG_CONFIG_HOME=/home/node/.openclaw
     ```
 
-    Leave `OPENCLAW_GATEWAY_TOKEN` blank unless you explicitly want to
-    manage it through `.env`; OpenClaw writes a random gateway token to
-    config on first start. Generate a keyring password and paste it into
-    `GOG_KEYRING_PASSWORD`:
+    Set `OPENCLAW_GATEWAY_TOKEN` when you want to manage the stable gateway
+    token through `.env`; otherwise configure `gateway.auth.token` before
+    relying on clients across restarts. If neither source exists, OpenClaw uses
+    a runtime-only token for that startup. Generate a keyring password and paste
+    it into `GOG_KEYRING_PASSWORD`:
 
     ```bash
     openssl rand -hex 32
@@ -227,7 +229,22 @@ For the generic Docker flow, see [Docker](/install/docker).
   </Step>
 
   <Step title="Hetzner-specific access">
-    After the shared build and launch steps, tunnel from your laptop:
+    After the shared build and launch steps, complete the following setup to open the tunnel:
+
+    **Prerequisite:** Ensure your VPS sshd config allows TCP forwarding. If you
+    have hardened your SSH config, check `/etc/ssh/sshd_config` and set:
+
+    ```
+    AllowTcpForwarding local
+    ```
+
+    `local` allows `ssh -L` local forwards from your laptop while blocking
+    remote forwards from the server. Setting it to `no` will fail the tunnel
+    with:
+    `channel 3: open failed: administratively prohibited: open failed`
+
+    After confirming TCP forwarding is enabled, restart the SSH service
+    (`systemctl restart ssh`) and run the tunnel from your laptop:
 
     ```bash
     ssh -N -L 18789:127.0.0.1:18789 root@YOUR_VPS_IP
@@ -262,7 +279,9 @@ For teams preferring infrastructure-as-code workflows, a community-maintained Te
 
 This approach complements the Docker setup above with reproducible deployments, version-controlled infrastructure, and automated disaster recovery.
 
-> **Note:** Community-maintained. For issues or contributions, see the repository links above.
+<Note>
+Community-maintained. For issues or contributions, see the repository links above.
+</Note>
 
 ## Next steps
 

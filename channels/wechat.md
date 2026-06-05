@@ -1,17 +1,23 @@
 ---
 title: "WeChat"
 category: channels
-tags:
-  - channels
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/channels/wechat.md"
+  - "/usr/lib/node_modules/openclaw/docs/channels/wechat.md"
+tags: [channels]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:58.737982+00:00
+---
+
+---
 summary: "WeChat channel setup through the external openclaw-weixin plugin"
 read_when:
   - You want to connect OpenClaw to WeChat or Weixin
+  - You are installing or troubleshooting the openclaw-weixin channel plugin
+  - You need to understand how external channel plugins run beside the Gateway
+title: "WeChat"
 ---
-
-sourceType: article
-certainty: fact
 
 OpenClaw connects to WeChat through Tencent's external
 `@tencent-weixin/openclaw-weixin` channel plugin.
@@ -154,6 +160,11 @@ npm view @tencent-weixin/openclaw-weixin version
 openclaw plugins install "@tencent-weixin/openclaw-weixin" --force
 openclaw gateway restart
 ```
+
+If startup reports that the installed plugin package `requires compiled runtime
+output for TypeScript entry`, the npm package was published without the compiled
+JavaScript runtime files OpenClaw needs. Update/reinstall after the plugin
+publisher ships a fixed package, or temporarily disable/uninstall the plugin.
 
 Temporary disable:
 

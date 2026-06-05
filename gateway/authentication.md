@@ -1,167 +1,279 @@
 ---
 title: "Authentication"
-source: "https://code.claude.com/docs/en/authentication"
-category: "claude-code-docs"
+category: gateway
+sources:
+  - "/usr/lib/node_modules/openclaw/docs/gateway/authentication.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:58.791208+00:00
 ---
 
-> **TL;DR** Authentication
+---
+summary: "Model authentication: OAuth, API keys, Claude CLI reuse, and Anthropic setup-token"
+read_when:
+  - Debugging model auth or OAuth expiry
+  - Documenting authentication or credential storage
+title: "Authentication"
+---
 
+<Note>
+This page is the **model provider** authentication reference (API keys, OAuth, Claude CLI reuse, and Anthropic setup-token). For **gateway connection** authentication (token, password, trusted-proxy), see [Configuration](/gateway/configuration) and [Trusted Proxy Auth](/gateway/trusted-proxy-auth).
+</Note>
 
-sourceType: article
-certainty: question
-status: active
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
+OpenClaw supports OAuth and API keys for model providers. For always-on gateway
+hosts, API keys are usually the most predictable option. Subscription/OAuth
+flows are also supported when they match your provider account model.
 
-# Authentication
+See [/concepts/oauth](/concepts/oauth) for the full OAuth flow and storage
+layout.
+For SecretRef-based auth (`env`/`file`/`exec` providers), see [Secrets Management](/gateway/secrets).
+For credential eligibility/reason-code rules used by `models status --probe`, see
+[Auth Credential Semantics](/auth-credential-semantics).
 
-> Log in to Claude Code and configure authentication for individuals, teams, and organizations.
+## Recommended setup (API key, any provider)
 
-Claude Code supports multiple authentication methods depending on your setup. Individual users can log in with a Claude.ai account, while teams can use Claude for Teams or Enterprise, the Claude Console, or a cloud provider like Amazon Bedrock, Google Vertex AI, or Microsoft Foundry.
+If you're running a long-lived gateway, start with an API key for your chosen
+provider.
+For Anthropic specifically, API key auth is still the most predictable server
+setup, but OpenClaw also supports reusing a local Claude CLI login.
 
-## Log in to Claude Code
+1. Create an API key in your provider console.
+2. Put it on the **gateway host** (the machine running `openclaw gateway`).
 
-After [installing Claude Code](/en/setup#install-claude-code), run `claude` in your terminal. On first launch, Claude Code opens a browser window for you to log in.
-
-If the browser doesn't open automatically, press `c` to copy the login URL to your clipboard, then paste it into your browser.
-
-If your browser shows a login code instead of redirecting back after you sign in, paste it into the terminal at the `Paste code here if prompted` prompt. This happens when the browser can't reach Claude Code's local callback server, which is common in WSL2, SSH sessions, and containers.
-
-You can authenticate with any of these account types:
-
-* **Claude Pro or Max subscription**: log in with your Claude.ai account. Subscribe at [claude.com/pricing](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=authentication_pro_max).
-* **Claude for Teams or Enterprise**: log in with the Claude.ai account your team admin invited you to.
-* **Claude Console**: log in with your Console credentials. Your admin must have [invited you](#claude-console-authentication) first.
-* **Cloud providers**: if your organization uses [Amazon Bedrock](/en/amazon-bedrock), [Google Vertex AI](/en/google-vertex-ai), or [Microsoft Foundry](/en/microsoft-foundry), set the required environment variables before running `claude`. No browser login is needed.
-
-To log out and re-authenticate, type `/logout` at the Claude Code prompt.
-
-If you're having trouble logging in, see [authentication troubleshooting](/en/troubleshoot-install#login-and-authentication).
-
-## Set up team authentication
-
-For teams and organizations, you can configure Claude Code access in one of these ways:
-
-* [Claude for Teams or Enterprise](#claude-for-teams-or-enterprise), recommended for most teams
-* [Claude Console](#claude-console-authentication)
-* [Amazon Bedrock](/en/amazon-bedrock)
-* [Google Vertex AI](/en/google-vertex-ai)
-* [Microsoft Foundry](/en/microsoft-foundry)
-
-### Claude for Teams or Enterprise
-
-[Claude for Teams](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=authentication_teams#team-&-enterprise) and [Claude for Enterprise](https://anthropic.com/contact-sales?utm_source=claude_code\&utm_medium=docs\&utm_content=authentication_enterprise) provide the best experience for organizations using Claude Code. Team members get access to both Claude Code and Claude on the web with centralized billing and team management.
-
-* **Claude for Teams**: self-service plan with collaboration features, admin tools, and billing management. Best for smaller teams.
-* **Claude for Enterprise**: adds SSO, domain capture, role-based permissions, compliance API, and managed policy settings for organization-wide Claude Code configurations. Best for larger organizations with security and compliance requirements.
-
-<Steps>
-  <Step title="Subscribe">
-    Subscribe to [Claude for Teams](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=authentication_teams_step#team-&-enterprise) or contact sales for [Claude for Enterprise](https://anthropic.com/contact-sales?utm_source=claude_code\&utm_medium=docs\&utm_content=authentication_enterprise_step).
-  </Step>
-
-  <Step title="Invite team members">
-    Invite team members from the admin dashboard.
-  </Step>
-
-  <Step title="Install and log in">
-    Team members install Claude Code and log in with their Claude.ai accounts.
-  </Step>
-</Steps>
-
-### Claude Console authentication
-
-For organizations that prefer API-based billing, you can set up access through the Claude Console.
-
-<Steps>
-  <Step title="Create or use a Console account">
-    Use your existing Claude Console account or create a new one.
-  </Step>
-
-  <Step title="Add users">
-    You can add users through either method:
-
-    * Bulk invite users from within the Console: Settings -> Members -> Invite
-    * [Set up SSO](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
-  </Step>
-
-  <Step title="Assign roles">
-    When inviting users, assign one of:
-
-    * **Claude Code** role: users can only create Claude Code API keys
-    * **Developer** role: users can create any kind of API key
-  </Step>
-
-  <Step title="Users complete setup">
-    Each invited user needs to:
-
-    * Accept the Console invite
-    * [Check system requirements](/en/setup#system-requirements)
-    * [Install Claude Code](/en/setup#install-claude-code)
-    * Log in with Console account credentials
-  </Step>
-</Steps>
-
-### Cloud provider authentication
-
-For teams using Amazon Bedrock, Google Vertex AI, or Microsoft Foundry:
-
-<Steps>
-  <Step title="Follow provider setup">
-    Follow the [Bedrock docs](/en/amazon-bedrock), [Vertex docs](/en/google-vertex-ai), or [Microsoft Foundry docs](/en/microsoft-foundry).
-  </Step>
-
-  <Step title="Distribute configuration">
-    Distribute the environment variables and instructions for generating cloud credentials to your users. Read more about how to [manage configuration here](/en/settings).
-  </Step>
-
-  <Step title="Install Claude Code">
-    Users can [install Claude Code](/en/setup#install-claude-code).
-  </Step>
-</Steps>
-
-## Credential management
-
-Claude Code securely manages your authentication credentials:
-
-* **Storage location**: on macOS, credentials are stored in the encrypted macOS Keychain. On Linux and Windows, credentials are stored in `~/.claude/.credentials.json`, or under `$CLAUDE_CONFIG_DIR` if that variable is set. On Linux, the file is written with mode `0600`; on Windows, it inherits the access controls of your user profile directory.
-* **Supported authentication types**: Claude.ai credentials, Claude API credentials, Azure Auth, Bedrock Auth, and Vertex Auth.
-* **Custom credential scripts**: the [`apiKeyHelper`](/en/settings#available-settings) setting can be configured to run a shell script that returns an API key.
-* **Refresh intervals**: by default, `apiKeyHelper` is called after 5 minutes or on HTTP 401 response. Set `CLAUDE_CODE_API_KEY_HELPER_TTL_MS` environment variable for custom refresh intervals.
-* **Slow helper notice**: if `apiKeyHelper` takes longer than 10 seconds to return a key, Claude Code displays a warning notice in the prompt bar showing the elapsed time. If you see this notice regularly, check whether your credential script can be optimized.
-
-`apiKeyHelper`, `ANTHROPIC_API_KEY`, and `ANTHROPIC_AUTH_TOKEN` apply to terminal CLI sessions only. Claude Desktop and remote sessions use OAuth exclusively and do not call `apiKeyHelper` or read API key environment variables.
-
-### Authentication precedence
-
-When multiple credentials are present, Claude Code chooses one in this order:
-
-1. Cloud provider credentials, when `CLAUDE_CODE_USE_BEDROCK`, `CLAUDE_CODE_USE_VERTEX`, or `CLAUDE_CODE_USE_FOUNDRY` is set. See [third-party integrations](/en/third-party-integrations) for setup.
-2. `ANTHROPIC_AUTH_TOKEN` environment variable. Sent as the `Authorization: Bearer` header. Use this when routing through an [LLM gateway or proxy](/en/llm-gateway) that authenticates with bearer tokens rather than Anthropic API keys.
-3. `ANTHROPIC_API_KEY` environment variable. Sent as the `X-Api-Key` header. Use this for direct Anthropic API access with a key from the [Claude Console](https://platform.claude.com). In interactive mode, you are prompted once to approve or decline the key, and your choice is remembered. To change it later, use the "Use custom API key" toggle in `/config`. In non-interactive mode (`-p`), the key is always used when present.
-4. [`apiKeyHelper`](/en/settings#available-settings) script output. Use this for dynamic or rotating credentials, such as short-lived tokens fetched from a vault.
-5. `CLAUDE_CODE_OAUTH_TOKEN` environment variable. A long-lived OAuth token generated by [`claude setup-token`](#generate-a-long-lived-token). Use this for CI pipelines and scripts where browser login isn't available.
-6. Subscription OAuth credentials from `/login`. This is the default for Claude Pro, Max, Team, and Enterprise users.
-
-If you have an active Claude subscription but also have `ANTHROPIC_API_KEY` set in your environment, the API key takes precedence once approved. This can cause authentication failures if the key belongs to a disabled or expired organization. Run `unset ANTHROPIC_API_KEY` to fall back to your subscription, and check `/status` to confirm which method is active.
-
-[Claude Code on the Web](/en/claude-code-on-the-web) always uses your subscription credentials. `ANTHROPIC_API_KEY` and `ANTHROPIC_AUTH_TOKEN` in the sandbox environment do not override them.
-
-### Generate a long-lived token
-
-For CI pipelines, scripts, or other environments where interactive browser login isn't available, generate a one-year OAuth token with `claude setup-token`:
-
-```bash theme={null}
-claude setup-token
+```bash
+export <PROVIDER>_API_KEY="..."
+openclaw models status
 ```
 
-The command walks you through OAuth authorization and prints a token to the terminal. It does not save the token anywhere; copy it and set it as the `CLAUDE_CODE_OAUTH_TOKEN` environment variable wherever you want to authenticate:
+3. If the Gateway runs under systemd/launchd, prefer putting the key in
+   `~/.openclaw/.env` so the daemon can read it:
 
-```bash theme={null}
-export CLAUDE_CODE_OAUTH_TOKEN=your-token
+```bash
+cat >> ~/.openclaw/.env <<'EOF'
+<PROVIDER>_API_KEY=...
+EOF
 ```
 
-This token authenticates with your Claude subscription and requires a Pro, Max, Team, or Enterprise plan. It is scoped to inference only and cannot establish [Remote Control](/en/remote-control) sessions.
+Then restart the daemon (or restart your Gateway process) and re-check:
 
-[Bare mode](/en/headless#start-faster-with-bare-mode) does not read `CLAUDE_CODE_OAUTH_TOKEN`. If your script passes `--bare`, authenticate with `ANTHROPIC_API_KEY` or an `apiKeyHelper` instead.
+```bash
+openclaw models status
+openclaw doctor
+```
+
+If you'd rather not manage env vars yourself, onboarding can store
+API keys for daemon use: `openclaw onboard`.
+
+See [Help](/help) for details on env inheritance (`env.shellEnv`,
+`~/.openclaw/.env`, systemd/launchd).
+
+## Anthropic: Claude CLI and token compatibility
+
+Anthropic setup-token auth is still available in OpenClaw as a supported token
+path. Anthropic staff has since told us that OpenClaw-style Claude CLI usage is
+allowed again, so OpenClaw treats Claude CLI reuse and `claude -p` usage as
+sanctioned for this integration unless Anthropic publishes a new policy. When
+Claude CLI reuse is available on the host, that is now the preferred path.
+
+For long-lived gateway hosts, an Anthropic API key is still the most predictable
+setup. If you want to reuse an existing Claude login on the same host, use the
+Anthropic Claude CLI path in onboarding/configure.
+
+Recommended host setup for Claude CLI reuse:
+
+```bash
+# Run on the gateway host
+claude auth login
+claude auth status --text
+openclaw models auth login --provider anthropic --method cli --set-default
+```
+
+This is a two-step setup:
+
+1. Log Claude Code itself into Anthropic on the gateway host.
+2. Tell OpenClaw to switch Anthropic model selection to the local `claude-cli`
+   backend and store the matching OpenClaw auth profile.
+
+If `claude` is not on `PATH`, either install Claude Code first or set
+`agents.defaults.cliBackends.claude-cli.command` to the real binary path.
+
+Manual token entry (any provider; writes `auth-profiles.json` + updates config):
+
+```bash
+openclaw models auth paste-token --provider openrouter
+```
+
+`auth-profiles.json` stores credentials only. The canonical shape is:
+
+```json
+{
+  "version": 1,
+  "profiles": {
+    "openrouter:default": {
+      "type": "api_key",
+      "provider": "openrouter",
+      "key": "OPENROUTER_API_KEY"
+    }
+  }
+}
+```
+
+OpenClaw expects the canonical `version` + `profiles` shape at runtime. If an older install still has a flat file such as `{ "openrouter": { "apiKey": "..." } }`, run `openclaw doctor --fix` to rewrite it as an `openrouter:default` API-key profile; doctor keeps a `.legacy-flat.*.bak` copy beside the original. Endpoint details such as `baseUrl`, `api`, model ids, headers, and timeouts belong under `models.providers.<id>` in `openclaw.json` or `models.json`, not in `auth-profiles.json`.
+
+External auth routes such as Bedrock `auth: "aws-sdk"` are also not credentials. If you want a named Bedrock route, put `auth.profiles.<id>.mode: "aws-sdk"` in `openclaw.json`; do not write `type: "aws-sdk"` into `auth-profiles.json`. `openclaw doctor --fix` moves legacy AWS SDK markers from the credential store into config metadata.
+
+Auth profile refs are also supported for static credentials:
+
+- `api_key` credentials can use `keyRef: { source, provider, id }`
+- `token` credentials can use `tokenRef: { source, provider, id }`
+- OAuth-mode profiles do not support SecretRef credentials; if `auth.profiles.<id>.mode` is set to `"oauth"`, SecretRef-backed `keyRef`/`tokenRef` input for that profile is rejected.
+
+Automation-friendly check (exit `1` when expired/missing, `2` when expiring):
+
+```bash
+openclaw models status --check
+```
+
+Live auth probes:
+
+```bash
+openclaw models status --probe
+```
+
+Notes:
+
+- Probe rows can come from auth profiles, env credentials, or `models.json`.
+- If explicit `auth.order.<provider>` omits a stored profile, probe reports
+  `excluded_by_auth_order` for that profile instead of trying it.
+- If auth exists but OpenClaw cannot resolve a probeable model candidate for
+  that provider, probe reports `status: no_model`.
+- Rate-limit cooldowns can be model-scoped. A profile cooling down for one
+  model can still be usable for a sibling model on the same provider.
+
+Optional ops scripts (systemd/Termux) are documented here:
+[Auth monitoring scripts](/help/scripts#auth-monitoring-scripts)
+
+## Anthropic note
+
+The Anthropic `claude-cli` backend is supported again.
+
+- Anthropic staff told us this OpenClaw integration path is allowed again.
+- OpenClaw therefore treats Claude CLI reuse and `claude -p` usage as sanctioned
+  for Anthropic-backed runs unless Anthropic publishes a new policy.
+- Anthropic API keys remain the most predictable choice for long-lived gateway
+  hosts and explicit server-side billing control.
+
+## Checking model auth status
+
+```bash
+openclaw models status
+openclaw doctor
+```
+
+## API key rotation behavior (gateway)
+
+Some providers support retrying a request with alternative keys when an API call
+hits a provider rate limit.
+
+- Priority order:
+  - `OPENCLAW_LIVE_<PROVIDER>_KEY` (single override)
+  - `<PROVIDER>_API_KEYS`
+  - `<PROVIDER>_API_KEY`
+  - `<PROVIDER>_API_KEY_*`
+- Google providers also include `GOOGLE_API_KEY` as an additional fallback.
+- The same key list is deduplicated before use.
+- OpenClaw retries with the next key only for rate-limit errors (for example
+  `429`, `rate_limit`, `quota`, `resource exhausted`, `Too many concurrent
+requests`, `ThrottlingException`, `concurrency limit reached`, or
+  `workers_ai ... quota limit exceeded`).
+- Non-rate-limit errors are not retried with alternate keys.
+- If all keys fail, the final error from the last attempt is returned.
+
+## Removing provider auth while the gateway is running
+
+When provider auth is removed through the Gateway control plane, OpenClaw deletes
+the saved auth profiles for that provider and aborts active chat or agent runs
+whose selected model provider matches the removed provider. The aborted runs emit
+the normal chat cancellation and lifecycle events with
+`stopReason: "auth-revoked"`, so connected clients can show that the run was
+stopped because credentials were removed.
+
+Removing saved auth does not revoke keys at the provider. Rotate or revoke the
+key in the provider dashboard when you need provider-side invalidation.
+
+## Controlling which credential is used
+
+### During login (CLI)
+
+Use `openclaw models auth login --provider <id> --profile-id <profileId>` for
+providers that support named auth profiles during login.
+
+```bash
+openclaw models auth login --provider openai --profile-id openai:ritsuko
+openclaw models auth login --provider openai --profile-id openai:lain
+```
+
+This is the easiest way to keep multiple OAuth logins for the same provider
+separate inside one agent.
+
+Use `--force` when a saved provider profile is stuck, expired, or tied to the
+wrong account and the normal login command keeps reusing it. `--force` deletes
+the saved auth profiles for that provider in the selected agent directory, then
+runs the same provider auth flow again. It does not revoke credentials at the
+provider; rotate or revoke them in the provider dashboard when you need
+provider-side invalidation.
+
+```bash
+openclaw models auth login --provider anthropic --force
+```
+
+### Per-session (chat command)
+
+Use `/model <alias-or-id>@<profileId>` to pin a specific provider credential for the current session (example profile ids: `anthropic:default`, `anthropic:work`).
+
+Use `/model` (or `/model list`) for a compact picker; use `/model status` for the full view (candidates + next auth profile, plus provider endpoint details when configured).
+
+### Per-agent (CLI override)
+
+Set an explicit auth profile order override for an agent (stored in that agent's `auth-state.json`):
+
+```bash
+openclaw models auth order get --provider anthropic
+openclaw models auth order set --provider anthropic anthropic:default
+openclaw models auth order clear --provider anthropic
+```
+
+Use `--agent <id>` to target a specific agent; omit it to use the configured default agent.
+When you debug order issues, `openclaw models status --probe` shows omitted
+stored profiles as `excluded_by_auth_order` instead of silently skipping them.
+When you debug cooldown issues, remember that rate-limit cooldowns can be tied
+to one model id rather than the whole provider profile.
+
+If you change auth order or profile pinning for a chat that is already running,
+send `/new` or `/reset` in that chat to start a fresh session. Existing
+sessions can keep their current model/profile selection until reset.
+
+## Troubleshooting
+
+### "No credentials found"
+
+If the Anthropic profile is missing, configure an Anthropic API key on the
+**gateway host** or set up the Anthropic setup-token path, then re-check:
+
+```bash
+openclaw models status
+```
+
+### Token expiring/expired
+
+Run `openclaw models status` to confirm which profile is expiring. If an
+Anthropic token profile is missing or expired, refresh that setup via
+setup-token or migrate to an Anthropic API key.
+
+## Related
+
+- [Secrets management](/gateway/secrets)
+- [Remote access](/gateway/remote)
+- [Auth storage](/concepts/oauth)

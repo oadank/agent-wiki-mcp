@@ -1,23 +1,23 @@
 ---
 title: "Azure"
 category: install
-tags:
-  - install
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/install/azure.md"
+  - "/usr/lib/node_modules/openclaw/docs/install/azure.md"
+tags: [install]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.025366+00:00
+---
+
+---
 summary: "Run OpenClaw Gateway 24/7 on an Azure Linux VM with durable state"
 read_when:
   - You want OpenClaw running 24/7 on Azure with Network Security Group hardening
+  - You want a production-grade, always-on OpenClaw Gateway on your own Azure Linux VM
+  - You want secure administration with Azure Bastion SSH
+title: "Azure"
 ---
-
-> **TL;DR** OpenClaw on Azure Linux VM
-
-
-sourceType: article
-certainty: fact
-status: active
-
-# OpenClaw on Azure Linux VM
 
 This guide sets up an Azure Linux VM with the Azure CLI, applies Network Security Group (NSG) hardening, configures Azure Bastion for SSH access, and installs OpenClaw.
 

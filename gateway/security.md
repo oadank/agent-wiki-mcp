@@ -1,155 +1,147 @@
 ---
 title: "Security"
-source: "https://code.claude.com/docs/en/security"
-category: "claude-code-docs"
+category: gateway
+sources:
+  - "/usr/lib/node_modules/openclaw/docs/cli/security.md"
+tags: [gateway]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.053782+00:00
 ---
 
-> **TL;DR** Security
+---
+summary: "CLI reference for `openclaw security` (audit and fix common security footguns)"
+read_when:
+  - You want to run a quick security audit on config/state
+  - You want to apply safe "fix" suggestions (permissions, tighten defaults)
+title: "Security"
+---
 
+# `openclaw security`
 
-sourceType: article
-certainty: fact
-status: active
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
+Security tools (audit + optional fixes).
 
-# Security
+Related:
 
-> Learn about Claude Code's security safeguards and best practices for safe usage.
+- Security guide: [Security](/gateway/security)
 
-## How we approach security
+## Audit
 
-### Security foundation
+```bash
+openclaw security audit
+openclaw security audit --deep
+openclaw security audit --deep --password <password>
+openclaw security audit --deep --token <token>
+openclaw security audit --fix
+openclaw security audit --json
+```
 
-Your code's security is paramount. Claude Code is built with security at its core, developed according to Anthropic's comprehensive security program. Learn more and access resources (SOC 2 Type 2 report, ISO 27001 certificate, etc.) at [Anthropic Trust Center](https://trust.anthropic.com).
+Plain `security audit` stays on the cold config/filesystem/read-only path. It does not discover plugin runtime security collectors by default, so routine audits do not load every installed plugin runtime. Use `--deep` to include best-effort live Gateway probes and plugin-owned security audit collectors; explicit internal callers may also opt into those plugin-owned collectors when they already have an appropriate runtime scope.
 
-### Permission-based architecture
+The audit warns when multiple DM senders share the main session and recommends **secure DM mode**: `session.dmScope="per-channel-peer"` (or `per-account-channel-peer` for multi-account channels) for shared inboxes.
+This is for cooperative/shared inbox hardening. A single Gateway shared by mutually untrusted/adversarial operators is not a recommended setup; split trust boundaries with separate gateways (or separate OS users/hosts).
+It also emits `security.trust_model.multi_user_heuristic` when config suggests likely shared-user ingress (for example open DM/group policy, configured group targets, or wildcard sender rules), and reminds you that OpenClaw is a personal-assistant trust model by default.
+For intentional shared-user setups, the audit guidance is to sandbox all sessions, keep filesystem access workspace-scoped, and keep personal/private identities or credentials off that runtime.
+It also warns when small models (`<=300B`) are used without sandboxing and with web/browser tools enabled.
+For webhook ingress, startup logs a non-fatal security warning and audit flags `hooks.token` reuse of active Gateway shared-secret auth values, including `gateway.auth.token` / `OPENCLAW_GATEWAY_TOKEN` and `gateway.auth.password` / `OPENCLAW_GATEWAY_PASSWORD`. It also warns when:
 
-Claude Code uses strict read-only permissions by default. When additional actions are needed (editing files, running tests, executing commands), Claude Code requests explicit permission. Users control whether to approve actions once or allow them automatically.
+- `hooks.token` is short
+- `hooks.path="/"`
+- `hooks.defaultSessionKey` is unset
+- `hooks.allowedAgentIds` is unrestricted
+- request `sessionKey` overrides are enabled
+- overrides are enabled without `hooks.allowedSessionKeyPrefixes`
 
-We designed Claude Code to be transparent and secure. For example, we require approval for bash commands before executing them, giving you direct control. This approach enables users and organizations to configure permissions directly.
+If Gateway password auth is supplied only at startup, pass the same value to `openclaw security audit --auth password --password <password>` so the audit can check it against `hooks.token`.
+Run `openclaw doctor --fix` to rotate a persisted reused `hooks.token`, then update external hook senders to use the new hook token.
 
-For detailed permission configuration, see [Permissions](/en/permissions).
+It also warns when sandbox Docker settings are configured while sandbox mode is off, when `gateway.nodes.denyCommands` uses ineffective pattern-like/unknown entries (exact node command-name matching only, not shell-text filtering), when `gateway.nodes.allowCommands` explicitly enables dangerous node commands, when global `tools.profile="minimal"` is overridden by agent tool profiles, when write/edit tools are disabled but `exec` is still available without a constraining sandbox filesystem boundary, when open groups expose runtime/filesystem tools without sandbox/workspace guards, and when installed plugin tools may be reachable under permissive tool policy.
+It also flags `gateway.allowRealIpFallback=true` (header-spoofing risk if proxies are misconfigured) and `discovery.mdns.mode="full"` (metadata leakage via mDNS TXT records).
+It also warns when sandbox browser uses Docker `bridge` network without `sandbox.browser.cdpSourceRange`.
+It also flags dangerous sandbox Docker network modes (including `host` and `container:*` namespace joins).
+It also warns when existing sandbox browser Docker containers have missing/stale hash labels (for example pre-migration containers missing `openclaw.browserConfigEpoch`) and recommends `openclaw sandbox recreate --browser --all`.
+It also warns when npm-based plugin/hook install records are unpinned, missing integrity metadata, or drift from currently installed package versions.
+It warns when channel allowlists rely on mutable names/emails/tags instead of stable IDs (Discord, Slack, Google Chat, Microsoft Teams, Mattermost, IRC scopes where applicable).
+It warns when `gateway.auth.mode="none"` leaves Gateway HTTP APIs reachable without a shared secret (`/tools/invoke` plus any enabled `/v1/*` endpoint).
+Settings prefixed with `dangerous`/`dangerously` are explicit break-glass operator overrides; enabling one is not, by itself, a security vulnerability report.
+For the complete dangerous-parameter inventory, see the "Insecure or dangerous flags summary" section in [Security](/gateway/security).
 
-### Built-in protections
+Intentional standing findings can be accepted with `security.audit.suppressions`.
+Each suppression matches an exact `checkId` and can be narrowed with
+`titleIncludes` and/or `detailIncludes` case-insensitive substrings:
 
-To mitigate risks in agentic systems:
+```json
+{
+  "security": {
+    "audit": {
+      "suppressions": [
+        {
+          "checkId": "plugins.tools_reachable_permissive_policy",
+          "detailIncludes": "Enabled extension plugins: gbrain",
+          "reason": "trusted local operator plugin"
+        }
+      ]
+    }
+  }
+}
+```
 
-* **Sandboxed bash tool**: [Sandbox](/en/sandboxing) bash commands with filesystem and network isolation, reducing permission prompts while maintaining security. Enable with `/sandbox` to define boundaries where Claude Code can work autonomously
-* **Write access restriction**: Claude Code can only write to the folder where it was started and its subfolders—it cannot modify files in parent directories without explicit permission. While Claude Code can read files outside the working directory (useful for accessing system libraries and dependencies), write operations are strictly confined to the project scope, creating a clear security boundary
-* **Prompt fatigue mitigation**: Support for allowlisting frequently used safe commands per-user, per-codebase, or per-organization
-* **Accept Edits mode**: Batch accept multiple edits while maintaining permission prompts for commands with side effects
+Suppressed findings are removed from the active `summary` and `findings` list.
+JSON output keeps them under `suppressedFindings` for auditability.
+When suppressions are configured, active output also keeps an unsuppressible
+`security.audit.suppressions.active` info finding so readers can tell the audit
+was filtered. Dangerous config flags are emitted one flag per finding, so
+accepting one dangerous flag does not hide other enabled flags that share the
+same `config.insecure_or_dangerous_flags` checkId.
+Because suppressions can hide standing risk, adding or removing them through
+agent-run shell commands requires exec approval unless exec is already running
+with `security="full"` and `ask="off"` for trusted local automation.
 
-### User responsibility
+SecretRef behavior:
 
-Claude Code only has the permissions you grant it. You're responsible for reviewing proposed code and commands for safety before approval.
+- `security audit` resolves supported SecretRefs in read-only mode for its targeted paths.
+- If a SecretRef is unavailable in the current command path, audit continues and reports `secretDiagnostics` (instead of crashing).
+- `--token` and `--password` only override deep-probe auth for that command invocation; they do not rewrite config or SecretRef mappings.
 
-## Protect against prompt injection
+## JSON output
 
-Prompt injection is a technique where an attacker attempts to override or manipulate an AI assistant's instructions by inserting malicious text. Claude Code includes several safeguards against these attacks:
+Use `--json` for CI/policy checks:
 
-### Core protections
+```bash
+openclaw security audit --json | jq '.summary'
+openclaw security audit --deep --json | jq '.findings[] | select(.severity=="critical") | .checkId'
+```
 
-* **Permission system**: Sensitive operations require explicit approval
-* **Context-aware analysis**: Detects potentially harmful instructions by analyzing the full request
-* **Input sanitization**: Prevents command injection by processing user inputs
-* **Command blocklist**: Blocks risky commands that fetch arbitrary content from the web like `curl` and `wget` by default. When explicitly allowed, be aware of [permission pattern limitations](/en/permissions#tool-specific-permission-rules)
+If `--fix` and `--json` are combined, output includes both fix actions and final report:
 
-### Privacy safeguards
+```bash
+openclaw security audit --fix --json | jq '{fix: .fix.ok, summary: .report.summary}'
+```
 
-We have implemented several safeguards to protect your data, including:
+## What `--fix` changes
 
-* Limited retention periods for sensitive information (see the [Privacy Center](https://privacy.anthropic.com/en/articles/10023548-how-long-do-you-store-my-data) to learn more)
-* Restricted access to user session data
-* User control over data training preferences. Consumer users can change their [privacy settings](https://claude.ai/settings/privacy) at any time.
+`--fix` applies safe, deterministic remediations:
 
-For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, and Max users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
+- flips common `groupPolicy="open"` to `groupPolicy="allowlist"` (including account variants in supported channels)
+- when WhatsApp group policy flips to `allowlist`, seeds `groupAllowFrom` from
+  the stored `allowFrom` file when that list exists and config does not already
+  define `allowFrom`
+- sets `logging.redactSensitive` from `"off"` to `"tools"`
+- tightens permissions for state/config and common sensitive files
+  (`credentials/*.json`, `auth-profiles.json`, `sessions.json`, session
+  `*.jsonl`)
+- also tightens config include files referenced from `openclaw.json`
+- uses `chmod` on POSIX hosts and `icacls` resets on Windows
 
-### Additional safeguards
+`--fix` does **not**:
 
-* **Network request approval**: Tools that make network requests require user approval by default
-* **Isolated context windows**: Web fetch uses a separate context window to avoid injecting potentially malicious prompts
-* **Trust verification**: First-time codebase runs and new MCP servers require trust verification
-  * Note: Trust verification is disabled when running non-interactively with the `-p` flag
-* **Command injection detection**: Suspicious bash commands require manual approval even if previously allowlisted
-* **Fail-closed matching**: Unmatched commands default to requiring manual approval
-* **Natural language descriptions**: Complex bash commands include explanations for user understanding
-* **Secure credential storage**: API keys and tokens are encrypted. See [Credential Management](/en/authentication#credential-management)
+- rotate tokens/passwords/API keys
+- disable tools (`gateway`, `cron`, `exec`, etc.)
+- change gateway bind/auth/network exposure choices
+- remove or rewrite plugins/skills
 
-<Warning>
-  **Windows WebDAV security risk**: When running Claude Code on Windows, we recommend against enabling WebDAV or allowing Claude Code to access paths such as `\\*` that may contain WebDAV subdirectories. [WebDAV has been deprecated by Microsoft](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features#:~:text=The%20Webclient%20\(WebDAV\)%20service%20is%20deprecated) due to security risks. Enabling WebDAV may allow Claude Code to trigger network requests to remote hosts, bypassing the permission system.
-</Warning>
+## Related
 
-**Best practices for working with untrusted content**:
-
-1. Review suggested commands before approval
-2. Avoid piping untrusted content directly to Claude
-3. Verify proposed changes to critical files
-4. Use virtual machines (VMs) to run scripts and make tool calls, especially when interacting with external web services
-5. Report suspicious behavior with `/feedback`
-
-<Warning>
-  While these protections significantly reduce risk, no system is completely
-  immune to all attacks. Always maintain good security practices when working
-  with any AI tool.
-</Warning>
-
-## MCP security
-
-Claude Code allows users to configure Model Context Protocol (MCP) servers. The list of allowed MCP servers is configured in your source code, as part of Claude Code settings engineers check into source control.
-
-We encourage either writing your own MCP servers or using MCP servers from providers that you trust. You are able to configure Claude Code permissions for MCP servers. Anthropic does not manage or audit any MCP servers.
-
-## IDE security
-
-See [VS Code security and privacy](/en/vs-code#security-and-privacy) for more information on running Claude Code in an IDE.
-
-## Cloud execution security
-
-When using [Claude Code on the web](/en/claude-code-on-the-web), additional security controls are in place:
-
-* **Isolated virtual machines**: Each cloud session runs in an isolated, Anthropic-managed VM
-* **Network access controls**: Network access is limited by default and can be configured to be disabled or allow only specific domains
-* **Credential protection**: Authentication is handled through a secure proxy that uses a scoped credential inside the sandbox, which is then translated to your actual GitHub authentication token
-* **Branch restrictions**: Git push operations are restricted to the current working branch
-* **Audit logging**: All operations in cloud environments are logged for compliance and audit purposes
-* **Automatic cleanup**: Cloud environments are automatically terminated after session completion
-
-For more details on cloud execution, see [Claude Code on the web](/en/claude-code-on-the-web).
-
-[Remote Control](/en/remote-control) sessions work differently: the web interface connects to a Claude Code process running on your local machine. All code execution and file access stays local, and the same data that flows during any local Claude Code session travels through the Anthropic API over TLS. No cloud VMs or sandboxing are involved. The connection uses multiple short-lived, narrowly scoped credentials, each limited to a specific purpose and expiring independently, to limit the blast radius of any single compromised credential.
-
-## Security best practices
-
-### Working with sensitive code
-
-* Review all suggested changes before approval
-* Use project-specific permission settings for sensitive repositories
-* Consider using [dev containers](/en/devcontainer) for additional isolation
-* Regularly audit your permission settings with `/permissions`
-
-### Team security
-
-* Use [managed settings](/en/settings#settings-files) to enforce organizational standards
-* Share approved permission configurations through version control
-* Train team members on security best practices
-* Monitor Claude Code usage through [OpenTelemetry metrics](/en/monitoring-usage)
-* Audit or block settings changes during sessions with [`ConfigChange` hooks](/en/hooks#configchange)
-
-### Reporting security issues
-
-If you discover a security vulnerability in Claude Code:
-
-1. Do not disclose it publicly
-2. Report it through our [HackerOne program](https://hackerone.com/4f1f16ba-10d3-4d09-9ecc-c721aad90f24/embedded_submissions/new)
-3. Include detailed reproduction steps
-4. Allow time for us to address the issue before public disclosure
-
-## Related resources
-
-* [Sandboxing](/en/sandboxing) - Filesystem and network isolation for bash commands
-* [Permissions](/en/permissions) - Configure permissions and access controls
-* [Monitoring usage](/en/monitoring-usage) - Track and audit Claude Code activity
-* [Development containers](/en/devcontainer) - Secure, isolated environments
-* [Anthropic Trust Center](https://trust.anthropic.com) - Security certifications and compliance
+- [CLI reference](/cli)
+- [Security audit](/gateway/security)

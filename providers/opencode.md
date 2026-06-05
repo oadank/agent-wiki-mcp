@@ -1,18 +1,22 @@
 ---
 title: "OpenCode"
 category: providers
-tags:
-  - providers
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/providers/opencode.md"
+  - "/usr/lib/node_modules/openclaw/docs/providers/opencode.md"
+tags: [providers]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.173001+00:00
+---
+
+---
 summary: "Use OpenCode Zen and Go catalogs with OpenClaw"
 read_when:
   - You want OpenCode-hosted model access
+  - You want to pick between the Zen and Go catalogs
+title: "OpenCode"
 ---
-
-sourceType: document
-certainty: fact
-status: active
 
 OpenCode exposes two hosted catalogs in OpenClaw:
 
@@ -74,7 +78,7 @@ as one OpenCode setup.
       </Step>
       <Step title="Set a Go model as the default">
         ```bash
-        openclaw config set agents.defaults.model.primary "opencode-go/kimi-k2.5"
+        openclaw config set agents.defaults.model.primary "opencode-go/kimi-k2.6"
         ```
       </Step>
       <Step title="Verify models are available">
@@ -110,7 +114,7 @@ as one OpenCode setup.
 | Property         | Value                                                                    |
 | ---------------- | ------------------------------------------------------------------------ |
 | Runtime provider | `opencode-go`                                                            |
-| Example models   | `opencode-go/kimi-k2.5`, `opencode-go/glm-5`, `opencode-go/minimax-m2.5` |
+| Example models   | `opencode-go/kimi-k2.6`, `opencode-go/glm-5`, `opencode-go/minimax-m2.5` |
 
 ## Advanced configuration
 

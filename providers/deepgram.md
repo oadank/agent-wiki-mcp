@@ -1,23 +1,23 @@
 ---
 title: "Deepgram"
 category: providers
-tags:
-  - providers
 sources:
-  - "/opt/openclaw/data/workspace/refs/openclaw-docs/docs/providers/deepgram.md"
+  - "/usr/lib/node_modules/openclaw/docs/providers/deepgram.md"
+tags: [providers]
+sourceType: document
+certainty: high
+status: active
+syncedAt: 2026-06-05T06:46:59.166450+00:00
+---
+
+---
 summary: "Deepgram transcription for inbound voice notes"
 read_when:
   - You want Deepgram speech-to-text for audio attachments
+  - You want Deepgram streaming transcription for Voice Call
+  - You need a quick Deepgram config example
+title: "Deepgram"
 ---
-
-> **TL;DR** Deepgram (Audio Transcription)
-
-
-sourceType: article
-certainty: fact
-status: active
-
-# Deepgram (Audio Transcription)
 
 Deepgram is a speech-to-text API. In OpenClaw it is used for inbound
 audio/voice-note transcription through `tools.media.audio` and for Voice Call
