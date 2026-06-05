@@ -62,13 +62,19 @@ const PROJECTS_DIR = join(WIKI_DIR, 'projects');
 console.error(`[openclaw-wiki-mcp] Wiki 目录: ${WIKI_DIR}`);
 console.error(`[openclaw-wiki-mcp] 脚本目录: ${SCRIPTS_DIR}`);
 
-// ── MCP Server ──────────────────────────────────────────────
-const server = new McpServer({
+// ── 同步配置（全局）──────────────────────────────────────────────
+const SYNC_INTERVAL = 5 * 60 * 1000;
+let syncTimer = null;
+
+// ── MCP Server（stateless HTTP 模式）──────────────────────────────
+function getServer() {
+  const server = new McpServer({
   name: 'openclaw-wiki',
   version: '1.0.0',
   title: 'OpenClaw Wiki 知识库',
   description: 'OpenClaw Wiki 知识库 + 记忆层。支持关键词搜索、语义联想、深度综合回答。'
-});
+  });
+
 
 // ── 工具：调用脚本的辅助函数 ──────────────────────────────────
 async function runScript(scriptName, args = [], timeout = 60000) {
@@ -1033,6 +1039,9 @@ server.resource(
   }
 );
 
+  return server;
+}
+
 // 启动定时同步（后台）
 function startAutoSync() {
   if (syncTimer) return;
@@ -1075,13 +1084,14 @@ async function main() {
       let parsedBody;
       try { parsedBody = JSON.parse(body); } catch { parsedBody = undefined; }
 
-      // 每个请求创建 stateless transport
+      // 每个请求新建 McpServer（stateless 模式）
       const transport = new StreamableHTTPServerTransport({
         sessionIdGenerator: undefined, // stateless 模式
       });
 
       // 连接到共享的 McpServer
-      await server.connect(transport);
+      const requestServer = getServer();
+      await requestServer.connect(transport);
 
       // 处理请求
       await transport.handleRequest(req, res, parsedBody);

@@ -20,17 +20,17 @@ from pathlib import Path
 
 # 配置
 VAULT = os.environ.get("WIKI_VAULT_PATH", Path(__file__).parent.parent.resolve())
-EMBED_URL = os.environ.get("EMBEDDING_URL", "http://localhost:11435/v1/embeddings")
+EMBED_URL = "http://localhost:11435/v1/embeddings"
 MODEL = "bge-small-zh-v1.5"
 DIMENSIONS = 512
-BATCH_SIZE = 10       # 批量嵌入数量
-BATCH_DELAY = 3       # 每批后等待秒数
-EMBED_DELAY = 0.5     # 每次embedding后等待秒数
+BATCH_SIZE = 50
+BATCH_DELAY = 0.1
+EMBED_DELAY = 0.02
 
 # PostgreSQL 连接
 PG_CONN = {
     "host": "localhost",
-    "database": "postgres",
+    "database": "wiki",
     "user": "postgres"
 }
 
