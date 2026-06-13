@@ -3,24 +3,14 @@
   "realPath": "/opt/litellm-source",
   "status": "active",
   "createdAt": "2026-05-11 01:23",
-  "lastSession": "2026-05-27 18:30",
+  "lastSession": "2026-06-13 11:26",
   "lastAI": "Claude",
   "currentTask": "MiMo 缓存优化：路由+日志+日期剥离",
   "taskStatus": "✅",
   "pendingChanges": [
     {
-      "type": "files_modified",
-      "path": "/opt/litellm-source",
-      "count": 7,
-      "files": [
-        "./tests/test_litellm/llms/domestic/test_domestic_utils.py",
-        "./tests/test_litellm/responses/litellm_completion_transformation/__init__.py",
-        "./tests/test_litellm/responses/litellm_completion_transformation/test_transformation_clean_schema.py",
-        "./tests/test_litellm/responses/litellm_completion_transformation/test_domestic_filter.py",
-        "./tests/test_litellm/responses/litellm_completion_transformation/test_handler_json_arguments.py",
-        "./.pytest_cache/v/cache/nodeids",
-        "./.pytest_cache/v/cache/stepwise"
-      ]
+      "type": "path_missing",
+      "path": "/opt/litellm-source"
     }
   ],
   "totalSessions": 0,

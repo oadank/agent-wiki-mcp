@@ -3,7 +3,7 @@
   "realPath": "/opt/agent-wiki-mcp",
   "status": "active",
   "createdAt": "2026-05-09T10:56:14.357Z",
-  "lastSession": "2026-06-05 15:23",
+  "lastSession": "2026-06-13 11:26",
   "lastAI": "Claude",
   "currentTask": "清理残留字段",
   "taskStatus": "✅",
@@ -13,12 +13,14 @@
     {
       "type": "files_modified",
       "path": "/opt/agent-wiki-mcp",
-      "count": 4,
+      "count": 6,
       "files": [
-        "./projects/registry.json",
-        "./projects/openhuman/meta.json",
         "./projects/agents-to-im/meta.json",
-        "./projects/agent-wiki-mcp/meta.json"
+        "./projects/agent-wiki-mcp/meta.json",
+        "./projects/openhuman/meta.json",
+        "./projects/registry.json",
+        "./projects/cc-haha/meta.json",
+        "./projects/litellm-domestic-fix/meta.json"
       ]
     }
   ]

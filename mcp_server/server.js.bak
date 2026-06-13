@@ -6,7 +6,8 @@
  * 支持跨平台：Claude Code、Codex、Cursor、VS Code Copilot
  *
  * 用法:
- *   node server.js                    # 使用默认 wiki 路径
+ *   node server.js                    # stdio 模式（默认）
+ *   node server.js --http 3456        # HTTP 模式，监听 0.0.0.0:3456
  *   node server.js --wiki /path/wiki  # 自定义 wiki 路径
  *
  * MCP 配置示例 (Claude Code settings.json):
@@ -27,12 +28,16 @@
 
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { z } from 'zod';
 import { spawn } from 'child_process';
 import { execSync } from 'child_process';
+import { createServer } from 'http';
+import { randomUUID } from 'crypto';
 import { readFile, readdir, stat, writeFile, appendFile } from 'fs/promises';
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
+import { ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -45,6 +50,10 @@ if (wikiArgIdx >= 0 && args[wikiArgIdx + 1]) {
   WIKI_DIR = args[wikiArgIdx + 1];
 }
 
+// HTTP 模式：--http <port>
+const httpPortIdx = args.indexOf('--http');
+const HTTP_PORT = httpPortIdx >= 0 ? parseInt(args[httpPortIdx + 1], 10) : null;
+
 const SCRIPTS_DIR = join(WIKI_DIR, 'scripts');
 const MEMORIES_DIR = join(WIKI_DIR, 'memories');
 const SHARED_DIR = join(WIKI_DIR, 'shared');
@@ -53,13 +62,20 @@ const PROJECTS_DIR = join(WIKI_DIR, 'projects');
 console.error(`[openclaw-wiki-mcp] Wiki 目录: ${WIKI_DIR}`);
 console.error(`[openclaw-wiki-mcp] 脚本目录: ${SCRIPTS_DIR}`);
 
-// ── MCP Server ──────────────────────────────────────────────
-const server = new McpServer({
-  name: 'openclaw-wiki',
-  version: '1.0.0',
-  title: 'OpenClaw Wiki 知识库',
-  description: 'OpenClaw Wiki 知识库 + 记忆层。支持关键词搜索、语义联想、深度综合回答。'
-});
+// ── MCP Server（HTTP 模式为每个请求创建新实例）────────────
+function createWikiServer() {
+  const s = new McpServer({
+    name: 'openclaw-wiki',
+    version: '1.0.0',
+    title: 'OpenClaw Wiki 知识库',
+    description: 'OpenClaw Wiki 知识库 + 记忆层。支持关键词搜索、语义联想、深度综合回答。'
+  });
+  return s;
+}
+
+// stdio 模式使用的全局 server（单实例）
+const server = createWikiServer();
+
 
 // ── 工具：调用脚本的辅助函数 ──────────────────────────────────
 async function runScript(scriptName, args = [], timeout = 60000) {
@@ -144,7 +160,7 @@ server.tool(
   },
   async ({ query, limit }) => {
     try {
-      const output = await runScript('unified-search.js', [query, String(limit)], 30000);
+      const output = await runScript('unified-search.cjs', [query, String(limit)], 30000);
       return { content: [{ type: 'text', text: output }] };
     } catch (err) {
       return { content: [{ type: 'text', text: `搜索失败: ${err.message}` }], isError: true };
@@ -162,7 +178,7 @@ server.tool(
   },
   async ({ query, limit }) => {
     try {
-      const output = await runScript('unified-search.js', [query, String(limit), '--mode', 'deep'], 180000);
+      const output = await runScript('unified-search.cjs', [query, String(limit), '--mode', 'deep'], 180000);
       return { content: [{ type: 'text', text: output }] };
     } catch (err) {
       return { content: [{ type: 'text', text: `深度搜索失败: ${err.message}` }], isError: true };
@@ -421,7 +437,7 @@ server.tool(
           let result = `# 项目进度: ${project}\n\n${progress}`;
           // 同时搜索项目相关内容
           const projectQuery = `projects/${project} ${query}`;
-          const related = await runScript('unified-search.js', [projectQuery, String(limit)], 30000);
+          const related = await runScript('unified-search.cjs', [projectQuery, String(limit)], 30000);
           result += `\n\n---\n\n## 相关内容\n\n${related}`;
           return { content: [{ type: 'text', text: result }] };
         }
@@ -430,7 +446,7 @@ server.tool(
 
       // 默认搜索 shared + projects 目录
       const sharedQuery = `shared ${query}`;
-      const output = await runScript('unified-search.js', [sharedQuery, String(limit)], 30000);
+      const output = await runScript('unified-search.cjs', [sharedQuery, String(limit)], 30000);
       return { content: [{ type: 'text', text: output }] };
     } catch (err) {
       return { content: [{ type: 'text', text: `查询记忆失败: ${err.message}` }], isError: true };
@@ -951,6 +967,79 @@ server.tool(
   }
 );
 
+
+// ── 资源定义 ──────────────────────────────────────────────
+
+// 1. 静态资源：Wiki状态
+server.resource(
+  'wiki-status',
+  'wiki://status',
+  { title: 'Wiki 状态', description: 'Wiki 知识库状态信息', mimeType: 'text/markdown' },
+  async () => {
+    const indexPath = join(WIKI_DIR, 'index.md');
+    const manifestPath = join(WIKI_DIR, '.manifest.json');
+    
+    let status = `# Wiki 状态\n\n`;
+    status += `- Wiki 目录: ${WIKI_DIR}\n`;
+    status += `- 索引文件: ${existsSync(indexPath) ? '✅ 存在' : '❌ 不存在'}\n`;
+    status += `- 清单文件: ${existsSync(manifestPath) ? '✅ 存在' : '❌ 不存在'}\n`;
+    
+    try {
+      const files = await readdir(WIKI_DIR).catch(() => []);
+      const mdFiles = files.filter(f => f.endsWith('.md'));
+      status += `- Markdown 文件: ${mdFiles.length} 个\n`;
+    } catch (e) {
+      status += `- 读取目录失败: ${e.message}\n`;
+    }
+    
+    return { contents: [{ uri: 'wiki://status', mimeType: 'text/markdown', text: status }] };
+  }
+);
+
+// 2. 资源模板：Wiki搜索
+server.resource(
+  'wiki-search',
+  new ResourceTemplate('wiki://search{?query,limit}', { list: undefined }),
+  { title: 'Wiki 搜索', description: '搜索 Wiki 知识库', mimeType: 'text/markdown' },
+  async (uri, variables) => {
+    const query = variables.query || '';
+    const limit = parseInt(variables.limit || '10', 10);
+    
+    if (!query) {
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: '# 错误\n\n缺少查询参数: query' }] };
+    }
+    
+    try {
+      const output = await runScript('unified-search.cjs', [query, String(limit)], 30000);
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: output }] };
+    } catch (err) {
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: `# 搜索失败\n\n${err.message}` }] };
+    }
+  }
+);
+
+// 3. 资源模板：Wiki深度搜索
+server.resource(
+  'wiki-deep-search',
+  new ResourceTemplate('wiki://deep{?query,limit}', { list: undefined }),
+  { title: 'Wiki 深度搜索', description: '深度搜索 Wiki 知识库（LLM综合）', mimeType: 'text/markdown' },
+  async (uri, variables) => {
+    const query = variables.query || '';
+    const limit = parseInt(variables.limit || '10', 10);
+    
+    if (!query) {
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: '# 错误\n\n缺少查询参数: query' }] };
+    }
+    
+    try {
+      const output = await runScript('unified-search.cjs', [query, String(limit), '--mode', 'deep'], 180000);
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: output }] };
+    } catch (err) {
+      return { contents: [{ uri: uri.href, mimeType: 'text/markdown', text: `# 深度搜索失败\n\n${err.message}` }] };
+    }
+  }
+);
+
 // 启动定时同步（后台）
 function startAutoSync() {
   if (syncTimer) return;
@@ -966,9 +1055,55 @@ function startAutoSync() {
 
 // ── 启动 Server ──────────────────────────────────────────────
 async function main() {
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
-  console.error('[openclaw-wiki-mcp] Server 已启动，等待 MCP 客户端连接...');
+  if (HTTP_PORT) {
+    // HTTP 模式：stateless，每个请求新建 McpServer 实例（工具在 createWikiServer 中注册）
+    const httpServer = createServer(async (req, res) => {
+      // CORS headers
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Mcp-Session-Id');
+
+      if (req.method === 'OPTIONS') {
+        res.writeHead(204);
+        res.end();
+        return;
+      }
+
+      // 只处理 /mcp 路径
+      if (req.url !== '/mcp' && !req.url.startsWith('/mcp/')) {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Not Found. Use POST /mcp');
+        return;
+      }
+
+      // 解析请求体
+      let body = '';
+      for await (const chunk of req) body += chunk;
+      let parsedBody;
+      try { parsedBody = JSON.parse(body); } catch { parsedBody = undefined; }
+
+      // 每个请求新建 McpServer 实例 + transport（stateless 模式）
+      const requestServer = createWikiServer();
+      const transport = new StreamableHTTPServerTransport({
+        sessionIdGenerator: undefined, // stateless 模式
+      });
+
+      await requestServer.connect(transport);
+
+      // 处理请求
+      await transport.handleRequest(req, res, parsedBody);
+    });
+
+    httpServer.listen(HTTP_PORT, '0.0.0.0', () => {
+      console.error(`[openclaw-wiki-mcp] HTTP 模式启动: http://0.0.0.0:${HTTP_PORT}/mcp`);
+      console.error(`[openclaw-wiki-mcp] Wiki 目录: ${WIKI_DIR}`);
+    });
+  } else {
+    // stdio 模式（默认）
+    const transport = new StdioServerTransport();
+    await server.connect(transport);
+    console.error('[openclaw-wiki-mcp] stdio 模式启动，等待 MCP 客户端连接...');
+  }
 
   // 启动自动同步（后台定时检查）
   startAutoSync();

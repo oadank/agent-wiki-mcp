@@ -3,7 +3,7 @@
   "realPath": "/opt/.agents-to-im-claude",
   "status": "active",
   "createdAt": "2026-05-09T15:38:00.000Z",
-  "lastSession": "2026-06-05 15:23",
+  "lastSession": "2026-06-13 11:26",
   "lastAI": "Claude",
   "currentTask": "compact 全面升级 + 两轮代码审计共 11 bug 修复",
   "taskStatus": "✅",
@@ -19,12 +19,8 @@
       ]
     },
     {
-      "type": "files_modified",
-      "path": "/opt/.agents-to-im-codex",
-      "count": 1,
-      "files": [
-        "./logs/bridge.log"
-      ]
+      "type": "path_missing",
+      "path": "/opt/.agents-to-im-codex"
     },
     {
       "type": "path_missing",

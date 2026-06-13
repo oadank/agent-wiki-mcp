@@ -1,14 +1,18 @@
 {
-  "lastSession": "2026-06-05 15:23",
+  "lastSession": "2026-06-13 11:26",
   "daysSinceUpdate": 0,
   "pendingChanges": [
     {
-      "type": "files_modified",
-      "path": "/opt/.agents-to-im-openhuman",
-      "count": 1,
-      "files": [
-        "./logs/bridge.log"
-      ]
+      "type": "path_missing",
+      "path": "/opt/openhuman"
+    },
+    {
+      "type": "path_missing",
+      "path": "/opt/.agents-to-im-openhuman"
+    },
+    {
+      "type": "path_missing",
+      "path": "/root/.openhuman"
     }
   ]
 }
