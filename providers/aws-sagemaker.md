@@ -283,7 +283,7 @@ print(response)
 
 ## Pass provider-specific params 
 
-If you pass a non-openai param to litellm, we'll assume it's provider-specific and send it as a kwarg in the request body. [See more](../completion/input.md#provider-specific-params)
+If you pass a non-openai param to litellm, we'll assume it's provider-specific and send it as a kwarg in the request body. [[.completion/input#provider-specific-params|See more]]
 
 
 ```python
@@ -391,7 +391,7 @@ response = completion(
         )
 ```
 
-You can also pass in your own [custom prompt template](../completion/prompt_formatting.md#format-prompt-yourself)
+You can also pass in your own [[.completion/prompt_formatting#format-prompt-yourself|custom prompt template]]
 
 
 ## Sagemaker Messages API 
@@ -456,7 +456,7 @@ curl --location 'http://0.0.0.0:4000/chat/completions' \
 '
 ```
 
-[**👉 See OpenAI SDK/Langchain/Llamaindex/etc. examples**](../proxy/user_keys.md#chatcompletions)
+[[.proxy/user_keys#chatcompletions|**👉 See OpenAI SDK/Langchain/Llamaindex/etc. examples**]]
 
 
 

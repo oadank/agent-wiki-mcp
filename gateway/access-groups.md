@@ -127,11 +127,11 @@ LiteLLM has two related concepts:
 | Attach to  | Keys, teams                                                             | Keys, teams                                             |
 | Use when   | You want unified control over models, MCP, and agents from the UI       | You need config-based or API-based model access control |
 
-For config-based model access with `access_groups` in `model_info`, see [Model Access Groups](./model_access_groups.md).
+For config-based model access with `access_groups` in `model_info`, see [[model_access_groups|Model Access Groups]].
 
 ## Related Documentation
 
-- [Virtual Keys](./virtual_keys.md) – Creating and managing API keys
-- [Role-based Access Controls](./access_control.md) – Organizations, teams, and user roles
-- [Model Access Groups](./model_access_groups.md) – Config-based model access groups
-- [MCP Control](../mcp_control.md) – MCP server setup and access control
+- [[virtual_keys|Virtual Keys]] – Creating and managing API keys
+- [[access_control|Role-based Access Controls]] – Organizations, teams, and user roles
+- [[model_access_groups|Model Access Groups]] – Config-based model access groups
+- [[.mcp_control|MCP Control]] – MCP server setup and access control

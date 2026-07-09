@@ -409,5 +409,5 @@ The agent responds with its capabilities. You can now interact with your Azure A
 
 - [Azure AI Foundry Agents Documentation](https://learn.microsoft.com/en-us/azure/ai-services/agents/)
 - [Create Thread and Run API Reference](https://learn.microsoft.com/en-us/rest/api/aifoundry/aiagents/create-thread-and-run/create-thread-and-run)
-- [A2A Agent Gateway](../a2a.md)
-- [A2A Cost Tracking](../a2a_cost_tracking.md)
+- [[.a2a|A2A Agent Gateway]]
+- [[.a2a_cost_tracking|A2A Cost Tracking]]

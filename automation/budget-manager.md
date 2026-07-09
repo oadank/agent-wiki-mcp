@@ -24,7 +24,7 @@ Don't want to get crazy bills because either while you're calling LLM APIs **or*
 
 #### ℹ️ Info
 
-If you want a server to manage user keys, budgets, etc. use our [LiteLLM Proxy Server](./proxy/virtual_keys.md)
+If you want a server to manage user keys, budgets, etc. use our [[proxy/virtual_keys|LiteLLM Proxy Server]]
 
 
 

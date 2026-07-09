@@ -6,13 +6,13 @@
       "path": "/opt/agent-wiki-mcp",
       "status": "active",
       "createdAt": "2026-05-09T10:56:14.354Z",
-      "lastCheck": "2026-06-13 11:26"
+      "lastCheck": "2026-07-09 16:51"
     },
     "agents-to-im": {
       "path": "/opt/.agents-to-im-claude",
       "status": "active",
       "createdAt": "2026-05-09T14:38:00.000Z",
-      "lastCheck": "2026-06-13 11:26",
+      "lastCheck": "2026-07-09 16:51",
       "description": "飞书桥接软件（Claude + Codex 两个实例 + 全局二进制程序）",
       "relatedPaths": [
         "/opt/.agents-to-im-codex",
@@ -23,13 +23,13 @@
       "path": "/opt/.codex",
       "status": "active",
       "createdAt": "2026-05-10 00:36",
-      "lastCheck": "2026-06-05 14:40"
+      "lastCheck": "2026-07-09 16:51"
     },
     "litellm-domestic-fix": {
       "path": "/opt/litellm-source",
       "status": "active",
       "createdAt": "2026-05-11 01:23",
-      "lastCheck": "2026-06-13 11:26"
+      "lastCheck": "2026-07-09 16:51"
     },
     "openhuman": {
       "path": "/opt/openhuman",
@@ -40,13 +40,13 @@
         "/opt/.agents-to-im-openhuman",
         "/root/.openhuman"
       ],
-      "lastCheck": "2026-06-13 11:26"
+      "lastCheck": "2026-07-09 16:51"
     },
     "cc-haha": {
       "path": "/home/code/cc-haha",
       "status": "active",
       "createdAt": "2026-05-24T15:25:52.054282",
-      "lastCheck": "2026-06-13 11:26",
+      "lastCheck": "2026-07-09 16:51",
       "description": "Claude Code 本地源码（oadank/cc-haha 泄露版本）",
       "github": "https://github.com/oadank/cc-haha"
     },
@@ -61,6 +61,12 @@
         "/etc/xrdp/xrdp.ini"
       ],
       "lastCheck": "2026-06-02 10:40"
+    },
+    "opt": {
+      "path": "/opt",
+      "status": "active",
+      "createdAt": "2026-07-03 11:14",
+      "lastCheck": "2026-07-09 16:51"
     }
   }
 }

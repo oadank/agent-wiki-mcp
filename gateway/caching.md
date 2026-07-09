@@ -22,7 +22,7 @@ status: active
 
 #### ℹ️ Note
 
-For OpenAI/Anthropic Prompt Caching, go [here](../completion/prompt_caching.md)
+For OpenAI/Anthropic Prompt Caching, go [[.completion/prompt_caching|here]]
 
 
 

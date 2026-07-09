@@ -282,7 +282,7 @@ model_list:
 ```
 
 
-For full details, see the [Web Search guide](../completion/web_search.md).
+For full details, see the [[.completion/web_search|Web Search guide]].
 
 ## OpenAI Vision Models
 | Model Name            | Function Call                                                   |
@@ -1129,7 +1129,7 @@ response = completion("openai/your-model-name", messages)
 
 If you need to set api_base dynamically, just pass it in completions instead - `completions(...,api_base="your-proxy-api-base")`
 
-For more check out [setting API Base/Keys](../set_keys.md)
+For more check out [[.set_keys|setting API Base/Keys]]
 
 ### Forwarding Org ID for Proxy requests
 
@@ -1200,4 +1200,4 @@ response = completion(
 
 LiteLLM supports OpenAI's video generation models including Sora.
 
-For detailed documentation on video generation, see [OpenAI Video Generation →](./openai/videos.md)
+For detailed documentation on video generation, see [[openai/videos|OpenAI Video Generation →]]

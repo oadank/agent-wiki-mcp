@@ -2259,7 +2259,7 @@ curl --location 'http://0.0.0.0:4000/chat/completions' \
 
 ## OpenMeter
 
-Bill customers according to their LLM API usage with [OpenMeter](../observability/openmeter.md)
+Bill customers according to their LLM API usage with [[.observability/openmeter|OpenMeter]]
 
 **Required Env Variables**
 

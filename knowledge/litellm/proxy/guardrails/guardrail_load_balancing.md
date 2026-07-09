@@ -347,7 +347,7 @@ Selected guardrail deployment: bedrock/guardrail (guard-eu-west)
 
 ## Related
 
-- [Guardrails Quick Start](./quick_start.md)
-- [Bedrock Guardrails](./bedrock.md)
-- [Custom Guardrails](./custom_guardrail.md)
-- [Load Balancing for LLM Calls](../load_balancing.md)
+- [[quick_start|Guardrails Quick Start]]
+- [[bedrock|Bedrock Guardrails]]
+- [[custom_guardrail|Custom Guardrails]]
+- [[.load_balancing|Load Balancing for LLM Calls]]

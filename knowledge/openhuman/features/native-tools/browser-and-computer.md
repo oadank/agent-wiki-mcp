@@ -13,7 +13,7 @@ When the agent needs to *use* your machine the way a person would - open a page,
 * **Screenshot** the current page.
 * **Inspect** image output and metadata, so the agent can describe what it sees.
 
-The browser surface runs through CEF (Chromium Embedded Framework) and includes a security layer that scopes what pages can do. See [Chromium Embedded Framework](../../developing/cef.md) for the platform details.
+The browser surface runs through CEF (Chromium Embedded Framework) and includes a security layer that scopes what pages can do. See [[..developing/cef|Chromium Embedded Framework]] for the platform details.
 
 ## Computer (mouse + keyboard)
 
@@ -23,11 +23,11 @@ The browser surface runs through CEF (Chromium Embedded Framework) and includes 
 
 ## What it's good for
 
-* Driving sites that don't have an API or a [native integration](../integrations/README.md).
+* Driving sites that don't have an API or a [[.integrations/README|native integration]].
 * Multi-step UI flows where a single screenshot isn't enough.
 * Automating local apps from inside a chat.
 
 ## See also
 
-* [Web Scraper](web-scraper.md) - when you only need the article, not the whole page.
-* [Chromium Embedded Framework](../../developing/cef.md) - the runtime browser layer.
+* [[web-scraper|Web Scraper]] - when you only need the article, not the whole page.
+* [[..developing/cef|Chromium Embedded Framework]] - the runtime browser layer.

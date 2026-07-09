@@ -151,4 +151,4 @@ curl -L -X POST 'http://0.0.0.0:4000/embeddings' \
 -d '{"input": ["hello world"], "model": "my-model"}'
 ```
 
-[See OpenAI SDK/Langchain/etc. examples](../proxy/user_keys.md#embeddings)
+[[.proxy/user_keys#embeddings|See OpenAI SDK/Langchain/etc. examples]]

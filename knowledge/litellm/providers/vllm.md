@@ -191,7 +191,7 @@ curl -L -X POST 'http://0.0.0.0:4000/embeddings' \
 -d '{"input": ["hello world"], "model": "my-model"}'
 ```
 
-[See OpenAI SDK/Langchain/etc. examples](../proxy/user_keys.md#embeddings)
+[[.proxy/user_keys#embeddings|See OpenAI SDK/Langchain/etc. examples]]
 
 
 ## Rerank
@@ -287,7 +287,7 @@ curl -L -X POST 'http://0.0.0.0:4000/rerank' \
 }'
 ```
 
-[See OpenAI SDK/Langchain/etc. examples](../rerank.md#litellm-proxy-usage)
+[[.rerank#litellm-proxy-usage|See OpenAI SDK/Langchain/etc. examples]]
 
 
 ## Send Video URL to VLLM

@@ -83,7 +83,7 @@ A private browser UI is possible for development/preview by serving the Vite
 frontend and pointing it at the remote core, but it is not a full replacement
 for the desktop shell. Native deep links, tray controls, OS keychain access, CEF
 account scanners, and screen/window integrations still require the Tauri app.
-See [Cloud Deploy](cloud-deploy.md#remote-ui-choices) for the current remote UI
+See [[cloud-deploy#remote-ui-choices|Cloud Deploy]] for the current remote UI
 setup.
 
 ***

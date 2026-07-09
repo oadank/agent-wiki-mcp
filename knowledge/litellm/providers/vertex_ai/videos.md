@@ -258,7 +258,7 @@ print(response.usage)  # {"duration_seconds": 5.0}
 
 ## See Also
 
-- [OpenAI Video Generation](../openai/videos.md)
-- [Azure Video Generation](../azure/videos.md)
-- [Gemini Video Generation](../gemini/videos.md)
+- [[.openai/videos|OpenAI Video Generation]]
+- [[.azure/videos|Azure Video Generation]]
+- [[.gemini/videos|Gemini Video Generation]]
 - [Video Generation API Reference](/docs/videos)

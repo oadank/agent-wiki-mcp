@@ -222,7 +222,7 @@ Use this for Stable Diffusion models hosted on Xinference
 
 #### Usage
 
-See Xinference usage with LiteLLM [here](./providers/xinference.md#image-generation)
+See Xinference usage with LiteLLM [[providers/xinference#image-generation|here]]
 
 ## Recraft Image Generation Models
 
@@ -242,7 +242,7 @@ response = image_generation(
 print(response)
 ```
 
-See Recraft usage with LiteLLM [here](./providers/recraft.md#image-generation)
+See Recraft usage with LiteLLM [[providers/recraft#image-generation|here]]
 
 ## OpenRouter Image Generation Models
 

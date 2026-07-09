@@ -128,5 +128,5 @@ Pick your Pydantic AI agent from the dropdown and send a test message.
 
 - [Pydantic AI Documentation](https://ai.pydantic.dev/)
 - [Pydantic AI Agents](https://ai.pydantic.dev/agents/)
-- [A2A Agent Gateway](../a2a.md)
-- [A2A Cost Tracking](../a2a_cost_tracking.md)
+- [[.a2a|A2A Agent Gateway]]
+- [[.a2a_cost_tracking|A2A Cost Tracking]]

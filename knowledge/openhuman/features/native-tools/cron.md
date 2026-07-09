@@ -18,7 +18,7 @@ Scheduling is a first-class capability, not a workaround. The agent can set up r
 | `cron_run`    | Run a job once, immediately, regardless of its schedule.           |
 | `cron_runs`   | Inspect the recent run history - when, how long, what it produced. |
 
-There's also a one-shot `schedule` tool in [System & Utilities](system-and-utilities.md) for "do this once at time T" cases that don't need a recurring entry.
+There's also a one-shot `schedule` tool in [[system-and-utilities|System & Utilities]] for "do this once at time T" cases that don't need a recurring entry.
 
 ## What it's good for
 
@@ -29,9 +29,9 @@ There's also a one-shot `schedule` tool in [System & Utilities](system-and-utili
 
 ## How it ties back to the rest
 
-Every cron run is just a normal agent invocation, so it can use any other tool - search the web, query the [Memory Tree](../obsidian-wiki/memory-tree.md), call a [third-party integration](../integrations/README.md), send a message. Run history is recorded so you can see what each tick produced.
+Every cron run is just a normal agent invocation, so it can use any other tool - search the web, query the [[.obsidian-wiki/memory-tree|Memory Tree]], call a [[.integrations/README|third-party integration]], send a message. Run history is recorded so you can see what each tick produced.
 
 ## See also
 
-* [System & Utilities](system-and-utilities.md) - the one-shot `schedule` tool.
-* [Agent Coordination](agent-coordination.md) - for jobs that fan out into subagents.
+* [[system-and-utilities|System & Utilities]] - the one-shot `schedule` tool.
+* [[agent-coordination|Agent Coordination]] - for jobs that fan out into subagents.

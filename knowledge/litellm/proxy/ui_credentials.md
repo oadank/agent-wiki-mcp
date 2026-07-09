@@ -53,7 +53,7 @@ Go to Add Model -> Existing Credentials -> Select your credential in the dropdow
 
 ## Usage Tracking
 
-Models attached to a reusable credential are automatically tracked in the Usage page. Each request is tagged `Credential: <name>` and appears in the **Tag** view, so you can filter spend and usage by credential without any extra configuration. See [Credential Usage Tracking](./credential_usage_tracking.md) for details.
+Models attached to a reusable credential are automatically tracked in the Usage page. Each request is tagged `Credential: <name>` and appears in the **Tag** view, so you can filter spend and usage by credential without any extra configuration. See [[credential_usage_tracking|Credential Usage Tracking]] for details.
 
 ## Frequently Asked Questions
 

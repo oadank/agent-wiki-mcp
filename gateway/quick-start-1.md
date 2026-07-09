@@ -28,7 +28,7 @@ Create keys, track spend, add models without worrying about the config / CRUD en
 - Requires proxy master key to be set
 - Requires db connected
 
-Follow [setup](./virtual_keys.md#setup)
+Follow [[virtual_keys#setup|setup]]
 
 ### 1. Start the proxy
 
@@ -76,7 +76,7 @@ By default, `DOCS_URL` is `"/"`, so this setting is only needed when you've chan
 
 Allow others to create/delete their own keys.
 
-[**Go Here**](./self_serve.md)
+[[self_serve|**Go Here**]]
 
 ## Model Management
 
@@ -86,12 +86,12 @@ The Admin UI provides comprehensive model management capabilities:
 - **AI Hub**: Make models and agents public for developers to discover what's available
 - **Price Data Sync**: Keep model pricing data up to date by syncing from GitHub
 
-For detailed information on model management, see [Model Management](./model_management.md).
+For detailed information on model management, see [[model_management|Model Management]].
 
-For information on sharing models and agents, see [AI Hub](./ai_hub.md).
+For information on sharing models and agents, see [[ai_hub|AI Hub]].
 
 #### 💡 Tip Sync Model Pricing Data
-[Sync model pricing data from GitHub](./sync_models_github.md) to keep your model cost information current.
+[[sync_models_github|Sync model pricing data from GitHub]] to keep your model cost information current.
 
 
 ## Disable Admin UI

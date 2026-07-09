@@ -42,7 +42,7 @@ retrieval       search / drill_down / topic / global / fetch
 
 The hot path (canonicalize → chunk → fast-score → persist → enqueue follow-up work) is fast. Heavy work - embeddings, entity extraction, sealing summary buckets, daily digests - runs in background workers so the UI never blocks.
 
-Embeddings and summary-tree building can run **on-device via Ollama** if you turn on [Local AI](../model-routing/local-ai.md); otherwise they go through the OpenHuman backend like any other model call.
+Embeddings and summary-tree building can run **on-device via Ollama** if you turn on [[.model-routing/local-ai|Local AI]]; otherwise they go through the OpenHuman backend like any other model call.
 
 ## Three trees, three scopes
 
@@ -137,7 +137,7 @@ This is why retrieval can show provenance without re-running the pipeline: the c
 
 ## Triggering ingest
 
-* **Automatic** - every active integration is auto-fetched every twenty minutes; see [Auto-fetch](auto-fetch.md).
+* **Automatic** - every active integration is auto-fetched every twenty minutes; see [[auto-fetch|Auto-fetch]].
 * **Manual** - the Memory tab in the desktop app exposes a "Run ingest" trigger per source.
 * **RPC** - `openhuman.memory_tree_ingest` for advanced workflows.
 
@@ -173,6 +173,6 @@ The Memory Tree pipeline (chunker → score → seal → summarise) is the
 default. Operators who self-host [agentmemory](https://github.com/rohitg00/agentmemory)
 across multiple agents and want OpenHuman to share that same durable
 store can opt into an external backend via `MemoryConfig.backend =
-"agentmemory"` — see [agentmemory backend](agentmemory-backend.md) for
+"agentmemory"` — see [[agentmemory-backend|agentmemory backend]] for
 config keys, field mapping, endpoint table, security, and failure
 modes.

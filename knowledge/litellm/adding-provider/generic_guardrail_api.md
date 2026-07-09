@@ -305,7 +305,7 @@ guardrails:
         plr_scanners: true  # Include scanner details in response
 ```
 
-See the [Pillar Security documentation](../proxy/guardrails/pillar_security.md) for full configuration options.
+See the [[.proxy/guardrails/pillar_security|Pillar Security documentation]] for full configuration options.
 
 ## Usage
 

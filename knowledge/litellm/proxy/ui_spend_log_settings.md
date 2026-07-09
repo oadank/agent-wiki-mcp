@@ -38,7 +38,7 @@ Settings changed in the UI **override** the values in your config file. For exam
 | **Store Prompts in Spend Logs** | When enabled, request messages and response content are stored for **new** spend logs so you can view them in the Logs UI. Logs created before you enabled this will not have request/response content. When disabled, only metadata (e.g. tokens, cost, model) is stored for new logs. |
 | **Retention Period**            | Maximum time to keep spend logs before they are automatically deleted (e.g. `7d`, `30d`). Optional; if not set, logs are retained according to your config or default behavior.                                                                                                         |
 
-The same options can be set in config via [general_settings](./config_settings.md#general_settings---reference) (`store_prompts_in_spend_logs`, `maximum_spend_logs_retention_period`). Values set in the UI take precedence.
+The same options can be set in config via [[config_settings#general_settings---reference|general_settings]] (`store_prompts_in_spend_logs`, `maximum_spend_logs_retention_period`). Values set in the UI take precedence.
 
 ## How to Configure Spend Log Settings in the UI
 
@@ -98,6 +98,6 @@ Adjust how long spend logs are retained (e.g. shorten to reduce storage or exten
 
 ## Related Documentation
 
-- [Getting Started with UI Logs](./ui_logs.md) – Overview of what gets logged and config-based options
-- [Config Settings](./config_settings.md) – `store_prompts_in_spend_logs`, `disable_spend_logs`, `maximum_spend_logs_retention_period` in `general_settings`
-- [Spend Logs Deletion](./spend_logs_deletion.md) – How retention and cleanup work
+- [[ui_logs|Getting Started with UI Logs]] – Overview of what gets logged and config-based options
+- [[config_settings|Config Settings]] – `store_prompts_in_spend_logs`, `disable_spend_logs`, `maximum_spend_logs_retention_period` in `general_settings`
+- [[spend_logs_deletion|Spend Logs Deletion]] – How retention and cleanup work

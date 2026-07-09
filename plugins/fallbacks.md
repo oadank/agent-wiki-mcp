@@ -22,7 +22,7 @@ status: active
 
 If a call fails after num_retries, fallback to another model group. 
 
-- Quick Start [load balancing](./load_balancing.md)
+- Quick Start [[load_balancing|load balancing]]
 - Quick Start [client side fallbacks](#client-side-fallbacks)
 
 

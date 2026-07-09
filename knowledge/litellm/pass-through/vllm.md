@@ -155,7 +155,7 @@ curl -L -X POST 'https://my-vllm-server.com/chat/completions' \
 ## Advanced - Use with Virtual Keys 
 
 Pre-requisites
-- [Setup proxy with DB](../proxy/virtual_keys.md#setup)
+- [[.proxy/virtual_keys#setup|Setup proxy with DB]]
 
 Use this, to avoid giving developers the raw Cohere API key, but still letting them use Cohere endpoints.
 

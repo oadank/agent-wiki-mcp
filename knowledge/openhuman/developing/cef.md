@@ -80,7 +80,7 @@ This is the bulk of `docs/TAURI_CEF_FINDINGS_AND_CHANGES.md`. It's why Slack sto
 
 ## The "no new JS injection" rule
 
-The rule is documented in [`CLAUDE.md`](../../CLAUDE.md): **migrated providers load with zero injected JavaScript**. All scraping happens natively over CDP from the scanner side.
+The rule is documented in [[..CLAUDE|`CLAUDE.md`]]: **migrated providers load with zero injected JavaScript**. All scraping happens natively over CDP from the scanner side.
 
 This matters because anything host-controlled that runs inside a third-party origin is an attack-surface liability. A persistent JS bridge inside Slack is one Slack update away from breaking, and one mistake away from leaking the bridge to attacker-controlled JS. CDP from outside the renderer is strictly better.
 
@@ -147,7 +147,7 @@ The CDP surface is general-purpose. Today it powers memory ingest from a fixed l
 
 ### Browser automation as a first-class agent tool
 
-Today the agent has [native tools](../features/native-tools/README.md) for filesystem, git, web search, and web fetch. The next obvious tool is **"drive a real browser session"**: log into a SaaS the user is already authed in, fill a form, scrape a paginated table, download an export.
+Today the agent has [[.features/native-tools/README|native tools]] for filesystem, git, web search, and web fetch. The next obvious tool is **"drive a real browser session"**: log into a SaaS the user is already authed in, fill a form, scrape a paginated table, download an export.
 
 The plumbing is already there. A `@openhuman/browser_task` skill could spin up a dedicated CEF webview, drive it via CDP from the core, and surface the result as a tool call. The user's existing per-account profiles mean no re-auth.
 
@@ -173,5 +173,5 @@ Each connected account gets its own profile and its own IDB. CDP can snapshot on
 
 ## See also
 
-* [`docs/TAURI_CEF_FINDINGS_AND_CHANGES.md`](../../docs/TAURI_CEF_FINDINGS_AND_CHANGES.md). the notification-permission deep dive.
-* [`CLAUDE.md`](../../CLAUDE.md). the canonical "no new JS injection" rule.
+* [[..docs/TAURI_CEF_FINDINGS_AND_CHANGES|`docs/TAURI_CEF_FINDINGS_AND_CHANGES.md`]]. the notification-permission deep dive.
+* [[..CLAUDE|`CLAUDE.md`]]. the canonical "no new JS injection" rule.

@@ -148,7 +148,7 @@ The `/v1/messages/count_tokens` endpoint automatically routes to the appropriate
 | Provider | Token Counting Method |
 |----------|----------------------|
 | Anthropic | [Anthropic Token Counting API](https://docs.anthropic.com/en/docs/build-with-claude/token-counting) |
-| OpenAI | [OpenAI Responses API `/input_tokens`](https://platform.openai.com/docs/api-reference/responses/input-tokens) — see [Token Counting](./count_tokens.md) |
+| OpenAI | [OpenAI Responses API `/input_tokens`](https://platform.openai.com/docs/api-reference/responses/input-tokens) — see [[count_tokens|Token Counting]] |
 | Vertex AI (Claude) | Vertex AI Partner Models Token Counter |
 | Bedrock (Claude) | AWS Bedrock CountTokens API |
 | Gemini | Google AI Studio countTokens API |
@@ -221,7 +221,7 @@ LiteLLM provides two ways to count tokens:
 | Endpoint | Description | Use Case |
 |----------|-------------|----------|
 | `/v1/messages/count_tokens` | LiteLLM's Anthropic-compatible endpoint | Works with all supported providers (Anthropic, Vertex AI, Bedrock, etc.) |
-| `/anthropic/v1/messages/count_tokens` | [Pass-through to Anthropic API](./pass_through/anthropic_completion.md#example-2-token-counting-api) | Direct Anthropic API access with native headers |
+| `/anthropic/v1/messages/count_tokens` | [[pass_through/anthropic_completion#example-2-token-counting-api|Pass-through to Anthropic API]] | Direct Anthropic API access with native headers |
 
 ### Pass-through Example
 

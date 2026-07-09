@@ -451,6 +451,6 @@ Skip input examples if:
 
 ## Related Features
 
-- [Anthropic Tool Search](./anthropic_tool_search.md) - Dynamically discover and load tools on-demand
-- [Anthropic Programmatic Tool Calling](./anthropic_programmatic_tool_calling.md) - Call tools from code execution
-- [Anthropic Provider](./anthropic.md) - General Anthropic provider documentation
+- [[anthropic_tool_search|Anthropic Tool Search]] - Dynamically discover and load tools on-demand
+- [[anthropic_programmatic_tool_calling|Anthropic Programmatic Tool Calling]] - Call tools from code execution
+- [[anthropic|Anthropic Provider]] - General Anthropic provider documentation

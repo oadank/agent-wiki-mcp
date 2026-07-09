@@ -25,7 +25,7 @@ summary: "[Qualifire](https://qualifire.ai/) provides real-time Agentic evaluati
 
 #### 💡 Tip
 
-Looking for Qualifire Guardrails? Check out the [Qualifire Guardrails Integration](../proxy/guardrails/qualifire.md) for real-time content moderation, prompt injection detection, PII checks, and more.
+Looking for Qualifire Guardrails? Check out the [[.proxy/guardrails/qualifire|Qualifire Guardrails Integration]] for real-time content moderation, prompt injection detection, PII checks, and more.
 
 
 

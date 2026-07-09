@@ -131,7 +131,7 @@ general_settings:
   forward_llm_provider_auth_headers: true  # Enable BYOK
 ```
 
-For **Claude Code** with `/login` and your own Anthropic key, see [Claude Code BYOK](../tutorials/claude_code_byok.md). Use `ANTHROPIC_CUSTOM_HEADERS="x-litellm-api-key: sk-12345"` to pass your LiteLLM key while your Anthropic key (from `/login`) is forwarded as `x-api-key`.
+For **Claude Code** with `/login` and your own Anthropic key, see [[.tutorials/claude_code_byok|Claude Code BYOK]]. Use `ANTHROPIC_CUSTOM_HEADERS="x-litellm-api-key: sk-12345"` to pass your LiteLLM key while your Anthropic key (from `/login`) is forwarded as `x-api-key`.
 
 Client request:
 ```bash
@@ -378,10 +378,10 @@ To test if headers are being forwarded:
 
 ## Related Features
 
-- [Request Headers](./request_headers.md) - Complete list of supported request headers
-- [Response Headers](./response_headers.md) - Headers returned by LiteLLM
-- [Team Model Aliases](./team_model_add.md) - Configure model aliases for teams
-- [Model Access Control](./model_access.md) - Control which users can access which models
+- [[request_headers|Request Headers]] - Complete list of supported request headers
+- [[response_headers|Response Headers]] - Headers returned by LiteLLM
+- [[team_model_add|Team Model Aliases]] - Configure model aliases for teams
+- [[model_access|Model Access Control]] - Control which users can access which models
 
 ## API Reference
 

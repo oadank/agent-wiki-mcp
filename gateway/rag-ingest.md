@@ -27,7 +27,7 @@ All-in-one document ingestion pipeline: **Upload → Chunk → Embed → Vector 
 | Supported Providers | `openai`, `bedrock`, `vertex_ai`, `gemini`, `s3_vectors` |
 
 #### 💡 Tip
-After ingesting documents, use [/rag/query](./rag_query.md) to search and generate responses with your ingested content.
+After ingesting documents, use [[rag_query|/rag/query]] to search and generate responses with your ingested content.
 
 
 ## Quick Start
@@ -132,7 +132,7 @@ curl -X POST "http://localhost:4000/v1/rag/ingest" \
 
 ## Query with RAG
 
-After ingestion, use the [/rag/query](./rag_query.md) endpoint to search and generate LLM responses:
+After ingestion, use the [[rag_query|/rag/query]] endpoint to search and generate LLM responses:
 
 ```bash showLineNumbers title="RAG Query"
 curl -X POST "http://localhost:4000/v1/rag/query" \

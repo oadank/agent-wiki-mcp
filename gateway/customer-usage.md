@@ -99,7 +99,7 @@ The customer ID will be automatically upserted into the database with the new sp
 
 ### Example using OpenWebUI
 
-See the [Open WebUI tutorial](../tutorials/openweb_ui.md) for detailed instructions on connecting Open WebUI to LiteLLM and tracking customer usage.
+See the [[.tutorials/openweb_ui|Open WebUI tutorial]] for detailed instructions on connecting Open WebUI to LiteLLM and tracking customer usage.
 
 ## How to View Spend
 
@@ -153,6 +153,6 @@ Understand how different customers use your service:
 
 ## Related Features
 
-- [Customers / End-User Budgets](./customers.md) - Set budgets and rate limits for customers
-- [Cost Tracking](./cost_tracking.md) - Comprehensive cost tracking and analytics
-- [Billing](./billing.md) - Bill customers based on their usage
+- [[customers|Customers / End-User Budgets]] - Set budgets and rate limits for customers
+- [[cost_tracking|Cost Tracking]] - Comprehensive cost tracking and analytics
+- [[billing|Billing]] - Bill customers based on their usage

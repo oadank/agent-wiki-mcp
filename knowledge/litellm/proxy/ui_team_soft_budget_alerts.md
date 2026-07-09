@@ -39,7 +39,7 @@ Team soft budget alerts let you:
 - **Work without global alerting** — team soft budget alerts are sent via email independently of Slack or other global alerting configuration
 
 #### ⚠️ Warning Email integration required
-Team soft budget alerts are sent via email. You must have an active email integration (SendGrid, Resend, or SMTP) configured on your proxy for alerts to be delivered. See [Email Notifications](./email.md) for setup instructions.
+Team soft budget alerts are sent via email. You must have an active email integration (SendGrid, Resend, or SMTP) configured on your proxy for alerts to be delivered. See [[email|Email Notifications]] for setup instructions.
 
 
 #### ℹ️ Info Automatically active
@@ -145,6 +145,6 @@ curl -X POST 'http://localhost:4000/team/update' \
 
 ## Related Documentation
 
-- [Email Notifications](./email.md) – Configure email integrations (Resend, SMTP) for LiteLLM Proxy
-- [Alerting](./alerting.md) – Set up Slack and other alerting channels
-- [Cost Tracking](./cost_tracking.md) – Track and manage spend across teams, keys, and users
+- [[email|Email Notifications]] – Configure email integrations (Resend, SMTP) for LiteLLM Proxy
+- [[alerting|Alerting]] – Set up Slack and other alerting channels
+- [[cost_tracking|Cost Tracking]] – Track and manage spend across teams, keys, and users

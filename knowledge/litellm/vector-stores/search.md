@@ -125,7 +125,7 @@ response = await litellm.vector_stores.asearch(
 print(response)
 ```
 
-[See full Azure AI vector store documentation](../providers/azure_ai_vector_stores.md)
+[[.providers/azure_ai_vector_stores|See full Azure AI vector store documentation]]
 
 
 
@@ -151,7 +151,7 @@ response = await litellm.vector_stores.asearch(
 print(response)
 ```
 
-[See full Milvus vector store documentation](../providers/milvus_vector_stores.md)
+[[.providers/milvus_vector_stores|See full Milvus vector store documentation]]
 
 
 
@@ -182,7 +182,7 @@ response = await litellm.vector_stores.asearch(
 print(response)
 ```
 
-[See full Gemini File Search documentation](../providers/gemini_file_search.md)
+[[.providers/gemini_file_search|See full Gemini File Search documentation]]
 
 
 ### LiteLLM Proxy Server
@@ -248,7 +248,7 @@ curl -L -X POST 'http://0.0.0.0:4000/v1/vector_stores/vs_abc123/search' \
 
 ## Setting Up Vector Stores
 
-To use vector store search, configure your vector stores in the `vector_store_registry`. See the [Vector Store Configuration Guide](../completion/knowledgebase.md) for:
+To use vector store search, configure your vector stores in the `vector_store_registry`. See the [[.completion/knowledgebase|Vector Store Configuration Guide]] for:
 
 - Provider-specific configuration (Bedrock, OpenAI, Azure, Vertex AI, PG Vector)
 - Python SDK and Proxy setup examples  
@@ -256,4 +256,4 @@ To use vector store search, configure your vector stores in the `vector_store_re
 
 ## Using Vector Stores with Chat Completions
 
-Pass `vector_store_ids` in chat completion requests to automatically retrieve relevant context. See [Using Vector Stores with Chat Completions](../completion/knowledgebase.md#2-make-a-request-with-vector_store_ids-parameter) for implementation details.
+Pass `vector_store_ids` in chat completion requests to automatically retrieve relevant context. See [[.completion/knowledgebase#2-make-a-request-with-vector_store_ids-parameter|Using Vector Stores with Chat Completions]] for implementation details.

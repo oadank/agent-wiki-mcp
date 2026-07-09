@@ -3,7 +3,7 @@
   "realPath": "/opt/.codex",
   "status": "active",
   "createdAt": "2026-05-10 00:36",
-  "lastSession": "2026-06-05 14:40",
+  "lastSession": "2026-07-09 16:51",
   "lastAI": "注册",
   "currentTask": "项目初始化",
   "taskStatus": "✅",
@@ -13,9 +13,9 @@
       "path": "/opt/.codex",
       "count": 3,
       "files": [
+        "./logs_2.sqlite-wal",
         "./logs_2.sqlite-shm",
-        "./logs_2.sqlite",
-        "./logs_2.sqlite-wal"
+        "./logs_2.sqlite"
       ]
     }
   ],

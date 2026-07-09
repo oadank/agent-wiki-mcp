@@ -34,7 +34,7 @@ status: active
 
 Requirements: 
 
-- Need to a postgres database (e.g. [Supabase](https://supabase.com/), [Neon](https://neon.tech/), etc) [**See Setup**](./virtual_keys.md#setup)
+- Need to a postgres database (e.g. [Supabase](https://supabase.com/), [Neon](https://neon.tech/), etc) [[virtual_keys#setup|**See Setup**]]
 
 
 ## Set Budgets
@@ -496,7 +496,7 @@ Expected response on failure
 
 ### Agents
 
-Set budgets and rate limits on agents registered with LiteLLM's [Agent Gateway](../a2a.md). You can control:
+Set budgets and rate limits on agents registered with LiteLLM's [[.a2a|Agent Gateway]]. You can control:
 - **Per-agent rate limits**: `tpm_limit` and `rpm_limit` on the agent itself
 - **Per-session rate limits**: `session_tpm_limit` and `session_rpm_limit` applied per session
 - **Per-session iteration cap**: `max_iterations` in agent `litellm_params`
@@ -845,7 +845,7 @@ curl --location 'http://0.0.0.0:4000/key/generate' \
 
 Set `model_rpm_limit` and `model_tpm_limit` to set rate limits per model per api key
 
-Here `gpt-4` is the `model_name` set on the [litellm config.yaml](configs.md)
+Here `gpt-4` is the `model_name` set on the [[configs|litellm config.yaml]]
 
 ```shell
 curl --location 'http://0.0.0.0:4000/key/generate' \
@@ -893,7 +893,7 @@ These headers indicate:
 - 179 tokens remaining for the GPT-4 model for key=`sk-ulGNRXWtv7M0lFnnsQk0wQ`
 
 
-Set rate limits on agents registered with the [Agent Gateway](../a2a.md).
+Set rate limits on agents registered with the [[.a2a|Agent Gateway]].
 
 **Agent-level limits** cap total throughput across all sessions:
 
@@ -980,7 +980,7 @@ curl --location 'http://localhost:4000/chat/completions' \
 
 Use this to set a default budget for users who you give keys to.
 
-This will apply when a user has [`user_role="internal_user"`](./self_serve.md#available-roles) (set this via `/user/new` or `/user/update`). 
+This will apply when a user has [[self_serve#available-roles|`user_role="internal_user"`]] (set this via `/user/new` or `/user/update`). 
 
 This will NOT apply if a key has a team_id (team budgets will apply then). [Tell us how we can improve this!](https://github.com/BerriAI/litellm/issues)
 

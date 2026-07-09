@@ -20,7 +20,7 @@ Route the same model to different LLM provider endpoints (e.g. different Azure i
 
 In multi-tenant deployments, different teams often need the same model name (e.g., `gpt-4`) to hit different provider endpoints — for example, separate Azure OpenAI instances per business unit for cost isolation, data residency, or rate limit separation.
 
-**Credential routing** lets you configure this in team/project metadata using the existing [credentials table](./ui_credentials.md), without duplicating model definitions or creating separate model groups per team.
+**Credential routing** lets you configure this in team/project metadata using the existing [[ui_credentials|credentials table]], without duplicating model definitions or creating separate model groups per team.
 
 ```
 Hotel Team → gpt-4 → https://hotel-eastus.openai.azure.com/
@@ -31,7 +31,7 @@ Flight Team → gpt-4 → https://flight-centralus.openai.azure.com/
 
 When a request comes in, the system walks this precedence chain (first match wins):
 
-1. **Clientside credentials** — `api_base`/`api_key` passed in the request body ([docs](./clientside_auth.md))
+1. **Clientside credentials** — `api_base`/`api_key` passed in the request body ([[clientside_auth|docs]])
 2. **Project model-specific** — override for this exact model in the project's `model_config`
 3. **Project default** — `defaultconfig` in the project's `model_config`
 4. **Team model-specific** — override for this exact model in the team's `model_config`
@@ -42,7 +42,7 @@ When a request comes in, the system walks this precedence chain (first match win
 
 ### Step 1: Create Credentials
 
-Store your Azure endpoint credentials in the credentials table. You can do this via the [UI](./ui_credentials.md) or API:
+Store your Azure endpoint credentials in the credentials table. You can do this via the [[ui_credentials|UI]] or API:
 
 ```bash showLineNumbers
 # Create credential for Hotel team's Azure endpoint
@@ -233,7 +233,7 @@ The `model_config` key is a JSON object in team/project `metadata`:
 | `defaultconfig` | Fallback credential for any model not explicitly listed |
 | `<model-name>` | Model-specific override — must match the LiteLLM model group name |
 | `<provider>` | Provider key (e.g. `azure`, `openai`, `bedrock`). When the model name includes a provider prefix (e.g. `azure/gpt-4`), the system prefers the matching provider key |
-| `litellm_credentials` | Name of a credential in the [credentials table](./ui_credentials.md) |
+| `litellm_credentials` | Name of a credential in the [[ui_credentials|credentials table]] |
 
 ### Credential Values
 
@@ -271,8 +271,8 @@ The feature flag must be enabled before `model_config` entries in team/project m
 
 ## Related Documentation
 
-- [Adding LLM Credentials](./ui_credentials.md) — Create and manage reusable credentials
-- [Project Management](./project_management.md) — Project hierarchy and API
-- [Team Budgets](./team_budgets.md) — Team-level budget management
-- [Clientside LLM Credentials](./clientside_auth.md) — Passing credentials in the request body
-- [Credential Usage Tracking](./credential_usage_tracking.md) — Track spend by credential
+- [[ui_credentials|Adding LLM Credentials]] — Create and manage reusable credentials
+- [[project_management|Project Management]] — Project hierarchy and API
+- [[team_budgets|Team Budgets]] — Team-level budget management
+- [[clientside_auth|Clientside LLM Credentials]] — Passing credentials in the request body
+- [[credential_usage_tracking|Credential Usage Tracking]] — Track spend by credential

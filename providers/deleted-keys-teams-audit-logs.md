@@ -119,5 +119,5 @@ This feature is particularly useful for:
 
 ## Related Features
 
-- [Audit Logs](./multiple_admins.md) - View comprehensive audit logs for all entity changes
-- [UI Logs](./ui_logs.md) - View request logs and spend tracking
+- [[multiple_admins|Audit Logs]] - View comprehensive audit logs for all entity changes
+- [[ui_logs|UI Logs]] - View request logs and spend tracking

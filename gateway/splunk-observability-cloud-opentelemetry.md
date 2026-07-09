@@ -21,7 +21,7 @@ status: active
 
 Send LiteLLM traces to [Splunk Observability Cloud](https://www.splunk.com/en_us/products/observability-cloud.html) using the built-in **`otel`** callback and standard OpenTelemetry OTLP environment variables.
 
-LiteLLM uses the same OpenTelemetry path as the [OpenTelemetry integration](./opentelemetry_integration.md). Splunk’s OTLP/HTTP trace ingest URL uses **`/v2/trace/otlp`** (not **`/v1/traces`**); LiteLLM normalizes generic collector URLs but **preserves** Splunk-style `/v2/trace/otlp` endpoints so spans reach Splunk correctly.
+LiteLLM uses the same OpenTelemetry path as the [[opentelemetry_integration|OpenTelemetry integration]]. Splunk’s OTLP/HTTP trace ingest URL uses **`/v2/trace/otlp`** (not **`/v1/traces`**); LiteLLM normalizes generic collector URLs but **preserves** Splunk-style `/v2/trace/otlp` endpoints so spans reach Splunk correctly.
 
 ## Video walkthrough
 
@@ -79,5 +79,5 @@ litellm --config /path/to/config.yaml
 
 ## See also
 
-- [OpenTelemetry — Tracing LLMs](./opentelemetry_integration.md)
+- [[opentelemetry_integration|OpenTelemetry — Tracing LLMs]]
 - [Splunk Observability Cloud — OTLP exporter](https://docs.splunk.com/observability/en/gdi/opentelemetry/opentelemetry.html) (vendor docs)

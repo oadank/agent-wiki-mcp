@@ -284,7 +284,7 @@ This ensures the polling mechanism can correctly identify the provider and retri
 ## Advanced
 
 Pre-requisites
-- [Setup proxy with DB](../proxy/virtual_keys.md#setup)
+- [[.proxy/virtual_keys#setup|Setup proxy with DB]]
 
 Use this, to avoid giving developers the raw Anthropic API key, but still letting them use Anthropic endpoints.
 

@@ -18,7 +18,7 @@ OpenHuman is designed so that the **memory of your life lives on your machine**.
 
 **No training on your data.** Your conversations, your Memory Tree, and your personal information are never used to train AI models or improve systems.
 
-**Optional** [**Local AI**](model-routing/local-ai.md)**.** If you want embeddings and summary-tree building to stay on your machine, opt in. Heartbeat / learning / subconscious loops can be moved on-device the same way.
+**Optional** [[model-routing/local-ai|**Local AI**]]**.** If you want embeddings and summary-tree building to stay on your machine, opt in. Heartbeat / learning / subconscious loops can be moved on-device the same way.
 
 ***
 
@@ -36,9 +36,9 @@ OpenHuman is designed so that the **memory of your life lives on your machine**.
 |                                    |                                                                                                                                                                            |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **LLM calls**                      | Proxied through the backend under one subscription, then forwarded to the underlying provider (Anthropic / OpenAI / Google / etc.) per the [model router](model-routing/). |
-| **Web search proxy**               | The native [web search tool](native-tools/web-search.md) uses the backend proxy by default so you don't carry a search API key. If you call the optional SearXNG tool, that query goes to your configured SearXNG instance instead. |
-| **Integration OAuth & tool proxy** | Token storage and rate-limited request brokering for [118+ integrations](integrations/README.md).                                                                                 |
-| **TTS streaming**                  | Hosted [text-to-speech](native-tools/voice.md) audio streams. Audio is generated and discarded - not retained.                                                                          |
+| **Web search proxy**               | The native [[native-tools/web-search|web search tool]] uses the backend proxy by default so you don't carry a search API key. If you call the optional SearXNG tool, that query goes to your configured SearXNG instance instead. |
+| **Integration OAuth & tool proxy** | Token storage and rate-limited request brokering for [[integrations/README|118+ integrations]].                                                                                 |
+| **TTS streaming**                  | Hosted [[native-tools/voice|text-to-speech]] audio streams. Audio is generated and discarded - not retained.                                                                          |
 
 ***
 
@@ -46,7 +46,7 @@ OpenHuman is designed so that the **memory of your life lives on your machine**.
 
 OpenHuman accesses an integration only after you complete its OAuth flow. Each connection has its own scope; you can revoke any of them at any time from the Skills tab.
 
-[Auto-fetch](obsidian-wiki/auto-fetch.md) does run continuously while a connection is active, that is the whole point. But it is bound by:
+[[obsidian-wiki/auto-fetch|Auto-fetch]] does run continuously while a connection is active, that is the whole point. But it is bound by:
 
 * The **OAuth scope** you granted that integration.
 * A **per-provider sync interval** (e.g. Gmail every 15 min by default).
@@ -72,7 +72,7 @@ Compression and locality together become the privacy architecture.
 
 **Sandboxed skills.** Each skill runs in its own isolated execution environment with enforced memory and resource limits. Skills cannot access each other's data, the host system's file system, or your credentials.
 
-**Workspace-scoped tools.** The native [filesystem tools](native-tools/coder.md) operate within the workspace the user opens; they do not have ambient access to the rest of the disk.
+**Workspace-scoped tools.** The native [[native-tools/coder|filesystem tools]] operate within the workspace the user opens; they do not have ambient access to the rest of the disk.
 
 **Short-lived tokens.** Authentication tokens between the app and the backend are time-limited.
 

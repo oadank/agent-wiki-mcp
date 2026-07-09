@@ -79,7 +79,7 @@ Vendored 运行时位于 [`app/src-tauri/vendor/tauri-cef/`](https://github.com/
 
 ## "不注入新 JS" 规则
 
-规则记录在 [`CLAUDE.md`](../../CLAUDE.md) 中：**迁移的提供商以零注入 JavaScript 加载**。所有抓取都通过扫描器侧的 CDP 原生进行。
+规则记录在 [[..CLAUDE|`CLAUDE.md`]] 中：**迁移的提供商以零注入 JavaScript 加载**。所有抓取都通过扫描器侧的 CDP 原生进行。
 
 这很重要，因为任何在第三方来源内部运行的宿主控制代码都是攻击面责任。Slack 内部的持久 JS 桥接离失效只有一个 Slack 更新之遥，离通过攻击者控制的 JS 泄露桥接只有一个错误之遥。从渲染器外部的 CDP 严格更好。
 
@@ -142,7 +142,7 @@ CDP 表面是通用的。今天它为固定列表的提供商提供记忆摄入�
 
 ### 浏览器自动化作为一等智能体工具
 
-今天智能体有[原生工具](../features/native-tools/README.zh-CN.md)用于文件系统、git、网页搜索和网页获取。下一个明显的工具是**"驱动真实浏览器会话"**：登录用户已认证过的 SaaS，填写表单，抓取分页表格，下载导出。
+今天智能体有[[.features/native-tools/README.zh-CN|原生工具]]用于文件系统、git、网页搜索和网页获取。下一个明显的工具是**"驱动真实浏览器会话"**：登录用户已认证过的 SaaS，填写表单，抓取分页表格，下载导出。
 
  plumbing 已经存在。`@openhuman/browser_task` 技能可以启动一个专用 CEF webview，通过 CDP 从核心驱动它，并将结果作为工具调用展示。用户现有的每账户配置文件意味着无需重新认证。
 
@@ -168,5 +168,5 @@ CEF 的 `CefRequestHandler` 已经允许我们拦截网络请求。从"拦截并
 
 ## 另请参阅
 
-* [`docs/TAURI_CEF_FINDINGS_AND_CHANGES.md`](../../docs/TAURI_CEF_FINDINGS_AND_CHANGES.md)。通知权限深度解析。
-* [`CLAUDE.md`](../../CLAUDE.md)。权威的"不注入新 JS"规则。
+* [[..docs/TAURI_CEF_FINDINGS_AND_CHANGES|`docs/TAURI_CEF_FINDINGS_AND_CHANGES.md`]]。通知权限深度解析。
+* [[..CLAUDE|`CLAUDE.md`]]。权威的"不注入新 JS"规则。

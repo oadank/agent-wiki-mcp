@@ -25,7 +25,7 @@ A trigger is an external event published by an integration you've connected. Com
 | **Stripe** | `STRIPE_CHARGE_SUCCEEDED`, a successful charge on your account |
 | **Calendar** | `GOOGLE_CALENDAR_EVENT_CREATED`, a new event on your calendar |
 
-The full set comes from the [Composio](https://composio.dev) connector layer that powers [third-party integrations](README.md). When a connection is active, the relevant trigger subscriptions are wired up automatically.
+The full set comes from the [Composio](https://composio.dev) connector layer that powers [[README|third-party integrations]]. When a connection is active, the relevant trigger subscriptions are wired up automatically.
 
 ### Gmail OAuth scopes
 
@@ -89,11 +89,11 @@ This is the part that distinguishes "OpenHuman has a Gmail integration" from "Op
 
 - **`react`** is the cheap path. The Trigger Reactor is a narrow specialist with a hard budget of a couple of tool calls. It's perfect for: writing a one-line memory note that says "saw a new charge from Stripe for $84, customer X, merchant Y", silently marking a Slack message as handled because it's the same automated alert you've already triaged twice this week, or storing a structured record of an event the user might want to look up later.
 
-- **`escalate`** is the heavy path. When the Triage agent decides the trigger needs real work, it hands off to the Orchestrator with a self-contained task description. The orchestrator has access to your full skill surface, tools, memory, and the [Subconscious Loop](../subconscious.md) outputs. From there it might:
+- **`escalate`** is the heavy path. When the Triage agent decides the trigger needs real work, it hands off to the Orchestrator with a self-contained task description. The orchestrator has access to your full skill surface, tools, memory, and the [[.subconscious|Subconscious Loop]] outputs. From there it might:
   - Draft a reply to an important email and queue it for your approval.
   - Pull up the relevant Notion / Linear / Drive context for an inbound issue and write a structured comment.
   - Update three connected systems based on a single inbound event ("this customer's plan changed in Stripe, update HubSpot, post in #revenue, and add a note to their Notion file").
-  - Decide the trigger means a meeting just got scheduled and pre-load the [Meeting Agent](../mascot/meeting-agents.md) for that call.
+  - Decide the trigger means a meeting just got scheduled and pre-load the [[.mascot/meeting-agents|Meeting Agent]] for that call.
 
 In both cases the action runs on your machine, against your local Memory Tree, with the same model-routing and tool surface the rest of the agent uses.
 
@@ -104,7 +104,7 @@ It's tempting to skip the classifier and just pipe every trigger straight into t
 1. **Most triggers are noise.** A connected Gmail account fires dozens of triggers an hour, the vast majority of which the user doesn't care about. Running the orchestrator on each would burn budget and produce a constant stream of background activity.
 2. **Different triggers deserve different ceilings.** An automated Stripe receipt and a personal Slack DM should not cost the same number of tokens to handle. Triage lets the cheap path be cheap and reserves the orchestrator for things that earn it.
 
-Triage runs on the fast model tier (see [Automatic Model Routing](../model-routing/README.md)) so the classification itself is sub-second.
+Triage runs on the fast model tier (see [[.model-routing/README|Automatic Model Routing]]) so the classification itself is sub-second.
 
 ## Configuration and opt-out
 
@@ -115,7 +115,7 @@ Triage runs on the fast model tier (see [Automatic Model Routing](../model-routi
 
 ## Privacy boundary
 
-Triggers follow the same boundary as the rest of the product (see [Privacy & Security](../privacy-and-security.md)):
+Triggers follow the same boundary as the rest of the product (see [[.privacy-and-security|Privacy & Security]]):
 
 - The third-party token lives on the backend, never on your laptop.
 - The webhook is HMAC-verified by the backend before it reaches your machine.
@@ -133,7 +133,7 @@ Triggers follow the same boundary as the rest of the product (see [Privacy & Sec
 
 ## See also
 
-* [Third-party Integrations](README.md), the catalog of services triggers come from.
-* [Auto-fetch from Integrations](../obsidian-wiki/auto-fetch.md), the polling counterpart, periodic ingest of source data into the Memory Tree.
-* [Subconscious Loop](../subconscious.md), the background loop that uses trigger context and memory to plan ahead.
-* [Meeting Agents](../mascot/meeting-agents.md), one place an escalated trigger can land (a calendar event with a Meet link).
+* [[README|Third-party Integrations]], the catalog of services triggers come from.
+* [[.obsidian-wiki/auto-fetch|Auto-fetch from Integrations]], the polling counterpart, periodic ingest of source data into the Memory Tree.
+* [[.subconscious|Subconscious Loop]], the background loop that uses trigger context and memory to plan ahead.
+* [[.mascot/meeting-agents|Meeting Agents]], one place an escalated trigger can land (a calendar event with a Meet link).

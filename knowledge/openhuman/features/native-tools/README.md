@@ -18,26 +18,26 @@ A plugin-only model means tools live in different processes, behind RPC, with th
 
 * Consistent error handling.
 * Zero install friction.
-* All output passes through [Smart Token Compression](../token-compression.md) for free.
+* All output passes through [[.token-compression|Smart Token Compression]] for free.
 * Predictable security boundary - filesystem tools respect workspace scoping, and network tools use the managed OpenHuman proxy by default unless you opt into a self-hosted path such as SearXNG.
 
 ## The toolbelt
 
 | Family | What it covers |
 | ------ | -------------- |
-| [Web Search](web-search.md) | Search the live web via the managed proxy, or opt into self-hosted SearXNG. |
-| [Web Scraper](web-scraper.md) | Pull clean text out of any URL - articles, docs, READMEs. |
-| [Coder](coder.md) | Read/write/edit/patch files, glob, grep, git, lint, test. |
-| [Browser & Computer Control](browser-and-computer.md) | Open URLs, screenshot, click, type, move the mouse. |
-| [Cron & Scheduling](cron.md) | Recurring jobs, one-off reminders, scheduled agent runs. |
-| [Voice](voice.md) | Speech-to-text in, text-to-speech out, live Google Meet agent. |
-| [Memory Tools](memory-tools.md) | Recall, store, forget, and search the [Memory Tree](../obsidian-wiki/memory-tree.md). |
-| [Third-party Integrations](../integrations/README.md) | The agent's view of the [118+ connected services](../integrations/README.md). |
-| [Agent Coordination](agent-coordination.md) | Spawn subagents, delegate to skills, plan, ask the user. |
-| [System & Utilities](system-and-utilities.md) | Shell, node, SQL, current time, push notifications, LSP. |
+| [[web-search|Web Search]] | Search the live web via the managed proxy, or opt into self-hosted SearXNG. |
+| [[web-scraper|Web Scraper]] | Pull clean text out of any URL - articles, docs, READMEs. |
+| [[coder|Coder]] | Read/write/edit/patch files, glob, grep, git, lint, test. |
+| [[browser-and-computer|Browser & Computer Control]] | Open URLs, screenshot, click, type, move the mouse. |
+| [[cron|Cron & Scheduling]] | Recurring jobs, one-off reminders, scheduled agent runs. |
+| [[voice|Voice]] | Speech-to-text in, text-to-speech out, live Google Meet agent. |
+| [[memory-tools|Memory Tools]] | Recall, store, forget, and search the [[.obsidian-wiki/memory-tree|Memory Tree]]. |
+| [[.integrations/README|Third-party Integrations]] | The agent's view of the [[.integrations/README|118+ connected services]]. |
+| [[agent-coordination|Agent Coordination]] | Spawn subagents, delegate to skills, plan, ask the user. |
+| [[system-and-utilities|System & Utilities]] | Shell, node, SQL, current time, push notifications, LSP. |
 
 ## See also
 
-* [Smart Token Compression](../token-compression.md) - what keeps tool output costs bounded.
-* [Third-party Integrations](../integrations/README.md) - the user-facing pitch and OAuth flow for the 118+ catalog.
-* [Privacy & Security](../privacy-and-security.md) - the boundary every tool runs inside.
+* [[.token-compression|Smart Token Compression]] - what keeps tool output costs bounded.
+* [[.integrations/README|Third-party Integrations]] - the user-facing pitch and OAuth flow for the 118+ catalog.
+* [[.privacy-and-security|Privacy & Security]] - the boundary every tool runs inside.

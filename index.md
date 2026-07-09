@@ -176,7 +176,7 @@
 - [[gateway/cpu-issue-classification-reproduction|gateway/cpu-issue-classification-reproduction]] — Select the options that best describes the CPU behavior observed.
 - [[gateway/create-custom-subagents|gateway/create-custom-subagents]]
 - [[gateway/create-pass-through-endpoints|gateway/create-pass-through-endpoints]] — Route requests from your LiteLLM proxy to any external API. Perfect for custom models, image generation APIs, or any service you want to proxy through LiteLLM.
-- [[gateway/credential-usage-tracking|gateway/credential-usage-tracking]] — When a model is attached to a [reusable credential](./ui_credentials.md), LiteLLM automatically injects the credential name as a tag on every request that uses that model. This means credential-level 
+- [[gateway/credential-usage-tracking|gateway/credential-usage-tracking]] — When a model is attached to a [[ui_credentials|reusable credential]], LiteLLM automatically injects the credential name as a tag on every request that uses that model. This means credential-level 
 - [[gateway/crestodian|gateway/crestodian]] — CLI reference and security model for Crestodian, the configless-safe setup and repair helper
 - [[gateway/cron-1|gateway/cron-1]] — CLI reference for `openclaw cron` (schedule and run background jobs)
 - [[gateway/cron|gateway/cron]] — CLI reference for `openclaw cron` (schedule and run background jobs)
@@ -2586,7 +2586,7 @@
 - [[knowledge/openclaw/claude-code-docs/plugins|knowledge/openclaw/claude-code-docs/plugins]]
 - [[knowledge/openclaw/tools/creating-skills|knowledge/openclaw/tools/creating-skills]] — Build and test custom workspace skills with SKILL.md
 - [[knowledge/openclaw/skills/creating-skills|knowledge/openclaw/skills/creating-skills]] — Build and test custom workspace skills with SKILL.md
-- [[knowledge/litellm/proxy/credential_usage_tracking|knowledge/litellm/proxy/credential_usage_tracking]] — When a model is attached to a [reusable credential](./ui_credentials.md), LiteLLM automatically injects the credential name as a tag on every request that uses that model. This means credential-level 
+- [[knowledge/litellm/proxy/credential_usage_tracking|knowledge/litellm/proxy/credential_usage_tracking]] — When a model is attached to a [[ui_credentials|reusable credential]], LiteLLM automatically injects the credential name as a tag on every request that uses that model. This means credential-level 
 - [[knowledge/openclaw/reference/credits|knowledge/openclaw/reference/credits]] — Project origin, contributors, and license.
 - [[knowledge/plugins/crestodian|knowledge/plugins/crestodian]] — CLI reference and security model for Crestodian, the configless-safe setup and repair helper
 - [[knowledge/openhuman/features/native-tools/cron|knowledge/openhuman/features/native-tools/cron]]

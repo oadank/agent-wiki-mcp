@@ -141,7 +141,7 @@ Here's how to call a LM Studio model with the LiteLLM Proxy Server
 
 ## Supported Parameters
 
-See [Supported Parameters](../completion/input.md#translated-openai-params) for supported parameters.
+See [[.completion/input#translated-openai-params|Supported Parameters]] for supported parameters.
 
 ## Embedding
 

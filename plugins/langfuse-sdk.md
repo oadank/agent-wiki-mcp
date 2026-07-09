@@ -87,7 +87,7 @@ print("flushed langfuse request")
 ## Advanced - Use with Virtual Keys 
 
 Pre-requisites
-- [Setup proxy with DB](../proxy/virtual_keys.md#setup)
+- [[.proxy/virtual_keys#setup|Setup proxy with DB]]
 
 Use this, to avoid giving developers the raw Google AI Studio key, but still letting them use Google AI Studio endpoints.
 
@@ -142,4 +142,4 @@ langfuse.flush()
 print("flushed langfuse request")
 ```
 
-## [Advanced - Log to separate langfuse projects (by key/team)](../proxy/team_logging.md)
+## [[.proxy/team_logging|Advanced - Log to separate langfuse projects (by key/team)]]

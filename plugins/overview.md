@@ -520,7 +520,7 @@ model_list:
 
 ### Set Custom Prompt Templates
 
-LiteLLM by default checks if a model has a [prompt template and applies it](../completion/prompt_formatting.md) (e.g. if a huggingface model has a saved chat template in it's tokenizer_config.json). However, you can also set a custom prompt template on your proxy in the `config.yaml`: 
+LiteLLM by default checks if a model has a [[.completion/prompt_formatting|prompt template and applies it]] (e.g. if a huggingface model has a saved chat template in it's tokenizer_config.json). However, you can also set a custom prompt template on your proxy in the `config.yaml`: 
 
 **Step 1**: Save your prompt template in a `config.yaml`
 ```yaml

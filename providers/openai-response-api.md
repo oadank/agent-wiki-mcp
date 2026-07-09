@@ -67,7 +67,7 @@ response = litellm.responses(
 print(response)
 ```
 
-For full details, see the [Web Search guide](../../completion/web_search.md).
+For full details, see the [[..completion/web_search|Web Search guide]].
 
 #### Image Generation with Streaming
 ```python showLineNumbers title="OpenAI Streaming Image Generation"

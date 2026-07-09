@@ -53,7 +53,7 @@ When running multiple LiteLLM proxy pods, you can enable shared health check sta
 - Background health checks enabled
 - Multiple proxy pods
 
-For detailed configuration and usage, see [Shared Health Check State](./shared_health_check.md). 
+For detailed configuration and usage, see [[shared_health_check|Shared Health Check State]]. 
 
 ## `/health`
 #### Request
@@ -337,7 +337,7 @@ general_settings:
 
 Route traffic away from unhealthy deployments proactively — before user requests hit them. Supports per-error-type failure thresholds, transient error suppression, and automatic safety nets.
 
-See the full guide: [Health Check Driven Routing](./health_check_routing.md)
+See the full guide: [[health_check_routing|Health Check Driven Routing]]
 
 ## Health Check Timeout
 

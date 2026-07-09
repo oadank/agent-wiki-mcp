@@ -16,7 +16,7 @@ icon: sitemap
 | `spawn_worker_thread` | 不需要阻塞主对话的后台工作。 |
 | `delegate` | 将任务交给专家（例如具有不同提示/工具/权限的原型）。 |
 | `archetype_delegation` | 路由到命名原型——coder、researcher、planner 等。 |
-| `skill_delegation` | 交接给工作区中安装的[技能](../integrations/README.zh-CN.md#skills)。 |
+| `skill_delegation` | 交接给工作区中安装的[[.integrations/README.zh-CN#skills|技能]]。 |
 | `ask_clarification` | 暂停并向用户提出精确问题，而不是猜测。 |
 | `plan_exit` | 退出规划阶段并开始执行。 |
 | `check_onboarding_status` / `complete_onboarding` | 根据用户是否完成入门进行门控。 |
@@ -33,5 +33,5 @@ icon: sitemap
 
 ## 另见
 
-* [编码器](coder.zh-CN.md)——coder-archetype 子智能体通常使用什么。
-* [潜意识循环](../subconscious.zh-CN.md)——始终开启的后台智能体线程。
+* [[coder.zh-CN|编码器]]——coder-archetype 子智能体通常使用什么。
+* [[.subconscious.zh-CN|潜意识循环]]——始终开启的后台智能体线程。

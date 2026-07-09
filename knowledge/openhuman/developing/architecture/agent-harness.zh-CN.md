@@ -64,7 +64,7 @@ Agent Harness 是将用户消息（或 webhook 触发、cron tick）转变为完
 
 1. **恢复会话转录**，如果这是一个新进程 —— 从磁盘重新加载精确的提供商消息，以便推理后端的 KV-cache 前缀仍然命中。
 2. **构建系统提示**（仅在第一轮）。这拉入身份、soul、profile、记忆、已连接集成、可用工具、安全前言 —— 由提示部分构建器组装。
-3. **注入记忆上下文**，通过记忆加载器为新用户消息注入：[记忆树](../../features/obsidian-wiki/memory-tree.zh-CN.md) 中的相关块，附带引用，使 UI 可以展示来源。
+3. **注入记忆上下文**，通过记忆加载器为新用户消息注入：[[..features/obsidian-wiki/memory-tree.zh-CN|记忆树]] 中的相关块，附带引用，使 UI 可以展示来源。
 4. **进入工具调用循环**（下一节）。
 5. **在后台生成轮次后 hook** —— 用户在 archivist / learning / 成本日志完成前就得到答案。
 
@@ -242,7 +242,7 @@ evaluator 有意保持廉价 —— 在可用时使用小型本地模型，重�
 * **Archivist** —— 蒸馏轮次中哪些事实值得持久化到长期记忆。
 * **Learning** —— 为 reflection、工具跟踪器和用户 profile 更新提供输入。
 * **成本日志** —— 最终每轮成本行。
-* **情景记忆索引** —— 将轮次作为块写入[记忆树](../../features/obsidian-wiki/memory-tree.zh-CN.md)以供未来召回。
+* **情景记忆索引** —— 将轮次作为块写入[[..features/obsidian-wiki/memory-tree.zh-CN|记忆树]]以供未来召回。
 
 Hook 通过 `tokio::spawn` 运行，因此用户在它们完成前就得到了答案。
 
@@ -305,7 +305,7 @@ harness 完全位于 `src/openhuman/agent/` 下。该目录中的 README 枚举�
 
 ## 另请参阅
 
-* [架构概览](README.zh-CN.md) —— harness 在更大图景中的位置。
-* [记忆树](../../features/obsidian-wiki/memory-tree.zh-CN.md) —— 记忆加载器从中读取、轮次后 hook 写入的内容。
-* [自动模型路由](../../features/model-routing/README.zh-CN.md) —— `model: "hint:reasoning"` 如何解析为具体的提供商+模型。
-* [原生工具 —— 智能体协调](../../features/native-tools/agent-coordination.zh-CN.md) —— `spawn_subagent`、`delegate_*`、`todo_write` 的用户可见表面。
+* [[README.zh-CN|架构概览]] —— harness 在更大图景中的位置。
+* [[..features/obsidian-wiki/memory-tree.zh-CN|记忆树]] —— 记忆加载器从中读取、轮次后 hook 写入的内容。
+* [[..features/model-routing/README.zh-CN|自动模型路由]] —— `model: "hint:reasoning"` 如何解析为具体的提供商+模型。
+* [[..features/native-tools/agent-coordination.zh-CN|原生工具 —— 智能体协调]] —— `spawn_subagent`、`delegate_*`、`todo_write` 的用户可见表面。

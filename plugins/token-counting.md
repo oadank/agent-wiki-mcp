@@ -165,7 +165,7 @@ print(response.json())
 
 ### Anthropic Format — `/v1/messages/count_tokens`
 
-See [Anthropic Token Counting](./anthropic_count_tokens.md) for full documentation.
+See [[anthropic_count_tokens|Anthropic Token Counting]] for full documentation.
 
 ```bash
 curl -X POST "http://localhost:4000/v1/messages/count_tokens" \

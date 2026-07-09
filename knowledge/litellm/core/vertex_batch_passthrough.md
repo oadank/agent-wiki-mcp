@@ -166,6 +166,6 @@ Common error scenarios and their solutions:
 
 ## Related Documentation
 
-- [Vertex AI Provider Documentation](./providers/vertex.md)
-- [General Batches API Documentation](./batches.md)
-- [Cost Tracking and Monitoring](./observability/telemetry.md)
+- [[providers/vertex|Vertex AI Provider Documentation]]
+- [[batches|General Batches API Documentation]]
+- [[observability/telemetry|Cost Tracking and Monitoring]]

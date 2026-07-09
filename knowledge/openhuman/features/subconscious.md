@@ -181,6 +181,6 @@ Lives under **Intelligence → Subconscious**.
 
 ## See also
 
-* [Memory Tree](obsidian-wiki/memory-tree.md), what the situation report reads from.
-* [Auto-fetch from Integrations](obsidian-wiki/auto-fetch.md), how the workspace stays fresh between ticks.
-* [Local AI (optional)](model-routing/local-ai.md), the on-device model that powers evaluation.
+* [[obsidian-wiki/memory-tree|Memory Tree]], what the situation report reads from.
+* [[obsidian-wiki/auto-fetch|Auto-fetch from Integrations]], how the workspace stays fresh between ticks.
+* [[model-routing/local-ai|Local AI (optional)]], the on-device model that powers evaluation.

@@ -328,6 +328,6 @@ LiteLLM automatically maps these to appropriate exceptions:
 ## Further Reading
 
 Vector Stores:
-- [Vector Store Creation](../vector_stores/create.md)
-- [Using Vector Stores with Completions](../completion/knowledgebase.md)
-- [Vector Store Registry](../completion/knowledgebase.md#vectorstoreregistry)
+- [[.vector_stores/create|Vector Store Creation]]
+- [[.completion/knowledgebase|Using Vector Stores with Completions]]
+- [[.completion/knowledgebase#vectorstoreregistry|Vector Store Registry]]

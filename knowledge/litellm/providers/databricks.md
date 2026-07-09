@@ -212,7 +212,7 @@ response = completion(
 
 
 ## Passing additional params - max_tokens, temperature 
-See all litellm.completion supported params [here](../completion/input.md#translated-openai-params)
+See all litellm.completion supported params [[.completion/input#translated-openai-params|here]]
 
 ```python
 # !uv add litellm

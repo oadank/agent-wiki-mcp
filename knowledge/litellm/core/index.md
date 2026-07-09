@@ -27,7 +27,7 @@ The Trivy supply-chain compromise has been contained :tada: . All affected packa
 
 - Call any provider using the same `completion()` interface — no re-learning the API for each one
 - Consistent output format regardless of which provider or model you use
-- Built-in retry / fallback logic across multiple deployments via the [Router](./routing.md)
+- Built-in retry / fallback logic across multiple deployments via the [[routing|Router]]
 - Self-hosted [LLM Gateway (Proxy)](./simple_proxy) with virtual keys, cost tracking, and an admin UI
 
 [![PyPI](https://img.shields.io/pypi/v/litellm.svg)](https://pypi.org/project/litellm/)

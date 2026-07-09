@@ -6,7 +6,7 @@ lang: zh-CN
 
 # 测试策略
 
-OpenHuman 如何测试其产品。"我的测试该放哪里？"的权威答案。 companion 文档为 [`TEST-COVERAGE-MATRIX.md`](../../docs/TEST-COVERAGE-MATRIX.md)。
+OpenHuman 如何测试其产品。"我的测试该放哪里？"的权威答案。 companion 文档为 [[..docs/TEST-COVERAGE-MATRIX|`TEST-COVERAGE-MATRIX.md`]]。
 
 ---
 
@@ -17,8 +17,8 @@ OpenHuman 如何测试其产品。"我的测试该放哪里？"的权威答案�
 | **Rust 单元测试** | 同一 `*.rs` 文件内的 `#[cfg(test)] mod tests`，或同级 `tests.rs`，或域名下的 `tests/` 子目录（例如 `src/openhuman/channels/tests/`） | 纯领域逻辑、schema、RPC handler 形态、内存状态机 | `cargo test` |
 | **Rust 集成测试** | 仓库根目录的 `tests/*.rs` | 完整领域接线，含真实 Tokio 运行时、模拟外部服务、JSON-RPC 端到端（`tests/json_rpc_e2e.rs`）、领域 × 领域交互 | `pnpm test:rust`（调用 `bash scripts/test-rust-with-mock.sh`） |
 | **Vitest 单元测试** | 与源码共存于 `app/src/**` 下的 `*.test.ts(x)`，或 `app/src/**/__tests__/` 下 | React 组件、hook、store slice、纯工具函数、service 层适配器 | `pnpm test:unit` |
-| **WDIO E2E** | `app/test/e2e/specs/*.spec.ts` | 完整桌面流程：UI → Tauri → core sidecar → JSON-RPC；用户可见行为 | Linux CI: `tauri-driver`（端口 4444）。macOS 本地: Appium Mac2（端口 4723）。详见 [E2E 测试](e2e-testing.zh-CN.md)。 |
-| **手动冒烟测试** | [`docs/RELEASE-MANUAL-SMOKE.md`](../../docs/RELEASE-MANUAL-SMOKE.md) | 驱动程序无法断言的 OS 级表面：TCC 权限弹窗、Gatekeeper、代码签名、DMG 安装、OS 原生通知 | 发布切割时由人工执行，在发布 PR 中签字确认 |
+| **WDIO E2E** | `app/test/e2e/specs/*.spec.ts` | 完整桌面流程：UI → Tauri → core sidecar → JSON-RPC；用户可见行为 | Linux CI: `tauri-driver`（端口 4444）。macOS 本地: Appium Mac2（端口 4723）。详见 [[e2e-testing.zh-CN|E2E 测试]]。 |
+| **手动冒烟测试** | [[..docs/RELEASE-MANUAL-SMOKE|`docs/RELEASE-MANUAL-SMOKE.md`]] | 驱动程序无法断言的 OS 级表面：TCC 权限弹窗、Gatekeeper、代码签名、DMG 安装、OS 原生通知 | 发布切割时由人工执行，在发布 PR 中签字确认 |
 
 ---
 
@@ -126,7 +126,7 @@ bash app/scripts/e2e-run-spec.sh test/e2e/specs/<your-spec>.spec.ts <id>
 
 ## 无法被驱动程序自动化的 —— 需要手动冒烟
 
-某些表面无法被 WDIO / Appium 驱动，因为它们跨越 OS 级信任边界或硬件路径。完整的清单 + 签字块位于 [`docs/RELEASE-MANUAL-SMOKE.md`](../../docs/RELEASE-MANUAL-SMOKE.md)，该文件是每次发布必须验证内容的权威来源。涵盖示例：
+某些表面无法被 WDIO / Appium 驱动，因为它们跨越 OS 级信任边界或硬件路径。完整的清单 + 签字块位于 [[..docs/RELEASE-MANUAL-SMOKE|`docs/RELEASE-MANUAL-SMOKE.md`]]，该文件是每次发布必须验证内容的权威来源。涵盖示例：
 
 - macOS TCC 权限弹窗（辅助功能、输入监控、屏幕录制、麦克风）
 - Gatekeeper 首次启动签名验证
@@ -141,7 +141,7 @@ bash app/scripts/e2e-run-spec.sh test/e2e/specs/<your-spec>.spec.ts <id>
 
 ## 覆盖矩阵即契约
 
-[覆盖矩阵](../../docs/TEST-COVERAGE-MATRIX.md) 中的每个功能叶子节点映射到：
+[[..docs/TEST-COVERAGE-MATRIX|覆盖矩阵]] 中的每个功能叶子节点映射到：
 
 1. 一个或多个测试路径，**或**
 2. 一个合理的 `🚫` 并附手动冒烟条目。

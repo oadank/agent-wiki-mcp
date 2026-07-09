@@ -583,6 +583,6 @@ This is a **beta API**. We're actively improving it based on feedback. Open an i
 
 ## Related Documentation
 
-- [Prompt Management Overview](../proxy/prompt_management.md)
-- [Generic Guardrail API](./generic_guardrail_api.md)
-- [LiteLLM Proxy Setup](../proxy/quick_start.md)
+- [[.proxy/prompt_management|Prompt Management Overview]]
+- [[generic_guardrail_api|Generic Guardrail API]]
+- [[.proxy/quick_start|LiteLLM Proxy Setup]]

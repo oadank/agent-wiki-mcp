@@ -8,7 +8,7 @@ icon: database
 
 # agentmemory 后端
 
-OpenHuman 默认的 `Memory` trait 后端是 `sqlite`——即 [记忆树](memory-tree.zh-CN.md) 中记录的统一存储。对于已经在本地运行 [agentmemory](https://github.com/rohitg00/agentmemory) 的用户——通常是因为他们希望在 Claude Code、Cursor、Codex、OpenCode 和 OpenHuman 之间共享单一持久化存储——OpenHuman 暴露了一个可选后端，将每个 trait 调用代理到 agentmemory 的 REST 层面。
+OpenHuman 默认的 `Memory` trait 后端是 `sqlite`——即 [[memory-tree.zh-CN|记忆树]] 中记录的统一存储。对于已经在本地运行 [agentmemory](https://github.com/rohitg00/agentmemory) 的用户——通常是因为他们希望在 Claude Code、Cursor、Codex、OpenCode 和 OpenHuman 之间共享单一持久化存储——OpenHuman 暴露了一个可选后端，将每个 trait 调用代理到 agentmemory 的 REST 层面。
 
 选择 `backend = "agentmemory"` 会跳过 OpenHuman 的 SQLite + 嵌入器路径。agentmemory 拥有存储、嵌入和检索层。OpenHuman 成为一个精简的 REST 客户端。
 

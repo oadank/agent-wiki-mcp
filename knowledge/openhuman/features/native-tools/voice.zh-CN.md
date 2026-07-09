@@ -28,7 +28,7 @@ OpenHuman 在你需要时是语音优先的。STT、TTS 和实时 Google Meet �
 OpenHuman 的旗舰语音集成：
 
 * 通过嵌入式 webview 加入 Google Meet。
-* 实时流式输出音频到 STT，转录通话中的每个人，并在会议进行时将结构化笔记写入[记忆树](../obsidian-wiki/memory-tree.zh-CN.md)。
+* 实时流式输出音频到 STT，转录通话中的每个人，并在会议进行时将结构化笔记写入[[.obsidian-wiki/memory-tree.zh-CN|记忆树]]。
 * 当你让它说话（或它觉得有需要补充的有用内容时），它通过 TTS 模型生成音频并**作为出站摄像头/麦克风流播放回会议**，这样其他参与者真的能听到它。
 
 ## 隐私
@@ -39,5 +39,5 @@ OpenHuman 的旗舰语音集成：
 
 ## 另见
 
-* [记忆树](../obsidian-wiki/memory-tree.zh-CN.md) —— Meet 转录和笔记存放的地方。
+* [[.obsidian-wiki/memory-tree.zh-CN|记忆树]] —— Meet 转录和笔记存放的地方。
 * [自动模型路由](../model-routing/) —— Meet 的大脑使用 `hint:fast` 实现低延迟对话轮次。

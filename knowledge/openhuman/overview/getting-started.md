@@ -15,11 +15,11 @@ OpenHuman is open source under the GNU GPL3 license. The codebase is at [github.
 
 ## System requirements
 
-OpenHuman runs on **macOS, Windows and Linux** desktops. 4 GB+ RAM is recommended; 16 GB+ if you intend to ingest very large mailboxes or repos, or run a [local model](../features/model-routing/local-ai.md) on the same machine.
+OpenHuman runs on **macOS, Windows and Linux** desktops. 4 GB+ RAM is recommended; 16 GB+ if you intend to ingest very large mailboxes or repos, or run a [[.features/model-routing/local-ai|local model]] on the same machine.
 
 ### Permissions
 
-The first time you launch OpenHuman, the OS will prompt for the permissions the app needs (Accessibility on macOS, Input Monitoring for the voice hotkey, Camera/Microphone if you plan to use the [Meeting Agent](../features/mascot/meeting-agents.md)). You can review and adjust these any time under **Settings → Automation & Channels**.
+The first time you launch OpenHuman, the OS will prompt for the permissions the app needs (Accessibility on macOS, Input Monitoring for the voice hotkey, Camera/Microphone if you plan to use the [[.features/mascot/meeting-agents|Meeting Agent]]). You can review and adjust these any time under **Settings → Automation & Channels**.
 
 ***
 
@@ -69,10 +69,10 @@ The Memory tab has a **View vault in Obsidian** button. Click it to open `<works
 
 Now that the agent has memory and a model, the rest of the product is about giving it more surfaces:
 
-* [**Meeting Agents**](../features/mascot/meeting-agents.md) - drop a Google Meet link in and the mascot joins as a real participant: it listens, takes notes into the Memory Tree, speaks back into the call, and uses tools live.
-* [**Auto-fetch from Integrations**](../features/obsidian-wiki/auto-fetch.md) - connect more sources from **Settings**; every twenty minutes the scheduler pulls fresh data into your tree.
-* [**Native Voice**](../features/native-tools/voice.md) - push-to-talk dictation and TTS replies so you can talk to OpenHuman instead of typing.
-* [**Subconscious Loop**](../features/subconscious.md) - let the mascot keep working on standing tasks while you're away.
+* [[.features/mascot/meeting-agents|**Meeting Agents**]] - drop a Google Meet link in and the mascot joins as a real participant: it listens, takes notes into the Memory Tree, speaks back into the call, and uses tools live.
+* [[.features/obsidian-wiki/auto-fetch|**Auto-fetch from Integrations**]] - connect more sources from **Settings**; every twenty minutes the scheduler pulls fresh data into your tree.
+* [[.features/native-tools/voice|**Native Voice**]] - push-to-talk dictation and TTS replies so you can talk to OpenHuman instead of typing.
+* [[.features/subconscious|**Subconscious Loop**]] - let the mascot keep working on standing tasks while you're away.
 
 ## Join the community
 

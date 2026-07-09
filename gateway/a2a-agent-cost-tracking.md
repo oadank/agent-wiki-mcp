@@ -158,5 +158,5 @@ For most use cases, a flat cost per query is simplest. Use token-based pricing i
 
 ## Related
 
-- [A2A Agent Gateway](./a2a.md)
-- [Spend Tracking](./proxy/cost_tracking.md)
+- [[a2a|A2A Agent Gateway]]
+- [[proxy/cost_tracking|Spend Tracking]]

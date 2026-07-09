@@ -54,7 +54,7 @@ response = completion(
 
 #### ℹ️ Info
 
-[See how to do on PROXY](../proxy/reliability.md)
+[[.proxy/reliability|See how to do on PROXY]]
 
 
 

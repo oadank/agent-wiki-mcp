@@ -30,7 +30,7 @@ In production, litellm supports using Redis as a way to track cooldown server an
 
 #### ℹ️ Info
 
-If you want a server to load balance across different LLM APIs, use our [LiteLLM Proxy Server](./proxy/load_balancing.md)
+If you want a server to load balance across different LLM APIs, use our [[proxy/load_balancing|LiteLLM Proxy Server]]
 
 
 
@@ -41,7 +41,7 @@ If you want a server to load balance across different LLM APIs, use our [LiteLLM
 
 ### Quick Start
 
-Loadbalance across multiple [azure](./providers/azure)/[bedrock](./providers/bedrock.md)/[provider](./providers/) deployments. LiteLLM will handle retrying in different regions if a call fails.
+Loadbalance across multiple [azure](./providers/azure)/[[providers/bedrock|bedrock]]/[provider](./providers/) deployments. LiteLLM will handle retrying in different regions if a call fails.
 
 
 ```python
@@ -106,7 +106,7 @@ print(response)
 
 #### ℹ️ Info
 
-See detailed proxy loadbalancing/fallback docs [here](./proxy/reliability.md)
+See detailed proxy loadbalancing/fallback docs [[proxy/reliability|here]]
 
 
 
@@ -811,7 +811,7 @@ asyncio.run(router_acompletion())
 
 Traffic mirroring allows you to "mimic" production traffic to a secondary (silent) model for evaluation purposes. The silent model's response is gathered in the background and does not affect the latency or result of the primary request.
 
-[**See detailed guide on A/B Testing - Traffic Mirroring here**](./traffic_mirroring.md)
+[[traffic_mirroring|**See detailed guide on A/B Testing - Traffic Mirroring here**]]
 
 ## Basic Reliability
 
@@ -1444,7 +1444,7 @@ print(f"response id: {response._hidden_params['model_id']}")
 
 
 #### ℹ️ Info
-Go [here](./proxy/reliability.md#advanced---context-window-fallbacks) for how to do this on the proxy
+Go [[proxy/reliability#advanced---context-window-fallbacks|here]] for how to do this on the proxy
 
 
 ## Caching across model groups

@@ -265,7 +265,7 @@ Nested attribute paths are supported (e.g., `claims.role` or `attributes.litellm
 
 **Capturing Additional SSO Fields**
 
-Use `GENERIC_USER_EXTRA_ATTRIBUTES` to extract additional fields from the SSO provider response beyond the standard user attributes (id, email, name, etc.). This is useful when you need to access custom organization-specific data (e.g., department, employee ID, groups) in your [custom SSO handler](./custom_sso.md).
+Use `GENERIC_USER_EXTRA_ATTRIBUTES` to extract additional fields from the SSO provider response beyond the standard user attributes (id, email, name, etc.). This is useful when you need to access custom organization-specific data (e.g., department, employee ID, groups) in your [[custom_sso|custom SSO handler]].
 
 ```shell
 # Comma-separated list of field names to extract
@@ -531,14 +531,14 @@ Centralize role management by defining user permissions in Azure Entra ID. LiteL
 
 1. Navigate to your App Registration on https://portal.azure.com/
 2. Go to **App roles** > **Create app role**
-3. Configure the app role using one of the [supported LiteLLM roles](./access_control.md#global-proxy-roles):
+3. Configure the app role using one of the [[access_control#global-proxy-roles|supported LiteLLM roles]]:
    - **Display name**: Admin Viewer (or your preferred display name)
    - **Value**: `proxy_admin_viewer` (must match one of the LiteLLM role values exactly)
 4. Click **Apply** to save the role
 5. Repeat for each LiteLLM role you want to use
 
 
-**Supported LiteLLM role values** (see [full role documentation](./access_control.md#global-proxy-roles)):
+**Supported LiteLLM role values** (see [[access_control#global-proxy-roles|full role documentation]]):
 - `proxy_admin` - Full admin access
 - `proxy_admin_viewer` - Read-only admin access
 - `internal_user` - Can create/view/delete own keys

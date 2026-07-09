@@ -34,8 +34,8 @@ Pass-through endpoints for Vertex AI - call provider-specific endpoint, in nativ
 LiteLLM supports 3 vertex ai passthrough routes:
 
 1. `/vertex_ai` → routes to `https://{vertex_location}-aiplatform.googleapis.com/`
-2. `/vertex_ai/discovery` → routes to [`https://discoveryengine.googleapis.com`](https://discoveryengine.googleapis.com/) - [See Search Datastores Guide](./vertex_ai_search_datastores.md)
-3. `/vertex_ai/live` → upgrades to the Vertex AI Live API WebSocket (`google.cloud.aiplatform.v1.LlmBidiService/BidiGenerateContent`) - [See Live WebSocket Guide](./vertex_ai_live_websocket.md)
+2. `/vertex_ai/discovery` → routes to [`https://discoveryengine.googleapis.com`](https://discoveryengine.googleapis.com/) - [[vertex_ai_search_datastores|See Search Datastores Guide]]
+3. `/vertex_ai/live` → upgrades to the Vertex AI Live API WebSocket (`google.cloud.aiplatform.v1.LlmBidiService/BidiGenerateContent`) - [[vertex_ai_live_websocket|See Live WebSocket Guide]]
 
 ## How to use
 
@@ -324,7 +324,7 @@ curl http://localhost:4000/vertex_ai/v1/projects/${PROJECT_ID}/locations/us-cent
 ## Advanced
 
 Pre-requisites
-- [Setup proxy with DB](../proxy/virtual_keys.md#setup)
+- [[.proxy/virtual_keys#setup|Setup proxy with DB]]
 
 Use this, to avoid giving developers the raw Anthropic API key, but still letting them use Anthropic endpoints.
 

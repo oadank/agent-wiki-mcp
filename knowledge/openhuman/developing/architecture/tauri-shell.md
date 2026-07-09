@@ -211,6 +211,6 @@ This document replaces the old “SessionService / SocketService” split. The T
 
 ### `utils/tauriSocket.ts` (frontend)
 
-Not in `src-tauri`, but **pairs** with the shell: the React app listens for Tauri events that mirror socket activity when using the Rust-side client. See `app/src/utils/tauriSocket.ts` and the [Frontend Services](frontend.md#services-layer) chapter.
+Not in `src-tauri`, but **pairs** with the shell: the React app listens for Tauri events that mirror socket activity when using the Rust-side client. See `app/src/utils/tauriSocket.ts` and the [[frontend#services-layer|Frontend Services]] chapter.
 
 ---

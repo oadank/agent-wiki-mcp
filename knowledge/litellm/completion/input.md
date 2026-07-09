@@ -161,11 +161,11 @@ def completion(
 | Type | Description | Docs |
 |------|-------------|------|
 | `text` | Text content | [Type Definition](https://github.com/BerriAI/litellm/blob/main/litellm/types/llms/openai.py#L598) |
-| `image_url` | Images | [Vision](./vision.md) |
-| `input_audio` | Audio input | [Audio](./audio.md) |
+| `image_url` | Images | [[vision|Vision]] |
+| `input_audio` | Audio input | [[audio|Audio]] |
 | `video_url` | Video input | [Type Definition](https://github.com/BerriAI/litellm/blob/main/litellm/types/llms/openai.py#L625) |
-| `file` | Files | [Document Understanding](./document_understanding.md) |
-| `document` | Documents/PDFs | [Document Understanding](./document_understanding.md) |
+| `file` | Files | [[document_understanding|Document Understanding]] |
+| `document` | Documents/PDFs | [[document_understanding|Document Understanding]] |
 
 **Examples:**
 ```python
@@ -287,7 +287,7 @@ messages=[{"role": "user", "content": [
 
 - `output_cost_per_token`: *float (optional)* - The cost per output token for the completion call 
 
-**CUSTOM PROMPT TEMPLATE** (See [prompt formatting for more info](./prompt_formatting.md#format-prompt-yourself))
+**CUSTOM PROMPT TEMPLATE** (See [[prompt_formatting#format-prompt-yourself|prompt formatting for more info]])
 - `initial_prompt_value`: *string (optional)* - Initial string applied at the start of the input messages
 
 - `roles`: *dict (optional)* - Dictionary specifying how to format the prompt based on the role + message passed in via `messages`. 

@@ -892,7 +892,7 @@ print(result)
 
 ## Using with Vertex, Boto3, Anthropic SDK (Native format)
 
-👉 **[Here's how to use litellm proxy with Vertex, boto3, Anthropic SDK - in the native format](../pass_through/vertex_ai.md)**
+👉 **[[.pass_through/vertex_ai|Here's how to use litellm proxy with Vertex, boto3, Anthropic SDK - in the native format]]**
 
 ## Advanced
 

@@ -33,10 +33,10 @@ LiteLLM provides fine-grained permission management for MCP servers, allowing yo
 This ensures that only authorized entities can discover and use MCP tools, providing an additional security layer for your MCP infrastructure.
 
 #### ℹ️ Info Related Documentation
-- [MCP Overview](./mcp.md) - Learn about MCP in LiteLLM
-- [MCP Cost Tracking](./mcp_cost.md) - Track costs for MCP tool calls
-- [MCP Guardrails](./mcp_guardrail.md) - Apply security guardrails to MCP calls
-- [Using MCP](./mcp_usage.md) - How to use MCP with LiteLLM
+- [[mcp|MCP Overview]] - Learn about MCP in LiteLLM
+- [[mcp_cost|MCP Cost Tracking]] - Track costs for MCP tool calls
+- [[mcp_guardrail|MCP Guardrails]] - Apply security guardrails to MCP calls
+- [[mcp_usage|Using MCP]] - How to use MCP with LiteLLM
 
 
 ## How It Works

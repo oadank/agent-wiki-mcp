@@ -66,7 +66,7 @@ A **session** is the live conversation an `Agent` instance is running. The `Agen
 
 1. **Resumes the session transcript** if this is a fresh process - re-loading the exact provider messages from disk so the inference backend's KV-cache prefix still hits.
 2. **Builds the system prompt** (only on the first turn). This pulls in identity, soul, profile, memory, connected integrations, available tools, safety preamble - assembled by the prompt section builder.
-3. **Injects memory context** for the new user message via the memory loader: relevant chunks from the [Memory Tree](../../features/obsidian-wiki/memory-tree.md), with citations attached so the UI can show provenance.
+3. **Injects memory context** for the new user message via the memory loader: relevant chunks from the [[..features/obsidian-wiki/memory-tree|Memory Tree]], with citations attached so the UI can show provenance.
 4. **Enters the tool-call loop** (next section).
 5. **Spawns post-turn hooks** in the background - the user gets their answer before archivist / learning / cost logging finishes.
 
@@ -244,7 +244,7 @@ Post-turn hooks fire **after** the turn completes, in the background. They get a
 * **Archivist** - distills which facts from the turn are worth persisting to long-term memory.
 * **Learning** - feeds reflection, tool-tracker, and user-profile updates.
 * **Cost log** - final per-turn cost line.
-* **Episodic memory indexing** - writes the turn into the [Memory Tree](../../features/obsidian-wiki/memory-tree.md) as a chunk for future recall.
+* **Episodic memory indexing** - writes the turn into the [[..features/obsidian-wiki/memory-tree|Memory Tree]] as a chunk for future recall.
 
 Hooks run via `tokio::spawn`, so the user gets their answer before any of them finish.
 
@@ -307,7 +307,7 @@ The harness lives entirely under `src/openhuman/agent/`. The README in that dire
 
 ## See also
 
-* [Architecture overview](README.md) - where the harness sits in the bigger picture.
-* [Memory Tree](../../features/obsidian-wiki/memory-tree.md) - what the memory loader reads from and post-turn hooks write to.
+* [[README|Architecture overview]] - where the harness sits in the bigger picture.
+* [[..features/obsidian-wiki/memory-tree|Memory Tree]] - what the memory loader reads from and post-turn hooks write to.
 * [Automatic Model Routing](../../features/model-routing/) - how `model: "hint:reasoning"` resolves to a concrete provider+model.
-* [Native Tools - Agent Coordination](../../features/native-tools/agent-coordination.md) - the user-facing surface for `spawn_subagent`, `delegate_*`, `todo_write`.
+* [[..features/native-tools/agent-coordination|Native Tools - Agent Coordination]] - the user-facing surface for `spawn_subagent`, `delegate_*`, `todo_write`.

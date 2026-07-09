@@ -197,7 +197,7 @@ Expected Response
 }
 ```
 
-[See Webhook Spec](./alerting.md#api-spec-for-webhook-event)
+[[alerting#api-spec-for-webhook-event|See Webhook Spec]]
 
 
 

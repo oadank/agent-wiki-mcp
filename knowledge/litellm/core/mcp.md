@@ -69,11 +69,11 @@ model_list:
       api_key: sk-xxxxxxx
 ```
 
-**See all available object types:** [Config Settings - supported_db_objects](./proxy/config_settings.md#general_settings---reference)
+**See all available object types:** [[proxy/config_settings#general_settings---reference|Config Settings - supported_db_objects]]
 
 If `supported_db_objects` is not set, all object types are loaded from the database (default behavior).
 
-For diagnosing connectivity problems after setup, see the [MCP Troubleshooting Guide](./mcp_troubleshoot.md).
+For diagnosing connectivity problems after setup, see the [[mcp_troubleshoot|MCP Troubleshooting Guide]].
 
 
 On the LiteLLM UI, Navigate to "MCP Servers" and click "Add New MCP Server".
@@ -146,7 +146,7 @@ For MCP servers hosted on [AWS Bedrock AgentCore](https://docs.aws.amazon.com/be
 
 Fill in your AWS region, service name (defaults to `bedrock-agentcore`), and optionally your AWS access key and secret. If credentials are omitted, LiteLLM falls back to the boto3 credential chain (IAM roles, environment variables, etc.).
 
-[**See full SigV4 setup guide**](./mcp_aws_sigv4.md)
+[[mcp_aws_sigv4|**See full SigV4 setup guide**]]
 
 <br/>
 
@@ -231,7 +231,7 @@ mcp_servers:
   | `bearer_token` | `Authorization: Bearer <auth_value>` |
   | `basic` | `Authorization: Basic <auth_value>` |
   | `authorization` | `Authorization: <auth_value>` |
-  | `aws_sigv4` | Per-request AWS SigV4 signature ([details](./mcp_aws_sigv4.md)) |
+  | `aws_sigv4` | Per-request AWS SigV4 signature ([[mcp_aws_sigv4|details]]) |
 
 - **Extra Headers**: Optional list of additional header names that should be forwarded from client to the MCP server
 - **Static Headers**: Optional map of header key/value pairs to include every request to the MCP server.
@@ -362,13 +362,13 @@ litellm_settings:
 
 LiteLLM can convert OpenAPI specifications into MCP servers, exposing any REST API as MCP tools without writing custom server code.
 
-See the **[MCP from OpenAPI Specs guide](./mcp_openapi.md)** for full setup, usage examples, and how to override tool names and descriptions.
+See the **[[mcp_openapi|MCP from OpenAPI Specs guide]]** for full setup, usage examples, and how to override tool names and descriptions.
 
 ## MCP OAuth
 
 LiteLLM supports OAuth 2.0 for MCP servers -- both interactive (PKCE) flows for user-facing clients and machine-to-machine (M2M) `client_credentials` for backend services.
 
-See the **[MCP OAuth guide](./mcp_oauth.md)** for setup instructions, sequence diagrams, and a test server.
+See the **[[mcp_oauth|MCP OAuth guide]]** for setup instructions, sequence diagrams, and a test server.
 
 <details>
 <summary>Detailed OAuth reference (click to expand)</summary>
@@ -1420,7 +1420,7 @@ async with stdio_client(server_params) as (read, write):
 
 **Q: How do I use OAuth2 client_credentials (machine-to-machine) with MCP servers behind LiteLLM?**
 
-LiteLLM supports automatic token management for the `client_credentials` grant. Configure `client_id`, `client_secret`, and `token_url` on your MCP server and LiteLLM will fetch, cache, and refresh tokens automatically. See the [MCP OAuth M2M guide](./mcp_oauth.md#machine-to-machine-m2m-auth) for setup instructions.
+LiteLLM supports automatic token management for the `client_credentials` grant. Configure `client_id`, `client_secret`, and `token_url` on your MCP server and LiteLLM will fetch, cache, and refresh tokens automatically. See the [[mcp_oauth#machine-to-machine-m2m-auth|MCP OAuth M2M guide]] for setup instructions.
 
 **Q: When I fetch an OAuth token from the LiteLLM UI, where is it stored?**
 
@@ -1428,4 +1428,4 @@ The UI keeps only transient state in `sessionStorage` so the OAuth redirect flow
 
 **Q: I'm seeing MCP connection errors—what should I check?**
 
-Walk through the [MCP Troubleshooting Guide](./mcp_troubleshoot.md) for step-by-step isolation (Client → LiteLLM vs. LiteLLM → MCP), log examples, and verification methods like MCP Inspector and `curl`.
+Walk through the [[mcp_troubleshoot|MCP Troubleshooting Guide]] for step-by-step isolation (Client → LiteLLM vs. LiteLLM → MCP), log examples, and verification methods like MCP Inspector and `curl`.

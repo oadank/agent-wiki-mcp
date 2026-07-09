@@ -567,11 +567,11 @@ Every finding must include a concrete fix.`
               example: `# Memory Index
 
 ## Project
-- [build-and-test.md](build-and-test.md): npm run build (~45s), Vitest, dev server on 3001
-- [architecture.md](architecture.md): API client singleton, refresh-token auth
+- [[build-and-test|build-and-test.md]]: npm run build (~45s), Vitest, dev server on 3001
+- [[architecture|architecture.md]]: API client singleton, refresh-token auth
 
 ## Reference
-- [debugging.md](debugging.md): auth token rotation and DB connection troubleshooting`,
+- [[debugging|debugging.md]]: auth token rotation and DB connection troubleshooting`,
               docsLink: '/en/memory'
             }, {
               id: 'memory-topic',

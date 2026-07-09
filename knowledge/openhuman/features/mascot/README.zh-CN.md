@@ -9,7 +9,7 @@ icon: face-smile
 
 OpenHuman 有一张脸。吉祥物是一个生活在你桌面上的动画角色，作为智能体的可见表面——它在说什么、它在思考什么、它何时空闲、何时忙碌、何时有话要告诉你。
 
-它不是装饰性镀层。吉祥物接入智能体同一套组件：语音、记忆、[潜意识循环](../subconscious.zh-CN.md)和 [Google Meet 集成](../native-tools/voice.zh-CN.md)。智能体说话时，吉祥物就是说话的那个；智能体思考时，吉祥物就是思考的那个。
+它不是装饰性镀层。吉祥物接入智能体同一套组件：语音、记忆、[[.subconscious.zh-CN|潜意识循环]]和 [[.native-tools/voice.zh-CN|Google Meet 集成]]。智能体说话时，吉祥物就是说话的那个；智能体思考时，吉祥物就是思考的那个。
 
 ## 它做什么
 
@@ -17,13 +17,13 @@ OpenHuman 有一张脸。吉祥物是一个生活在你桌面上的动画角色�
 
 智能体回复时，音频通过托管 TTS 模型生成并流式传输到你的扬声器。同时，吉祥物驱动一个 viseme 贴图与音频对齐，这样它的嘴型与说出的词语相匹配。没有单独的"说话头像"视频，你听到的同一音频流驱动着动画。
 
-吉祥物所依赖的语音转文字、文字转语音、会议管道见[原生语音](../native-tools/voice.zh-CN.md)。
+吉祥物所依赖的语音转文字、文字转语音、会议管道见[[.native-tools/voice.zh-CN|原生语音]]。
 
 ### 它加入你的会议，作为真实参与者
 
-吉祥物是 OpenHuman 的旗舰语音集成。它可以作为真实参与者加入 Google Meet 会议：它听到每个人、将笔记记入你的[记忆树](../obsidian-wiki/memory-tree.zh-CN.md)、当它有话要说时在通话中说话，并将其自己的动画脸作为摄像头画面管道输送到会议中。
+吉祥物是 OpenHuman 的旗舰语音集成。它可以作为真实参与者加入 Google Meet 会议：它听到每个人、将笔记记入你的[[.obsidian-wiki/memory-tree.zh-CN|记忆树]]、当它有话要说时在通话中说话，并将其自己的动画脸作为摄像头画面管道输送到会议中。
 
-这是头条用例，有专门页面，见[会议智能体](meeting-agents.zh-CN.md)。
+这是头条用例，有专门页面，见[[meeting-agents.zh-CN|会议智能体]]。
 
 ### 它移动并对周围环境做出反应
 
@@ -33,13 +33,13 @@ OpenHuman 有一张脸。吉祥物是一个生活在你桌面上的动画角色�
 
 ### 它记得你
 
-吉祥物是拥有[记忆树](../obsidian-wiki/memory-tree.zh-CN.md)的智能体的可见部分。它记得你们聊过什么、你生活中的人是谁、你盘子上有什么、已决定了什么、什么还悬而未决，跨越你连接的所有来源。当它早上问候你时，它不是从零开始。
+吉祥物是拥有[[.obsidian-wiki/memory-tree.zh-CN|记忆树]]的智能体的可见部分。它记得你们聊过什么、你生活中的人是谁、你盘子上有什么、已决定了什么、什么还悬而未决，跨越你连接的所有来源。当它早上问候你时，它不是从零开始。
 
 这种记忆使性格在数周和数月间保持一致。今天和你说话的吉祥物知道上周二和你说话的吉祥物知道的东西。
 
 ### 它在后台思考——潜意识
 
-即使你已经停止打字，吉祥物也在继续思考。[潜意识循环](../subconscious.zh-CN.md)是一个后台 tick：
+即使你已经停止打字，吉祥物也在继续思考。[[.subconscious.zh-CN|潜意识循环]]是一个后台 tick：
 
 * 加载你的待办任务和背景目标。
 * 读取你工作区和最近记忆的当前状态。
@@ -66,8 +66,8 @@ OpenHuman 有一张脸。吉祥物是一个生活在你桌面上的动画角色�
 
 ## 另见
 
-* [会议智能体](meeting-agents.zh-CN.md)，吉祥物在 Google Meet 中：倾听、说话、动画、使用工具。
-* [原生语音](../native-tools/voice.zh-CN.md)，吉祥物所依赖的 STT / TTS 管道。
-* [记忆树](../obsidian-wiki/memory-tree.zh-CN.md)，吉祥物记住什么以及如何记住。
-* [潜意识循环](../subconscious.zh-CN.md)，你离开时它在思考什么。
-* [Chromium Embedded Framework](../../developing/cef.zh-CN.md)，摄像头进入 Meet 的管道（开发者参考）。
+* [[meeting-agents.zh-CN|会议智能体]]，吉祥物在 Google Meet 中：倾听、说话、动画、使用工具。
+* [[.native-tools/voice.zh-CN|原生语音]]，吉祥物所依赖的 STT / TTS 管道。
+* [[.obsidian-wiki/memory-tree.zh-CN|记忆树]]，吉祥物记住什么以及如何记住。
+* [[.subconscious.zh-CN|潜意识循环]]，你离开时它在思考什么。
+* [[..developing/cef.zh-CN|Chromium Embedded Framework]]，摄像头进入 Meet 的管道（开发者参考）。

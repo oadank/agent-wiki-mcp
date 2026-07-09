@@ -237,13 +237,13 @@ curl -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5
 
 Generate videos using Google's Veo model through LiteLLM pass-through routes.
 
-[**→ Complete Veo Video Generation Guide**](../proxy/veo_video_generation.md)
+[[.proxy/veo_video_generation|**→ Complete Veo Video Generation Guide**]]
 
 
 ## Advanced 
 
 Pre-requisites
-- [Setup proxy with DB](../proxy/virtual_keys.md#setup)
+- [[.proxy/virtual_keys#setup|Setup proxy with DB]]
 
 Use this, to avoid giving developers the raw Google AI Studio key, but still letting them use Google AI Studio endpoints.
 

@@ -377,7 +377,7 @@ response = transcription(
 )
 ```
 
-[Pass API Key/API Base in `.transcription`](../set_keys.md#passing-args-to-completion)
+[[.set_keys#passing-args-to-completion|Pass API Key/API Base in `.transcription`]]
 
 
 1. Setup config.yaml
@@ -438,7 +438,7 @@ response = rerank(
 print(response)
 ```
 
-[Pass API Key/API Base in `.rerank`](../set_keys.md#passing-args-to-completion)
+[[.set_keys#passing-args-to-completion|Pass API Key/API Base in `.rerank`]]
 
 
 1. Setup config.yaml

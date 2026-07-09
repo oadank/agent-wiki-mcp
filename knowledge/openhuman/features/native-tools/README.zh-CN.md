@@ -17,26 +17,26 @@ OpenHuman 的智能体并非空载交付。智能体背后的每个模型在安�
 
 * 一致的错误处理。
 * 零安装门槛。
-* 所有输出自动经过[智能 Token 压缩](../token-compression.zh-CN.md)。
+* 所有输出自动经过[[.token-compression.zh-CN|智能 Token 压缩]]。
 * 可预测的安全边界——文件系统工具遵守工作区作用域，网络工具通过 OpenHuman 代理。
 
 ## 工具带
 
 | 类别 | 包含内容 |
 | ------ | -------------- |
-| [网络搜索](web-search.zh-CN.md) | 无需自带 API key 搜索实时网页。 |
-| [网页抓取](web-scraper.zh-CN.md) | 从任意 URL 拉取干净文本——文章、文档、README。 |
-| [编码器](coder.zh-CN.md) | 读/写/编辑/补丁文件，glob，grep，git，lint，test。 |
-| [浏览器与计算机控制](browser-and-computer.zh-CN.md) | 打开 URL、截图、点击、输入、移动鼠标。 |
-| [定时任务与调度](cron.zh-CN.md) | 循环任务、一次性提醒、定时智能体运行。 |
-| [语音](voice.zh-CN.md) | 语音转文字输入、文字转语音输出、实时 Google Meet 智能体。 |
-| [记忆工具](memory-tools.zh-CN.md) | 在[记忆树](../obsidian-wiki/memory-tree.zh-CN.md)中召回、存储、遗忘和搜索。 |
-| [第三方集成](../integrations/README.zh-CN.md) | 智能体视角中的 [118+ 已连接服务](../integrations/README.zh-CN.md)。 |
-| [智能体协作](agent-coordination.zh-CN.md) | 生成子智能体、委托给技能、规划、询问用户。 |
-| [系统与工具](system-and-utilities.zh-CN.md) | Shell、node、SQL、当前时间、推送通知、LSP。 |
+| [[web-search.zh-CN|网络搜索]] | 无需自带 API key 搜索实时网页。 |
+| [[web-scraper.zh-CN|网页抓取]] | 从任意 URL 拉取干净文本——文章、文档、README。 |
+| [[coder.zh-CN|编码器]] | 读/写/编辑/补丁文件，glob，grep，git，lint，test。 |
+| [[browser-and-computer.zh-CN|浏览器与计算机控制]] | 打开 URL、截图、点击、输入、移动鼠标。 |
+| [[cron.zh-CN|定时任务与调度]] | 循环任务、一次性提醒、定时智能体运行。 |
+| [[voice.zh-CN|语音]] | 语音转文字输入、文字转语音输出、实时 Google Meet 智能体。 |
+| [[memory-tools.zh-CN|记忆工具]] | 在[[.obsidian-wiki/memory-tree.zh-CN|记忆树]]中召回、存储、遗忘和搜索。 |
+| [[.integrations/README.zh-CN|第三方集成]] | 智能体视角中的 [[.integrations/README.zh-CN|118+ 已连接服务]]。 |
+| [[agent-coordination.zh-CN|智能体协作]] | 生成子智能体、委托给技能、规划、询问用户。 |
+| [[system-and-utilities.zh-CN|系统与工具]] | Shell、node、SQL、当前时间、推送通知、LSP。 |
 
 ## 另见
 
-* [智能 Token 压缩](../token-compression.zh-CN.md) —— 保持工具输出成本有界的机制。
-* [第三方集成](../integrations/README.zh-CN.md) —— 118+ 目录的面向用户介绍和 OAuth 流程。
-* [隐私与安全](../privacy-and-security.zh-CN.md) —— 每个工具运行所在的安全边界。
+* [[.token-compression.zh-CN|智能 Token 压缩]] —— 保持工具输出成本有界的机制。
+* [[.integrations/README.zh-CN|第三方集成]] —— 118+ 目录的面向用户介绍和 OAuth 流程。
+* [[.privacy-and-security.zh-CN|隐私与安全]] —— 每个工具运行所在的安全边界。

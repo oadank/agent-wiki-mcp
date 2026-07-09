@@ -42,10 +42,10 @@ Per call, the tool accepts `query`, optional `categories` (`web`, `news`, `image
 
 ## How it differs from generic HTTP
 
-A pure `http_request` tool can fetch a URL but can't *find* one. Web Search is the discovery layer: it picks the right URLs for the agent, which then hands them off to the [Web Scraper](web-scraper.md) for the actual reading.
+A pure `http_request` tool can fetch a URL but can't *find* one. Web Search is the discovery layer: it picks the right URLs for the agent, which then hands them off to the [[web-scraper|Web Scraper]] for the actual reading.
 
 ## See also
 
-* [MCP Server](../../developing/mcp-server.md) - how `searxng_search` appears to MCP clients.
-* [Web Scraper](web-scraper.md) - fetch and clean a specific URL.
-* [Smart Token Compression](../token-compression.md) - search snippets are compressed before they hit the model.
+* [[..developing/mcp-server|MCP Server]] - how `searxng_search` appears to MCP clients.
+* [[web-scraper|Web Scraper]] - fetch and clean a specific URL.
+* [[.token-compression|Smart Token Compression]] - search snippets are compressed before they hit the model.

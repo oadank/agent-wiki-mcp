@@ -724,7 +724,7 @@ print(response_2.usage)
 
 Cost cache-hit prompt tokens can differ from cache-miss prompt tokens.
 
-Use the `completion_cost()` function for calculating cost ([handles prompt caching cost calculation](https://github.com/BerriAI/litellm/blob/f7ce1173f3315cc6cae06cf9bcf12e54a2a19705/litellm/llms/anthropic/cost_calculation.py#L12) as well). [**See more helper functions**](./token_usage.md)
+Use the `completion_cost()` function for calculating cost ([handles prompt caching cost calculation](https://github.com/BerriAI/litellm/blob/f7ce1173f3315cc6cae06cf9bcf12e54a2a19705/litellm/llms/anthropic/cost_calculation.py#L12) as well). [[token_usage|**See more helper functions**]]
 
 ```python
 cost = completion_cost(completion_response=response, model=model)
@@ -861,4 +861,4 @@ This checks our maintained [model info/cost map](https://github.com/BerriAI/lite
 #### 💡 Tip Auto-Inject Prompt Caching
 Want LiteLLM to automatically add `cache_control` directives without modifying your code? 
 
-See [**Auto-Inject Prompt Caching Tutorial**](../tutorials/prompt_caching.md) to learn how to use `cache_control_injection_points` to automatically cache system messages, specific messages by index, or custom injection patterns.
+See [[.tutorials/prompt_caching|**Auto-Inject Prompt Caching Tutorial**]] to learn how to use `cache_control_injection_points` to automatically cache system messages, specific messages by index, or custom injection patterns.

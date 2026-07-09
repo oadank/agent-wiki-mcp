@@ -26,7 +26,7 @@ The proxy will handle routing requests (using LiteLLM's Router). **Set `rpm` in 
 
 #### ℹ️ Info
 
-For more details on routing strategies / params, see [Routing](../routing.md)
+For more details on routing strategies / params, see [[.routing|Routing]]
 
 
 
@@ -430,4 +430,4 @@ router_settings:
 
 This ensures requests containing encrypted content are routed to the deployment that created them, while other requests continue to load balance normally.
 
-**[Learn more about Encrypted Content Affinity →](../response_api.md#encrypted-content-affinity-multi-region-load-balancing)**
+**[[.response_api#encrypted-content-affinity-multi-region-load-balancing|Learn more about Encrypted Content Affinity →]]**

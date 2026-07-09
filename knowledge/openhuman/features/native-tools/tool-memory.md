@@ -5,7 +5,7 @@ icon: shield-check
 
 # Tool-Scoped Memory
 
-The tool-scoped memory layer captures **actionable guidance** about how the agent should use specific tools - separate from the [Memory Tools](memory-tools.md) general-purpose recall and from the `tool_effectiveness` statistics namespace. It is the surface that turns "never email Sarah" into a hard constraint the agent has to obey on every subsequent turn.
+The tool-scoped memory layer captures **actionable guidance** about how the agent should use specific tools - separate from the [[memory-tools|Memory Tools]] general-purpose recall and from the `tool_effectiveness` statistics namespace. It is the surface that turns "never email Sarah" into a hard constraint the agent has to obey on every subsequent turn.
 
 It implements [issue #1400](https://github.com/tinyhumansai/openhuman/issues/1400) - a first-class storage and retrieval system for durable learnings and high-priority rules.
 
@@ -78,5 +78,5 @@ Coverage and the integration test live in `src/openhuman/memory/tool_memory/`.
 
 ## See also
 
-- [Memory Tools](memory-tools.md) - general-purpose `recall`, `store`, `forget`.
-- [Smart Token Compression](../token-compression.md) - what the system prompt is protected against.
+- [[memory-tools|Memory Tools]] - general-purpose `recall`, `store`, `forget`.
+- [[.token-compression|Smart Token Compression]] - what the system prompt is protected against.

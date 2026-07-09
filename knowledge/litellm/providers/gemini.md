@@ -20,9 +20,9 @@ summary: "| Property | Details |"
 | Provider Route on LiteLLM | `gemini/` |
 | Provider Doc | [Google AI Studio ↗](https://aistudio.google.com/) |
 | API Endpoint for Provider | https://generativelanguage.googleapis.com |
-| Supported OpenAI Endpoints | `/chat/completions`, [`/embeddings`](../embedding/supported_embedding#gemini-ai-embedding-models), `/completions`, [`/videos`](./gemini/videos.md), [`/images/edits`](../image_edits.md) |
-| Lyria (music) | [Cost map & notes](./gemini/music.md) |
-| Pass-through Endpoint | [Supported](../pass_through/google_ai_studio.md) |
+| Supported OpenAI Endpoints | `/chat/completions`, [`/embeddings`](../embedding/supported_embedding#gemini-ai-embedding-models), `/completions`, [[gemini/videos|`/videos`]], [[.image_edits|`/images/edits`]] |
+| Lyria (music) | [[gemini/music|Cost map & notes]] |
+| Pass-through Endpoint | [[.pass_through/google_ai_studio|Supported]] |
 
 <br />
 
@@ -2210,7 +2210,7 @@ litellm --config /path/to/config.yaml
 
 3. Test it! 
 
-[**See Langchain, OpenAI JS, Llamaindex, etc. examples**](../proxy/user_keys.md#request-format)
+[[.proxy/user_keys#request-format|**See Langchain, OpenAI JS, Llamaindex, etc. examples**]]
 
 
 ```bash

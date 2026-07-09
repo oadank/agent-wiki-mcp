@@ -14,7 +14,7 @@ lang: zh-CN
 - 二进制文件：`openhuman-core`
 - 库：`openhuman_core`
 
-如果你需要完整的桌面应用（`pnpm dev`、Tauri、CEF、前端工具链），请使用[环境搭建](getting-set-up.zh-CN.md)。该路径有额外的 JavaScript、子模块和桌面运行时依赖，**不**需要用于纯核心的 `cargo` 工作流。
+如果你需要完整的桌面应用（`pnpm dev`、Tauri、CEF、前端工具链），请使用[[getting-set-up.zh-CN|环境搭建]]。该路径有额外的 JavaScript、子模块和桌面运行时依赖，**不**需要用于纯核心的 `cargo` 工作流。
 
 ## 1. 安装指定版本的 Rust 工具链
 
@@ -46,7 +46,7 @@ cd openhuman
 桌面/Tauri 开发则不同：
 
 - 只有在构建桌面壳层或 CEF 感知的 Tauri 工具链时，才需要 `app/src-tauri/vendor/` 子模块。
-- 该流程请遵循[环境搭建](getting-set-up.zh-CN.md)并运行 `git submodule update --init --recursive`。
+- 该流程请遵循[[getting-set-up.zh-CN|环境搭建]]并运行 `git submodule update --init --recursive`。
 
 ## 3. 构建命令
 
@@ -127,7 +127,7 @@ fatal error: 'array' file not found
 
 这就是为什么文档特别指出 `libstdc++-14-dev`：`clang` 在 Ubuntu runner 上可能会选择 GCC 14 的 C++ 头文件。
 
-如果你的发行版布局仍然导致构建无法解析 `libstdc++.so`，请使用 [`AGENTS.md`](../../AGENTS.md) 中记录的相同变通方案：
+如果你的发行版布局仍然导致构建无法解析 `libstdc++.so`，请使用 [[..AGENTS|`AGENTS.md`]] 中记录的相同变通方案：
 
 ```bash
 # Ubuntu/Debian —— 按需调整 GCC 版本
@@ -186,5 +186,5 @@ Windows 注意事项：
 
 ## 7. 相关路径
 
-- [环境搭建](getting-set-up.zh-CN.md)：完整的桌面贡献者设置，含 `pnpm`、Tauri、子模块和 sidecar staging。
-- [OpenHuman 架构](architecture/README.zh-CN.md)：核心在桌面应用和 RPC 流程中的位置。
+- [[getting-set-up.zh-CN|环境搭建]]：完整的桌面贡献者设置，含 `pnpm`、Tauri、子模块和 sidecar staging。
+- [[architecture/README.zh-CN|OpenHuman 架构]]：核心在桌面应用和 RPC 流程中的位置。

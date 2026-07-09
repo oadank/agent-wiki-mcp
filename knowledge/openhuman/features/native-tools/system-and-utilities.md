@@ -15,7 +15,7 @@ The catch-all family. Small, sharp tools the agent reaches for to round out a ta
 | `node_exec`         | Run a Node.js snippet - useful for one-off scripting.                         |
 | `npm_exec`          | Run an `npm`/`pnpm`/`yarn` script.                                            |
 | `current_time`      | Get the current time in any timezone, with formatting options.                |
-| `schedule`          | One-shot "do this once at time T" - for recurring jobs see [Cron](cron.md).   |
+| `schedule`          | One-shot "do this once at time T" - for recurring jobs see [[cron|Cron]].   |
 | `pushover`          | Send a push notification to your devices.                                     |
 | `insert_sql_record` | Append a row to the agent's structured workspace SQL store.                   |
 | `lsp`               | Query a language server (definitions, references, diagnostics).               |
@@ -32,5 +32,5 @@ The catch-all family. Small, sharp tools the agent reaches for to round out a ta
 
 ## See also
 
-* [Coder](coder.md) - for filesystem-heavy work, prefer the dedicated tools over `shell`.
-* [Cron & Scheduling](cron.md) - for anything recurring.
+* [[coder|Coder]] - for filesystem-heavy work, prefer the dedicated tools over `shell`.
+* [[cron|Cron & Scheduling]] - for anything recurring.

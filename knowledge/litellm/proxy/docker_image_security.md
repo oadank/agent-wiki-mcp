@@ -197,6 +197,6 @@ Avoid `main-latest` or `main-stable` in production — these rolling tags point 
 ## Further reading
 
 - [CI/CD v2 announcement](https://docs.litellm.ai/blog/ci-cd-v2-improvements) — background on LiteLLM's signing infrastructure
-- [Docker deployment guide](./deploy.md) — full Docker, Helm, and Terraform setup
+- [[deploy|Docker deployment guide]] — full Docker, Helm, and Terraform setup
 - [cosign documentation](https://docs.sigstore.dev/cosign/overview/) — cosign usage and key management
 - [Sigstore Policy Controller](https://docs.sigstore.dev/policy-controller/overview/) — Kubernetes admission control

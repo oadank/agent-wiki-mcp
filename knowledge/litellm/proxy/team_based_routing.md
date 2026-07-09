@@ -15,7 +15,7 @@ summary: ":::info"
 
 #### ℹ️ Info
 
-This is deprecated, please use [Tag Based Routing](./tag_routing.md) instead
+This is deprecated, please use [[tag_routing|Tag Based Routing]] instead
 
 
 

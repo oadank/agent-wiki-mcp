@@ -15,13 +15,13 @@ OpenHuman 桌面 UI：`app/src/` 下的 Vite + React 19 树（Yarn workspace `op
 
 | 章节 | 涵盖内容 |
 | ------------------------------------------------- | --------------------------------------------- |
-| [架构](frontend.zh-CN.md#architecture-overview) | Provider 链、构建、布局、规范 |
-| [状态管理](frontend.zh-CN.md#state-management) | Redux Toolkit slice、selector、持久化 |
-| [服务层](frontend.zh-CN.md#services-layer) | `apiClient`、`socketService`、`coreRpcClient` |
-| [Providers](frontend.zh-CN.md#providers) | `User`、`Socket`、`AI`、`Skill` providers |
-| [页面与路由](frontend.zh-CN.md#pages-routing) | `HashRouter`、路由守卫、主路由 |
-| [组件](frontend.zh-CN.md#components) | UI / 设置组件模式 |
-| [Hook 与工具](frontend.zh-CN.md#hooks-utilities) | 共享 hook、辅助函数、配置 |
+| [[frontend.zh-CN#architecture-overview|架构]] | Provider 链、构建、布局、规范 |
+| [[frontend.zh-CN#state-management|状态管理]] | Redux Toolkit slice、selector、持久化 |
+| [[frontend.zh-CN#services-layer|服务层]] | `apiClient`、`socketService`、`coreRpcClient` |
+| [[frontend.zh-CN#providers|Providers]] | `User`、`Socket`、`AI`、`Skill` providers |
+| [[frontend.zh-CN#pages-routing|页面与路由]] | `HashRouter`、路由守卫、主路由 |
+| [[frontend.zh-CN#components|组件]] | UI / 设置组件模式 |
+| [[frontend.zh-CN#hooks-utilities|Hook 与工具]] | 共享 hook、辅助函数、配置 |
 
 ## 规模
 
@@ -129,8 +129,8 @@ RPC 握手成功后，`services/backendUrl` 调用 `openhuman.config_resolve_api
 
 ### 相关文档
 
-* Rust 架构：[架构](../architecture.zh-CN.md)
-* Tauri 壳层：[Tauri Shell](tauri-shell.zh-CN.md)
+* Rust 架构：[[.architecture.zh-CN|架构]]
+* Tauri 壳层：[[tauri-shell.zh-CN|Tauri Shell]]
 
 ## 状态管理
 

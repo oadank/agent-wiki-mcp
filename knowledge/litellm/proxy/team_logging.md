@@ -236,7 +236,7 @@ litellm_settings:
       langfuse_secret: os.environ/LANGFUSE_SECRET_2 # Project 2
 ```
 
-Now, when you [generate keys](./virtual_keys.md) for this team-id 
+Now, when you [[virtual_keys|generate keys]] for this team-id 
 
 ```bash
 curl -X POST 'http://0.0.0.0:4000/key/generate' \

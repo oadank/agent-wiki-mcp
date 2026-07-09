@@ -14,9 +14,9 @@ OpenHuman 搭载对 **118+ 第三方服务**的后端代理访问。任意服务
 服务连接后，会同时出现在四个位置：
 
 1. 作为**智能体工具**，模型可以直接调用。
-2. 作为**记忆源**，[自动拉取](../obsidian-wiki/auto-fetch.zh-CN.md)每二十分钟将其同步到[记忆树](../obsidian-wiki/memory-tree.zh-CN.md)。
+2. 作为**记忆源**，[[.obsidian-wiki/auto-fetch.zh-CN|自动拉取]]每二十分钟将其同步到[[.obsidian-wiki/memory-tree.zh-CN|记忆树]]。
 3. 作为**个人化信号**，你在各服务上的活动为你的偏好模型提供数据。
-4. 作为**触发器源**，实时事件（新邮件、新 charge、入站 DM）流入[触发器](triggers.zh-CN.md)流水线，可以自动触发智能体操作。
+4. 作为**触发器源**，实时事件（新邮件、新 charge、入站 DM）流入[[triggers.zh-CN|触发器]]流水线，可以自动触发智能体操作。
 
 ## 目录中的部分服务
 
@@ -67,8 +67,8 @@ OpenHuman 搭载对 **118+ 第三方服务**的后端代理访问。任意服务
 
 有两个功能作为原生功能搭载，而非集成，因为它们对桌面体验是基础性的：
 
-* [**语音**](../native-tools/voice.zh-CN.md)。语音转文字输入、文字转语音输出，加上实时 Google Meet 智能体——加入会议、转录到记忆树、在通话中说话。
-* [**原生工具**](../native-tools/README.zh-CN.md)。内置网络搜索、网络抓取，以及完整的文件系统/git/lint/test/grep 编码工具集，智能体开箱即用。
+* [[.native-tools/voice.zh-CN|**语音**]]。语音转文字输入、文字转语音输出，加上实时 Google Meet 智能体——加入会议、转录到记忆树、在通话中说话。
+* [[.native-tools/README.zh-CN|**原生工具**]]。内置网络搜索、网络抓取，以及完整的文件系统/git/lint/test/grep 编码工具集，智能体开箱即用。
 
 ## 隐私边界
 
@@ -76,10 +76,10 @@ OpenHuman core 从不直接调用任何第三方 API。所有请求都通过 Ope
 
 如果你选择直连 Composio 模式，该边界会改变：你本地的 core 使用你自己的 Composio API 密钥，你负责 Composio 账户、速率限制、计费关系，以及触发器投递所需的任何 webhook 端点。
 
-完整边界见[隐私与安全](../privacy-and-security.zh-CN.md)。
+完整边界见[[.privacy-and-security.zh-CN|隐私与安全]]。
 
 ## 另见
 
-* [触发器](triggers.zh-CN.md)，已连接集成的实时事件以及它们如何触发智能体操作。
-* [从集成自动拉取](../obsidian-wiki/auto-fetch.zh-CN.md)
-* [记忆树](../obsidian-wiki/memory-tree.zh-CN.md)
+* [[triggers.zh-CN|触发器]]，已连接集成的实时事件以及它们如何触发智能体操作。
+* [[.obsidian-wiki/auto-fetch.zh-CN|从集成自动拉取]]
+* [[.obsidian-wiki/memory-tree.zh-CN|记忆树]]

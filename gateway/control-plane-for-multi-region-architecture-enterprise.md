@@ -221,7 +221,7 @@ response = requests.post(
 
 ## Related Documentation
 
-- [Virtual Keys](./virtual_keys.md) - Managing API keys and users
-- [Health Checks](./health.md) - Monitoring instance health  
-- [Prometheus Metrics](./logging.md#prometheus-metrics) - Collecting metrics
-- [Production Deployment](./prod.md) - Production best practices 
+- [[virtual_keys|Virtual Keys]] - Managing API keys and users
+- [[health|Health Checks]] - Monitoring instance health  
+- [[logging#prometheus-metrics|Prometheus Metrics]] - Collecting metrics
+- [[prod|Production Deployment]] - Production best practices 

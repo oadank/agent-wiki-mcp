@@ -74,7 +74,7 @@ curl --location 'http://0.0.0.0:4000/chat/completions' \
 
 ## Debugging 
 
-Start the LiteLLM Proxy with [`--detailed_debug` mode and you should see more verbose logs](cli.md#detailed_debug)
+Start the LiteLLM Proxy with [[cli#detailed_debug|`--detailed_debug` mode and you should see more verbose logs]]
 
 ## Using OAuth2 + JWT Together
 
@@ -98,4 +98,4 @@ general_settings:
         path: "oauth2"
 ```
 
-For full `routing_overrides` behavior and list-based selectors, see [`/proxy/token_auth`](./token_auth.md#route-jwt-shaped-machine-tokens-to-oauth2).
+For full `routing_overrides` behavior and list-based selectors, see [[token_auth#route-jwt-shaped-machine-tokens-to-oauth2|`/proxy/token_auth`]].

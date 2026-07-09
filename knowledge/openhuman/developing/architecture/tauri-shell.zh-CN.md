@@ -204,6 +204,6 @@ _见 `app/src-tauri/src/lib.rs` 获取权威列表。_
 
 ### `utils/tauriSocket.ts`（前端）
 
-不在 `src-tauri` 中，但与 shell **配对**：React 应用监听镜像 Rust 端客户端 socket 活动的 Tauri 事件。见 `app/src/utils/tauriSocket.ts` 和 [前端服务](frontend.zh-CN.md#services-layer) 章节。
+不在 `src-tauri` 中，但与 shell **配对**：React 应用监听镜像 Rust 端客户端 socket 活动的 Tauri 事件。见 `app/src/utils/tauriSocket.ts` 和 [[frontend.zh-CN#services-layer|前端服务]] 章节。
 
 ---

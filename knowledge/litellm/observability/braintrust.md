@@ -172,7 +172,7 @@ response = client.chat.completions.create(
 print(response)
 ```
 
-For more examples, [**Click Here**](../proxy/user_keys.md#chatcompletions)
+For more examples, [[.proxy/user_keys#chatcompletions|**Click Here**]]
 
 
 You can use `BRAINTRUST_API_BASE` to point to your self-hosted Braintrust data plane. Read more about this [here](https://www.braintrust.dev/docs/guides/self-hosting).

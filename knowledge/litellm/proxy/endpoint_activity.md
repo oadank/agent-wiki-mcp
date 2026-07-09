@@ -121,6 +121,6 @@ Understand spend distribution across endpoints:
 
 ## Related Features
 
-- [Customer Usage](./customer_usage.md) - Track spend and usage for individual customers
-- [Cost Tracking](./cost_tracking.md) - Comprehensive cost tracking and analytics
-- [Spend Logs](./cost_tracking.md#-spend-logs-api---individual-transaction-logs) - Detailed request-level spend logs
+- [[customer_usage|Customer Usage]] - Track spend and usage for individual customers
+- [[cost_tracking|Cost Tracking]] - Comprehensive cost tracking and analytics
+- [[cost_tracking#-spend-logs-api---individual-transaction-logs|Spend Logs]] - Detailed request-level spend logs

@@ -181,6 +181,6 @@ Decision: Escalate
 
 ## 另见
 
-* [记忆树](obsidian-wiki/memory-tree.zh-CN.md)，情况报告从中读取。
-* [从集成自动拉取](obsidian-wiki/auto-fetch.zh-CN.md)，tick 之间工作区如何保持新鲜。
-* [本地 AI（可选）](model-routing/local-ai.zh-CN.md)，为评估提供支持的端侧模型。
+* [[obsidian-wiki/memory-tree.zh-CN|记忆树]]，情况报告从中读取。
+* [[obsidian-wiki/auto-fetch.zh-CN|从集成自动拉取]]，tick 之间工作区如何保持新鲜。
+* [[model-routing/local-ai.zh-CN|本地 AI（可选）]]，为评估提供支持的端侧模型。

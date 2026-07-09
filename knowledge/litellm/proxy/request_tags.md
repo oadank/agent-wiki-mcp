@@ -19,7 +19,7 @@ Add tags to model deployments to track spend by environment, AWS account, or any
 Tags appear in the `request_tags` field of LiteLLM spend logs.
 
 #### ℹ️ Info Requirements
-Virtual Keys & a database should be set up. See [Virtual Keys Setup](./virtual_keys.md).
+Virtual Keys & a database should be set up. See [[virtual_keys|Virtual Keys Setup]].
 
 
 ## Config Setup
@@ -176,6 +176,6 @@ The tag from the model config appears in `LiteLLM_SpendLogs`:
 
 ## Related
 
-- [Spend Tracking Overview](cost_tracking.md) - Complete tutorial on tracking spend with tags
-- [Tag Budgets](tag_budgets.md) - Set budget limits per tag
-- [Virtual Keys Setup](virtual_keys.md) - Required for tag tracking
+- [[cost_tracking|Spend Tracking Overview]] - Complete tutorial on tracking spend with tags
+- [[tag_budgets|Tag Budgets]] - Set budget limits per tag
+- [[virtual_keys|Virtual Keys Setup]] - Required for tag tracking

@@ -306,8 +306,8 @@ You can read more about how model resolution works in the [Model Configuration](
 
 ### Useful Links
 - [**All Supported LLM API Providers (OpenAI/Bedrock/Vertex/etc.)**](../providers/)
-- [**Full Config.Yaml Spec**](./configs.md)
-- [**Pass provider-specific params**](../completion/provider_specific_params.md#proxy-usage)
+- [[configs|**Full Config.Yaml Spec**]]
+- [[.completion/provider_specific_params#proxy-usage|**Pass provider-specific params**]]
 
 
 ## 2. Make a successful /chat/completion call 
@@ -443,10 +443,10 @@ curl -X POST 'http://0.0.0.0:4000/chat/completions' \
 
 ### Useful Links
 - [All Supported LLM API Providers (OpenAI/Bedrock/Vertex/etc.)](../providers/)
-- [Call LiteLLM Proxy via OpenAI SDK, Langchain, etc.](./user_keys.md#request-format)
+- [[user_keys#request-format|Call LiteLLM Proxy via OpenAI SDK, Langchain, etc.]]
 - [All API Endpoints Swagger](https://litellm-api.up.railway.app/#/chat%2Fcompletions)
-- [Other/Non-Chat Completion Endpoints](../embedding/supported_embedding.md)
-- [Pass-through for VertexAI, Bedrock, etc.](../pass_through/vertex_ai.md)
+- [[.embedding/supported_embedding|Other/Non-Chat Completion Endpoints]]
+- [[.pass_through/vertex_ai|Pass-through for VertexAI, Bedrock, etc.]]
 
 ## Optional: Generate a virtual key
 
@@ -613,10 +613,10 @@ curl -X POST 'http://0.0.0.0:4000/chat/completions' \
 
 ### Useful Links 
 
-- [Creating Virtual Keys](./virtual_keys.md)
+- [[virtual_keys|Creating Virtual Keys]]
 - [Key Management API Endpoints Swagger](https://litellm-api.up.railway.app/#/key%20management)
-- [Set Budgets / Rate Limits per key/user/teams](./users.md)
-- [Dynamic TPM/RPM Limits for keys](./team_budgets.md#dynamic-tpmrpm-allocation)
+- [[users|Set Budgets / Rate Limits per key/user/teams]]
+- [[team_budgets#dynamic-tpmrpm-allocation|Dynamic TPM/RPM Limits for keys]]
 
 ## Key Concepts
 

@@ -38,7 +38,7 @@ lang: zh-CN
 2. 当弃用对旧安装包的支持时，在该发布**之前**或**同时**将 **`VITE_MINIMUM_SUPPORTED_APP_VERSION`** 设置为新的 floor（仓库 Actions 变量 + 上述两个工作流步骤）。
 3. 从用户可见表面（GitHub Release 资源、网站、CDN、更新器 feed）移除、重定向或淘汰旧稳定版安装包和陈旧**更新器**条目。确认已弃用的资源无法从默认安装/更新流程中访问。
 4. 从 **releases/latest** 的全新安装上冒烟测试 **Gmail 连接**。
-5. 完成[手动冒烟清单](../../docs/RELEASE-MANUAL-SMOKE.md)，然后将完成的签字块（逐字复制，每个已勾选项目保持勾选）粘贴到发布 PR 描述中，然后再打 tag。
+5. 完成[[..docs/RELEASE-MANUAL-SMOKE|手动冒烟清单]]，然后将完成的签字块（逐字复制，每个已勾选项目保持勾选）粘贴到发布 PR 描述中，然后再打 tag。
 
 ## 工作流：staging vs. production
 

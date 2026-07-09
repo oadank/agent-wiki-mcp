@@ -214,5 +214,5 @@ Pick your Vertex AI Agent Engine from the dropdown and send a test message.
 
 - [Vertex AI Agent Engine Documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/reasoning-engine/overview)
 - [Create a Reasoning Engine](https://cloud.google.com/vertex-ai/generative-ai/docs/reasoning-engine/create)
-- [A2A Agent Gateway](../a2a.md)
-- [Vertex AI Provider](./vertex.md)
+- [[.a2a|A2A Agent Gateway]]
+- [[vertex|Vertex AI Provider]]

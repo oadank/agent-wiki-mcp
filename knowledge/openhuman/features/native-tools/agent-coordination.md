@@ -16,7 +16,7 @@ Beyond doing the work, the agent has tools for *organising* the work - planning 
 | `spawn_worker_thread`   | Background work that doesn't need to block the main conversation.                             |
 | `delegate`              | Hand a task to a specialist (e.g. an archetype with different prompts/tools/permissions).     |
 | `archetype_delegation`  | Route to a named archetype - coder, researcher, planner, etc.                                 |
-| `skill_delegation`      | Hand off to a [skill](../integrations/README.md#skills) installed in the workspace.                  |
+| `skill_delegation`      | Hand off to a [[.integrations/README#skills|skill]] installed in the workspace.                  |
 | `ask_clarification`     | Pause and ask the user a precise question instead of guessing.                                |
 | `plan_exit`             | Exit a planning phase and start executing.                                                    |
 | `check_onboarding_status` / `complete_onboarding` | Gate behaviour on whether the user has finished onboarding.        |
@@ -35,5 +35,5 @@ Asking for clarification is a tool too, on purpose: it makes "I should ask the u
 
 ## See also
 
-* [Coder](coder.md) - what a coder-archetype subagent typically uses.
-* [Subconscious Loop](../subconscious.md) - the always-on background agent thread.
+* [[coder|Coder]] - what a coder-archetype subagent typically uses.
+* [[.subconscious|Subconscious Loop]] - the always-on background agent thread.

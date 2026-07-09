@@ -60,7 +60,7 @@ Agents / AI clients
    Azure    (public)
 ```
 
-One service, one config, one set of API keys. Use the [public internet filter](./mcp_public_internet.md) to control which MCP servers are visible to external callers (Claude Desktop, ChatGPT) vs. internal-only.
+One service, one config, one set of API keys. Use the [[mcp_public_internet|public internet filter]] to control which MCP servers are visible to external callers (Claude Desktop, ChatGPT) vs. internal-only.
 
 ```yaml title="config.yaml" showLineNumbers
 general_settings:
@@ -169,18 +169,18 @@ By default all authenticated callers can call all MCP tools. Use these to restri
 
 | Control | Where |
 |---------|-------|
-| Per-key tool access | [Key-level MCP permissions](./mcp_control.md) |
-| Per-team tool access | [Team-level MCP permissions](./mcp_control.md) |
-| Hide internal servers from external callers | [available_on_public_internet](./mcp_public_internet.md) |
-| Verify requests came through LiteLLM | [MCP Zero Trust (JWT)](./mcp_zero_trust.md) |
-| Block sensitive data in responses | [MCP Guardrails](./mcp_guardrail.md) |
+| Per-key tool access | [[mcp_control|Key-level MCP permissions]] |
+| Per-team tool access | [[mcp_control|Team-level MCP permissions]] |
+| Hide internal servers from external callers | [[mcp_public_internet|available_on_public_internet]] |
+| Verify requests came through LiteLLM | [[mcp_zero_trust|MCP Zero Trust (JWT)]] |
+| Block sensitive data in responses | [[mcp_guardrail|MCP Guardrails]] |
 
 ---
 
 ## Related
 
-- [MCP Overview](./mcp.md)
-- [Public Internet Filter](./mcp_public_internet.md)
-- [MCP Access Control](./mcp_control.md)
-- [MCP Zero Trust](./mcp_zero_trust.md)
-- [MCP Guardrails](./mcp_guardrail.md)
+- [[mcp|MCP Overview]]
+- [[mcp_public_internet|Public Internet Filter]]
+- [[mcp_control|MCP Access Control]]
+- [[mcp_zero_trust|MCP Zero Trust]]
+- [[mcp_guardrail|MCP Guardrails]]

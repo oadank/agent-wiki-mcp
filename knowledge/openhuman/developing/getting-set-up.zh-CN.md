@@ -8,7 +8,7 @@ lang: zh-CN
 
 本指南涵盖完整的桌面/源码安装路径和发布安装包。
 
-如果你只需要在新机器上运行仓库根目录的 Rust crate，请使用[构建 Rust 核心](building-rust-core.zh-CN.md)。该页面记录了固定的 Rust 工具链、OS 包前置条件以及 `openhuman-core` 的精确 `cargo` 命令。
+如果你只需要在新机器上运行仓库根目录的 Rust crate，请使用[[building-rust-core.zh-CN|构建 Rust 核心]]。该页面记录了固定的 Rust 工具链、OS 包前置条件以及 `openhuman-core` 的精确 `cargo` 命令。
 
 本指南涵盖两条路径：
 

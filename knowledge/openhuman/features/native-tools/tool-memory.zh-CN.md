@@ -6,7 +6,7 @@ lang: zh-CN
 
 # 工具级记忆
 
-工具级记忆层捕获关于智能体应如何使用特定工具的**可执行指引**——它与[记忆工具](memory-tools.zh-CN.md)的通用召回不同，也与 `tool_effectiveness` 统计命名空间相区别。它是把"永远不要给 Sarah 发邮件"转化为智能体在每一轮后续中都必须遵守的硬约束的表面。
+工具级记忆层捕获关于智能体应如何使用特定工具的**可执行指引**——它与[[memory-tools.zh-CN|记忆工具]]的通用召回不同，也与 `tool_effectiveness` 统计命名空间相区别。它是把"永远不要给 Sarah 发邮件"转化为智能体在每一轮后续中都必须遵守的硬约束的表面。
 
 它实现了 [issue #1400](https://github.com/tinyhumansai/openhuman/issues/1400)——一个用于持久化学习成果和高优先级规则的一流存储与检索系统。
 
@@ -79,5 +79,5 @@ JSON payload 使用 snake_case（`priority: "critical"`、`source: "user_explici
 
 ## 另请参阅
 
-- [记忆工具](memory-tools.zh-CN.md)——通用 `recall`、`store`、`forget`。
-- [智能 Token 压缩](../token-compression.zh-CN.md)——系统提示被保护免受的内容。
+- [[memory-tools.zh-CN|记忆工具]]——通用 `recall`、`store`、`forget`。
+- [[.token-compression.zh-CN|智能 Token 压缩]]——系统提示被保护免受的内容。

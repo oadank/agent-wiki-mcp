@@ -47,11 +47,11 @@ These are the models that currently work with the "sk-litellm-.." keys.
 
 For a complete list of models/providers that you can call with LiteLLM, [check out our provider list](./providers/) or check out [models.litellm.ai](https://models.litellm.ai/)
 
-* OpenAI models - [OpenAI docs](./providers/openai.md)
+* OpenAI models - [[providers/openai|OpenAI docs]]
     * gpt-4
     * gpt-3.5-turbo
     * gpt-3.5-turbo-16k
-* Llama2 models - [TogetherAI docs](./providers/togetherai.md)
+* Llama2 models - [[providers/togetherai|TogetherAI docs]]
     * togethercomputer/llama-2-70b-chat
     * togethercomputer/llama-2-70b
     * togethercomputer/LLaMA-2-7B-32K
@@ -60,17 +60,17 @@ For a complete list of models/providers that you can call with LiteLLM, [check o
     * togethercomputer/CodeLlama-34b
     * WizardLM/WizardCoder-Python-34B-V1.0
     * NousResearch/Nous-Hermes-Llama2-13b
-* Falcon models - [TogetherAI docs](./providers/togetherai.md)
+* Falcon models - [[providers/togetherai|TogetherAI docs]]
     * togethercomputer/falcon-40b-instruct
     * togethercomputer/falcon-7b-instruct
-* Jurassic/AI21 models - [AI21 docs](./providers/ai21.md)
+* Jurassic/AI21 models - [[providers/ai21|AI21 docs]]
     * j2-ultra
     * j2-mid
     * j2-light
-* NLP Cloud models - [NLPCloud docs](./providers/nlp_cloud.md)
+* NLP Cloud models - [[providers/nlp_cloud|NLPCloud docs]]
     * dolpin
     * chatdolphin 
-* Anthropic models - [Anthropic docs](./providers/anthropic.md)
+* Anthropic models - [[providers/anthropic|Anthropic docs]]
     * claude-2
     * claude-instant-v1
 

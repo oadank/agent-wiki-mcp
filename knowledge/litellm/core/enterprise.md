@@ -43,51 +43,51 @@ LiteLLM OSS already covers the fundamentals — an OpenAI-compatible gateway, vi
 
 ### Security & Access Control
 
-- **[SSO for the Admin UI](./proxy/ui.md#-enterprise-features)** – Okta, Azure AD, Google Workspace, and any OIDC/SAML provider
-- **[JWT-based Authentication](./proxy/token_auth.md)** – Authenticate requests with your identity provider's tokens
-- **[Audit Logs with retention policies](./proxy/multiple_admins.md)** – Track every admin action and key-level change
-- **[Role-Based Access Control](./proxy/access_control.md)** – Organizations, teams, and user roles
-- **[Public & private route controls](./proxy/public_routes.md)** – Restrict admin routes, lock down surface area
-- **[IP address-based access control lists](./proxy/ip_address.md)** – Restrict proxy access to specific CIDR ranges
-- **[Key Rotations](./proxy/virtual_keys.md#-key-rotations)** – Automate rotation for virtual keys
-- **[Secret Managers](./secret_managers/overview.md)** – AWS KMS, AWS Secrets Manager, Azure Key Vault, Google KMS, Google Secret Manager, HashiCorp Vault, CyberArk, or a custom secret manager
-- **[AI Hub](./proxy/ai_hub.md)** – Share a public, branded page of available models and agents with your users
+- **[[proxy/ui#-enterprise-features|SSO for the Admin UI]]** – Okta, Azure AD, Google Workspace, and any OIDC/SAML provider
+- **[[proxy/token_auth|JWT-based Authentication]]** – Authenticate requests with your identity provider's tokens
+- **[[proxy/multiple_admins|Audit Logs with retention policies]]** – Track every admin action and key-level change
+- **[[proxy/access_control|Role-Based Access Control]]** – Organizations, teams, and user roles
+- **[[proxy/public_routes|Public & private route controls]]** – Restrict admin routes, lock down surface area
+- **[[proxy/ip_address|IP address-based access control lists]]** – Restrict proxy access to specific CIDR ranges
+- **[[proxy/virtual_keys#-key-rotations|Key Rotations]]** – Automate rotation for virtual keys
+- **[[secret_managers/overview|Secret Managers]]** – AWS KMS, AWS Secrets Manager, Azure Key Vault, Google KMS, Google Secret Manager, HashiCorp Vault, CyberArk, or a custom secret manager
+- **[[proxy/ai_hub|AI Hub]]** – Share a public, branded page of available models and agents with your users
 
 ### Governance & Cost Control
 
-- **[Multi-tenant Architecture](./proxy/multi_tenant_architecture.md)** – Organizations → Teams → Projects → Keys
-- **[Project Management](./proxy/project_management.md)** – Group keys by application or use-case with budgets, owners, and isolated spend tracking
-- **[Tag-based Budgets](./proxy/provider_budget_routing.md)** – Budgets and spend tracking by custom tag
-- **[Model-specific Budgets per Virtual Key](./proxy/users.md)** – Different limits per model, per key
-- **[Temporary Budget Increases](./proxy/temporary_budget_increase.md)** – Time-boxed spend bumps without permanent changes
-- **[Soft Budget Email Alerts](./proxy/ui_team_soft_budget_alerts.md)** – Warn teams before they hit hard limits
-- **[Generate Spend Reports](./proxy/cost_tracking.md#-enterprise-generate-spend-reports)** – Programmatic access to spend by key/team/tag/model
+- **[[proxy/multi_tenant_architecture|Multi-tenant Architecture]]** – Organizations → Teams → Projects → Keys
+- **[[proxy/project_management|Project Management]]** – Group keys by application or use-case with budgets, owners, and isolated spend tracking
+- **[[proxy/provider_budget_routing|Tag-based Budgets]]** – Budgets and spend tracking by custom tag
+- **[[proxy/users|Model-specific Budgets per Virtual Key]]** – Different limits per model, per key
+- **[[proxy/temporary_budget_increase|Temporary Budget Increases]]** – Time-boxed spend bumps without permanent changes
+- **[[proxy/ui_team_soft_budget_alerts|Soft Budget Email Alerts]]** – Warn teams before they hit hard limits
+- **[[proxy/cost_tracking#-enterprise-generate-spend-reports|Generate Spend Reports]]** – Programmatic access to spend by key/team/tag/model
 
 ### Observability & Compliance
 
-- **[Team-Based Logging](./proxy/team_logging.md)** – Route each team's logs to their own Langfuse project or callback
-- **[Disable logging per team](./proxy/team_logging.md#disable-logging-for-a-team)** – GDPR-friendly opt-out at the team level
-- **[Log export to GCS / Azure Blob](./observability/gcs_bucket_integration.md)** – Durable storage for compliance
+- **[[proxy/team_logging|Team-Based Logging]]** – Route each team's logs to their own Langfuse project or callback
+- **[[proxy/team_logging#disable-logging-for-a-team|Disable logging per team]]** – GDPR-friendly opt-out at the team level
+- **[[observability/gcs_bucket_integration|Log export to GCS / Azure Blob]]** – Durable storage for compliance
 - **[Guardrails per key/team](#guardrails---secret-detectionredaction)** – Secret redaction, content moderation, banned keywords
 - **[Enforced required params](#required-params-for-llm-requests)** – Reject requests missing required metadata
 
 ### Operations & Branding
 
 - **[Custom Swagger branding](#swagger-docs---custom-routes--branding)** – Your title, description, and filtered routes
-- **[Custom email branding](./proxy/email.md#customizing-email-branding)** – Your logo and colors on system emails
+- **[[proxy/email#customizing-email-branding|Custom email branding]]** – Your logo and colors on system emails
 - **[Max request/response size limits](#set-max-request--response-size-on-litellm-proxy)** – Protect the proxy from runaway payloads
-- **[Team-managed models](./proxy/team_model_add.md)** – Let teams bring their own keys and fine-tunes
+- **[[proxy/team_model_add|Team-managed models]]** – Let teams bring their own keys and fine-tunes
 
 ### Projects
 
-[Projects](./proxy/project_management.md) let you group virtual keys by application or use-case. Each project has its own budget, owners, rate limits, and isolated spend view — useful when a single team runs multiple apps and needs separate reporting per app.
+[[proxy/project_management|Projects]] let you group virtual keys by application or use-case. Each project has its own budget, owners, rate limits, and isolated spend view — useful when a single team runs multiple apps and needs separate reporting per app.
 
 - Group keys by application, environment, or customer
 - Per-project budgets, rate limits, and model allowlists
 - Dedicated owners and spend dashboards
 - Works with organizations, teams, and tags
 
-See [Project Management](./proxy/project_management.md) and the [UI walkthrough](./proxy/ui_project_management.md) for setup.
+See [[proxy/project_management|Project Management]] and the [[proxy/ui_project_management|UI walkthrough]] for setup.
 
 ---
 
@@ -102,7 +102,7 @@ Deploy our Docker image (or build from the pip package) on your own infrastructu
 LITELLM_LICENSE="eyJ..."
 ```
 
-**No data leaves your environment.** [Procurement available via AWS and Azure Marketplace.](./data_security.md#legalcompliance-faqs)
+**No data leaves your environment.** [[data_security#legalcompliance-faqs|Procurement available via AWS and Azure Marketplace.]]
 
 Pricing depends on your deployment size — [get in touch](https://enterprise.litellm.ai/demo) to scope it.
 
@@ -136,23 +136,23 @@ Custom SLAs available on request.
 
 Share a public page of available models, MCP, Agents and skills for users
 
-[Learn more](./proxy/ai_hub.md)
+[[proxy/ai_hub|Learn more]]
 
 
 ## Secret Managers
 
 LiteLLM Enterprise integrates with the following secret managers:
 
-- [AWS KMS](./secret_managers/aws_kms.md)
-- [AWS Secrets Manager](./secret_managers/aws_secret_manager.md)
-- [Azure Key Vault](./secret_managers/azure_key_vault.md)
-- [Google KMS](./secret_managers/google_kms.md)
-- [Google Secret Manager](./secret_managers/google_secret_manager.md)
-- [HashiCorp Vault](./secret_managers/hashicorp_vault.md)
-- [CyberArk](./secret_managers/cyberark.md)
-- [Custom Secret Manager](./secret_managers/custom_secret_manager.md)
+- [[secret_managers/aws_kms|AWS KMS]]
+- [[secret_managers/aws_secret_manager|AWS Secrets Manager]]
+- [[secret_managers/azure_key_vault|Azure Key Vault]]
+- [[secret_managers/google_kms|Google KMS]]
+- [[secret_managers/google_secret_manager|Google Secret Manager]]
+- [[secret_managers/hashicorp_vault|HashiCorp Vault]]
+- [[secret_managers/cyberark|CyberArk]]
+- [[secret_managers/custom_secret_manager|Custom Secret Manager]]
 
-See the [Secret Managers overview](./secret_managers/overview.md) for setup.
+See the [[secret_managers/overview|Secret Managers overview]] for setup.
 
 
 ## Enterprise Feature Reference
@@ -191,7 +191,7 @@ curl -X GET "http://0.0.0.0:4000/spend/tags" \
 ```
 
 #### 💡 Tip
-For comprehensive spend tracking features including budgets, alerts, and detailed analytics, check out [Spend Tracking](./proxy/cost_tracking.md).
+For comprehensive spend tracking features including budgets, alerts, and detailed analytics, check out [[proxy/cost_tracking|Spend Tracking]].
 
 
 
@@ -319,7 +319,7 @@ Expected Response
 
 ### Control available public, private routes
 
-See [Control Public & Private Routes](./proxy/public_routes.md) for detailed documentation on configuring public routes, admin-only routes, allowed routes, and wildcard patterns.
+See [[proxy/public_routes|Control Public & Private Routes]] for detailed documentation on configuring public routes, admin-only routes, allowed routes, and wildcard patterns.
 
 
 ## Guardrails - Secret Detection/Redaction
@@ -897,7 +897,7 @@ We expect this to fail since the request size is over `max_request_size_mb`
 
 ### Where can I read more about data security and compliance?
 
-See [Data Security / Legal / Compliance FAQs](./data_security.md).
+See [[data_security|Data Security / Legal / Compliance FAQs]].
 
 ### How is pricing structured?
 
@@ -905,4 +905,4 @@ Pricing is based on usage. [Contact us](https://enterprise.litellm.ai/demo) for 
 
 ### How do I get day-0 support for new models without restarting?
 
-Use [Auto Sync New Models](./proxy/sync_models_github.md) to pull the latest pricing and context-window data from GitHub on demand or on a schedule — no restart required. Trigger a manual sync with `POST /reload/model_cost_map`, or schedule periodic syncs with `POST /schedule/model_cost_map_reload?hours=6`.
+Use [[proxy/sync_models_github|Auto Sync New Models]] to pull the latest pricing and context-window data from GitHub on demand or on a schedule — no restart required. Trigger a manual sync with `POST /reload/model_cost_map`, or schedule periodic syncs with `POST /schedule/model_cost_map_reload?hours=6`.

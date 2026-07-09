@@ -22,10 +22,10 @@ icon: globe
 ## 适用于
 
 * 阅读文章、博客文章、文档页面、GitHub README，去除噪音。
-* 跟进[网络搜索](web-search.zh-CN.md)的结果。
+* 跟进[[web-search.zh-CN|网络搜索]]的结果。
 * 按需摘要单个页面。
 
 ## 另见
 
-* [网络搜索](web-search.zh-CN.md) —— 找到要输入抓取器的 URL。
-* [智能 Token 压缩](../token-compression.zh-CN.md) —— 在长页面到达模型之前对其进行修剪。
+* [[web-search.zh-CN|网络搜索]] —— 找到要输入抓取器的 URL。
+* [[.token-compression.zh-CN|智能 Token 压缩]] —— 在长页面到达模型之前对其进行修剪。

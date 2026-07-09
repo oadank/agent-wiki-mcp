@@ -15,7 +15,7 @@ icon: gear
 | `node_exec` | 运行 Node.js 片段——用于临时脚本。 |
 | `npm_exec` | 运行 `npm`/`pnpm`/`yarn` 脚本。 |
 | `current_time` | 获取任意时区的当前时间，带格式化选项。 |
-| `schedule` | 一次性"在时间 T 做这个"——循环任务见 [Cron](cron.zh-CN.md)。 |
+| `schedule` | 一次性"在时间 T 做这个"——循环任务见 [[cron.zh-CN|Cron]]。 |
 | `pushover` | 向你的设备发送推送通知。 |
 | `insert_sql_record` | 向智能体的结构化工作区 SQL 存储追加一行。 |
 | `lsp` | 查询语言服务器（定义、引用、诊断）。 |
@@ -32,5 +32,5 @@ icon: gear
 
 ## 另见
 
-* [编码器](coder.zh-CN.md) —— 对于文件系统重的工作，优先使用专用工具而非 `shell`。
-* [定时任务与调度](cron.zh-CN.md) —— 对于任何循环性的任务。
+* [[coder.zh-CN|编码器]] —— 对于文件系统重的工作，优先使用专用工具而非 `shell`。
+* [[cron.zh-CN|定时任务与调度]] —— 对于任何循环性的任务。

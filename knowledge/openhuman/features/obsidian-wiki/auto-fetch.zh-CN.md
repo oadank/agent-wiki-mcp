@@ -7,11 +7,11 @@ icon: arrows-rotate
 
 # 自动拉取集成
 
-大多数"AI 助手"是被动的：你提问，它们思考，它们回答。OpenHuman 则相反。它持续从你的技术栈中拉取数据，所以当你问"昨晚我的收件箱收到了什么？"时，答案已经在[记忆树](memory-tree.zh-CN.md)里了。
+大多数"AI 助手"是被动的：你提问，它们思考，它们回答。OpenHuman 则相反。它持续从你的技术栈中拉取数据，所以当你问"昨晚我的收件箱收到了什么？"时，答案已经在[[memory-tree.zh-CN|记忆树]]里了。
 
 ## 工作原理
 
-一个单一的周期性调度器每二十分钟触发一次。每次触发时，它遍历每个活跃的[集成](../integrations/README.zh-CN.md)，查找匹配的原生 provider，如果该连接的距上次同步的时间足够长，就调用 `provider.sync(ctx, SyncReason::Periodic)`。
+一个单一的周期性调度器每二十分钟触发一次。每次触发时，它遍历每个活跃的[[.integrations/README.zh-CN|集成]]，查找匹配的原生 provider，如果该连接的距上次同步的时间足够长，就调用 `provider.sync(ctx, SyncReason::Periodic)`。
 
 ```text
 每 20 分钟
@@ -41,7 +41,7 @@ icon: arrows-rotate
 
 每个 provider 负责定义自己的摄入逻辑。例如 Gmail provider 获取一页新消息，运行邮件规范化器，通过相同的手动 UI 摄入路径传输结果，块进入 SQLite，摘要 bucket 被填充，任何被触及的实体都会将主题树标记为脏。
 
-其他 providers（GitHub、Slack、Notion……）遵循相同的形状：从游标后获取新项目 → 规范化 → 摄入到[记忆树](memory-tree.zh-CN.md)。
+其他 providers（GitHub、Slack、Notion……）遵循相同的形状：从游标后获取新项目 → 规范化 → 摄入到[[memory-tree.zh-CN|记忆树]]。
 
 ## 为什么是 20 分钟触发周期
 
@@ -55,6 +55,6 @@ icon: arrows-rotate
 
 ## 另见
 
-* [第三方集成](../integrations/README.zh-CN.md)。自动拉取运行的连接器层。
-* [记忆树](memory-tree.zh-CN.md)。一切最终到达的地方。
-* [智能 Token 压缩](../token-compression.zh-CN.md)。使"获取一切"保持低成本的原因。
+* [[.integrations/README.zh-CN|第三方集成]]。自动拉取运行的连接器层。
+* [[memory-tree.zh-CN|记忆树]]。一切最终到达的地方。
+* [[.token-compression.zh-CN|智能 Token 压缩]]。使"获取一切"保持低成本的原因。

@@ -14,7 +14,7 @@ summary: "1. Add user with permissions to a team on proxy "
 
 # Internal User Self-Serve
 
-## Allow users to create their own keys on [Proxy UI](./ui.md).
+## Allow users to create their own keys on [[ui|Proxy UI]].
 
 1. Add user with permissions to a team on proxy 
 
@@ -100,7 +100,7 @@ http://0.0.0.0:4000/ui/onboarding?id=a2f0918f-43b0-4770-a664-96ddd192966e
 
 #### ℹ️ Info
 
-Use [Email Notifications](./email.md) to email users onboarding links 
+Use [[email|Email Notifications]] to email users onboarding links 
 
 
 
@@ -111,7 +111,7 @@ Use [Email Notifications](./email.md) to email users onboarding links
 
 #### ℹ️ Info 
 
-LiteLLM Enterprise: Enable [SSO login](./ui.md#setup-ssoauth-for-ui)
+LiteLLM Enterprise: Enable [[ui#setup-ssoauth-for-ui|SSO login]]
 
 
 
@@ -202,7 +202,7 @@ Follow this [tutorial for auto-adding sso users to teams with Microsoft Entra ID
 
 ### Debugging SSO JWT fields 
 
-[**Go Here**](./admin_ui_sso.md#debugging-sso-jwt-fields)
+[[admin_ui_sso#debugging-sso-jwt-fields|**Go Here**]]
 
 
 ## Advanced
@@ -217,7 +217,7 @@ Set `PROXY_LOGOUT_URL` in your .env if you want users to get redirected to a spe
 
 ### Set default max budget for internal users 
 
-Automatically apply budget per internal user when they sign up. By default the table will be checked every 10 minutes, for users to reset. To modify this, [see this](./users.md#reset-budgets)
+Automatically apply budget per internal user when they sign up. By default the table will be checked every 10 minutes, for users to reset. To modify this, [[users#reset-budgets|see this]]
 
 ```yaml
 litellm_settings:
@@ -238,7 +238,7 @@ This budget does not apply to keys created under non-default teams.
 
 ### Set max budget for teams
 
-[**Go Here**](./team_budgets.md)
+[[team_budgets|**Go Here**]]
 
 ### Default Team
 
@@ -341,7 +341,7 @@ This is useful if you only want users to create keys under a specific team.
 
 This will also prevent users from using their session tokens on the test keys chat pane. 
 
-👉 [**See this**](./virtual_keys.md#restricting-key-generation)
+👉 [[virtual_keys#restricting-key-generation|**See this**]]
 
 ## **All Settings for Self Serve / SSO Flow**
 
@@ -378,7 +378,7 @@ litellm_settings:
     tpm_limit: 1000 #(Optional[int], optional): Tpm limit. Defaults to None.
     rpm_limit: 1000 #(Optional[int], optional): Rpm limit. Defaults to None.
 
-  key_generation_settings: # Restricts who can generate keys. [Further docs](./virtual_keys.md#restricting-key-generation)
+  key_generation_settings: # Restricts who can generate keys. [[virtual_keys#restricting-key-generation|Further docs]]
     team_key_generation:
       allowed_team_member_roles: ["admin"]
     personal_key_generation: # maps to 'Default Team' on UI 

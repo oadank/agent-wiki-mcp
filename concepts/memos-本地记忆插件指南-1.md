@@ -197,11 +197,11 @@ A:
 ---
 
 ## 相关文档
-- [记忆架构](memory.md)
-- [Dreaming 机制](dreaming.md)
-- [内置记忆引擎](memory-builtin.md)
-- [LanceDB 记忆插件](memory-lancedb.md)
-- [记忆配置参考](../plugins/memory-configuration-reference.md)
+- [[memory|记忆架构]]
+- [[dreaming|Dreaming 机制]]
+- [[memory-builtin|内置记忆引擎]]
+- [[memory-lancedb|LanceDB 记忆插件]]
+- [[.plugins/memory-configuration-reference|记忆配置参考]]
 
 ---
 

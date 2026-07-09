@@ -58,6 +58,6 @@ fn resolve(&self, model: &str) -> (usize, String) {
 
 ## 另见
 
-- [智能 Token 压缩](../token-compression.zh-CN.md)。什么使大型推理调用负担得起。
-- [原生工具](../native-tools/README.zh-CN.md)。不同的工具调用暗示不同的路由。
-- [本地 AI（可选）](local-ai.zh-CN.md)。轻量聊天 hint 可以在设备上运行。
+- [[.token-compression.zh-CN|智能 Token 压缩]]。什么使大型推理调用负担得起。
+- [[.native-tools/README.zh-CN|原生工具]]。不同的工具调用暗示不同的路由。
+- [[local-ai.zh-CN|本地 AI（可选）]]。轻量聊天 hint 可以在设备上运行。

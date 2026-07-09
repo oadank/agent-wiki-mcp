@@ -280,7 +280,7 @@ AI 对用户的响应
 - **认证交接**：Web 到桌面认证使用 5 分钟 TTL 的一次性登录 token，通过 Rust HTTP 客户端交换（绕过 CORS）
 - **网络 TLS**：所有 WebSocket 和 HTTP 连接使用 rustls，不依赖平台 OpenSSL
 - **状态管理**：敏感数据保存在 Redux（内存）和 OS 钥匙串（持久化）中。凭证或 token 不使用 localStorage
-- **提示注入防护**：用户提示在模型/工具执行前经过规范化/评分，并在服务器端强制执行（`allow | review | block`）。详见 [`docs/PROMPT_INJECTION_GUARD.md`](../../docs/PROMPT_INJECTION_GUARD.md)
+- **提示注入防护**：用户提示在模型/工具执行前经过规范化/评分，并在服务器端强制执行（`allow | review | block`）。详见 [[..docs/PROMPT_INJECTION_GUARD|`docs/PROMPT_INJECTION_GUARD.md`]]
 
 ---
 

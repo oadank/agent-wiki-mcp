@@ -168,5 +168,5 @@ curl http://0.0.0.0:4000/cursor/v0/me \
 ## Related
 
 - [Cursor Cloud Agents API Docs](https://docs.cursor.com/account/api)
-- [Pass-through Endpoints Overview](./intro.md)
-- [Virtual Keys](../proxy/virtual_keys.md)
+- [[intro|Pass-through Endpoints Overview]]
+- [[.proxy/virtual_keys|Virtual Keys]]

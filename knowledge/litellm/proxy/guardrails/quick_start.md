@@ -127,7 +127,7 @@ litellm_settings:
 
 ### Load Balancing Guardrails
 
-Need to distribute guardrail requests across multiple accounts or regions? See [Guardrail Load Balancing](./guardrail_load_balancing.md) for details on:
+Need to distribute guardrail requests across multiple accounts or regions? See [[guardrail_load_balancing|Guardrail Load Balancing]] for details on:
 
 - Load balancing across multiple AWS Bedrock accounts (useful for rate limit management)
 - Weighted distribution across guardrail instances
@@ -244,7 +244,7 @@ x-litellm-applied-guardrails: aporia-pre-guard
 
 ### Guardrail Policies
 
-Need more control? Use [Guardrail Policies](./guardrail_policies.md) to:
+Need more control? Use [[guardrail_policies|Guardrail Policies]] to:
 
 - Group guardrails into reusable policies
 - Enable/disable guardrails for specific teams, keys, or models

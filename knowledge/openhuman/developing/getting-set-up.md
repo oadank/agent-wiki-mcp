@@ -7,7 +7,7 @@ icon: wrench
 
 This guide covers the full desktop/source install path and release installers.
 
-If you only need the repo-root Rust crate on a fresh machine, use [Building the Rust Core](building-rust-core.md). That page documents the pinned Rust toolchain, OS package prerequisites, and the exact `cargo` commands for `openhuman-core`.
+If you only need the repo-root Rust crate on a fresh machine, use [[building-rust-core|Building the Rust Core]]. That page documents the pinned Rust toolchain, OS package prerequisites, and the exact `cargo` commands for `openhuman-core`.
 
 This guide covers two paths:
 

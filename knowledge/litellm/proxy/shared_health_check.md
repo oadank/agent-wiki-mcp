@@ -314,7 +314,7 @@ general_settings:
 
 ## Related Features
 
-- [Background Health Checks](./health.md#background-health-checks)
-- [Redis Caching](./caching.md)
-- [High Availability Setup](./db_deadlocks.md)
-- [Health Check Endpoints](./health.md#health-endpoints)
+- [[health#background-health-checks|Background Health Checks]]
+- [[caching|Redis Caching]]
+- [[db_deadlocks|High Availability Setup]]
+- [[health#health-endpoints|Health Check Endpoints]]

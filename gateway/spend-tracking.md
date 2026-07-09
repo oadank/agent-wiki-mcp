@@ -24,10 +24,10 @@ Track spend for keys, users, and teams across 100+ LLMs.
 
 LiteLLM automatically tracks spend for all known models. See our [model cost map](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json)
 
-Provider-specific cost tracking (e.g., [Vertex AI PayGo / priority pricing](../providers/vertex.md#paygo--priority-cost-tracking), [Bedrock service tiers](../providers/bedrock.md#usage---service-tier), [Azure base model mapping](./custom_pricing.md#set-base_model-for-cost-tracking-eg-azure-deployments)) is applied automatically when the response includes tier metadata.
+Provider-specific cost tracking (e.g., [[.providers/vertex#paygo--priority-cost-tracking|Vertex AI PayGo / priority pricing]], [[.providers/bedrock#usage---service-tier|Bedrock service tiers]], [[custom_pricing#set-base_model-for-cost-tracking-eg-azure-deployments|Azure base model mapping]]) is applied automatically when the response includes tier metadata.
 
 #### 💡 Tip Keep Pricing Data Updated
-[Sync model pricing data from GitHub](./sync_models_github.md) to ensure accurate cost tracking.
+[[sync_models_github|Sync model pricing data from GitHub]] to ensure accurate cost tracking.
 
 
 #### ℹ️ Info Cost does not match your provider bill?
@@ -331,7 +331,7 @@ See our [Swagger API](https://litellm-api.up.railway.app/#/Budget%20%26%20Spend%
 ## Custom Tags
 
 #### 💡 Tip See Full Request Tags Documentation
-For comprehensive documentation on all tag options including `x-litellm-tags` header, request body `tags`, and config-based tags, see the dedicated [Request Tags](./request_tags.md) page.
+For comprehensive documentation on all tag options including `x-litellm-tags` header, request body `tags`, and config-based tags, see the dedicated [[request_tags|Request Tags]] page.
 
 
 Requirements:
@@ -632,7 +632,7 @@ Output from script
 
 Customer [this is `user` passed to `/chat/completions` request](#how-to-track-spend-with-litellm)
 
-- [LiteLLM API key](virtual_keys.md)
+- [[virtual_keys|LiteLLM API key]]
 
 
 

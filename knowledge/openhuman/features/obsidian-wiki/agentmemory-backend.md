@@ -9,7 +9,7 @@ icon: database
 # agentmemory backend
 
 OpenHuman's default `Memory` trait backend is `sqlite` — the unified store
-documented in [Memory Trees](memory-tree.md). For users who already
+documented in [[memory-tree|Memory Trees]]. For users who already
 self-host [agentmemory](https://github.com/rohitg00/agentmemory) — typically
 because they want a single durable memory shared across Claude Code,
 Cursor, Codex, OpenCode, and OpenHuman — OpenHuman exposes an opt-in

@@ -73,7 +73,7 @@ sequenceDiagram
 
 ### Prerequisites
 
-Complete [OIDC JWT Auth setup](./token_auth.md) first — you need `JWT_PUBLIC_KEY_URL` configured and `enable_jwt_auth: True` in your proxy config.
+Complete [[token_auth|OIDC JWT Auth setup]] first — you need `JWT_PUBLIC_KEY_URL` configured and `enable_jwt_auth: True` in your proxy config.
 
 ### Step 1. Configure the JWT claim to map on
 
@@ -330,6 +330,6 @@ Mappings are unique per `(claim_name, claim_value, issuer)` — so `user-123` fr
 
 ## Related
 
-- [OIDC JWT Auth](./token_auth.md) — base JWT auth setup required before using this feature
-- [Virtual Keys](./virtual_keys.md) — full virtual key documentation
-- [Access Control](./access_control.md) — model and team access control
+- [[token_auth|OIDC JWT Auth]] — base JWT auth setup required before using this feature
+- [[virtual_keys|Virtual Keys]] — full virtual key documentation
+- [[access_control|Access Control]] — model and team access control

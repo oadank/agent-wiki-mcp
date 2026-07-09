@@ -291,5 +291,5 @@ The agent responds with its capabilities. You can now interact with your LangGra
 
 - [LangGraph Platform Documentation](https://langchain-ai.github.io/langgraph/cloud/quick_start/)
 - [LangGraph GitHub](https://github.com/langchain-ai/langgraph)
-- [A2A Agent Gateway](../a2a.md)
-- [A2A Cost Tracking](../a2a_cost_tracking.md)
+- [[.a2a|A2A Agent Gateway]]
+- [[.a2a_cost_tracking|A2A Cost Tracking]]

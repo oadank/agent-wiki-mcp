@@ -5,7 +5,7 @@ icon: brain
 
 # 记忆工具
 
-[记忆树](../obsidian-wiki/memory-tree.zh-CN.md) 是 OpenHuman 的知识库。记忆工具是智能体在对话期间如何与其对话的。
+[[.obsidian-wiki/memory-tree.zh-CN|记忆树]] 是 OpenHuman 的知识库。记忆工具是智能体在对话期间如何与其对话的。
 
 ## 系列中的工具
 
@@ -23,5 +23,5 @@ icon: brain
 
 ## 另见
 
-* [记忆树](../obsidian-wiki/memory-tree.zh-CN.md)——这些工具从什么读取和写入什么。
-* [自动拉取](../obsidian-wiki/auto-fetch.zh-CN.md)——树如何首先被填充。
+* [[.obsidian-wiki/memory-tree.zh-CN|记忆树]]——这些工具从什么读取和写入什么。
+* [[.obsidian-wiki/auto-fetch.zh-CN|自动拉取]]——树如何首先被填充。

@@ -14,7 +14,7 @@ summary: ":::info"
 # Custom Callbacks
 
 #### ℹ️ Info
-**For PROXY** [Go Here](../proxy/logging.md#custom-callback-class-async)
+**For PROXY** [[.proxy/logging#custom-callback-class-async|Go Here]]
  
 
 ## Callback Class

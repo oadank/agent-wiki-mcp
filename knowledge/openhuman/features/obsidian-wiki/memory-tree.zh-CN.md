@@ -42,7 +42,7 @@ icon: tree
 
 热路径（规范化 → 分块 → 快速评分 → 持久化 → 入队后续工作）很快。重型工作——向量生成、实体提取、密封摘要 bucket、每日摘要——在后台 workers 中运行，UI 永远不会阻塞。
 
-如果你开启了[本地 AI](../model-routing/local-ai.zh-CN.md)，嵌入向量和摘要树的构建可以在**设备上通过 Ollama** 运行；否则它们像其他模型调用一样通过 OpenHuman 后端处理。
+如果你开启了[[.model-routing/local-ai.zh-CN|本地 AI]]，嵌入向量和摘要树的构建可以在**设备上通过 Ollama** 运行；否则它们像其他模型调用一样通过 OpenHuman 后端处理。
 
 ## 三棵树，三个作用域
 
@@ -59,7 +59,7 @@ icon: tree
 | 路径                      | 内容                                           |
 | ------------------------- | ---------------------------------------------- |
 | `memory_tree/chunks.db`   | 块、评分、摘要、实体索引、任务、热度           |
-| `wiki/`                   | Markdown 存储库 —— 见 [Obsidian Wiki](./README.zh-CN.md) |
+| `wiki/`                   | Markdown 存储库 —— 见 [[README.zh-CN|Obsidian Wiki]] |
 
 一切都是本地的。除非你明确发送包含原始数据的聊天消息，否则你的原始数据不会离开你的机器。
 
@@ -137,7 +137,7 @@ pending_extraction --> admitted --> buffered --> sealed
 
 ## 触发摄入
 
-* **自动的** —— 每个活跃的集成每 20 分钟自动拉取一次；见 [自动拉取](auto-fetch.zh-CN.md)。
+* **自动的** —— 每个活跃的集成每 20 分钟自动拉取一次；见 [[auto-fetch.zh-CN|自动拉取]]。
 * **手动的** —— 桌面 app 的"记忆"标签页暴露了每个源的"运行摄入"触发器。
 * **RPC** —— `openhuman.memory_tree_ingest`，用于高级工作流。
 
@@ -165,8 +165,8 @@ pending_extraction --> admitted --> buffered --> sealed
 
 **搜索与检索。** 记忆树上的搜索栏。支持源作用域、主题作用域或全局查询，任何结果都可以链接回底层块文件（在你的 Obsidian 存储库中）以获取完整来源追溯。
 
-**路由。** 智能标签页还显示智能体每个任务使用的模型——见[自动模型路由](../model-routing/README.zh-CN.md)。
+**路由。** 智能标签页还显示智能体每个任务使用的模型——见[[.model-routing/README.zh-CN|自动模型路由]]。
 
 ## 交换后端
 
-记忆树流水线（分块 → 评分 → 密封 → 摘要）是默认的。在多个智能体间自托管 [agentmemory](https://github.com/rohitg00/agentmemory) 且希望 OpenHuman 共享相同持久化存储的操作员可以通过 `MemoryConfig.backend = "agentmemory"` 选择外部后端——参见 [agentmemory 后端](agentmemory-backend.zh-CN.md) 了解配置 keys、字段映射、端点表、安全措施和故障模式。
+记忆树流水线（分块 → 评分 → 密封 → 摘要）是默认的。在多个智能体间自托管 [agentmemory](https://github.com/rohitg00/agentmemory) 且希望 OpenHuman 共享相同持久化存储的操作员可以通过 `MemoryConfig.backend = "agentmemory"` 选择外部后端——参见 [[agentmemory-backend.zh-CN|agentmemory 后端]] 了解配置 keys、字段映射、端点表、安全措施和故障模式。

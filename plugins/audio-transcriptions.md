@@ -127,11 +127,11 @@ transcript = client.audio.transcriptions.create(
 
 - OpenAI
 - Azure
-- [Fireworks AI](./providers/fireworks_ai.md#audio-transcription)
-- [Groq](./providers/groq.md#speech-to-text---whisper)
-- [Deepgram](./providers/deepgram.md)
-- [Mistral (Voxtral)](./providers/mistral.md#audio-transcription)
-- [OVHcloud AI Endpoints](./providers/ovhcloud.md)
+- [[providers/fireworks_ai#audio-transcription|Fireworks AI]]
+- [[providers/groq#speech-to-text---whisper|Groq]]
+- [[providers/deepgram|Deepgram]]
+- [[providers/mistral#audio-transcription|Mistral (Voxtral)]]
+- [[providers/ovhcloud|OVHcloud AI Endpoints]]
 
 ---
 

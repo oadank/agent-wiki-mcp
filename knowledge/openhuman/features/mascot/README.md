@@ -10,7 +10,7 @@ icon: face-smile
 
 OpenHuman has a face. The mascot is an animated character that lives on your desktop and acts as the visible surface of the agent, what it's saying, what it's thinking about, when it's idle, when it's busy, when it has something to tell you.
 
-It is not a chrome ornament. The mascot is wired into the same pieces as the rest of the agent: voice, memory, the [subconscious loop](../subconscious.md), and the [Google Meet integration](../native-tools/voice.md). When the agent talks, the mascot is the one talking; when the agent is thinking, the mascot is the one thinking.
+It is not a chrome ornament. The mascot is wired into the same pieces as the rest of the agent: voice, memory, the [[.subconscious|subconscious loop]], and the [[.native-tools/voice|Google Meet integration]]. When the agent talks, the mascot is the one talking; when the agent is thinking, the mascot is the one thinking.
 
 ## What it does
 
@@ -18,13 +18,13 @@ It is not a chrome ornament. The mascot is wired into the same pieces as the res
 
 When the agent replies, the audio is generated through a hosted TTS model and streamed to your speakers. At the same time, the mascot drives a viseme map against the audio so its mouth shapes match the words coming out. There's no separate "talking head" video, the same audio stream that you hear is the one driving the animation.
 
-See [Native Voice](../native-tools/voice.md) for the speech-to-text, text-to-speech, and meeting plumbing the mascot rides on top of.
+See [[.native-tools/voice|Native Voice]] for the speech-to-text, text-to-speech, and meeting plumbing the mascot rides on top of.
 
 ### It joins your meetings, as a real participant
 
-The mascot is OpenHuman's flagship voice integration. It can join a Google Meet call as a real participant: it hears everyone, takes notes into your [Memory Tree](../obsidian-wiki/memory-tree.md), speaks back into the call when it has something to say, and pipes its own animated face into the meeting as the camera feed.
+The mascot is OpenHuman's flagship voice integration. It can join a Google Meet call as a real participant: it hears everyone, takes notes into your [[.obsidian-wiki/memory-tree|Memory Tree]], speaks back into the call when it has something to say, and pipes its own animated face into the meeting as the camera feed.
 
-This is the headline use case and has its own page, see [Meeting Agents](meeting-agents.md).
+This is the headline use case and has its own page, see [[meeting-agents|Meeting Agents]].
 
 ### It moves and reacts to its surroundings
 
@@ -36,13 +36,13 @@ It is meant to feel alive, not animated-on-rails.
 
 ### It remembers you
 
-The mascot is the visible part of an agent that has the [Memory Tree](../obsidian-wiki/memory-tree.md) underneath it. It remembers what you've talked about, who the people in your life are, what's open on your plate, what's been decided, and what's outstanding, across every source you've connected. When it greets you in the morning, it isn't starting from zero.
+The mascot is the visible part of an agent that has the [[.obsidian-wiki/memory-tree|Memory Tree]] underneath it. It remembers what you've talked about, who the people in your life are, what's open on your plate, what's been decided, and what's outstanding, across every source you've connected. When it greets you in the morning, it isn't starting from zero.
 
 That memory is what makes the personality consistent over weeks and months. The mascot you talk to today knows what the mascot you talked to last Tuesday knows.
 
 ### It thinks in the background, the subconscious
 
-Even when you've stopped typing, the mascot keeps thinking. The [Subconscious Loop](../subconscious.md) is a background tick that:
+Even when you've stopped typing, the mascot keeps thinking. The [[.subconscious|Subconscious Loop]] is a background tick that:
 
 * Loads your standing tasks and ambient goals.
 * Reads the current state of your workspace and recent memory.
@@ -69,8 +69,8 @@ The mascot exists because:
 
 ## See also
 
-* [Meeting Agents](meeting-agents.md), the mascot in Google Meet: listening, speaking, animating, using tools.
-* [Native Voice](../native-tools/voice.md), the STT / TTS plumbing the mascot rides on.
-* [Memory Tree](../obsidian-wiki/memory-tree.md), what the mascot remembers, and how.
-* [Subconscious Loop](../subconscious.md), what it thinks about while you're away.
-* [Chromium Embedded Framework](../../developing/cef.md), the camera-into-Meet pipeline (developer reference).
+* [[meeting-agents|Meeting Agents]], the mascot in Google Meet: listening, speaking, animating, using tools.
+* [[.native-tools/voice|Native Voice]], the STT / TTS plumbing the mascot rides on.
+* [[.obsidian-wiki/memory-tree|Memory Tree]], what the mascot remembers, and how.
+* [[.subconscious|Subconscious Loop]], what it thinks about while you're away.
+* [[..developing/cef|Chromium Embedded Framework]], the camera-into-Meet pipeline (developer reference).

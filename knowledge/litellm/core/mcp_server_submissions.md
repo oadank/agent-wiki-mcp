@@ -19,8 +19,8 @@ LiteLLM supports a submission and approval workflow for MCP servers. Team member
 This lets organizations give team members self-service MCP registration without immediately exposing unapproved servers to all users.
 
 #### ℹ️ Info Related Documentation
-- [MCP Overview](./mcp.md) - Adding and managing MCP servers
-- [MCP Permission Management](./mcp_control.md) - Control MCP access by key, team, or org
+- [[mcp|MCP Overview]] - Adding and managing MCP servers
+- [[mcp_control|MCP Permission Management]] - Control MCP access by key, team, or org
 
 
 ## How It Works

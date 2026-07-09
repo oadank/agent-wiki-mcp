@@ -446,7 +446,7 @@ curl -X POST "https://bedrock-agent-runtime.us-west-2.amazonaws.com/knowledgebas
 ## Advanced - Use with Virtual Keys 
 
 Pre-requisites
-- [Setup proxy with DB](../proxy/virtual_keys.md#setup)
+- [[.proxy/virtual_keys#setup|Setup proxy with DB]]
 
 Use this, to avoid giving developers the raw AWS Keys, but still letting them use AWS Bedrock endpoints.
 

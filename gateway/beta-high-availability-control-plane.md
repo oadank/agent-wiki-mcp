@@ -34,7 +34,7 @@ This is an Enterprise feature.
 
 ## Why This Architecture?
 
-In the [standard multi-region setup](./control_plane_and_data_plane.md), all instances share a single database and master key. This works, but introduces a shared dependency. If the database goes down, every instance is affected.
+In the [[control_plane_and_data_plane|standard multi-region setup]], all instances share a single database and master key. This works, but introduces a shared dependency. If the database goes down, every instance is affected.
 
 The **High Availability Control Plane** takes a different approach:
 
@@ -131,7 +131,7 @@ Each worker must have its own `master_key` and `database_url`. The whole point o
 
 ### 3. SSO Configuration (Optional)
 
-SSO is configured on the **control plane** instance the same way as a standard LiteLLM proxy. See the [SSO setup guide](./admin_ui_sso.md) for full instructions.
+SSO is configured on the **control plane** instance the same way as a standard LiteLLM proxy. See the [[admin_ui_sso|SSO setup guide]] for full instructions.
 
 If using SSO, make sure to register each worker URL and the control plane URL as allowed callback URLs in your SSO provider's dashboard.
 
@@ -195,6 +195,6 @@ Then open `http://localhost:4000/ui`. You should see the worker selector on the 
 
 ## Related Documentation
 
-- [Standard Multi-Region Setup](./control_plane_and_data_plane.md) - shared-database architecture for admin/worker split
-- [SSO Setup](./admin_ui_sso.md) - configuring SSO for the admin UI
-- [Production Deployment](./prod.md) - production best practices
+- [[control_plane_and_data_plane|Standard Multi-Region Setup]] - shared-database architecture for admin/worker split
+- [[admin_ui_sso|SSO Setup]] - configuring SSO for the admin UI
+- [[prod|Production Deployment]] - production best practices

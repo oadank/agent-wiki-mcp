@@ -22,11 +22,11 @@ LiteLLM provides flexible cost tracking and pricing customization for all LLM pr
 - **Cost Per Token** - Track costs based on input/output tokens (most common)
 - **Cost Per Second** - Track costs based on runtime (e.g., Sagemaker)
 - **Zero-Cost Models** - Bypass budget checks for free/on-premises models by setting costs to 0
-- **[Provider Discounts](./provider_discounts.md)** - Apply percentage-based discounts to specific providers
-- **[Provider Margins](./provider_margins.md)** - Add fees/margins to LLM costs for internal billing
+- **[[provider_discounts|Provider Discounts]]** - Apply percentage-based discounts to specific providers
+- **[[provider_margins|Provider Margins]]** - Add fees/margins to LLM costs for internal billing
 - **Base Model Mapping** - Ensure accurate cost tracking for Azure deployments
 
-By default, the response cost is accessible in the logging object via `kwargs["response_cost"]` on success (sync + async). [**Learn More**](../observability/custom_callback.md)
+By default, the response cost is accessible in the logging object via `kwargs["response_cost"]` on success (sync + async). [[.observability/custom_callback|**Learn More**]]
 
 #### ℹ️ Info
 
@@ -124,8 +124,8 @@ These keys evolve based on how new models handle multimodality. The latest versi
 
 For providers that support multiple pricing tiers (e.g., Vertex AI PayGo, Bedrock service tiers), LiteLLM automatically applies the correct cost based on the response:
 
-- **Vertex AI Gemini**: Uses `usageMetadata.trafficType` (`ON_DEMAND_PRIORITY` → priority, `FLEX`/`BATCH` → flex). See [Vertex AI - PayGo / Priority Cost Tracking](../providers/vertex.md#paygo--priority-cost-tracking).
-- **Bedrock**: Uses `serviceTier` from the response. See [Bedrock - Usage - Service Tier](../providers/bedrock.md#usage---service-tier).
+- **Vertex AI Gemini**: Uses `usageMetadata.trafficType` (`ON_DEMAND_PRIORITY` → priority, `FLEX`/`BATCH` → flex). See [[.providers/vertex#paygo--priority-cost-tracking|Vertex AI - PayGo / Priority Cost Tracking]].
+- **Bedrock**: Uses `serviceTier` from the response. See [[.providers/bedrock#usage---service-tier|Bedrock - Usage - Service Tier]].
 
 ## Zero-Cost Models (Bypass Budget Checks)
 

@@ -268,5 +268,5 @@ This polling is handled automatically by LiteLLM - you just call `image_generati
 ## Additional Resources
 
 - [Black Forest Labs Documentation](https://docs.bfl.ai/)
-- [Black Forest Labs Image Editing](./black_forest_labs_img_edit.md) - For editing existing images
+- [[black_forest_labs_img_edit|Black Forest Labs Image Editing]] - For editing existing images
 - [FLUX Model Information](https://blackforestlabs.ai/)

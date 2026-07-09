@@ -72,8 +72,8 @@ To see the SDK in action end-to-end, start from the runnable examples in `src/ex
     npx tsx src/examples/client/simpleStreamableHttp.ts
     ```
 
-This pair of examples demonstrates tools, resources, prompts, sampling, elicitation, tasks and logging. For a guided walkthrough and variations (stateless servers, JSON-only responses, SSE compatibility, OAuth, etc.), see [docs/server.md](docs/server.md) and
-[docs/client.md](docs/client.md).
+This pair of examples demonstrates tools, resources, prompts, sampling, elicitation, tasks and logging. For a guided walkthrough and variations (stateless servers, JSON-only responses, SSE compatibility, OAuth, etc.), see [[docs/server|docs/server.md]] and
+[[docs/client|docs/client.md]].
 
 ## Core Concepts
 
@@ -85,7 +85,7 @@ An MCP server is typically created with `McpServer` and connected to a transport
 - **HTTP + SSE** for backwards compatibility only.
 - **stdio** for local, process-spawned integrations.
 
-Runnable server examples live under `src/examples/server` and are documented in [docs/server.md](docs/server.md).
+Runnable server examples live under `src/examples/server` and are documented in [[docs/server|docs/server.md]].
 
 ### Tools, resources, prompts
 
@@ -93,7 +93,7 @@ Runnable server examples live under `src/examples/server` and are documented in 
 - **Resources** expose read-only data that clients can surface to users or models.
 - **Prompts** are reusable templates that help users talk to models in a consistent way.
 
-The detailed APIs, including `ResourceTemplate`, completions, and display-name metadata, are covered in [docs/server.md](docs/server.md#tools-resources-and-prompts), with runnable implementations in [`simpleStreamableHttp.ts`](src/examples/server/simpleStreamableHttp.ts).
+The detailed APIs, including `ResourceTemplate`, completions, and display-name metadata, are covered in [[docs/server#tools-resources-and-prompts|docs/server.md]], with runnable implementations in [`simpleStreamableHttp.ts`](src/examples/server/simpleStreamableHttp.ts).
 
 ### Capabilities: sampling, elicitation, and tasks
 
@@ -106,7 +106,7 @@ The SDK includes higher-level capabilities for richer workflows:
 
 Conceptual overviews and links to runnable examples are in:
 
-- [docs/capabilities.md](docs/capabilities.md)
+- [[docs/capabilities|docs/capabilities.md]]
 
 Key example servers include:
 
@@ -118,7 +118,7 @@ Key example servers include:
 
 The high-level `Client` class connects to MCP servers over different transports and exposes helpers like `listTools`, `callTool`, `listResources`, `readResource`, `listPrompts`, and `getPrompt`.
 
-Runnable clients live under `src/examples/client` and are described in [docs/client.md](docs/client.md), including:
+Runnable clients live under `src/examples/client` and are described in [[docs/client|docs/client.md]], including:
 
 - Interactive Streamable HTTP client ([`simpleStreamableHttp.ts`](src/examples/client/simpleStreamableHttp.ts))
 - Streamable HTTP client with SSE fallback ([`streamableHttpWithSseFallbackClient.ts`](src/examples/client/streamableHttpWithSseFallbackClient.ts))
@@ -128,7 +128,7 @@ Runnable clients live under `src/examples/client` and are described in [docs/cli
 
 Some parts of the SDK (for example, JWT-based client authentication in `auth-extensions.ts` via `jose`) rely on the Web Crypto API exposed as `globalThis.crypto`.
 
-See [docs/faq.md](docs/faq.md) for details on supported Node.js versions and how to polyfill `globalThis.crypto` when running on older Node.js runtimes.
+See [[docs/faq|docs/faq.md]] for details on supported Node.js versions and how to polyfill `globalThis.crypto` when running on older Node.js runtimes.
 
 ## Examples
 
@@ -138,43 +138,43 @@ The SDK ships runnable examples under `src/examples`. Use these tables to find t
 
 | Scenario                                            | Description                                                                                       | Example file(s)                                                                                          | Related docs                                                             |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Streamable HTTP server (stateful)                   | Feature-rich server with tools, resources, prompts, logging, tasks, sampling, and optional OAuth. | [`simpleStreamableHttp.ts`](src/examples/server/simpleStreamableHttp.ts)                                 | [`server.md`](docs/server.md), [`capabilities.md`](docs/capabilities.md) |
-| Streamable HTTP server (stateless)                  | No session tracking; good for simple API-style servers.                                           | [`simpleStatelessStreamableHttp.ts`](src/examples/server/simpleStatelessStreamableHttp.ts)               | [`server.md`](docs/server.md)                                            |
-| JSON response mode (no SSE)                         | Streamable HTTP with JSON responses only and limited notifications.                               | [`jsonResponseStreamableHttp.ts`](src/examples/server/jsonResponseStreamableHttp.ts)                     | [`server.md`](docs/server.md)                                            |
-| Server notifications over Streamable HTTP           | Demonstrates server-initiated notifications using SSE with Streamable HTTP.                       | [`standaloneSseWithGetStreamableHttp.ts`](src/examples/server/standaloneSseWithGetStreamableHttp.ts)     | [`server.md`](docs/server.md)                                            |
-| Deprecated HTTP+SSE server                          | Legacy HTTP+SSE transport for backwards-compatibility testing.                                    | [`simpleSseServer.ts`](src/examples/server/simpleSseServer.ts)                                           | [`server.md`](docs/server.md)                                            |
-| Backwards-compatible server (Streamable HTTP + SSE) | Single server that supports both Streamable HTTP and legacy SSE clients.                          | [`sseAndStreamableHttpCompatibleServer.ts`](src/examples/server/sseAndStreamableHttpCompatibleServer.ts) | [`server.md`](docs/server.md)                                            |
-| Form elicitation server                             | Uses form elicitation to collect non-sensitive user input.                                        | [`elicitationFormExample.ts`](src/examples/server/elicitationFormExample.ts)                             | [`capabilities.md`](docs/capabilities.md#elicitation)                    |
-| URL elicitation server                              | Demonstrates URL-mode elicitation in an OAuth-protected server.                                   | [`elicitationUrlExample.ts`](src/examples/server/elicitationUrlExample.ts)                               | [`capabilities.md`](docs/capabilities.md#elicitation)                    |
-| Sampling and tasks server                           | Combines tools, logging, sampling, and experimental task-based execution.                         | [`toolWithSampleServer.ts`](src/examples/server/toolWithSampleServer.ts)                                 | [`capabilities.md`](docs/capabilities.md)                                |
-| OAuth demo authorization server                     | In-memory OAuth provider used with the example servers.                                           | [`demoInMemoryOAuthProvider.ts`](src/examples/server/demoInMemoryOAuthProvider.ts)                       | [`server.md`](docs/server.md)                                            |
+| Streamable HTTP server (stateful)                   | Feature-rich server with tools, resources, prompts, logging, tasks, sampling, and optional OAuth. | [`simpleStreamableHttp.ts`](src/examples/server/simpleStreamableHttp.ts)                                 | [[docs/server|`server.md`]], [[docs/capabilities|`capabilities.md`]] |
+| Streamable HTTP server (stateless)                  | No session tracking; good for simple API-style servers.                                           | [`simpleStatelessStreamableHttp.ts`](src/examples/server/simpleStatelessStreamableHttp.ts)               | [[docs/server|`server.md`]]                                            |
+| JSON response mode (no SSE)                         | Streamable HTTP with JSON responses only and limited notifications.                               | [`jsonResponseStreamableHttp.ts`](src/examples/server/jsonResponseStreamableHttp.ts)                     | [[docs/server|`server.md`]]                                            |
+| Server notifications over Streamable HTTP           | Demonstrates server-initiated notifications using SSE with Streamable HTTP.                       | [`standaloneSseWithGetStreamableHttp.ts`](src/examples/server/standaloneSseWithGetStreamableHttp.ts)     | [[docs/server|`server.md`]]                                            |
+| Deprecated HTTP+SSE server                          | Legacy HTTP+SSE transport for backwards-compatibility testing.                                    | [`simpleSseServer.ts`](src/examples/server/simpleSseServer.ts)                                           | [[docs/server|`server.md`]]                                            |
+| Backwards-compatible server (Streamable HTTP + SSE) | Single server that supports both Streamable HTTP and legacy SSE clients.                          | [`sseAndStreamableHttpCompatibleServer.ts`](src/examples/server/sseAndStreamableHttpCompatibleServer.ts) | [[docs/server|`server.md`]]                                            |
+| Form elicitation server                             | Uses form elicitation to collect non-sensitive user input.                                        | [`elicitationFormExample.ts`](src/examples/server/elicitationFormExample.ts)                             | [[docs/capabilities#elicitation|`capabilities.md`]]                    |
+| URL elicitation server                              | Demonstrates URL-mode elicitation in an OAuth-protected server.                                   | [`elicitationUrlExample.ts`](src/examples/server/elicitationUrlExample.ts)                               | [[docs/capabilities#elicitation|`capabilities.md`]]                    |
+| Sampling and tasks server                           | Combines tools, logging, sampling, and experimental task-based execution.                         | [`toolWithSampleServer.ts`](src/examples/server/toolWithSampleServer.ts)                                 | [[docs/capabilities|`capabilities.md`]]                                |
+| OAuth demo authorization server                     | In-memory OAuth provider used with the example servers.                                           | [`demoInMemoryOAuthProvider.ts`](src/examples/server/demoInMemoryOAuthProvider.ts)                       | [[docs/server|`server.md`]]                                            |
 
 ### Client examples
 
 | Scenario                                            | Description                                                                        | Example file(s)                                                                                                                                                                                                                        | Related docs                                                 |
 | --------------------------------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| Interactive Streamable HTTP client                  | CLI client that exercises tools, resources, prompts, elicitation, and tasks.       | [`simpleStreamableHttp.ts`](src/examples/client/simpleStreamableHttp.ts)                                                                                                                                                               | [`client.md`](docs/client.md)                                |
-| Backwards-compatible client (Streamable HTTP → SSE) | Tries Streamable HTTP first, then falls back to SSE on 4xx responses.              | [`streamableHttpWithSseFallbackClient.ts`](src/examples/client/streamableHttpWithSseFallbackClient.ts)                                                                                                                                 | [`client.md`](docs/client.md), [`server.md`](docs/server.md) |
-| SSE polling client                                  | Polls a legacy SSE server and demonstrates notification handling.                  | [`ssePollingClient.ts`](src/examples/client/ssePollingClient.ts)                                                                                                                                                                       | [`client.md`](docs/client.md)                                |
-| Parallel tool calls client                          | Shows how to run multiple tool calls in parallel.                                  | [`parallelToolCallsClient.ts`](src/examples/client/parallelToolCallsClient.ts)                                                                                                                                                         | [`client.md`](docs/client.md)                                |
-| Multiple clients in parallel                        | Demonstrates connecting multiple clients concurrently to the same server.          | [`multipleClientsParallel.ts`](src/examples/client/multipleClientsParallel.ts)                                                                                                                                                         | [`client.md`](docs/client.md)                                |
-| OAuth clients                                       | Examples of client_credentials (basic and private_key_jwt) and reusable providers. | [`simpleOAuthClient.ts`](src/examples/client/simpleOAuthClient.ts), [`simpleOAuthClientProvider.ts`](src/examples/client/simpleOAuthClientProvider.ts), [`simpleClientCredentials.ts`](src/examples/client/simpleClientCredentials.ts) | [`client.md`](docs/client.md)                                |
-| URL elicitation client                              | Works with the URL elicitation server to drive secure browser flows.               | [`elicitationUrlExample.ts`](src/examples/client/elicitationUrlExample.ts)                                                                                                                                                             | [`capabilities.md`](docs/capabilities.md#elicitation)        |
+| Interactive Streamable HTTP client                  | CLI client that exercises tools, resources, prompts, elicitation, and tasks.       | [`simpleStreamableHttp.ts`](src/examples/client/simpleStreamableHttp.ts)                                                                                                                                                               | [[docs/client|`client.md`]]                                |
+| Backwards-compatible client (Streamable HTTP → SSE) | Tries Streamable HTTP first, then falls back to SSE on 4xx responses.              | [`streamableHttpWithSseFallbackClient.ts`](src/examples/client/streamableHttpWithSseFallbackClient.ts)                                                                                                                                 | [[docs/client|`client.md`]], [[docs/server|`server.md`]] |
+| SSE polling client                                  | Polls a legacy SSE server and demonstrates notification handling.                  | [`ssePollingClient.ts`](src/examples/client/ssePollingClient.ts)                                                                                                                                                                       | [[docs/client|`client.md`]]                                |
+| Parallel tool calls client                          | Shows how to run multiple tool calls in parallel.                                  | [`parallelToolCallsClient.ts`](src/examples/client/parallelToolCallsClient.ts)                                                                                                                                                         | [[docs/client|`client.md`]]                                |
+| Multiple clients in parallel                        | Demonstrates connecting multiple clients concurrently to the same server.          | [`multipleClientsParallel.ts`](src/examples/client/multipleClientsParallel.ts)                                                                                                                                                         | [[docs/client|`client.md`]]                                |
+| OAuth clients                                       | Examples of client_credentials (basic and private_key_jwt) and reusable providers. | [`simpleOAuthClient.ts`](src/examples/client/simpleOAuthClient.ts), [`simpleOAuthClientProvider.ts`](src/examples/client/simpleOAuthClientProvider.ts), [`simpleClientCredentials.ts`](src/examples/client/simpleClientCredentials.ts) | [[docs/client|`client.md`]]                                |
+| URL elicitation client                              | Works with the URL elicitation server to drive secure browser flows.               | [`elicitationUrlExample.ts`](src/examples/client/elicitationUrlExample.ts)                                                                                                                                                             | [[docs/capabilities#elicitation|`capabilities.md`]]        |
 
 Shared utilities:
 
-- In-memory event store for resumability: [`inMemoryEventStore.ts`](src/examples/shared/inMemoryEventStore.ts) (see [`server.md`](docs/server.md)).
+- In-memory event store for resumability: [`inMemoryEventStore.ts`](src/examples/shared/inMemoryEventStore.ts) (see [[docs/server|`server.md`]]).
 
 For more details on how to run these examples (including recommended commands and deployment diagrams), see `src/examples/README.md`.
 
 ## Documentation
 
 - Local SDK docs:
-    - [docs/server.md](docs/server.md) – building and running MCP servers, transports, tools/resources/prompts, CORS, DNS rebinding, and multi-node deployment.
-    - [docs/client.md](docs/client.md) – using the high-level client, transports, backwards compatibility, and OAuth helpers.
-    - [docs/capabilities.md](docs/capabilities.md) – sampling, elicitation (form and URL), and experimental task-based execution.
-    - [docs/protocol.md](docs/protocol.md) – protocol features: ping, progress, cancellation, pagination, capability negotiation, and JSON Schema.
-    - [docs/faq.md](docs/faq.md) – environment and troubleshooting FAQs (including Node.js Web Crypto support).
+    - [[docs/server|docs/server.md]] – building and running MCP servers, transports, tools/resources/prompts, CORS, DNS rebinding, and multi-node deployment.
+    - [[docs/client|docs/client.md]] – using the high-level client, transports, backwards compatibility, and OAuth helpers.
+    - [[docs/capabilities|docs/capabilities.md]] – sampling, elicitation (form and URL), and experimental task-based execution.
+    - [[docs/protocol|docs/protocol.md]] – protocol features: ping, progress, cancellation, pagination, capability negotiation, and JSON Schema.
+    - [[docs/faq|docs/faq.md]] – environment and troubleshooting FAQs (including Node.js Web Crypto support).
 - External references:
     - [V1 API reference](https://modelcontextprotocol.github.io/typescript-sdk/)
     - [V2 API reference](https://modelcontextprotocol.github.io/typescript-sdk/v2/)

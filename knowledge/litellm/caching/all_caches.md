@@ -20,7 +20,7 @@ summary: "[**See Code**](https://github.com/BerriAI/litellm/blob/main/litellm/ca
 
 - For Proxy Server? Doc here: [Caching Proxy Server](https://docs.litellm.ai/docs/proxy/caching)
 
-- For OpenAI/Anthropic Prompt Caching, go [here](../completion/prompt_caching.md)
+- For OpenAI/Anthropic Prompt Caching, go [[.completion/prompt_caching|here]]
 
 
 

@@ -13,7 +13,7 @@ It covers the **repo-root crate only**:
 - Binary: `openhuman-core`
 - Library: `openhuman_core`
 
-If you want the full desktop app (`pnpm dev`, Tauri, CEF, frontend tooling), use [Getting Set Up](getting-set-up.md). That path has extra JavaScript, submodule, and desktop-runtime requirements that are **not** needed for a core-only `cargo` workflow.
+If you want the full desktop app (`pnpm dev`, Tauri, CEF, frontend tooling), use [[getting-set-up|Getting Set Up]]. That path has extra JavaScript, submodule, and desktop-runtime requirements that are **not** needed for a core-only `cargo` workflow.
 
 ## 1. Install the pinned Rust toolchain
 
@@ -45,7 +45,7 @@ That is enough for the root crate.
 Desktop/Tauri work is different:
 
 - `app/src-tauri/vendor/` submodules are only needed when building the desktop shell or CEF-aware Tauri tooling.
-- For that flow, follow [Getting Set Up](getting-set-up.md) and run `git submodule update --init --recursive`.
+- For that flow, follow [[getting-set-up|Getting Set Up]] and run `git submodule update --init --recursive`.
 
 ## 3. Build commands
 
@@ -126,7 +126,7 @@ fatal error: 'array' file not found
 
 This is why the docs call out `libstdc++-14-dev`: `clang` may pick GCC 14 C++ headers on Ubuntu runners.
 
-If your distro layout still leaves `libstdc++.so` unresolved for the build, use the same workaround documented in [`AGENTS.md`](../../AGENTS.md):
+If your distro layout still leaves `libstdc++.so` unresolved for the build, use the same workaround documented in [[..AGENTS|`AGENTS.md`]]:
 
 ```bash
 # Ubuntu/Debian — adjust the GCC version as needed
@@ -185,5 +185,5 @@ Windows note:
 
 ## 7. Related paths
 
-- [Getting Set Up](getting-set-up.md): full desktop contributor setup with `pnpm`, Tauri, submodules, and sidecar staging.
-- [OpenHuman Architecture](architecture/README.md): where the core fits into the desktop app and RPC flow.
+- [[getting-set-up|Getting Set Up]]: full desktop contributor setup with `pnpm`, Tauri, submodules, and sidecar staging.
+- [[architecture/README|OpenHuman Architecture]]: where the core fits into the desktop app and RPC flow.

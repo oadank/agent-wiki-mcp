@@ -375,7 +375,7 @@ print(message.content)
 
 
 
-[**More Info**](./configs.md)
+[[configs|**More Info**]]
 
 
 

@@ -5,7 +5,7 @@ icon: plug
 
 # 第三方集成
 
-OpenHuman 的智能体可以通过单一代理工具接口调用 [118+ 第三方服务](../integrations/README.zh-CN.md)——Gmail、Notion、GitHub、Slack、Stripe、日历，以及长长的尾部的服务。
+OpenHuman 的智能体可以通过单一代理工具接口调用 [[.integrations/README.zh-CN|118+ 第三方服务]]——Gmail、Notion、GitHub、Slack、Stripe、日历，以及长长的尾部的服务。
 
 ## 它在智能体看来如何
 
@@ -20,7 +20,7 @@ OpenHuman 的智能体可以通过单一代理工具接口调用 [118+ 第三方
 
 ## 原生 vs 代理
 
-部分服务有**原生 provider**——Rust 模块知道如何直接将服务摄入[记忆树](../obsidian-wiki/memory-tree.zh-CN.md)（例如 Gmail 的原生摄入路径）。其他仅暴露为**代理工具**：智能体可以调用，但没有自动摄入。新的原生 provider 随着功能落地陆续添加。
+部分服务有**原生 provider**——Rust 模块知道如何直接将服务摄入[[.obsidian-wiki/memory-tree.zh-CN|记忆树]]（例如 Gmail 的原生摄入路径）。其他仅暴露为**代理工具**：智能体可以调用，但没有自动摄入。新的原生 provider 随着功能落地陆续添加。
 
 ## 隐私边界
 
@@ -28,6 +28,6 @@ OpenHuman core 从不直接调用任何第三方 API。所有请求都通过 Ope
 
 ## 另见
 
-* [第三方集成（目录）](../integrations/README.zh-CN.md)——面向用户的介绍、OAuth 流程和连接管理。
-* [自动拉取](../obsidian-wiki/auto-fetch.zh-CN.md)——已连接服务如何流入记忆树。
-* [隐私与安全](../privacy-and-security.zh-CN.md)——完整边界。
+* [[.integrations/README.zh-CN|第三方集成（目录）]]——面向用户的介绍、OAuth 流程和连接管理。
+* [[.obsidian-wiki/auto-fetch.zh-CN|自动拉取]]——已连接服务如何流入记忆树。
+* [[.privacy-and-security.zh-CN|隐私与安全]]——完整边界。

@@ -39,5 +39,5 @@ Shell 工具加 `cat`/`sed`/`awk` 技术上可以完成所有这些。原生工�
 
 ## 另见
 
-* [系统与工具](system-and-utilities.zh-CN.md) —— `shell`、`node_exec`、`npm_exec` 用于开发循环的其余部分。
-* [智能体协作](agent-coordination.zh-CN.md) —— `todo_write`、`spawn_subagent` 用于更大的重构。
+* [[system-and-utilities.zh-CN|系统与工具]] —— `shell`、`node_exec`、`npm_exec` 用于开发循环的其余部分。
+* [[agent-coordination.zh-CN|智能体协作]] —— `todo_write`、`spawn_subagent` 用于更大的重构。

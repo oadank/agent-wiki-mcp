@@ -121,7 +121,7 @@ response = litellm.completion(
 
 MLflow LiteLLM integration allow you to run qualitative assessment against LLM to evaluate or/and monitor your GenAI application.
 
-Visit [Evaluate LLMs Tutorial](../tutorials/eval_suites.md) for the complete guidance on how to run evaluation suite with LiteLLM and MLflow.
+Visit [[.tutorials/eval_suites|Evaluate LLMs Tutorial]] for the complete guidance on how to run evaluation suite with LiteLLM and MLflow.
 
 
 ## Exporting Traces to OpenTelemetry collectors

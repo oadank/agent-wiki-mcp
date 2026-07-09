@@ -160,4 +160,4 @@ Vantage enforces per-upload limits. LiteLLM handles these automatically:
 - [Vantage](https://vantage.sh)
 - [Vantage Custom Providers](https://docs.vantage.sh/connecting_custom_providers)
 - [FOCUS Specification](https://focus.finops.org/)
-- [Focus Export (S3/Parquet)](./focus.md)
+- [[focus|Focus Export (S3/Parquet)]]

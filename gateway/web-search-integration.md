@@ -200,7 +200,7 @@ Configure which search provider to use. LiteLLM supports multiple search provide
 | **SearXNG** | `searxng` | `SEARXNG_API_BASE` (required) |
 | **Linkup** | `linkup` | `LINKUP_API_KEY` |
 
-See [Search Providers Documentation](../search/index.md) for detailed setup instructions.
+See [[.search/index|Search Providers Documentation]] for detailed setup instructions.
 
 ## Complete Configuration Example
 
@@ -389,10 +389,10 @@ search_tools:
 
 ## Related Documentation
 
-- [Search Providers](../search/index.md) - Detailed search provider setup
-- [Claude Code WebSearch](../tutorials/claude_code_websearch.md) - Using with Claude Code
-- [Tool Calling](../completion/function_call.md) - General tool calling documentation
-- [Callbacks](../observability/custom_callback.md) - Custom callback documentation
+- [[.search/index|Search Providers]] - Detailed search provider setup
+- [[.tutorials/claude_code_websearch|Claude Code WebSearch]] - Using with Claude Code
+- [[.completion/function_call|Tool Calling]] - General tool calling documentation
+- [[.observability/custom_callback|Callbacks]] - Custom callback documentation
 
 ## Technical Details
 

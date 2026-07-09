@@ -22,10 +22,10 @@ A purpose-built fetch tool, separate from generic `http_request` / `curl`. It ex
 ## What it's good for
 
 * Reading articles, blog posts, docs pages, GitHub READMEs without the noise.
-* Following up on a [Web Search](web-search.md) result.
+* Following up on a [[web-search|Web Search]] result.
 * Summarising a single page on demand.
 
 ## See also
 
-* [Web Search](web-search.md) - find URLs to feed into the scraper.
-* [Smart Token Compression](../token-compression.md) - what trims long pages before they hit the model.
+* [[web-search|Web Search]] - find URLs to feed into the scraper.
+* [[.token-compression|Smart Token Compression]] - what trims long pages before they hit the model.

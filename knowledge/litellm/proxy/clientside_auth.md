@@ -18,7 +18,7 @@ summary: "Allow your end-users to pass their model list, api base, OpenAI API ke
 ### Pass User LLM API Keys, Fallbacks
 Allow your end-users to pass their model list, api base, OpenAI API key (any LiteLLM supported provider) to make requests 
 
-**Note** This is not related to [virtual keys](./virtual_keys.md). This is for when you want to pass in your users actual LLM API keys. 
+**Note** This is not related to [[virtual_keys|virtual keys]]. This is for when you want to pass in your users actual LLM API keys. 
 
 #### ℹ️ Info
 

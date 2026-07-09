@@ -32,7 +32,7 @@ This is an Enterprise feature.
 Manage projects directly from the LiteLLM Admin UI. Projects sit between teams and keys in your organizational hierarchy, enabling fine-grained access control and budget management for specific use cases or applications.
 
 #### ℹ️ Info
-Project Management is a beta feature. The API and UI are subject to change. For the full API documentation, see [Project Management](./project_management.md).
+Project Management is a beta feature. The API and UI are subject to change. For the full API documentation, see [[project_management|Project Management]].
 
 
 ## Overview
@@ -47,7 +47,7 @@ Projects enable you to:
 
 **Hierarchy**: `Organizations > Teams > Projects > Keys`
 
-For detailed information about the project API and configuration, see [Project Management](./project_management.md).
+For detailed information about the project API and configuration, see [[project_management|Project Management]].
 
 ## Prerequisites
 
@@ -154,14 +154,14 @@ If you're a platform, create projects for different customer segments or use cas
 After creating a project:
 
 1. **Generate API Keys** – Create API keys scoped to your project for application use
-2. **Set Budgets** – Configure project-level budget limits via the [Project Management API](./project_management.md)
+2. **Set Budgets** – Configure project-level budget limits via the [[project_management|Project Management API]]
 3. **Track Spend** – View project-level spend in the Usage dashboard
-4. **Manage Access** – Use [Access Groups](./access_groups.md) to control model and MCP server access
+4. **Manage Access** – Use [[access_groups|Access Groups]] to control model and MCP server access
 
 ## Related Documentation
 
-- [Project Management API](./project_management.md) – Full API reference for projects
-- [Access Groups](./access_groups.md) – Define reusable access controls for models, MCP servers, and agents
-- [Virtual Keys](./virtual_keys.md) – Create and manage API keys scoped to projects
-- [Role-based Access Control](./access_control.md) – Organizations, teams, and user roles
-- [Spend Logs](./spend_logs_deletion.md) – Track detailed request-level costs and usage
+- [[project_management|Project Management API]] – Full API reference for projects
+- [[access_groups|Access Groups]] – Define reusable access controls for models, MCP servers, and agents
+- [[virtual_keys|Virtual Keys]] – Create and manage API keys scoped to projects
+- [[access_control|Role-based Access Control]] – Organizations, teams, and user roles
+- [[spend_logs_deletion|Spend Logs]] – Track detailed request-level costs and usage

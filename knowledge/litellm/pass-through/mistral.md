@@ -169,7 +169,7 @@ curl -L -X POST 'https://api.mistral.ai/v1/chat/completions' \
 ## Advanced - Use with Virtual Keys 
 
 Pre-requisites
-- [Setup proxy with DB](../proxy/virtual_keys.md#setup)
+- [[.proxy/virtual_keys#setup|Setup proxy with DB]]
 
 Use this, to avoid giving developers the raw Mistral API key, but still letting them use Mistral endpoints.
 

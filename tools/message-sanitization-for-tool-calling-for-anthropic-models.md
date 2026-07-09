@@ -368,10 +368,10 @@ response = litellm.completion(
 
 ## Related Features
 
-- **[Drop Params](./drop_params.md)** - Drop unsupported parameters for specific providers
-- **[Message Trimming](./message_trimming.md)** - Trim messages to fit token limits
-- **[Function Calling](./function_call.md)** - Complete guide to tool/function calling
-- **[Reasoning Content](../reasoning_content.md)** - Extended thinking with tool calling
+- **[[drop_params|Drop Params]]** - Drop unsupported parameters for specific providers
+- **[[message_trimming|Message Trimming]]** - Trim messages to fit token limits
+- **[[function_call|Function Calling]]** - Complete guide to tool/function calling
+- **[[.reasoning_content|Reasoning Content]]** - Extended thinking with tool calling
 
 ## Troubleshooting
 
@@ -451,7 +451,7 @@ Both can be enabled simultaneously.
 
 ## See Also
 
-- [Reasoning Content with Tool Calling](../reasoning_content.md)
-- [Function Calling Guide](./function_call.md)
-- [Bedrock Provider Documentation](../providers/bedrock.md)
-- [Anthropic Provider Documentation](../providers/anthropic.md)
+- [[.reasoning_content|Reasoning Content with Tool Calling]]
+- [[function_call|Function Calling Guide]]
+- [[.providers/bedrock|Bedrock Provider Documentation]]
+- [[.providers/anthropic|Anthropic Provider Documentation]]

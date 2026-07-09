@@ -378,7 +378,7 @@ assert len(response_2_text) > len(response_1_text)
 
 
 
-[**Check out the tutorial!**](../tutorials/provider_specific_params.md)
+[[.tutorials/provider_specific_params|**Check out the tutorial!**]]
 
 
 ## Proxy Usage 

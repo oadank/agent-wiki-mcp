@@ -164,6 +164,6 @@ The semantic filter is optimized for production:
 
 ## Related
 
-- [MCP Overview](./mcp.md) - Learn about MCP in LiteLLM
-- [MCP Permission Management](./mcp_control.md) - Control tool access by key/team
-- [Using MCP](./mcp_usage.md) - Complete MCP usage guide
+- [[mcp|MCP Overview]] - Learn about MCP in LiteLLM
+- [[mcp_control|MCP Permission Management]] - Control tool access by key/team
+- [[mcp_usage|Using MCP]] - Complete MCP usage guide

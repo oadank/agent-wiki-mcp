@@ -16,7 +16,7 @@ summary: "When LiteLLM acts as an MCP proxy, traffic normally flows `Client → 
 
 When LiteLLM acts as an MCP proxy, traffic normally flows `Client → LiteLLM Proxy → MCP Server`, while OAuth-enabled setups add an authorization server for metadata discovery.
 
-For provisioning steps, transport options, and configuration fields, refer to [mcp.md](./mcp.md).
+For provisioning steps, transport options, and configuration fields, refer to [[mcp|mcp.md]].
 
 ## Quick Start: Debug with One Command
 

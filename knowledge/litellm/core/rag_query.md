@@ -155,7 +155,7 @@ curl -X POST "http://localhost:4000/v1/rag/query" \
 
 ### 1. Ingest a Document
 
-First, ingest a document using the [/rag/ingest](./rag_ingest.md) endpoint:
+First, ingest a document using the [[rag_ingest|/rag/ingest]] endpoint:
 
 ```bash showLineNumbers title="Step 1: Ingest"
 curl -X POST "http://localhost:4000/v1/rag/ingest" \

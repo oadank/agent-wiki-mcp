@@ -5,7 +5,7 @@ icon: brain
 
 # Memory Tools
 
-The [Memory Tree](../obsidian-wiki/memory-tree.md) is OpenHuman's knowledge base. The memory tools are how the agent talks to it during a conversation.
+The [[.obsidian-wiki/memory-tree|Memory Tree]] is OpenHuman's knowledge base. The memory tools are how the agent talks to it during a conversation.
 
 ## Tools in the family
 
@@ -23,5 +23,5 @@ The Memory Tree is too big to dump into every conversation. The tools let the mo
 
 ## See also
 
-* [Memory Tree](../obsidian-wiki/memory-tree.md) - what these tools read from and write to.
-* [Auto-fetch](../obsidian-wiki/auto-fetch.md) - how the tree gets populated in the first place.
+* [[.obsidian-wiki/memory-tree|Memory Tree]] - what these tools read from and write to.
+* [[.obsidian-wiki/auto-fetch|Auto-fetch]] - how the tree gets populated in the first place.

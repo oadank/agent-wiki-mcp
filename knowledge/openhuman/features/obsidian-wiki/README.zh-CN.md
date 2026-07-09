@@ -49,5 +49,5 @@ OpenHuman 的记忆不是一个黑箱。智能体在其上推理的相同块作�
 
 ## 另见
 
-* [记忆树](memory-tree.zh-CN.md)。产生存储库的流水线。
-* [从集成自动拉取](auto-fetch.zh-CN.md)。存储库如何自行增长。
+* [[memory-tree.zh-CN|记忆树]]。产生存储库的流水线。
+* [[auto-fetch.zh-CN|从集成自动拉取]]。存储库如何自行增长。

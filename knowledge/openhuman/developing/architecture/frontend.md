@@ -15,13 +15,13 @@ This is one consolidated reference. Use the table of contents above (or your rea
 
 | Section                                           | Covers                                        |
 | ------------------------------------------------- | --------------------------------------------- |
-| [Architecture](frontend.md#architecture-overview) | Provider chain, build, layout, conventions    |
-| [State Management](frontend.md#state-management)  | Redux Toolkit slices, selectors, persistence  |
-| [Services Layer](frontend.md#services-layer)      | `apiClient`, `socketService`, `coreRpcClient` |
-| [Providers](frontend.md#providers)                | `User`, `Socket`, `AI`, `Skill` providers     |
-| [Pages & Routing](frontend.md#pages-routing)      | `HashRouter`, route guards, main routes       |
-| [Components](frontend.md#components)              | UI / settings component patterns              |
-| [Hooks & Utilities](frontend.md#hooks-utilities)  | Shared hooks, helpers, config                 |
+| [[frontend#architecture-overview|Architecture]] | Provider chain, build, layout, conventions    |
+| [[frontend#state-management|State Management]]  | Redux Toolkit slices, selectors, persistence  |
+| [[frontend#services-layer|Services Layer]]      | `apiClient`, `socketService`, `coreRpcClient` |
+| [[frontend#providers|Providers]]                | `User`, `Socket`, `AI`, `Skill` providers     |
+| [[frontend#pages-routing|Pages & Routing]]      | `HashRouter`, route guards, main routes       |
+| [[frontend#components|Components]]              | UI / settings component patterns              |
+| [[frontend#hooks-utilities|Hooks & Utilities]]  | Shared hooks, helpers, config                 |
 
 ## Scale
 
@@ -129,8 +129,8 @@ Components that need the backend URL should call `useBackendUrl()` (or `getBacke
 
 ### Related docs
 
-* Rust architecture: [Architecture](../architecture.md)
-* Tauri shell: [Tauri Shell](tauri-shell.md)
+* Rust architecture: [[.architecture|Architecture]]
+* Tauri shell: [[tauri-shell|Tauri Shell]]
 
 ## State Management
 

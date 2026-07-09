@@ -447,5 +447,5 @@ The following tools cannot currently be called programmatically:
 
 ## Related Features
 
-- [Anthropic Tool Search](./anthropic_tool_search.md) - Dynamically discover and load tools on-demand
-- [Anthropic Provider](./anthropic.md) - General Anthropic provider documentation
+- [[anthropic_tool_search|Anthropic Tool Search]] - Dynamically discover and load tools on-demand
+- [[anthropic|Anthropic Provider]] - General Anthropic provider documentation

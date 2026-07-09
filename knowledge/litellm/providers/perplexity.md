@@ -460,4 +460,4 @@ print(f"Usage: {response.usage}")
 
 #### ℹ️ Info
 
-For more information about passing provider-specific parameters, [go here](../completion/provider_specific_params.md)
+For more information about passing provider-specific parameters, [[.completion/provider_specific_params|go here]]

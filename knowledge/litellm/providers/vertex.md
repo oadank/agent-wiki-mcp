@@ -31,7 +31,7 @@ summary: "| Property | Details |"
 | `gemini-2.0-flash` (no prefix) | Vertex AI | GCP credentials + project |
 | `gemini/gemini-2.0-flash` | Gemini API | `GEMINI_API_KEY` (simple API key) |
 
-**If you just want to use an API key** (like OpenAI), use the `gemini/` prefix instead. See [Gemini - Google AI Studio](./gemini.md).
+**If you just want to use an API key** (like OpenAI), use the `gemini/` prefix instead. See [[gemini|Gemini - Google AI Studio]].
 
 Models without a prefix default to Vertex AI which requires GCP authentication.
 
@@ -925,7 +925,7 @@ curl http://0.0.0.0:4000/v1/chat/completions \
 
 #### Unified Endpoint
 
-Use Vertex AI context caching in the same way as [**Google AI Studio -  Context Caching**](../providers/gemini.md#context-caching)
+Use Vertex AI context caching in the same way as [[.providers/gemini#context-caching|**Google AI Studio -  Context Caching**]]
 
 
 ##### Example usage
@@ -1064,7 +1064,7 @@ curl -X POST 'http://0.0.0.0:4000/chat/completions' \
 
 #### Calling provider api directly
 
-[**Go straight to provider**](../pass_through/vertex_ai.md#context-caching)
+[[.pass_through/vertex_ai#context-caching|**Go straight to provider**]]
 
 ##### 1. Create the Cache
 
@@ -1640,7 +1640,7 @@ LiteLLM automatically tracks spend for Vertex AI Gemini models using the correct
 
 When you use [Vertex AI PayGo](https://cloud.google.com/vertex-ai/generative-ai/pricing) (on-demand priority) or batch workloads, LiteLLM reads `trafficType` from the response and applies the matching cost per token from the [model cost map](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json). No configuration is required — spend tracking works out of the box for both standard and PayGo requests.
 
-See [Spend Tracking](../proxy/cost_tracking.md) for general cost tracking setup.
+See [[.proxy/cost_tracking|Spend Tracking]] for general cost tracking setup.
 
 ## Private Service Connect (PSC) Endpoints
 
@@ -2399,7 +2399,7 @@ All models listed [here](https://github.com/BerriAI/litellm/blob/57f37f743886a02
 
 ### Supported OpenAI (Unified) Params
 
-| [param](../embedding/supported_embedding.md#input-params-for-litellmembedding) | type | [vertex equivalent](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text-embeddings-api) |
+| [[.embedding/supported_embedding#input-params-for-litellmembedding|param]] | type | [vertex equivalent](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text-embeddings-api) |
 |-------|-------------|--------------------|
 | `input` | **string or List[string]** | `instances` |
 | `dimensions` | **int** | `output_dimensionality` |

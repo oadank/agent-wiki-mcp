@@ -47,7 +47,7 @@ Supports JSON Schema draft-04/06/07/2019-09/2020-12 ([draft-04 support](https://
 
 More than 100 people contributed to Ajv, and we would love to have you join the development. We welcome implementing new features that will benefit many users and ideas to improve our documentation.
 
-Please review [Contributing guidelines](./CONTRIBUTING.md) and [Code components](https://ajv.js.org/components.html).
+Please review [[CONTRIBUTING|Contributing guidelines]] and [Code components](https://ajv.js.org/components.html).
 
 ## Documentation
 
@@ -207,7 +207,7 @@ See [https://github.com/ajv-validator/ajv/releases](https://github.com/ajv-valid
 
 ## Code of conduct
 
-Please review and follow the [Code of conduct](./CODE_OF_CONDUCT.md).
+Please review and follow the [[CODE_OF_CONDUCT|Code of conduct]].
 
 Please report any unacceptable behaviour to ajv.validator@gmail.com - it will be reviewed by the project team.
 

@@ -114,6 +114,6 @@ model_list:
     - `role_permissions`: control what models are allowed for each role. 
         - `role`: the LiteLLM role to control access for. Allowed roles = ["internal_user", "proxy_admin", "team"]
         - `models`: list of models that the role is allowed to access. 
-    - `model_list`: parent list of models on the proxy. [Learn more](./configs.md#llm-configs-model_list)
+    - `model_list`: parent list of models on the proxy. [[configs#llm-configs-model_list|Learn more]]
 
 3. Model Checks: The proxy will run validation checks on the received JWT. [Code](https://github.com/BerriAI/litellm/blob/3a4f5b23b5025b87b6d969f2485cc9bc741f9ba6/litellm/proxy/auth/user_api_key_auth.py#L284)

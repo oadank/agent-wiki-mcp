@@ -5,7 +5,7 @@ icon: vial
 
 # Testing Strategy
 
-How OpenHuman tests its product. Source of truth for "where does my test go?". Companion to [`TEST-COVERAGE-MATRIX.md`](../../docs/TEST-COVERAGE-MATRIX.md).
+How OpenHuman tests its product. Source of truth for "where does my test go?". Companion to [[..docs/TEST-COVERAGE-MATRIX|`TEST-COVERAGE-MATRIX.md`]].
 
 ---
 
@@ -16,8 +16,8 @@ How OpenHuman tests its product. Source of truth for "where does my test go?". C
 | **Rust unit**        | `#[cfg(test)] mod tests` inside the same `*.rs` file, or sibling `tests.rs`, or `tests/` subdir under a domain (e.g. `src/openhuman/channels/tests/`) | Pure domain logic, schemas, RPC handler shape, in-memory state machines                                                                         | `cargo test`                                                                                                               |
 | **Rust integration** | `tests/*.rs` at repo root                                                                                                                             | Full domain wiring with real Tokio runtime, mock external services, JSON-RPC end-to-end (`tests/json_rpc_e2e.rs`), domain × domain interactions | `pnpm test:rust` (which calls `bash scripts/test-rust-with-mock.sh`)                                                       |
 | **Vitest unit**      | Co-located as `*.test.ts(x)` next to source under `app/src/**`, or under `app/src/**/__tests__/`                                                      | React components, hooks, store slices, pure utilities, service-layer adapters                                                                   | `pnpm test:unit`                                                                                                           |
-| **WDIO E2E**         | `app/test/e2e/specs/*.spec.ts`                                                                                                                        | Full desktop flow: UI → Tauri → core sidecar → JSON-RPC; user-visible behaviour                                                                 | Linux CI: `tauri-driver` (port 4444). macOS local: Appium Mac2 (port 4723). See [E2E Testing](e2e-testing.md). |
-| **Manual smoke**     | [`docs/RELEASE-MANUAL-SMOKE.md`](../../docs/RELEASE-MANUAL-SMOKE.md)                                                                                           | OS-level surfaces drivers cannot assert: TCC permission prompts, Gatekeeper, code signing, DMG install, OS-native toasts                        | Human at release-cut, signed off in release PR                                                                             |
+| **WDIO E2E**         | `app/test/e2e/specs/*.spec.ts`                                                                                                                        | Full desktop flow: UI → Tauri → core sidecar → JSON-RPC; user-visible behaviour                                                                 | Linux CI: `tauri-driver` (port 4444). macOS local: Appium Mac2 (port 4723). See [[e2e-testing|E2E Testing]]. |
+| **Manual smoke**     | [[..docs/RELEASE-MANUAL-SMOKE|`docs/RELEASE-MANUAL-SMOKE.md`]]                                                                                           | OS-level surfaces drivers cannot assert: TCC permission prompts, Gatekeeper, code signing, DMG install, OS-native toasts                        | Human at release-cut, signed off in release PR                                                                             |
 
 ---
 
@@ -125,7 +125,7 @@ bash app/scripts/e2e-run-spec.sh test/e2e/specs/<your-spec>.spec.ts <id>
 
 ## Not driver-automatable - manual smoke required
 
-Some surfaces cannot be driven by WDIO / Appium because they cross OS-level trust boundaries or hardware paths. The complete checklist + sign-off block lives in [`docs/RELEASE-MANUAL-SMOKE.md`](../../docs/RELEASE-MANUAL-SMOKE.md), that file is the source of truth for what must be verified per release. Examples of what it covers:
+Some surfaces cannot be driven by WDIO / Appium because they cross OS-level trust boundaries or hardware paths. The complete checklist + sign-off block lives in [[..docs/RELEASE-MANUAL-SMOKE|`docs/RELEASE-MANUAL-SMOKE.md`]], that file is the source of truth for what must be verified per release. Examples of what it covers:
 
 - macOS TCC permission prompts (Accessibility, Input Monitoring, Screen Recording, Microphone)
 - Gatekeeper signature validation on first launch
@@ -140,7 +140,7 @@ If a feature has no automated coverage AND is not on the manual smoke list, trea
 
 ## Coverage matrix as the contract
 
-Every feature leaf in the [coverage matrix](../../docs/TEST-COVERAGE-MATRIX.md) maps to:
+Every feature leaf in the [[..docs/TEST-COVERAGE-MATRIX|coverage matrix]] maps to:
 
 1. A test path or paths, **or**
 2. A justified `🚫` with a manual-smoke entry.

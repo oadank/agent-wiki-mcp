@@ -15,7 +15,7 @@ This is deliberate scoping. The previous design tried to put every modality on-d
 
 | Workload                  | Default model                     | Implementation                                                                                                          |
 | ------------------------- | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **Memory embeddings**     | `all-minilm:latest`               | `src/openhuman/embeddings/ollama.rs` - used by the [Memory Tree](../obsidian-wiki/memory-tree.md) for vector search.    |
+| **Memory embeddings**     | `all-minilm:latest`               | `src/openhuman/embeddings/ollama.rs` - used by the [[.obsidian-wiki/memory-tree|Memory Tree]] for vector search.    |
 | **Summary-tree building** | `gemma3:1b-it-qat` (configurable) | `src/openhuman/tree_summarizer/ops.rs` - source / topic / global summary builders for the Memory Tree.                  |
 | **Heartbeat loop**        | small chat model                  | `src/openhuman/heartbeat/` - periodic background reflection.                                                            |
 | **Learning / reflection** | small chat model                  | `src/openhuman/learning/reflection.rs` - passes that consolidate what was learned.                                      |
@@ -33,10 +33,10 @@ Each of these is an explicit opt-in. Turning on local AI does not silently route
 | **Reasoning**  | Stronger multi-step quality unless `reasoning_provider` is explicitly set to a local provider. |
 | **Vision**     | Same.                                                                                          |
 | **STT**        | Backend-proxied transcription (`src/openhuman/voice/cloud_transcribe.rs`).                     |
-| **TTS**        | Hosted [text-to-speech](../native-tools/voice.md) under the hood (`reply_speech.rs`).          |
+| **TTS**        | Hosted [[.native-tools/voice|text-to-speech]] under the hood (`reply_speech.rs`).          |
 | **Web search** | Backend proxy (no API key on your machine).                                                    |
 
-For **lightweight or medium chat hints** (`hint:reaction`, `hint:classify`, `hint:format`, `hint:sentiment`, `hint:summarize`, `hint:medium`, `hint:tool_lite`), the [router](README.md) can prefer the local provider only when `local_ai.runtime_enabled = true` and the configured local provider is reachable.
+For **lightweight or medium chat hints** (`hint:reaction`, `hint:classify`, `hint:format`, `hint:sentiment`, `hint:summarize`, `hint:medium`, `hint:tool_lite`), the [[README|router]] can prefer the local provider only when `local_ai.runtime_enabled = true` and the configured local provider is reachable.
 
 Heavy hints (`hint:reasoning`, `hint:agentic`, `hint:coding`) stay cloud by default unless the matching workload provider field is explicitly configured locally.
 
@@ -119,6 +119,6 @@ OpenHuman handles the rest: lifecycle (`src/openhuman/local_ai/service/`), API c
 
 ## See also
 
-- [Memory Tree](../obsidian-wiki/memory-tree.md). what local embeddings + summarization power.
-- [Automatic Model Routing](README.md). how lightweight chat hints prefer the local provider.
-- [Privacy & Security](../privacy-and-security.md). what moves on-device when you opt in.
+- [[.obsidian-wiki/memory-tree|Memory Tree]]. what local embeddings + summarization power.
+- [[README|Automatic Model Routing]]. how lightweight chat hints prefer the local provider.
+- [[.privacy-and-security|Privacy & Security]]. what moves on-device when you opt in.

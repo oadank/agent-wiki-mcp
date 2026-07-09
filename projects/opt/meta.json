@@ -1,0 +1,33 @@
+{
+  "projectName": "opt",
+  "realPath": "/opt",
+  "status": "active",
+  "createdAt": "2026-07-03 11:14",
+  "lastSession": "2026-07-09 16:51",
+  "lastAI": "注册",
+  "currentTask": "项目初始化",
+  "taskStatus": "✅",
+  "pendingChanges": [
+    {
+      "type": "files_modified",
+      "path": "/opt",
+      "count": 20,
+      "files": [
+        "./agents-to-im/.hello-cc/mesh.db",
+        "./openclaw-dashboard/.hello-cc/mesh.db",
+        "./agent-wiki-mcp/projects/agents-to-im/meta.json",
+        "./agent-wiki-mcp/projects/agent-wiki-mcp/meta.json",
+        "./agent-wiki-mcp/projects/openhuman/meta.json",
+        "./agent-wiki-mcp/projects/opt/meta.json",
+        "./agent-wiki-mcp/projects/registry.json",
+        "./agent-wiki-mcp/projects/cc-haha/meta.json",
+        "./agent-wiki-mcp/projects/codex/meta.json",
+        "./agent-wiki-mcp/projects/litellm-domestic-fix/meta.json"
+      ]
+    }
+  ],
+  "totalSessions": 0,
+  "daysSinceUpdate": 0,
+  "indexed": true,
+  "indexUpdatedAt": "2026-07-03 11:14"
+}

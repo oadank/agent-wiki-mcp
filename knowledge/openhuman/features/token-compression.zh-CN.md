@@ -21,7 +21,7 @@ OpenHuman 搭载 **TokenJuice**，这是 [vincentkoc/tokenjuice](https://github.
 
 ## 为什么这和记忆有关
 
-TokenJuice 是使[自动拉取](obsidian-wiki/auto-fetch.zh-CN.md)在经济上可行的原因。当 Gmail provider 同步一页 200 条消息时，TokenJuice 在每个规范化的邮件进入构建摘要的模型**之前**就将其压缩。GitHub diff、Slack 频道转储以及其他任何高流量来源同理。
+TokenJuice 是使[[obsidian-wiki/auto-fetch.zh-CN|自动拉取]]在经济上可行的原因。当 Gmail provider 同步一页 200 条消息时，TokenJuice 在每个规范化的邮件进入构建摘要的模型**之前**就将其压缩。GitHub diff、Slack 频道转储以及其他任何高流量来源同理。
 
 具体来说：通过前沿模型摄入你最近六个月的邮件费用从数百美元降到个位数美元。
 
@@ -47,5 +47,5 @@ LLM 上下文
 
 ## 另见
 
-* [原生工具](native-tools/README.zh-CN.md)。大多数重型工具输出都经过 TokenJuice。
-* [记忆树](obsidian-wiki/memory-tree.zh-CN.md)。压缩输出的下游消费者。
+* [[native-tools/README.zh-CN|原生工具]]。大多数重型工具输出都经过 TokenJuice。
+* [[obsidian-wiki/memory-tree.zh-CN|记忆树]]。压缩输出的下游消费者。

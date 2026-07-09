@@ -18,7 +18,7 @@ icon: clock
 | `cron_run` | 立即运行一次任务，无论其时间表如何。 |
 | `cron_runs` | 检查最近运行历史——何时、多久、产生了什么。 |
 
-[系统与工具](system-and-utilities.zh-CN.md)中还有一个一次性 `schedule` 工具，用于"在时间 T 做一次"而不需要循环条目的情况。
+[[system-and-utilities.zh-CN|系统与工具]]中还有一个一次性 `schedule` 工具，用于"在时间 T 做一次"而不需要循环条目的情况。
 
 ## 适用于
 
@@ -29,9 +29,9 @@ icon: clock
 
 ## 如何与其余部分关联
 
-每次 cron 运行都是一次正常的智能体调用，所以它可以使用任何其他工具——搜索网页、查询[记忆树](../obsidian-wiki/memory-tree.zh-CN.md)、调用[第三方集成](../integrations/README.zh-CN.md)、发消息。运行历史被记录，这样你可以看到每个 tick 产生了什么。
+每次 cron 运行都是一次正常的智能体调用，所以它可以使用任何其他工具——搜索网页、查询[[.obsidian-wiki/memory-tree.zh-CN|记忆树]]、调用[[.integrations/README.zh-CN|第三方集成]]、发消息。运行历史被记录，这样你可以看到每个 tick 产生了什么。
 
 ## 另见
 
-* [系统与工具](system-and-utilities.zh-CN.md) —— 一次性 `schedule` 工具。
-* [智能体协作](agent-coordination.zh-CN.md) —— 向子智能体扇出的任务。
+* [[system-and-utilities.zh-CN|系统与工具]] —— 一次性 `schedule` 工具。
+* [[agent-coordination.zh-CN|智能体协作]] —— 向子智能体扇出的任务。

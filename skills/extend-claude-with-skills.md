@@ -262,8 +262,8 @@ Reference supporting files from `SKILL.md` so Claude knows what each file contai
 ```markdown theme={null}
 ## Additional resources
 
-- For complete API details, see [reference.md](reference.md)
-- For usage examples, see [examples.md](examples.md)
+- For complete API details, see [[reference|reference.md]]
+- For usage examples, see [[examples|examples.md]]
 ```
 
 <Tip>Keep `SKILL.md` under 500 lines. Move detailed reference material to separate files.</Tip>
